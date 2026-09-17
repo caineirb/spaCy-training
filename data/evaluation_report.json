@@ -1,0 +1,120 @@
+{
+  "held_out_test_set": {
+    "overall_precision": 78.08,
+    "overall_recall": 100.0,
+    "overall_f1": 87.69,
+    "total_test_documents": 150,
+    "labels": {
+      "IT_TERM": {
+        "precision": 82.81,
+        "recall": 100.0,
+        "f1": 90.6
+      },
+      "CLERICAL_TERM": {
+        "precision": 74.39,
+        "recall": 100.0,
+        "f1": 85.31
+      }
+    }
+  },
+  "unseen_term_generalization_experiment": {
+    "total_unseen_benchmark_entities": 15,
+    "dictionary_recall_pct": 0.0,
+    "hybrid_precision_pct": 62.5,
+    "hybrid_recall_pct": 100.0,
+    "hybrid_f1_pct": 76.92,
+    "generalization_lift_recall": "+100.0%",
+    "sample_extractions": [
+      {
+        "text": "I developed a scalable microservice using FastAPI and connected it to our database.",
+        "gold_entities": [
+          "FastAPI"
+        ],
+        "extracted_entities": [
+          "FastAPI",
+          "database"
+        ],
+        "sources": [
+          "ML",
+          "dictionary"
+        ],
+        "statuses": [
+          "ACCEPTED",
+          "ACCEPTED"
+        ]
+      },
+      {
+        "text": "Migrated our legacy serverless functions to Bun for faster runtime execution.",
+        "gold_entities": [
+          "Bun"
+        ],
+        "extracted_entities": [
+          "Bun"
+        ],
+        "sources": [
+          "ML"
+        ],
+        "statuses": [
+          "ACCEPTED"
+        ]
+      },
+      {
+        "text": "Built an interactive reactive dashboard component using Svelte.",
+        "gold_entities": [
+          "Svelte"
+        ],
+        "extracted_entities": [
+          "dashboard",
+          "Svelte"
+        ],
+        "sources": [
+          "dictionary",
+          "ML"
+        ],
+        "statuses": [
+          "ACCEPTED",
+          "ACCEPTED"
+        ]
+      },
+      {
+        "text": "Configured modern responsive web styling using Tailwind CSS.",
+        "gold_entities": [
+          "Tailwind CSS"
+        ],
+        "extracted_entities": [
+          "Tailwind",
+          "CSS"
+        ],
+        "sources": [
+          "ML",
+          "dictionary"
+        ],
+        "statuses": [
+          "ACCEPTED",
+          "ACCEPTED"
+        ]
+      },
+      {
+        "text": "Set up authentication and cloud backend storage using Supabase.",
+        "gold_entities": [
+          "Supabase"
+        ],
+        "extracted_entities": [
+          "authentication",
+          "backend",
+          "Supabase"
+        ],
+        "sources": [
+          "dictionary",
+          "dictionary",
+          "ML"
+        ],
+        "statuses": [
+          "ACCEPTED",
+          "ACCEPTED",
+          "ACCEPTED"
+        ]
+      }
+    ]
+  }
+}

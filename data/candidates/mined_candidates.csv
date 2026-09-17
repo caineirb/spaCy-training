@@ -1,0 +1,12 @@
+candidate,count,suggested_label,mean_confidence,sample_context
+GraphQL,1,IT_TERM,0.99,I built a scalable GraphQL backend and integrated Redis for key-value caching.
+Redis,1,IT_TERM,0.99,I built a scalable GraphQL backend and integrated Redis for key-value caching.
+Curriculum Verification,1,CLERICAL_TERM,0.99,Assisted the department head with Curriculum Verification during the semester audit.
+Bun,1,IT_TERM,0.99,Developed a high-performance web service in Bun with rapid request execution.
+Airtable,1,IT_TERM,0.99,Encoded patient records using Airtable for collaborative team tracking.
+Supabase,1,IT_TERM,0.99,Refactored our serverless API functions using Supabase and PostgreSQL.
+GitHub Actions and,1,IT_TERM,0.85,Configured continuous integration using GitHub Actions and automated our unit tests.
+Bun with rapid,1,IT_TERM,0.85,Developed a high-performance web service in Bun with rapid request execution.
+Airtable for collaborative,1,IT_TERM,0.85,Encoded patient records using Airtable for collaborative team tracking.
+collaborative team tracking,1,CLERICAL_TERM,0.85,Encoded patient records using Airtable for collaborative team tracking.
+Supabase and PostgreSQL,1,IT_TERM,0.85,Refactored our serverless API functions using Supabase and PostgreSQL.

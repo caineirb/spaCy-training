@@ -1,0 +1,60 @@
+term,count,classification,source,confidence,sample_context
+Clerical,5,CLERICAL_TERM,dictionary,1.0,* Clerical: Assisted office clerk with document stamping and physical filing of department requisitions.
+database,4,IT_TERM,dictionary,1.0,* Task: Executed data migration scripts using Python and verified database index integrity.
+backend,2,IT_TERM,dictionary,1.0,* Task: Developed backend REST API endpoints using Laravel for student records management.
+Docker,2,IT_TERM,dictionary,1.0,* Task: Containerized application microservices using Docker and configured Docker Compose networking.
+DATABASE,1,IT_TERM,dictionary,1.0,"[WEEK 1: INFRASTRUCTURE SETUP, DATABASE MIGRATION, & OFFICE PROTOCOLS]"
+OFFICE PROTOCOLS,1,CLERICAL_TERM,ML,0.99,"[WEEK 1: INFRASTRUCTURE SETUP, DATABASE MIGRATION, & OFFICE PROTOCOLS]"
+Ubuntu,1,IT_TERM,dictionary,1.0,* Task: Configured development workstation and installed Ubuntu 22.04 LTS operating system.
+22.04 LTS,1,IT_TERM,ML,0.99,* Task: Configured development workstation and installed Ubuntu 22.04 LTS operating system.
+Git,1,IT_TERM,dictionary,1.0,* Task: Configured Git version control and authenticated remote repository on GitHub.
+version control,1,IT_TERM,dictionary,1.0,* Task: Configured Git version control and authenticated remote repository on GitHub.
+repository,1,IT_TERM,dictionary,1.0,* Task: Configured Git version control and authenticated remote repository on GitHub.
+GitHub,1,IT_TERM,dictionary,1.0,* Task: Configured Git version control and authenticated remote repository on GitHub.
+orientation,1,CLERICAL_TERM,dictionary,1.0,* Administrative: Received department orientation packet and completed intern clearance documentation.
+database schema,1,IT_TERM,dictionary,1.0,* Task: Initialized database schema using PostgreSQL and structured relational foreign key tables.
+PostgreSQL,1,IT_TERM,dictionary,1.0,* Task: Initialized database schema using PostgreSQL and structured relational foreign key tables.
+Python,1,IT_TERM,dictionary,1.0,* Task: Executed data migration scripts using Python and verified database index integrity.
+document stamping,1,CLERICAL_TERM,dictionary,1.0,* Clerical: Assisted office clerk with document stamping and physical filing of department requisitions.
+REST API,1,IT_TERM,dictionary,1.0,* Task: Developed backend REST API endpoints using Laravel for student records management.
+Laravel,1,IT_TERM,dictionary,1.0,* Task: Developed backend REST API endpoints using Laravel for student records management.
+student records,1,CLERICAL_TERM,dictionary,1.0,* Task: Developed backend REST API endpoints using Laravel for student records management.
+authentication,1,IT_TERM,dictionary,1.0,* Task: Integrated JWT authentication and user session management in Spring Boot microservices.
+session management,1,IT_TERM,dictionary,1.0,* Task: Integrated JWT authentication and user session management in Spring Boot microservices.
+Spring Boot,1,IT_TERM,dictionary,1.0,* Task: Integrated JWT authentication and user session management in Spring Boot microservices.
+Microsoft Excel,1,IT_TERM,dictionary,1.0,* Administrative: Compiled daily department attendance logs and encoded time cards into Microsoft Excel.
+Compose,1,IT_TERM,ML,0.99,* Task: Containerized application microservices using Docker and configured Docker Compose networking.
+Postman,1,IT_TERM,dictionary,1.0,* Task: Conducted automated API contract testing and performance benchmarks using Postman.
+Jenkins,1,IT_TERM,dictionary,1.0,* Task: Configured automated build and deployment pipeline using Jenkins on AWS cloud infrastructure.
+AWS,1,IT_TERM,dictionary,1.0,* Task: Configured automated build and deployment pipeline using Jenkins on AWS cloud infrastructure.
+Redis,1,IT_TERM,ML,0.99,* Task: Implemented in-memory caching layer using Redis to optimize database response times.
+meeting,1,CLERICAL_TERM,dictionary,1.0,* Review: Participated in weekly sprint review meeting and presented progress report to supervisor.
+FRONTEND,1,IT_TERM,dictionary,1.0,"[WEEK 2: FRONTEND INTEGRATION, CLERICAL AUDITING, & SYSTEM HARDENING]"
+CLERICAL,1,CLERICAL_TERM,dictionary,1.0,"[WEEK 2: FRONTEND INTEGRATION, CLERICAL AUDITING, & SYSTEM HARDENING]"
+SYSTEM HARDENING,1,CLERICAL_TERM,ML,0.99,"[WEEK 2: FRONTEND INTEGRATION, CLERICAL AUDITING, & SYSTEM HARDENING]"
+dashboard,1,IT_TERM,dictionary,1.0,* Task: Designed interactive user dashboard prototypes and wireframes using Figma.
+Figma,1,IT_TERM,dictionary,1.0,* Task: Designed interactive user dashboard prototypes and wireframes using Figma.
+React,1,IT_TERM,dictionary,1.0,* Task: Built responsive single-page application components using React and TypeScript.
+TypeScript,1,IT_TERM,dictionary,1.0,* Task: Built responsive single-page application components using React and TypeScript.
+inventory counting,1,CLERICAL_TERM,dictionary,1.0,* Clerical: Conducted inventory counting of department hardware supplies and logged discrepancies.
+hardware,1,IT_TERM,dictionary,1.0,* Clerical: Conducted inventory counting of department hardware supplies and logged discrepancies.
+frontend,1,IT_TERM,dictionary,1.0,* Task: Integrated frontend GraphQL queries with backend services for data aggregation.
+GraphQL,1,IT_TERM,dictionary,1.0,* Task: Integrated frontend GraphQL queries with backend services for data aggregation.
+UI,1,IT_TERM,dictionary,1.0,* Task: Styled responsive UI component library utilizing Tailwind CSS and HTML5 templates.
+Tailwind,1,IT_TERM,ML,0.99,* Task: Styled responsive UI component library utilizing Tailwind CSS and HTML5 templates.
+CSS,1,IT_TERM,dictionary,1.0,* Task: Styled responsive UI component library utilizing Tailwind CSS and HTML5 templates.
+HTML5,1,IT_TERM,ML,0.99,* Task: Styled responsive UI component library utilizing Tailwind CSS and HTML5 templates.
+Kubernetes,1,IT_TERM,dictionary,1.0,* Task: Deployed microservice container cluster on Kubernetes staging environment.
+RabbitMQ,1,IT_TERM,ML,0.99,* Task: Implemented asynchronous worker queue processing using RabbitMQ and Node.js.
+Node.js,1,IT_TERM,dictionary,1.0,* Task: Implemented asynchronous worker queue processing using RabbitMQ and Node.js.
+network,1,IT_TERM,dictionary,1.0,* Task: Troubleshot server network connectivity and resolved firewall routing issues on Linux.
+Linux,1,IT_TERM,dictionary,1.0,* Task: Troubleshot server network connectivity and resolved firewall routing issues on Linux.
+backup,1,IT_TERM,dictionary,1.0,* Task: Developed automated database backup scripts using Bash and scheduled cron execution.
+Bash,1,IT_TERM,ML,0.99,* Task: Developed automated database backup scripts using Bash and scheduled cron execution.
+cron,1,IT_TERM,ML,0.99,* Task: Developed automated database backup scripts using Bash and scheduled cron execution.
+document routing,1,CLERICAL_TERM,dictionary,1.0,* Administrative: Managed physical document routing and logged outgoing correspondence mail.
+web server,1,IT_TERM,dictionary,1.0,* Task: Benchmarked web server performance and optimized Nginx reverse proxy configuration.
+Nginx,1,IT_TERM,ML,0.99,* Task: Benchmarked web server performance and optimized Nginx reverse proxy configuration.
+SonarQube,1,IT_TERM,ML,0.99,* Task: Conducted code quality audits and fixed static analysis warnings using SonarQube.
+inventory analysis,1,CLERICAL_TERM,dictionary,1.0,* Clerical: Assisted supervisor with weekly department inventory analysis and filing reports.
+reports,1,CLERICAL_TERM,dictionary,1.0,* Clerical: Assisted supervisor with weekly department inventory analysis and filing reports.

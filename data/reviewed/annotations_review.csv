@@ -1,0 +1,1003 @@
+record_id,text,term,start,end,label,status
+0,"As assigned, Organized file cabinets, categorized binders, and conducted Collection Reports.",Collection Reports,73,91,CLERICAL_TERM,AUTO_MATCH
+1,"Early in the day, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+2,Cross-checked incoming department requests as part of Inventory Organization.,Inventory Organization,54,76,CLERICAL_TERM,AUTO_MATCH
+3,"Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+4,"Today, Monitored server resource utilization and optimized PC Assembly queries.",PC Assembly,59,70,IT_TERM,AUTO_MATCH
+5,"This week, Researched modern architectural best practices involving GeoJSON.",GeoJSON,68,75,IT_TERM,AUTO_MATCH
+6,"As assigned, Prepared the required paperwork and verified attachments for Medical Inventory.",Medical Inventory,74,91,CLERICAL_TERM,AUTO_MATCH
+7,"For my primary task, Attended a technical workshop on best practices for User Management.",User Management,73,88,IT_TERM,AUTO_MATCH
+8,Waited for feedback from the team lead before proceeding with the next assignment.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+9,Compiled weekly department statistics and created charts for Resource Management.,Resource Management,61,80,CLERICAL_TERM,AUTO_MATCH
+10,"Today, Researched modern architectural best practices involving Data Calculation.",Data Calculation,64,80,IT_TERM,AUTO_MATCH
+11,Refactored legacy code modules and migrated the system to Printer Installation.,Printer Installation,58,78,IT_TERM,AUTO_MATCH
+12,"For my primary task, Attended a technical workshop on best practices for SQLite.",SQLite,73,79,IT_TERM,AUTO_MATCH
+13,"In the afternoon, Cross-checked incoming department requests as part of Document Stamping.",Document Stamping,72,89,CLERICAL_TERM,AUTO_MATCH
+14,"For my primary task, Researched modern architectural best practices involving Google Sheets.",Google Sheets,78,91,IT_TERM,AUTO_MATCH
+15,"This week, Configured the development environment and set up Dashboard.",Dashboard,61,70,IT_TERM,AUTO_MATCH
+16,"In the afternoon, Completed the assigned weekly tasks regarding Inventory Counting on schedule.",Inventory Counting,64,82,CLERICAL_TERM,AUTO_MATCH
+17,"Today, Monitored server resource utilization and optimized Database Seeder queries.",Database Seeder,59,74,IT_TERM,AUTO_MATCH
+18,"As assigned, Managed physical inventory counts and logged discrepancies during General Cleaning.",General Cleaning,79,95,CLERICAL_TERM,AUTO_MATCH
+19,"Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+20,"Today, Printed, stamped, and organized physical documents for Meeting.",Meeting,62,69,CLERICAL_TERM,AUTO_MATCH
+21,"For my primary task, Collaborated with the infrastructure team to configure Mailer.",Mailer,76,82,IT_TERM,AUTO_MATCH
+22,"On Thursday, Cleaned the intern workstation and organized desk accessories before logging out.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+23,"For my primary task, Automated our daily build and deployment pipeline using PDF Conversion.",PDF Conversion,77,91,IT_TERM,AUTO_MATCH
+24,Distributed printed handouts and supported the team during Audit Preparation.,Audit Preparation,59,76,CLERICAL_TERM,AUTO_MATCH
+25,"As assigned, Cross-checked incoming department requests as part of Meeting Transcription.",Meeting Transcription,67,88,CLERICAL_TERM,AUTO_MATCH
+26,Designed the database schema and executed migrations using Google Cloud Platform.,Google Cloud Platform,59,80,IT_TERM,AUTO_MATCH
+27,"Today, Distributed printed handouts and supported the team during Meeting Proceedings.",Meeting Proceedings,66,85,CLERICAL_TERM,AUTO_MATCH
+28,Drafted official correspondence and summarized notes for Certificate Recognition.,Certificate Recognition,57,80,CLERICAL_TERM,AUTO_MATCH
+29,"This week, Assisted our senior engineer in deploying our application using QR Code.",QR Code,75,82,IT_TERM,AUTO_MATCH
+30,"Afterwards, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+31,"Printed, stamped, and organized physical documents for Client Assistance.",Client Assistance,55,72,CLERICAL_TERM,AUTO_MATCH
+32,Assisted our senior engineer in deploying our application using Database Normalization.,Database Normalization,64,86,IT_TERM,AUTO_MATCH
+33,"In the morning, Implemented background asynchronous task workers using Flash Drive.",Flash Drive,71,82,IT_TERM,AUTO_MATCH
+34,"Today, Completed the assigned weekly tasks regarding Financial Records on schedule.",Financial Records,53,70,CLERICAL_TERM,AUTO_MATCH
+35,"For my primary task, Wrote clean, maintainable microservice code in Microsoft Azure under supervision.",Microsoft Azure,68,83,IT_TERM,AUTO_MATCH
+36,"In the afternoon, Encoded information accurately into the office registry during Workplace Organization.",Workplace Organization,81,103,CLERICAL_TERM,AUTO_MATCH
+37,Installed necessary security patches and updated the Web Server dependency.,Web Server,53,63,IT_TERM,AUTO_MATCH
+38,"Today, Implemented background asynchronous task workers using UI Design.",UI Design,62,71,IT_TERM,AUTO_MATCH
+39,"In the morning, Conducted automated unit testing and performance benchmarks on Object-Oriented Programming.",Object-Oriented Programming,79,106,IT_TERM,AUTO_MATCH
+40,Refactored legacy code modules and migrated the system to Security.,Security,58,66,IT_TERM,AUTO_MATCH
+41,"For my primary task, Implemented secure authentication and access controls in System Planning.",System Planning,78,93,IT_TERM,AUTO_MATCH
+42,"During my shift, Prepared the required paperwork and verified attachments for File Management.",File Management,78,93,CLERICAL_TERM,AUTO_MATCH
+43,"Afterwards, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+44,"In the afternoon, Facilitated document routing and tracked outgoing mail for Activity Documentation.",Activity Documentation,77,99,CLERICAL_TERM,AUTO_MATCH
+45,"Today, Reviewed transaction logs and audited files as part of Community Coordination.",Community Coordination,62,84,CLERICAL_TERM,AUTO_MATCH
+46,"For my primary task, Researched modern architectural best practices involving InfinityFree.",InfinityFree,78,90,IT_TERM,AUTO_MATCH
+47,"Today, Conducted automated unit testing and performance benchmarks on Password Reset.",Password Reset,70,84,IT_TERM,AUTO_MATCH
+48,"For my primary task, Worked on backend API services and integrated Layout Design for persistent storage.",Layout Design,67,80,IT_TERM,AUTO_MATCH
+49,"Today, Managed physical inventory counts and logged discrepancies during Office Workflow.",Office Workflow,73,88,CLERICAL_TERM,AUTO_MATCH
+50,"In the morning, Collaborated with the infrastructure team to configure Data Entry.",Data Entry,71,81,IT_TERM,AUTO_MATCH
+51,Verified signatures and filed department clearance forms during Exit Clearance Forms.,Exit Clearance Forms,64,84,CLERICAL_TERM,AUTO_MATCH
+52,"For my primary task, Resolved an unexpected crash in production by debugging our Livewire service.",Livewire,81,89,IT_TERM,AUTO_MATCH
+53,Helped a colleague locate the designated conference room on the third floor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+54,"During my shift, Maintained office order and coordinated department logistics through Certificate Recognition.",Certificate Recognition,86,109,CLERICAL_TERM,AUTO_MATCH
+55,Configured the development environment and set up CRUD.,CRUD,50,54,IT_TERM,AUTO_MATCH
+56,"On Thursday, Attended the morning standup meeting with the supervisor to discuss daily goals.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+57,"This week, Monitored server resource utilization and optimized Phone Troubleshooting queries.",Phone Troubleshooting,63,84,IT_TERM,AUTO_MATCH
+58,Verified signatures and filed department clearance forms during Community Outreach.,Community Outreach,64,82,CLERICAL_TERM,AUTO_MATCH
+59,"First, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+60,"Today, I developed a web application feature using Data Validation.",Data Validation,51,66,IT_TERM,AUTO_MATCH
+61,Helped a colleague locate the designated conference room on the third floor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+62,"In the afternoon, Maintained office order and coordinated department logistics through Document Processing.",Document Processing,87,106,CLERICAL_TERM,AUTO_MATCH
+63,Took a short lunch break with fellow student interns at the company cafeteria.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+64,"This week, Conducted automated unit testing and performance benchmarks on Microsoft Word.",Microsoft Word,74,88,IT_TERM,AUTO_MATCH
+65,"In the morning, Resolved an unexpected crash in production by debugging our Printer Driver service.",Printer Driver,76,90,IT_TERM,AUTO_MATCH
+66,Distributed printed handouts and supported the team during Exit Clearance Forms.,Exit Clearance Forms,59,79,CLERICAL_TERM,AUTO_MATCH
+67,"During my shift, Handled confidential student records during Community Coordination.",Community Coordination,61,83,CLERICAL_TERM,AUTO_MATCH
+68,Implemented secure authentication and access controls in Session Management.,Session Management,57,75,IT_TERM,AUTO_MATCH
+69,"First, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+70,"Today, Managed physical inventory counts and logged discrepancies during Nutrition Counseling.",Nutrition Counseling,73,93,CLERICAL_TERM,AUTO_MATCH
+71,"Early in the day, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+72,"Today, Drafted official correspondence and summarized notes for Physical Files.",Physical Files,64,78,CLERICAL_TERM,AUTO_MATCH
+73,Submitted the bi-weekly intern time log sheet to the human resource assistant.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+74,Implemented secure authentication and access controls in User Management.,User Management,57,72,IT_TERM,AUTO_MATCH
+75,"Today, Submitted the finalized documentation package required for Clerical Duties.",Clerical Duties,66,81,CLERICAL_TERM,AUTO_MATCH
+76,"In the morning, Collaborated with the infrastructure team to configure Canva.",Canva,71,76,IT_TERM,AUTO_MATCH
+77,"Afterwards, Participated in an open discussion regarding team workflow enhancements.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+78,"On Thursday, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+79,Reviewed general company guidelines regarding data privacy and acceptable use.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+80,"Today, Verified signatures and filed department clearance forms during Document Routing.",Document Routing,71,87,CLERICAL_TERM,AUTO_MATCH
+81,"In the afternoon, Verified signatures and filed department clearance forms during Team Coordination.",Team Coordination,82,99,CLERICAL_TERM,AUTO_MATCH
+82,"Afterwards, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+83,Designed the database schema and executed migrations using Scrum.,Scrum,59,64,IT_TERM,AUTO_MATCH
+84,"During my shift, Completed the assigned weekly tasks regarding Photo Documentation on schedule.",Photo Documentation,63,82,CLERICAL_TERM,AUTO_MATCH
+85,"This week, Wrote clean, maintainable microservice code in Middleware under supervision.",Middleware,58,68,IT_TERM,AUTO_MATCH
+86,Cross-checked incoming department requests as part of Data Verification.,Data Verification,54,71,CLERICAL_TERM,AUTO_MATCH
+87,"For my primary task, Created comprehensive documentation and guidelines for Data Input usage.",Data Input,76,86,IT_TERM,AUTO_MATCH
+88,"In the afternoon, Cross-checked incoming department requests as part of Data Consolidation.",Data Consolidation,72,90,CLERICAL_TERM,AUTO_MATCH
+89,Encoded information accurately into the office registry during Document Verification.,Document Verification,63,84,CLERICAL_TERM,AUTO_MATCH
+90,"In the morning, Researched modern architectural best practices involving Family Profiling Application.",Family Profiling Application,73,101,IT_TERM,AUTO_MATCH
+91,"As assigned, Assisted staff members and visitors with inquiries regarding Student Enrollment.",Student Enrollment,74,92,CLERICAL_TERM,AUTO_MATCH
+92,"Today, Attended a technical workshop on best practices for Spring Boot.",Spring Boot,59,70,IT_TERM,AUTO_MATCH
+93,"Today, Facilitated document routing and tracked outgoing mail for Information Checking.",Information Checking,66,86,CLERICAL_TERM,AUTO_MATCH
+94,"As assigned, Drafted official correspondence and summarized notes for Photo Documentation.",Photo Documentation,70,89,CLERICAL_TERM,AUTO_MATCH
+95,"On Thursday, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+96,"As assigned, Completed the assigned weekly tasks regarding Financial Transactions on schedule.",Financial Transactions,59,81,CLERICAL_TERM,AUTO_MATCH
+97,"First, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+98,"During my shift, Reviewed transaction logs and audited files as part of Records Office.",Records Office,72,86,CLERICAL_TERM,AUTO_MATCH
+99,Resolved an unexpected crash in production by debugging our Capstone Project service.,Capstone Project,60,76,IT_TERM,AUTO_MATCH
+100,"Today, Assisted staff members and visitors with inquiries regarding Records Office.",Records Office,68,82,CLERICAL_TERM,AUTO_MATCH
+101,"During my shift, Managed physical inventory counts and logged discrepancies during Administrative Tasks.",Administrative Tasks,83,103,CLERICAL_TERM,AUTO_MATCH
+102,"Today, Organized file cabinets, categorized binders, and conducted Office Cleaning.",Office Cleaning,67,82,CLERICAL_TERM,AUTO_MATCH
+103,Compiled weekly department statistics and created charts for Community Coordination.,Community Coordination,61,83,CLERICAL_TERM,AUTO_MATCH
+104,"In the morning, Conducted automated unit testing and performance benchmarks on Hardware Repair.",Hardware Repair,79,94,IT_TERM,AUTO_MATCH
+105,"Early in the day, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+106,"As assigned, Managed physical inventory counts and logged discrepancies during Certificate Release.",Certificate Release,79,98,CLERICAL_TERM,AUTO_MATCH
+107,Automated our daily build and deployment pipeline using Spatie.,Spatie,56,62,IT_TERM,AUTO_MATCH
+108,"Today, Refactored legacy code modules and migrated the system to Computer Hardware Maintenance.",Computer Hardware Maintenance,65,94,IT_TERM,AUTO_MATCH
+109,"Today, Researched modern architectural best practices involving WiFi.",WiFi,64,68,IT_TERM,AUTO_MATCH
+110,"As assigned, Assisted staff members and visitors with inquiries regarding Certificate Distribution.",Certificate Distribution,74,98,CLERICAL_TERM,AUTO_MATCH
+111,"Wrote clean, maintainable microservice code in Google Cloud Platform under supervision.",Google Cloud Platform,47,68,IT_TERM,AUTO_MATCH
+112,Submitted the finalized documentation package required for Client Payments.,Client Payments,59,74,CLERICAL_TERM,AUTO_MATCH
+113,Collaborated with the infrastructure team to configure Application Management.,Application Management,55,77,IT_TERM,AUTO_MATCH
+114,"For my primary task, Refactored legacy code modules and migrated the system to Database Management.",Database Management,79,98,IT_TERM,AUTO_MATCH
+115,"During my shift, Verified signatures and filed department clearance forms during Medicine Stocks.",Medicine Stocks,81,96,CLERICAL_TERM,AUTO_MATCH
+116,"During my shift, Cross-checked incoming department requests as part of BNS Activities.",BNS Activities,71,85,CLERICAL_TERM,AUTO_MATCH
+117,"Afterwards, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+118,"This week, Collaborated with the infrastructure team to configure Django.",Django,66,72,IT_TERM,AUTO_MATCH
+119,"Early in the day, Greeted visitors at the entrance and escorted them to the conference room.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+120,"Early in the day, Participated in an open discussion regarding team workflow enhancements.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+121,Verified signatures and filed department clearance forms during Office Errands.,Office Errands,64,78,CLERICAL_TERM,AUTO_MATCH
+122,"In the afternoon, Cross-checked incoming department requests as part of Flyer Distribution.",Flyer Distribution,72,90,CLERICAL_TERM,AUTO_MATCH
+123,"Today, Assisted staff members and visitors with inquiries regarding File Labels.",File Labels,68,79,CLERICAL_TERM,AUTO_MATCH
+124,Designed the database schema and executed migrations using Jenkins.,Jenkins,59,66,IT_TERM,AUTO_MATCH
+125,"For my primary task, Monitored server resource utilization and optimized Certificate Design queries.",Certificate Design,73,91,IT_TERM,AUTO_MATCH
+126,"Afterwards, Took detailed personal notes during the department town hall assembly.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+127,Created an interactive user interface component with Visual Design.,Visual Design,53,66,IT_TERM,AUTO_MATCH
+128,"Today, Attended a technical workshop on best practices for TypeScript.",TypeScript,59,69,IT_TERM,AUTO_MATCH
+129,"This week, Worked on backend API services and integrated Database Normalization for persistent storage.",Database Normalization,57,79,IT_TERM,AUTO_MATCH
+130,"During my shift, Cross-checked incoming department requests as part of Photocopying.",Photocopying,71,83,CLERICAL_TERM,AUTO_MATCH
+131,"Today, I developed a web application feature using Tarpaulin Design.",Tarpaulin Design,51,67,IT_TERM,AUTO_MATCH
+132,"Afterwards, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+133,"In the morning, Worked on backend API services and integrated Data Entry for persistent storage.",Data Entry,62,72,IT_TERM,AUTO_MATCH
+134,"Early in the day, Signed the visitor logbook and collected the guest identification badges.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+135,"In the morning, I developed a web application feature using Git Commits.",Git Commits,60,71,IT_TERM,AUTO_MATCH
+136,Collaborated with the infrastructure team to configure Wireframe.,Wireframe,55,64,IT_TERM,AUTO_MATCH
+137,"First, Participated in the company-wide orientation regarding workplace ethics and rules.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+138,"During my shift, Maintained office order and coordinated department logistics through Outdoor Activities.",Outdoor Activities,86,104,CLERICAL_TERM,AUTO_MATCH
+139,"In the morning, Monitored server resource utilization and optimized Backup queries.",Backup,68,74,IT_TERM,AUTO_MATCH
+140,"As assigned, Distributed printed handouts and supported the team during Office Coordination.",Office Coordination,72,91,CLERICAL_TERM,AUTO_MATCH
+141,Researched modern architectural best practices involving Network.,Network,57,64,IT_TERM,AUTO_MATCH
+142,Designed the database schema and executed migrations using File Conversion.,File Conversion,59,74,IT_TERM,AUTO_MATCH
+143,"This week, Installed necessary security patches and updated the Printer Driver dependency.",Printer Driver,64,78,IT_TERM,AUTO_MATCH
+144,"In the morning, Automated our daily build and deployment pipeline using Coding.",Coding,72,78,IT_TERM,AUTO_MATCH
+145,"In the morning, Attended a technical workshop on best practices for UI Components.",UI Components,68,81,IT_TERM,AUTO_MATCH
+146,I developed a web application feature using eGOV.PH.,eGOV.PH,44,51,IT_TERM,AUTO_MATCH
+147,"For my primary task, Resolved an unexpected crash in production by debugging our Visual Design service.",Visual Design,81,94,IT_TERM,AUTO_MATCH
+148,"Today, Researched modern architectural best practices involving Geospatial Tracking.",Geospatial Tracking,64,83,IT_TERM,AUTO_MATCH
+149,"During my shift, Reviewed transaction logs and audited files as part of Patient Assistance.",Patient Assistance,72,90,CLERICAL_TERM,AUTO_MATCH
+150,I developed a web application feature using Ubuntu.,Ubuntu,44,50,IT_TERM,AUTO_MATCH
+151,"As assigned, Distributed printed handouts and supported the team during Data Verification.",Data Verification,72,89,CLERICAL_TERM,AUTO_MATCH
+152,"In the morning, Automated our daily build and deployment pipeline using PhpSpreadsheet.",PhpSpreadsheet,72,86,IT_TERM,AUTO_MATCH
+153,"In the morning, Wrote clean, maintainable microservice code in Ubuntu under supervision.",Ubuntu,63,69,IT_TERM,AUTO_MATCH
+154,"Today, Automated our daily build and deployment pipeline using Email Service.",Email Service,63,76,IT_TERM,AUTO_MATCH
+155,"This week, Resolved an unexpected crash in production by debugging our Python service.",Python,71,77,IT_TERM,AUTO_MATCH
+156,"Today, Distributed printed handouts and supported the team during Patient Records.",Patient Records,66,81,CLERICAL_TERM,AUTO_MATCH
+157,"For my primary task, Collaborated with the infrastructure team to configure Database.",Database,76,84,IT_TERM,AUTO_MATCH
+158,"Today, Monitored server resource utilization and optimized QR Code queries.",QR Code,59,66,IT_TERM,AUTO_MATCH
+159,Troubleshot network connectivity and configuration errors in Hardware.,Hardware,61,69,IT_TERM,AUTO_MATCH
+160,"During my shift, Reviewed transaction logs and audited files as part of Medicine Dispensing.",Medicine Dispensing,72,91,CLERICAL_TERM,AUTO_MATCH
+161,"In the afternoon, Handled confidential student records during Document Preparation.",Document Preparation,62,82,CLERICAL_TERM,AUTO_MATCH
+162,"In the afternoon, Handled confidential student records during Data Organization.",Data Organization,62,79,CLERICAL_TERM,AUTO_MATCH
+163,"In the afternoon, Drafted official correspondence and summarized notes for Promotional Materials.",Promotional Materials,75,96,CLERICAL_TERM,AUTO_MATCH
+164,"This week, Created comprehensive documentation and guidelines for Deployment Testing usage.",Deployment Testing,66,84,IT_TERM,AUTO_MATCH
+165,"During my shift, Verified signatures and filed department clearance forms during Enrollment.",Enrollment,81,91,CLERICAL_TERM,AUTO_MATCH
+166,"In the morning, Created comprehensive documentation and guidelines for C# usage.",C#,71,73,IT_TERM,AUTO_MATCH
+167,Distributed printed handouts and supported the team during Medicine Distribution.,Medicine Distribution,59,80,CLERICAL_TERM,AUTO_MATCH
+168,"On Thursday, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+169,"For my primary task, Implemented background asynchronous task workers using Postman.",Postman,76,83,IT_TERM,AUTO_MATCH
+170,"In the morning, Researched modern architectural best practices involving Family Profiling Application.",Family Profiling Application,73,101,IT_TERM,AUTO_MATCH
+171,"For my primary task, Designed the database schema and executed migrations using Capstone Project.",Capstone Project,80,96,IT_TERM,AUTO_MATCH
+172,"On Thursday, Organized notebook notes and planned personal task priorities for tomorrow morning.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+173,"First, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+174,"In the morning, Configured the development environment and set up Research Summit.",Research Summit,66,81,IT_TERM,AUTO_MATCH
+175,Monitored server resource utilization and optimized System Maintenance queries.,System Maintenance,52,70,IT_TERM,AUTO_MATCH
+176,Facilitated document routing and tracked outgoing mail for Document Processing.,Document Processing,59,78,CLERICAL_TERM,AUTO_MATCH
+177,"Today, Assisted staff members and visitors with inquiries regarding Administrative Tasks.",Administrative Tasks,68,88,CLERICAL_TERM,AUTO_MATCH
+178,"Today, I developed a web application feature using Login.",Login,51,56,IT_TERM,AUTO_MATCH
+179,"First, Organized notebook notes and planned personal task priorities for tomorrow morning.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+180,Reviewed transaction logs and audited files as part of Meeting Proceedings.,Meeting Proceedings,55,74,CLERICAL_TERM,AUTO_MATCH
+181,Installed necessary security patches and updated the Excel dependency.,Excel,53,58,IT_TERM,AUTO_MATCH
+182,"For my primary task, Worked on backend API services and integrated Database Connections for persistent storage.",Database Connections,67,87,IT_TERM,AUTO_MATCH
+183,"In the morning, Implemented secure authentication and access controls in Responsive Design.",Responsive Design,73,90,IT_TERM,AUTO_MATCH
+184,"First, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+185,Helped a colleague locate the designated conference room on the third floor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+186,"As assigned, Encoded information accurately into the office registry during Stock Records.",Stock Records,76,89,CLERICAL_TERM,AUTO_MATCH
+187,"For my primary task, Refactored legacy code modules and migrated the system to Microsoft Excel.",Microsoft Excel,79,94,IT_TERM,AUTO_MATCH
+188,"In the afternoon, Organized file cabinets, categorized binders, and conducted Medicine Distribution.",Medicine Distribution,78,99,CLERICAL_TERM,AUTO_MATCH
+189,Distributed printed handouts and supported the team during Medicine Sachets.,Medicine Sachets,59,75,CLERICAL_TERM,AUTO_MATCH
+190,"In the afternoon, Maintained office order and coordinated department logistics through Meeting Proceedings.",Meeting Proceedings,87,106,CLERICAL_TERM,AUTO_MATCH
+191,"On Thursday, Had a quick alignment call with the project mentor to review weekly objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+192,"For my primary task, Wrote clean, maintainable microservice code in Middleware under supervision.",Middleware,68,78,IT_TERM,AUTO_MATCH
+193,"On Thursday, Greeted visitors at the entrance and escorted them to the conference room.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+194,"Early in the day, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+195,"Early in the day, Took detailed personal notes during the department town hall assembly.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+196,"First, Cleaned the intern workstation and organized desk accessories before logging out.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+197,"In the morning, Resolved an unexpected crash in production by debugging our Data Structures service.",Data Structures,76,91,IT_TERM,AUTO_MATCH
+198,"In the afternoon, Organized file cabinets, categorized binders, and conducted Scholarship Records.",Scholarship Records,78,97,CLERICAL_TERM,AUTO_MATCH
+199,Researched modern architectural best practices involving Codebase.,Codebase,57,65,IT_TERM,AUTO_MATCH
+200,"In the morning, Resolved an unexpected crash in production by debugging our SSD service.",SSD,76,79,IT_TERM,AUTO_MATCH
+201,"This week, I developed a web application feature using Nutrimap System.",Nutrimap System,55,70,IT_TERM,AUTO_MATCH
+202,"Today, Refactored legacy code modules and migrated the system to Monitor.",Monitor,65,72,IT_TERM,AUTO_MATCH
+203,"Today, Facilitated document routing and tracked outgoing mail for Activity Documentation.",Activity Documentation,66,88,CLERICAL_TERM,AUTO_MATCH
+204,"During my shift, Cross-checked incoming department requests as part of Collection Reports.",Collection Reports,71,89,CLERICAL_TERM,AUTO_MATCH
+205,"As assigned, Handled confidential student records during Resource Management.",Resource Management,57,76,CLERICAL_TERM,AUTO_MATCH
+206,"During my shift, Submitted the finalized documentation package required for Binders.",Binders,76,83,CLERICAL_TERM,AUTO_MATCH
+207,"Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+208,"During my shift, Organized file cabinets, categorized binders, and conducted Captions.",Captions,77,85,CLERICAL_TERM,AUTO_MATCH
+209,"Early in the day, Reviewed general company guidelines regarding data privacy and acceptable use.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+210,"In the afternoon, Distributed printed handouts and supported the team during Data Management.",Data Management,77,92,CLERICAL_TERM,AUTO_MATCH
+211,"During my shift, Drafted official correspondence and summarized notes for Insurance Details.",Insurance Details,74,91,CLERICAL_TERM,AUTO_MATCH
+212,"As assigned, Encoded information accurately into the office registry during Medical Inventory.",Medical Inventory,76,93,CLERICAL_TERM,AUTO_MATCH
+213,Participated in an open discussion regarding team workflow enhancements.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+214,Signed the visitor logbook and collected the guest identification badges.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+215,Implemented secure authentication and access controls in Internet Connection.,Internet Connection,57,76,IT_TERM,AUTO_MATCH
+216,"Today, Researched modern architectural best practices involving Hardware Installation.",Hardware Installation,64,85,IT_TERM,AUTO_MATCH
+217,Assisted staff members and visitors with inquiries regarding Record Checking.,Record Checking,61,76,CLERICAL_TERM,AUTO_MATCH
+218,"In the afternoon, Maintained office order and coordinated department logistics through Clearance Forms.",Clearance Forms,87,102,CLERICAL_TERM,AUTO_MATCH
+219,"For my primary task, Attended a technical workshop on best practices for AI Chatbot.",AI Chatbot,73,83,IT_TERM,AUTO_MATCH
+220,"During my shift, Encoded information accurately into the office registry during Material Distribution.",Material Distribution,80,101,CLERICAL_TERM,AUTO_MATCH
+221,"In the morning, Researched modern architectural best practices involving Agile.",Agile,73,78,IT_TERM,AUTO_MATCH
+222,Assisted staff members and visitors with inquiries regarding Inventory Records.,Inventory Records,61,78,CLERICAL_TERM,AUTO_MATCH
+223,"Today, Installed necessary security patches and updated the PC dependency.",PC,60,62,IT_TERM,AUTO_MATCH
+224,"Today, Researched modern architectural best practices involving Hardware Assembly.",Hardware Assembly,64,81,IT_TERM,AUTO_MATCH
+225,"Today, I developed a web application feature using GitHub.",GitHub,51,57,IT_TERM,AUTO_MATCH
+226,"For my primary task, I developed a web application feature using Data Encoding.",Data Encoding,65,78,IT_TERM,AUTO_MATCH
+227,"As assigned, Drafted official correspondence and summarized notes for Records.",Records,70,77,CLERICAL_TERM,AUTO_MATCH
+228,Worked on backend API services and integrated Printer Repair for persistent storage.,Printer Repair,46,60,IT_TERM,AUTO_MATCH
+229,"In the afternoon, Distributed printed handouts and supported the team during Document Arrangement.",Document Arrangement,77,97,CLERICAL_TERM,AUTO_MATCH
+230,Troubleshot network connectivity and configuration errors in Internet Connection.,Internet Connection,61,80,IT_TERM,AUTO_MATCH
+231,"This week, Resolved an unexpected crash in production by debugging our Laptop service.",Laptop,71,77,IT_TERM,AUTO_MATCH
+232,"First, Cleaned the intern workstation and organized desk accessories before logging out.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+233,"Today, Verified signatures and filed department clearance forms during Document Stamping.",Document Stamping,71,88,CLERICAL_TERM,AUTO_MATCH
+234,"On Thursday, Organized notebook notes and planned personal task priorities for tomorrow morning.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+235,"Today, Created comprehensive documentation and guidelines for Livewire usage.",Livewire,62,70,IT_TERM,AUTO_MATCH
+236,"In the afternoon, Maintained office order and coordinated department logistics through Workspace Organization.",Workspace Organization,87,109,CLERICAL_TERM,AUTO_MATCH
+237,"This week, Implemented background asynchronous task workers using Scrum.",Scrum,66,71,IT_TERM,AUTO_MATCH
+238,"On Thursday, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+239,Helped a colleague locate the designated conference room on the third floor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+240,"First, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+241,"This week, Automated our daily build and deployment pipeline using Logout.",Logout,67,73,IT_TERM,AUTO_MATCH
+242,"Today, Conducted automated unit testing and performance benchmarks on System Design.",System Design,70,83,IT_TERM,AUTO_MATCH
+243,Assisted the administrative supervisor with daily Client Satisfaction Survey.,Client Satisfaction Survey,50,76,CLERICAL_TERM,AUTO_MATCH
+244,"Today, Organized file cabinets, categorized binders, and conducted Certificate Release.",Certificate Release,67,86,CLERICAL_TERM,AUTO_MATCH
+245,"Afterwards, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+246,"Today, Compiled weekly department statistics and created charts for Inventory Analysis.",Inventory Analysis,68,86,CLERICAL_TERM,AUTO_MATCH
+247,"In the morning, Implemented background asynchronous task workers using System Deployment.",System Deployment,71,88,IT_TERM,AUTO_MATCH
+248,"Today, Implemented background asynchronous task workers using Angular.",Angular,62,69,IT_TERM,AUTO_MATCH
+249,"During my shift, Prepared the required paperwork and verified attachments for Document Verification.",Document Verification,78,99,CLERICAL_TERM,AUTO_MATCH
+250,"Afterwards, Signed the visitor logbook and collected the guest identification badges.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+251,"As assigned, Assisted staff members and visitors with inquiries regarding Signatories.",Signatories,74,85,CLERICAL_TERM,AUTO_MATCH
+252,"Today, Reviewed transaction logs and audited files as part of Record Organization.",Record Organization,62,81,CLERICAL_TERM,AUTO_MATCH
+253,"Today, Monitored server resource utilization and optimized Hardware Installation queries.",Hardware Installation,59,80,IT_TERM,AUTO_MATCH
+254,"During my shift, Printed, stamped, and organized physical documents for Client Satisfaction Survey.",Client Satisfaction Survey,72,98,CLERICAL_TERM,AUTO_MATCH
+255,Installed necessary security patches and updated the Access Control dependency.,Access Control,53,67,IT_TERM,AUTO_MATCH
+256,"Today, Distributed printed handouts and supported the team during Information Checking.",Information Checking,66,86,CLERICAL_TERM,AUTO_MATCH
+257,"First, Reviewed general company guidelines regarding data privacy and acceptable use.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+258,"Today, Verified signatures and filed department clearance forms during Encoding.",Encoding,71,79,CLERICAL_TERM,AUTO_MATCH
+259,Reviewed transaction logs and audited files as part of Inventory Records.,Inventory Records,55,72,CLERICAL_TERM,AUTO_MATCH
+260,"During my shift, Organized file cabinets, categorized binders, and conducted Loans.",Loans,77,82,CLERICAL_TERM,AUTO_MATCH
+261,"In the morning, Assisted our senior engineer in deploying our application using Figma.",Figma,80,85,IT_TERM,AUTO_MATCH
+262,"In the afternoon, Submitted the finalized documentation package required for Charter Day.",Charter Day,77,88,CLERICAL_TERM,AUTO_MATCH
+263,"In the morning, Implemented secure authentication and access controls in RBAC.",RBAC,73,77,IT_TERM,AUTO_MATCH
+264,"Today, Researched modern architectural best practices involving Database Management.",Database Management,64,83,IT_TERM,AUTO_MATCH
+265,"In the morning, Designed the database schema and executed migrations using System Interface.",System Interface,75,91,IT_TERM,AUTO_MATCH
+266,"As assigned, Assisted staff members and visitors with inquiries regarding Record Organization.",Record Organization,74,93,CLERICAL_TERM,AUTO_MATCH
+267,Reviewed transaction logs and audited files as part of Clearance Forms.,Clearance Forms,55,70,CLERICAL_TERM,AUTO_MATCH
+268,"During my shift, Cross-checked incoming department requests as part of Document Delivery.",Document Delivery,71,88,CLERICAL_TERM,AUTO_MATCH
+269,"Today, Conducted automated unit testing and performance benchmarks on Machine Learning.",Machine Learning,70,86,IT_TERM,AUTO_MATCH
+270,"This week, Created comprehensive documentation and guidelines for System Testing usage.",System Testing,66,80,IT_TERM,AUTO_MATCH
+271,"Early in the day, Had a quick alignment call with the project mentor to review weekly objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+272,"In the morning, Configured the development environment and set up System Maintenance.",System Maintenance,66,84,IT_TERM,AUTO_MATCH
+273,"This week, I developed a web application feature using Password Recovery.",Password Recovery,55,72,IT_TERM,AUTO_MATCH
+274,"In the afternoon, Drafted official correspondence and summarized notes for Office Coordination.",Office Coordination,75,94,CLERICAL_TERM,AUTO_MATCH
+275,"In the morning, Monitored server resource utilization and optimized Laravel queries.",Laravel,68,75,IT_TERM,AUTO_MATCH
+276,"On Thursday, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+277,"During my shift, Encoded information accurately into the office registry during Nutrition Counseling.",Nutrition Counseling,80,100,CLERICAL_TERM,AUTO_MATCH
+278,"During my shift, Verified signatures and filed department clearance forms during BNS Activities.",BNS Activities,81,95,CLERICAL_TERM,AUTO_MATCH
+279,"On Thursday, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+280,"During my shift, Printed, stamped, and organized physical documents for Student Enrollment.",Student Enrollment,72,90,CLERICAL_TERM,AUTO_MATCH
+281,Signed the visitor logbook and collected the guest identification badges.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+282,"Today, Attended a technical workshop on best practices for PHP.",PHP,59,62,IT_TERM,AUTO_MATCH
+283,Encoded information accurately into the office registry during Task Alignment.,Task Alignment,63,77,CLERICAL_TERM,AUTO_MATCH
+284,"Today, Prepared the required paperwork and verified attachments for Resource Management.",Resource Management,68,87,CLERICAL_TERM,AUTO_MATCH
+285,"As assigned, Facilitated document routing and tracked outgoing mail for Insurance Details.",Insurance Details,72,89,CLERICAL_TERM,AUTO_MATCH
+286,"As assigned, Assisted staff members and visitors with inquiries regarding Document Forwarding.",Document Forwarding,74,93,CLERICAL_TERM,AUTO_MATCH
+287,"Today, Implemented secure authentication and access controls in Java.",Java,64,68,IT_TERM,AUTO_MATCH
+288,"In the afternoon, Facilitated document routing and tracked outgoing mail for OPT Plus.",OPT Plus,77,85,CLERICAL_TERM,AUTO_MATCH
+289,"Today, Configured the development environment and set up Flask.",Flask,57,62,IT_TERM,AUTO_MATCH
+290,"For my primary task, Assisted our senior engineer in deploying our application using Gemini API.",Gemini API,85,95,IT_TERM,AUTO_MATCH
+291,"In the morning, Designed the database schema and executed migrations using Database Schema.",database schema,29,44,IT_TERM,AUTO_MATCH
+291,"In the morning, Designed the database schema and executed migrations using Database Schema.",Database Schema,75,90,IT_TERM,AUTO_MATCH
+292,Conducted automated unit testing and performance benchmarks on Capstone Study.,Capstone Study,63,77,IT_TERM,AUTO_MATCH
+293,Drafted official correspondence and summarized notes for Event Coordination.,Event Coordination,57,75,CLERICAL_TERM,AUTO_MATCH
+294,"Organized file cabinets, categorized binders, and conducted Patient Records.",Patient Records,60,75,CLERICAL_TERM,AUTO_MATCH
+295,"Today, Implemented secure authentication and access controls in Gemini API.",Gemini API,64,74,IT_TERM,AUTO_MATCH
+296,"Afterwards, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+297,"In the morning, Collaborated with the infrastructure team to configure Technical Skills.",Technical Skills,71,87,IT_TERM,AUTO_MATCH
+298,"Today, Distributed printed handouts and supported the team during OPT Plus.",OPT Plus,66,74,CLERICAL_TERM,AUTO_MATCH
+299,Attended the farewell gathering for the departing senior supervisor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+300,"For my primary task, Conducted automated unit testing and performance benchmarks on Facebook Posting.",Facebook Posting,84,100,IT_TERM,AUTO_MATCH
+301,"As assigned, Cross-checked incoming department requests as part of Shares Accounts.",Shares Accounts,67,82,CLERICAL_TERM,AUTO_MATCH
+302,"Today, Implemented background asynchronous task workers using Composer.",Composer,62,70,IT_TERM,AUTO_MATCH
+303,"Printed, stamped, and organized physical documents for Exit Clearance Forms.",Exit Clearance Forms,55,75,CLERICAL_TERM,AUTO_MATCH
+304,"On Thursday, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+305,"Today, Submitted the finalized documentation package required for Scholarship Records.",Scholarship Records,66,85,CLERICAL_TERM,AUTO_MATCH
+306,"Today, Created comprehensive documentation and guidelines for Poster Design usage.",Poster Design,62,75,IT_TERM,AUTO_MATCH
+307,"In the afternoon, Completed the assigned weekly tasks regarding Research Activities on schedule.",Research Activities,64,83,CLERICAL_TERM,AUTO_MATCH
+308,"As assigned, Printed, stamped, and organized physical documents for Nutrition Activities.",Nutrition Activities,68,88,CLERICAL_TERM,AUTO_MATCH
+309,"First, Checked my work email inbox and responded to routine greeting messages.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+310,"For my primary task, Monitored server resource utilization and optimized System Features queries.",System Features,73,88,IT_TERM,AUTO_MATCH
+311,Compiled weekly department statistics and created charts for Inventory.,Inventory,61,70,CLERICAL_TERM,AUTO_MATCH
+312,Researched modern architectural best practices involving Monitor.,Monitor,57,64,IT_TERM,AUTO_MATCH
+313,"For my primary task, Troubleshot network connectivity and configuration errors in Database Queries.",Database Queries,82,98,IT_TERM,AUTO_MATCH
+314,"For my primary task, Designed the database schema and executed migrations using Computer Support.",Computer Support,80,96,IT_TERM,AUTO_MATCH
+315,"During my shift, Printed, stamped, and organized physical documents for Barangay Coordination.",Barangay Coordination,72,93,CLERICAL_TERM,AUTO_MATCH
+316,"For my primary task, Monitored server resource utilization and optimized Landing Page queries.",Landing Page,73,85,IT_TERM,AUTO_MATCH
+317,"Today, Created an interactive user interface component with API Routes.",API Routes,60,70,IT_TERM,AUTO_MATCH
+318,Collaborated with the infrastructure team to configure Jira.,Jira,55,59,IT_TERM,AUTO_MATCH
+319,Signed the visitor logbook and collected the guest identification badges.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+320,"Today, Implemented background asynchronous task workers using Technical Skills.",Technical Skills,62,78,IT_TERM,AUTO_MATCH
+321,"First, Took detailed personal notes during the department town hall assembly.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+322,Worked on backend API services and integrated Digital File Organization for persistent storage.,Digital File Organization,46,71,IT_TERM,AUTO_MATCH
+323,"This week, Implemented background asynchronous task workers using Template Design.",Template Design,66,81,IT_TERM,AUTO_MATCH
+324,"During my shift, Distributed printed handouts and supported the team during Transfer Slips.",Transfer Slips,76,90,CLERICAL_TERM,AUTO_MATCH
+325,Assisted our senior engineer in deploying our application using Credentials.,Credentials,64,75,IT_TERM,AUTO_MATCH
+326,"Today, Worked on backend API services and integrated Credentials for persistent storage.",Credentials,53,64,IT_TERM,AUTO_MATCH
+327,"In the afternoon, Compiled weekly department statistics and created charts for Workplace Organization.",Workplace Organization,79,101,CLERICAL_TERM,AUTO_MATCH
+328,Waited for feedback from the team lead before proceeding with the next assignment.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+329,"During my shift, Assisted staff members and visitors with inquiries regarding BNS Meeting.",BNS Meeting,78,89,CLERICAL_TERM,AUTO_MATCH
+330,"In the afternoon, Managed physical inventory counts and logged discrepancies during Form Distribution.",Form Distribution,84,101,CLERICAL_TERM,AUTO_MATCH
+331,"As assigned, Encoded information accurately into the office registry during Name Labels.",Name Labels,76,87,CLERICAL_TERM,AUTO_MATCH
+332,"Early in the day, Checked my work email inbox and responded to routine greeting messages.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+333,"Early in the day, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+334,"Today, Conducted automated unit testing and performance benchmarks on Session Management.",Session Management,70,88,IT_TERM,AUTO_MATCH
+335,"For my primary task, Installed necessary security patches and updated the Hardware dependency.",Hardware,74,82,IT_TERM,AUTO_MATCH
+336,"First, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+337,"As assigned, Printed, stamped, and organized physical documents for Team Task Division.",Team Task Division,68,86,CLERICAL_TERM,AUTO_MATCH
+338,"As assigned, Cross-checked incoming department requests as part of Meeting Materials.",Meeting Materials,67,84,CLERICAL_TERM,AUTO_MATCH
+339,"Afterwards, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+340,"Today, Troubleshot network connectivity and configuration errors in Role Assignment.",Role Assignment,68,83,IT_TERM,AUTO_MATCH
+341,"As assigned, Drafted official correspondence and summarized notes for Information Reviewing.",Information Reviewing,70,91,CLERICAL_TERM,AUTO_MATCH
+342,"On Thursday, Participated in the company-wide orientation regarding workplace ethics and rules.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+343,Attended a technical workshop on best practices for PDF Conversion.,PDF Conversion,52,66,IT_TERM,AUTO_MATCH
+344,"In the afternoon, Assisted the administrative supervisor with daily Data Consolidation.",Data Consolidation,68,86,CLERICAL_TERM,AUTO_MATCH
+345,Implemented secure authentication and access controls in System Debugging.,System Debugging,57,73,IT_TERM,AUTO_MATCH
+346,"Today, Assisted staff members and visitors with inquiries regarding Binders.",Binders,68,75,CLERICAL_TERM,AUTO_MATCH
+347,"During my shift, Assisted staff members and visitors with inquiries regarding Data Recording.",Data Recording,78,92,CLERICAL_TERM,AUTO_MATCH
+348,"First, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+349,"Today, Implemented secure authentication and access controls in DevOps.",DevOps,64,70,IT_TERM,AUTO_MATCH
+350,"During my shift, Distributed printed handouts and supported the team during Folder Organization.",Folder Organization,76,95,CLERICAL_TERM,AUTO_MATCH
+351,"This week, Worked on backend API services and integrated Template Design for persistent storage.",Template Design,57,72,IT_TERM,AUTO_MATCH
+352,"In the morning, Assisted our senior engineer in deploying our application using Logbook Template.",Logbook Template,80,96,IT_TERM,AUTO_MATCH
+353,"Today, Automated our daily build and deployment pipeline using Kubernetes.",Kubernetes,63,73,IT_TERM,AUTO_MATCH
+354,"As assigned, Distributed printed handouts and supported the team during Filing System.",Filing System,72,85,CLERICAL_TERM,AUTO_MATCH
+355,"On Thursday, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+356,"In the morning, Conducted automated unit testing and performance benchmarks on Backend API.",Backend API,79,90,IT_TERM,AUTO_MATCH
+357,Submitted the finalized documentation package required for Document Arrangement.,Document Arrangement,59,79,CLERICAL_TERM,AUTO_MATCH
+358,"Today, Worked on backend API services and integrated Schema Backup for persistent storage.",Schema Backup,53,66,IT_TERM,AUTO_MATCH
+359,"Today, Attended a technical workshop on best practices for Interactive Map.",Interactive Map,59,74,IT_TERM,AUTO_MATCH
+360,"On Thursday, Checked my work email inbox and responded to routine greeting messages.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+361,"In the afternoon, Assisted the administrative supervisor with daily Medicine Dispensing.",Medicine Dispensing,68,87,CLERICAL_TERM,AUTO_MATCH
+362,"Early in the day, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+363,Automated our daily build and deployment pipeline using Password Reset.,Password Reset,56,70,IT_TERM,AUTO_MATCH
+364,"This week, Monitored server resource utilization and optimized Server Settings queries.",Server Settings,63,78,IT_TERM,AUTO_MATCH
+365,"On Thursday, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+366,"On Thursday, Signed the visitor logbook and collected the guest identification badges.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+367,Participated in the company-wide orientation regarding workplace ethics and rules.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+368,"During my shift, Facilitated document routing and tracked outgoing mail for Scholarship Data.",Scholarship Data,76,92,CLERICAL_TERM,AUTO_MATCH
+369,Discussed project deadlines and milestone expectations during the afternoon huddle.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+370,Distributed printed handouts and supported the team during Promotional Materials.,Promotional Materials,59,80,CLERICAL_TERM,AUTO_MATCH
+371,"During my shift, Handled confidential student records during Training Activities.",Training Activities,61,80,CLERICAL_TERM,AUTO_MATCH
+372,"For my primary task, I developed a web application feature using GeoJSON.",GeoJSON,65,72,IT_TERM,AUTO_MATCH
+373,"First, Checked my work email inbox and responded to routine greeting messages.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+374,"As assigned, Drafted official correspondence and summarized notes for Data Correction.",Data Correction,70,85,CLERICAL_TERM,AUTO_MATCH
+375,"Early in the day, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+376,Created comprehensive documentation and guidelines for System Deployment usage.,System Deployment,55,72,IT_TERM,AUTO_MATCH
+377,"For my primary task, Conducted automated unit testing and performance benchmarks on Python.",Python,84,90,IT_TERM,AUTO_MATCH
+378,Conducted automated unit testing and performance benchmarks on Code Refactoring.,Code Refactoring,63,79,IT_TERM,AUTO_MATCH
+379,Assisted staff members and visitors with inquiries regarding Name Labels.,Name Labels,61,72,CLERICAL_TERM,AUTO_MATCH
+380,"In the afternoon, Printed, stamped, and organized physical documents for Police Clearance.",Police Clearance,73,89,CLERICAL_TERM,AUTO_MATCH
+381,"In the afternoon, Prepared the required paperwork and verified attachments for Document Management.",Document Management,79,98,CLERICAL_TERM,AUTO_MATCH
+382,"Today, Reviewed transaction logs and audited files as part of Patient Assistance.",Patient Assistance,62,80,CLERICAL_TERM,AUTO_MATCH
+383,"This week, Designed the database schema and executed migrations using Repository.",Repository,70,80,IT_TERM,AUTO_MATCH
+384,"In the morning, Wrote clean, maintainable microservice code in Backend under supervision.",Backend,63,70,IT_TERM,AUTO_MATCH
+385,"Today, Configured the development environment and set up Figma.",Figma,57,62,IT_TERM,AUTO_MATCH
+386,"Early in the day, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+387,"As assigned, Reviewed transaction logs and audited files as part of Document Editing.",Document Editing,68,84,CLERICAL_TERM,AUTO_MATCH
+388,Completed the assigned weekly tasks regarding Collection Reports on schedule.,Collection Reports,46,64,CLERICAL_TERM,AUTO_MATCH
+389,"First, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+390,"Today, Troubleshot network connectivity and configuration errors in Database.",Database,68,76,IT_TERM,AUTO_MATCH
+391,"As assigned, Cross-checked incoming department requests as part of Nutrition Counseling.",Nutrition Counseling,67,87,CLERICAL_TERM,AUTO_MATCH
+392,Drafted official correspondence and summarized notes for File Cabinets.,File Cabinets,57,70,CLERICAL_TERM,AUTO_MATCH
+393,"Today, Conducted automated unit testing and performance benchmarks on JavaScript.",JavaScript,70,80,IT_TERM,AUTO_MATCH
+394,"On Thursday, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+395,"In the afternoon, Reviewed transaction logs and audited files as part of Flyer Distribution.",Flyer Distribution,73,91,CLERICAL_TERM,AUTO_MATCH
+396,"Today, Monitored server resource utilization and optimized Flutter queries.",Flutter,59,66,IT_TERM,AUTO_MATCH
+397,"Today, Encoded information accurately into the office registry during Document Organization.",Document Organization,70,91,CLERICAL_TERM,AUTO_MATCH
+398,"On Thursday, Checked my work email inbox and responded to routine greeting messages.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+399,"Afterwards, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+400,"In the afternoon, Assisted staff members and visitors with inquiries regarding PhilHealth Eligibility.",PhilHealth Eligibility,79,101,CLERICAL_TERM,AUTO_MATCH
+401,"Afterwards, Participated in the company-wide orientation regarding workplace ethics and rules.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+402,"During my shift, Handled confidential student records during Community Outreach.",Community Outreach,61,79,CLERICAL_TERM,AUTO_MATCH
+403,Reviewed transaction logs and audited files as part of Seminars.,Seminars,55,63,CLERICAL_TERM,AUTO_MATCH
+404,"For my primary task, Collaborated with the infrastructure team to configure Coding.",Coding,76,82,IT_TERM,AUTO_MATCH
+405,"Afterwards, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+406,"In the morning, Attended a technical workshop on best practices for Poster Design.",Poster Design,68,81,IT_TERM,AUTO_MATCH
+407,"In the morning, Assisted our senior engineer in deploying our application using Network Troubleshooting.",Network Troubleshooting,80,103,IT_TERM,AUTO_MATCH
+408,"On Thursday, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+409,Implemented background asynchronous task workers using Docker.,Docker,55,61,IT_TERM,AUTO_MATCH
+410,"In the morning, Automated our daily build and deployment pipeline using Layout Design.",Layout Design,72,85,IT_TERM,AUTO_MATCH
+411,"In the afternoon, Distributed printed handouts and supported the team during Material Distribution.",Material Distribution,77,98,CLERICAL_TERM,AUTO_MATCH
+412,"Today, Compiled weekly department statistics and created charts for Document Safekeeping.",Document Safekeeping,68,88,CLERICAL_TERM,AUTO_MATCH
+413,"Afterwards, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+414,"As assigned, Encoded information accurately into the office registry during Medicine Stocks.",Medicine Stocks,76,91,CLERICAL_TERM,AUTO_MATCH
+415,Prepared the required paperwork and verified attachments for Scholarship Records.,Scholarship Records,61,80,CLERICAL_TERM,AUTO_MATCH
+416,"For my primary task, Conducted automated unit testing and performance benchmarks on Merge Conflict.",Merge Conflict,84,98,IT_TERM,AUTO_MATCH
+417,"Early in the day, Participated in the company-wide orientation regarding workplace ethics and rules.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+418,Handled confidential student records during Record Keeping.,Record Keeping,44,58,CLERICAL_TERM,AUTO_MATCH
+419,"Today, Monitored server resource utilization and optimized Merge Conflict queries.",Merge Conflict,59,73,IT_TERM,AUTO_MATCH
+420,"Today, Compiled weekly department statistics and created charts for Inventory Counting.",Inventory Counting,68,86,CLERICAL_TERM,AUTO_MATCH
+421,Collaborated with the infrastructure team to configure Technical Assistance.,Technical Assistance,55,75,IT_TERM,AUTO_MATCH
+422,"Wrote clean, maintainable microservice code in Rate Limiting under supervision.",Rate Limiting,47,60,IT_TERM,AUTO_MATCH
+423,"As assigned, Distributed printed handouts and supported the team during Document Sorting.",Document Sorting,72,88,CLERICAL_TERM,AUTO_MATCH
+424,"As assigned, Reviewed transaction logs and audited files as part of Record Checking.",Record Checking,68,83,CLERICAL_TERM,AUTO_MATCH
+425,"As assigned, Prepared the required paperwork and verified attachments for Document Forwarding.",Document Forwarding,74,93,CLERICAL_TERM,AUTO_MATCH
+426,Arrived at the office on time and logged in to the biometric attendance machine.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+427,Collaborated with the infrastructure team to configure Facebook Management.,Facebook Management,55,74,IT_TERM,AUTO_MATCH
+428,"In the afternoon, Verified signatures and filed department clearance forms during Document Filing.",Document Filing,82,97,CLERICAL_TERM,AUTO_MATCH
+429,"As assigned, Verified signatures and filed department clearance forms during Document Safekeeping.",Document Safekeeping,77,97,CLERICAL_TERM,AUTO_MATCH
+430,"First, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+431,Installed necessary security patches and updated the Form Validation dependency.,Form Validation,53,68,IT_TERM,AUTO_MATCH
+432,"For my primary task, Attended a technical workshop on best practices for System Debugging.",System Debugging,73,89,IT_TERM,AUTO_MATCH
+433,Had a quick alignment call with the project mentor to review weekly objectives.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+434,"In the afternoon, Managed physical inventory counts and logged discrepancies during Materials Preparation.",Materials Preparation,84,105,CLERICAL_TERM,AUTO_MATCH
+435,"As assigned, Reviewed transaction logs and audited files as part of Document Handling.",Document Handling,68,85,CLERICAL_TERM,AUTO_MATCH
+436,"In the morning, Automated our daily build and deployment pipeline using Responsive Design.",Responsive Design,72,89,IT_TERM,AUTO_MATCH
+437,"As assigned, Maintained office order and coordinated department logistics through Inventory Records.",Inventory Records,82,99,CLERICAL_TERM,AUTO_MATCH
+438,"This week, Automated our daily build and deployment pipeline using GitHub.",GitHub,67,73,IT_TERM,AUTO_MATCH
+439,"This week, Conducted automated unit testing and performance benchmarks on Rate Limiting.",Rate Limiting,74,87,IT_TERM,AUTO_MATCH
+440,"During my shift, Printed, stamped, and organized physical documents for Enrollment.",Enrollment,72,82,CLERICAL_TERM,AUTO_MATCH
+441,"In the afternoon, Drafted official correspondence and summarized notes for Incoming Documents.",Incoming Documents,75,93,CLERICAL_TERM,AUTO_MATCH
+442,Collaborated with the infrastructure team to configure PDF.,PDF,55,58,IT_TERM,AUTO_MATCH
+443,"Today, Drafted official correspondence and summarized notes for Printing.",Printing,64,72,CLERICAL_TERM,AUTO_MATCH
+444,"Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+445,Handled confidential student records during General Cleaning.,General Cleaning,44,60,CLERICAL_TERM,AUTO_MATCH
+446,"Today, Verified signatures and filed department clearance forms during Document Preparation.",Document Preparation,71,91,CLERICAL_TERM,AUTO_MATCH
+447,Assisted staff members and visitors with inquiries regarding Account Balances.,Account Balances,61,77,CLERICAL_TERM,AUTO_MATCH
+448,"In the morning, Resolved an unexpected crash in production by debugging our Computer Setup service.",Computer Setup,76,90,IT_TERM,AUTO_MATCH
+449,"Today, Implemented secure authentication and access controls in System Performance.",System Performance,64,82,IT_TERM,AUTO_MATCH
+450,"In the afternoon, Handled confidential student records during Prescription Records.",Prescription Records,62,82,CLERICAL_TERM,AUTO_MATCH
+451,Submitted the bi-weekly intern time log sheet to the human resource assistant.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+452,Reviewed transaction logs and audited files as part of Customer Service.,Customer Service,55,71,CLERICAL_TERM,AUTO_MATCH
+453,Listened to a presentation given by the department head on strategic objectives.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+454,Submitted the finalized documentation package required for Beneficiary Records.,Beneficiary Records,59,78,CLERICAL_TERM,AUTO_MATCH
+455,"During my shift, Printed, stamped, and organized physical documents for Prescription Records.",Prescription Records,72,92,CLERICAL_TERM,AUTO_MATCH
+456,"Afterwards, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+457,"During my shift, Prepared the required paperwork and verified attachments for Incoming Documents.",Incoming Documents,78,96,CLERICAL_TERM,AUTO_MATCH
+458,Designed the database schema and executed migrations using TypeScript.,TypeScript,59,69,IT_TERM,AUTO_MATCH
+459,"Wrote clean, maintainable microservice code in Programming Tools under supervision.",Programming Tools,47,64,IT_TERM,AUTO_MATCH
+460,"In the morning, Designed the database schema and executed migrations using Role Assignment.",Role Assignment,75,90,IT_TERM,AUTO_MATCH
+461,"Today, Handled confidential student records during Task Alignment.",Task Alignment,51,65,CLERICAL_TERM,AUTO_MATCH
+462,"In the morning, Refactored legacy code modules and migrated the system to Access Control.",Access Control,74,88,IT_TERM,AUTO_MATCH
+463,"In the morning, Automated our daily build and deployment pipeline using WiFi.",WiFi,72,76,IT_TERM,AUTO_MATCH
+464,Cross-checked incoming department requests as part of Report Preparation.,Report Preparation,54,72,CLERICAL_TERM,AUTO_MATCH
+465,"Today, Troubleshot network connectivity and configuration errors in Brochure Design.",Brochure Design,68,83,IT_TERM,AUTO_MATCH
+466,"This week, Designed the database schema and executed migrations using Hardware Troubleshooting.",Hardware Troubleshooting,70,94,IT_TERM,AUTO_MATCH
+467,"This week, Monitored server resource utilization and optimized Digital File Management queries.",Digital File Management,63,86,IT_TERM,AUTO_MATCH
+468,"As assigned, Compiled weekly department statistics and created charts for Office Documentation.",Office Documentation,74,94,CLERICAL_TERM,AUTO_MATCH
+469,Had a quick alignment call with the project mentor to review weekly objectives.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+470,"Today, Conducted automated unit testing and performance benchmarks on Data Validation.",Data Validation,70,85,IT_TERM,AUTO_MATCH
+471,"Organized file cabinets, categorized binders, and conducted Member ID.",Member ID,60,69,CLERICAL_TERM,AUTO_MATCH
+472,"Afterwards, Took detailed personal notes during the department town hall assembly.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+473,"During my shift, Submitted the finalized documentation package required for File Cabinets.",File Cabinets,76,89,CLERICAL_TERM,AUTO_MATCH
+474,"This week, Designed the database schema and executed migrations using Kubernetes.",Kubernetes,70,80,IT_TERM,AUTO_MATCH
+475,"This week, Researched modern architectural best practices involving Logout.",Logout,68,74,IT_TERM,AUTO_MATCH
+476,Worked on backend API services and integrated Hosting Environment for persistent storage.,Hosting Environment,46,65,IT_TERM,AUTO_MATCH
+477,"In the afternoon, Distributed printed handouts and supported the team during File Filing.",File Filing,77,88,CLERICAL_TERM,AUTO_MATCH
+478,"Today, Automated our daily build and deployment pipeline using Computer Skills.",Computer Skills,63,78,IT_TERM,AUTO_MATCH
+479,"This week, Refactored legacy code modules and migrated the system to Production Deployment.",Production Deployment,69,90,IT_TERM,AUTO_MATCH
+480,"On Thursday, Participated in the company-wide orientation regarding workplace ethics and rules.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+481,"Early in the day, Took detailed personal notes during the department town hall assembly.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+482,"In the morning, Installed necessary security patches and updated the Inquiry System dependency.",Inquiry System,69,83,IT_TERM,AUTO_MATCH
+483,Prepared the required paperwork and verified attachments for Document Checking.,Document Checking,61,78,CLERICAL_TERM,AUTO_MATCH
+484,"Today, Assisted the administrative supervisor with daily Record Management.",Record Management,57,74,CLERICAL_TERM,AUTO_MATCH
+485,Maintained office order and coordinated department logistics through Incoming Documents.,Incoming Documents,69,87,CLERICAL_TERM,AUTO_MATCH
+486,"As assigned, Facilitated document routing and tracked outgoing mail for Data Organization.",Data Organization,72,89,CLERICAL_TERM,AUTO_MATCH
+487,"On Thursday, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+488,"In the afternoon, Completed the assigned weekly tasks regarding Document Labeling on schedule.",Document Labeling,64,81,CLERICAL_TERM,AUTO_MATCH
+489,"This week, Wrote clean, maintainable microservice code in Email Verification under supervision.",Email Verification,58,76,IT_TERM,AUTO_MATCH
+490,"On Thursday, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+491,"Organized file cabinets, categorized binders, and conducted Beneficiary Records.",Beneficiary Records,60,79,CLERICAL_TERM,AUTO_MATCH
+492,"In the afternoon, Handled confidential student records during Field Activity.",Field Activity,62,76,CLERICAL_TERM,AUTO_MATCH
+493,"For my primary task, Installed necessary security patches and updated the InfinityFree dependency.",InfinityFree,74,86,IT_TERM,AUTO_MATCH
+494,"For my primary task, Troubleshot network connectivity and configuration errors in File Conversion.",File Conversion,82,97,IT_TERM,AUTO_MATCH
+495,"Today, Cross-checked incoming department requests as part of Data Recording.",Data Recording,61,75,CLERICAL_TERM,AUTO_MATCH
+496,"In the morning, Implemented background asynchronous task workers using GitHub Workflow.",GitHub Workflow,71,86,IT_TERM,AUTO_MATCH
+497,Facilitated document routing and tracked outgoing mail for Research Activities.,Research Activities,59,78,CLERICAL_TERM,AUTO_MATCH
+498,"This week, Monitored server resource utilization and optimized Jenkins queries.",Jenkins,63,70,IT_TERM,AUTO_MATCH
+499,"In the afternoon, Assisted the administrative supervisor with daily Attendance Records.",Attendance Records,68,86,CLERICAL_TERM,AUTO_MATCH
+500,"This week, Troubleshot network connectivity and configuration errors in IT Fest.",IT Fest,72,79,IT_TERM,AUTO_MATCH
+501,"In the afternoon, Prepared the required paperwork and verified attachments for Meeting Transcription.",Meeting Transcription,79,100,CLERICAL_TERM,AUTO_MATCH
+502,"First, Took detailed personal notes during the department town hall assembly.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+503,"First, Participated in an open discussion regarding team workflow enhancements.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+504,"First, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+505,"In the afternoon, Organized file cabinets, categorized binders, and conducted Inventory Analysis.",Inventory Analysis,78,96,CLERICAL_TERM,AUTO_MATCH
+506,Took a short lunch break with fellow student interns at the company cafeteria.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+507,"Today, Drafted official correspondence and summarized notes for Meeting.",Meeting,64,71,CLERICAL_TERM,AUTO_MATCH
+508,Participated in an open discussion regarding team workflow enhancements.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+509,"During my shift, Maintained office order and coordinated department logistics through Record Keeping.",Record Keeping,86,100,CLERICAL_TERM,AUTO_MATCH
+510,Handled confidential student records during Promotional Materials.,Promotional Materials,44,65,CLERICAL_TERM,AUTO_MATCH
+511,"In the afternoon, Organized file cabinets, categorized binders, and conducted Public Notices.",Public Notices,78,92,CLERICAL_TERM,AUTO_MATCH
+512,"Today, Handled confidential student records during Office Work.",Office Work,51,62,CLERICAL_TERM,AUTO_MATCH
+513,Managed physical inventory counts and logged discrepancies during Data Management.,Data Management,66,81,CLERICAL_TERM,AUTO_MATCH
+514,"Today, Configured the development environment and set up Microsoft Azure.",Microsoft Azure,57,72,IT_TERM,AUTO_MATCH
+515,"This week, Installed necessary security patches and updated the Database Connections dependency.",Database Connections,64,84,IT_TERM,AUTO_MATCH
+516,"For my primary task, Installed necessary security patches and updated the Hardware Assembly dependency.",Hardware Assembly,74,91,IT_TERM,AUTO_MATCH
+517,"In the afternoon, Distributed printed handouts and supported the team during Records Management.",Records Management,77,95,CLERICAL_TERM,AUTO_MATCH
+518,Took a short lunch break with fellow student interns at the company cafeteria.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+519,Assisted our senior engineer in deploying our application using Database Queries.,Database Queries,64,80,IT_TERM,AUTO_MATCH
+520,"Today, Created comprehensive documentation and guidelines for Database Storage usage.",Database Storage,62,78,IT_TERM,AUTO_MATCH
+521,"First, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+522,"During my shift, Reviewed transaction logs and audited files as part of Scanning Documents.",Scanning Documents,72,90,CLERICAL_TERM,AUTO_MATCH
+523,"In the morning, Collaborated with the infrastructure team to configure Computer Assembly.",Computer Assembly,71,88,IT_TERM,AUTO_MATCH
+524,Worked on backend API services and integrated Email Service for persistent storage.,Email Service,46,59,IT_TERM,AUTO_MATCH
+525,"For my primary task, Created comprehensive documentation and guidelines for System Features usage.",System Features,76,91,IT_TERM,AUTO_MATCH
+526,"Today, Conducted automated unit testing and performance benchmarks on Network Troubleshooting.",Network Troubleshooting,70,93,IT_TERM,AUTO_MATCH
+527,"Early in the day, Attended the morning standup meeting with the supervisor to discuss daily goals.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+528,"In the morning, Resolved an unexpected crash in production by debugging our Hardware Maintenance service.",Hardware Maintenance,76,96,IT_TERM,AUTO_MATCH
+529,"In the afternoon, Encoded information accurately into the office registry during Routine Office Tasks.",Routine Office Tasks,81,101,CLERICAL_TERM,AUTO_MATCH
+530,Cross-checked incoming department requests as part of Financial Transactions.,Financial Transactions,54,76,CLERICAL_TERM,AUTO_MATCH
+531,Completed the assigned weekly tasks regarding Client Records on schedule.,Client Records,46,60,CLERICAL_TERM,AUTO_MATCH
+532,"In the morning, Installed necessary security patches and updated the CRUD dependency.",CRUD,69,73,IT_TERM,AUTO_MATCH
+533,"This week, Conducted automated unit testing and performance benchmarks on Interactive Map.",Interactive Map,74,89,IT_TERM,AUTO_MATCH
+534,"For my primary task, Implemented secure authentication and access controls in Sidebar.",Sidebar,78,85,IT_TERM,AUTO_MATCH
+535,"Today, Distributed printed handouts and supported the team during Folder Organization.",Folder Organization,66,85,CLERICAL_TERM,AUTO_MATCH
+536,"In the afternoon, Cross-checked incoming department requests as part of Data Organization.",Data Organization,72,89,CLERICAL_TERM,AUTO_MATCH
+537,"During my shift, Compiled weekly department statistics and created charts for Beneficiary Records.",Beneficiary Records,78,97,CLERICAL_TERM,AUTO_MATCH
+538,"For my primary task, Implemented secure authentication and access controls in Email Verification.",Email Verification,78,96,IT_TERM,AUTO_MATCH
+539,Reviewed transaction logs and audited files as part of Medicine Dispensing.,Medicine Dispensing,55,74,CLERICAL_TERM,AUTO_MATCH
+540,"Today, Completed the assigned weekly tasks regarding Document Management on schedule.",Document Management,53,72,CLERICAL_TERM,AUTO_MATCH
+541,"During my shift, Encoded information accurately into the office registry during Financial Records.",Financial Records,80,97,CLERICAL_TERM,AUTO_MATCH
+542,Facilitated document routing and tracked outgoing mail for File Filing.,File Filing,59,70,CLERICAL_TERM,AUTO_MATCH
+543,"Early in the day, Greeted visitors at the entrance and escorted them to the conference room.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+544,"On Thursday, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+545,"Today, Installed necessary security patches and updated the Hosting Environment dependency.",Hosting Environment,60,79,IT_TERM,AUTO_MATCH
+546,"In the morning, Configured the development environment and set up API Routes.",API Routes,66,76,IT_TERM,AUTO_MATCH
+547,"In the afternoon, Distributed printed handouts and supported the team during Orientation.",Orientation,77,88,CLERICAL_TERM,AUTO_MATCH
+548,"On Thursday, Discussed project deadlines and milestone expectations during the afternoon huddle.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+549,"This week, Installed necessary security patches and updated the MySQL dependency.",MySQL,64,69,IT_TERM,AUTO_MATCH
+550,Drafted official correspondence and summarized notes for Office Operations.,Office Operations,57,74,CLERICAL_TERM,AUTO_MATCH
+551,"This week, Worked on backend API services and integrated Node.js for persistent storage.",Node.js,57,64,IT_TERM,AUTO_MATCH
+552,"As assigned, Printed, stamped, and organized physical documents for Document Checking.",Document Checking,68,85,CLERICAL_TERM,AUTO_MATCH
+553,Handled confidential student records during Encoding.,Encoding,44,52,CLERICAL_TERM,AUTO_MATCH
+554,"Today, Created an interactive user interface component with Windows Server.",Windows Server,60,74,IT_TERM,AUTO_MATCH
+555,"In the morning, Refactored legacy code modules and migrated the system to React.",React,74,79,IT_TERM,AUTO_MATCH
+556,"In the morning, Automated our daily build and deployment pipeline using MySQL.",MySQL,72,77,IT_TERM,AUTO_MATCH
+557,"As assigned, Handled confidential student records during Patient Assistance.",Patient Assistance,57,75,CLERICAL_TERM,AUTO_MATCH
+558,"In the morning, Refactored legacy code modules and migrated the system to Excel.",Excel,74,79,IT_TERM,AUTO_MATCH
+559,"In the morning, Researched modern architectural best practices involving Navbar.",Navbar,73,79,IT_TERM,AUTO_MATCH
+560,"As assigned, Prepared the required paperwork and verified attachments for Office Documentation.",Office Documentation,74,94,CLERICAL_TERM,AUTO_MATCH
+561,Created an interactive user interface component with Wireframe.,Wireframe,53,62,IT_TERM,AUTO_MATCH
+562,"In the morning, Monitored server resource utilization and optimized Linux queries.",Linux,68,73,IT_TERM,AUTO_MATCH
+563,"During my shift, Printed, stamped, and organized physical documents for Barangay Coordination.",Barangay Coordination,72,93,CLERICAL_TERM,AUTO_MATCH
+564,"Wrote clean, maintainable microservice code in Inquiry System under supervision.",Inquiry System,47,61,IT_TERM,AUTO_MATCH
+565,Attended the farewell gathering for the departing senior supervisor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+566,"In the afternoon, Prepared the required paperwork and verified attachments for Inventory Organization.",Inventory Organization,79,101,CLERICAL_TERM,AUTO_MATCH
+567,"In the morning, Troubleshot network connectivity and configuration errors in Form Validation.",Form Validation,77,92,IT_TERM,AUTO_MATCH
+568,"Wrote clean, maintainable microservice code in Hardware Repair under supervision.",Hardware Repair,47,62,IT_TERM,AUTO_MATCH
+569,Encoded information accurately into the office registry during Seminars.,Seminars,63,71,CLERICAL_TERM,AUTO_MATCH
+570,"This week, Automated our daily build and deployment pipeline using Database Schema.",Database Schema,67,82,IT_TERM,AUTO_MATCH
+571,"For my primary task, Automated our daily build and deployment pipeline using Security.",Security,77,85,IT_TERM,AUTO_MATCH
+572,"During my shift, Submitted the finalized documentation package required for Nutrition Activities.",Nutrition Activities,76,96,CLERICAL_TERM,AUTO_MATCH
+573,"Afterwards, Had a quick alignment call with the project mentor to review weekly objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+574,"This week, Resolved an unexpected crash in production by debugging our Figma Prototype service.",Figma Prototype,71,86,IT_TERM,AUTO_MATCH
+575,"During my shift, Assisted the administrative supervisor with daily Report Preparation.",Report Preparation,67,85,CLERICAL_TERM,AUTO_MATCH
+576,Refactored legacy code modules and migrated the system to Identification Card Design.,Identification Card Design,58,84,IT_TERM,AUTO_MATCH
+577,"In the morning, Created an interactive user interface component with Oracle Database.",Oracle Database,69,84,IT_TERM,AUTO_MATCH
+578,"Today, Facilitated document routing and tracked outgoing mail for Workplace Organization.",Workplace Organization,66,88,CLERICAL_TERM,AUTO_MATCH
+579,Designed the database schema and executed migrations using Dashboard Interface.,Dashboard Interface,59,78,IT_TERM,AUTO_MATCH
+580,"Afterwards, Greeted visitors at the entrance and escorted them to the conference room.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+581,"Today, Printed, stamped, and organized physical documents for Insurance Details.",Insurance Details,62,79,CLERICAL_TERM,AUTO_MATCH
+582,"During my shift, Cross-checked incoming department requests as part of Presentation Materials.",Presentation Materials,71,93,CLERICAL_TERM,AUTO_MATCH
+583,Installed necessary security patches and updated the Version Control dependency.,Version Control,53,68,IT_TERM,AUTO_MATCH
+584,Cross-checked incoming department requests as part of Training Activities.,Training Activities,54,73,CLERICAL_TERM,AUTO_MATCH
+585,Helped a colleague locate the designated conference room on the third floor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+586,"In the afternoon, Maintained office order and coordinated department logistics through Inventory Counting.",Inventory Counting,87,105,CLERICAL_TERM,AUTO_MATCH
+587,"In the afternoon, Handled confidential student records during Public Notices.",Public Notices,62,76,CLERICAL_TERM,AUTO_MATCH
+588,"In the morning, Attended a technical workshop on best practices for iClinicSys.",iClinicSys,68,78,IT_TERM,AUTO_MATCH
+589,"As assigned, Managed physical inventory counts and logged discrepancies during Outdoor Activities.",Outdoor Activities,79,97,CLERICAL_TERM,AUTO_MATCH
+590,"Today, Attended a technical workshop on best practices for Oracle Database.",Oracle Database,59,74,IT_TERM,AUTO_MATCH
+591,"As assigned, Reviewed transaction logs and audited files as part of Report Preparation.",Report Preparation,68,86,CLERICAL_TERM,AUTO_MATCH
+592,"Today, Printed, stamped, and organized physical documents for Stock Transfer.",Stock Transfer,62,76,CLERICAL_TERM,AUTO_MATCH
+593,"For my primary task, Troubleshot network connectivity and configuration errors in Authentication.",Authentication,82,96,IT_TERM,AUTO_MATCH
+594,"Afterwards, Signed the visitor logbook and collected the guest identification badges.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+595,"In the morning, Implemented secure authentication and access controls in Printer Troubleshooting.",Printer Troubleshooting,73,96,IT_TERM,AUTO_MATCH
+596,"In the morning, Designed the database schema and executed migrations using Git Commits.",Git Commits,75,86,IT_TERM,AUTO_MATCH
+597,"Today, Cross-checked incoming department requests as part of Document Forwarding.",Document Forwarding,61,80,CLERICAL_TERM,AUTO_MATCH
+598,"Today, Maintained office order and coordinated department logistics through Filing System.",Filing System,76,89,CLERICAL_TERM,AUTO_MATCH
+599,"In the afternoon, Assisted staff members and visitors with inquiries regarding Data Correction.",Data Correction,79,94,CLERICAL_TERM,AUTO_MATCH
+600,"For my primary task, Created comprehensive documentation and guidelines for SQLite usage.",SQLite,76,82,IT_TERM,AUTO_MATCH
+601,Created an interactive user interface component with MongoDB.,MongoDB,53,60,IT_TERM,AUTO_MATCH
+602,"On Thursday, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+603,"During my shift, Distributed printed handouts and supported the team during Awarding Ceremony.",Awarding Ceremony,76,93,CLERICAL_TERM,AUTO_MATCH
+604,"For my primary task, Configured the development environment and set up Identification Card Design.",Identification Card Design,71,97,IT_TERM,AUTO_MATCH
+605,"Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+606,Handled confidential student records during Labels.,Labels,44,50,CLERICAL_TERM,AUTO_MATCH
+607,"In the afternoon, Compiled weekly department statistics and created charts for Meeting Materials.",Meeting Materials,79,96,CLERICAL_TERM,AUTO_MATCH
+608,"Today, Configured the development environment and set up Google Forms.",Google Forms,57,69,IT_TERM,AUTO_MATCH
+609,"As assigned, Printed, stamped, and organized physical documents for Ticket Serial Numbers.",Ticket Serial Numbers,68,89,CLERICAL_TERM,AUTO_MATCH
+610,"This week, Refactored legacy code modules and migrated the system to Server Settings.",Server Settings,69,84,IT_TERM,AUTO_MATCH
+611,Attended a technical workshop on best practices for Vue.js.,Vue.js,52,58,IT_TERM,AUTO_MATCH
+612,"Today, Maintained office order and coordinated department logistics through Office Work.",Office Work,76,87,CLERICAL_TERM,AUTO_MATCH
+613,"In the afternoon, Reviewed transaction logs and audited files as part of File Arrangement.",File Arrangement,73,89,CLERICAL_TERM,AUTO_MATCH
+614,Cleaned the intern workstation and organized desk accessories before logging out.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+615,"For my primary task, Worked on backend API services and integrated Computer Setup for persistent storage.",Computer Setup,67,81,IT_TERM,AUTO_MATCH
+616,"Today, Prepared the required paperwork and verified attachments for Research Activities.",Research Activities,68,87,CLERICAL_TERM,AUTO_MATCH
+617,"In the morning, Worked on backend API services and integrated System Stability for persistent storage.",System Stability,62,78,IT_TERM,AUTO_MATCH
+618,"For my primary task, Monitored server resource utilization and optimized Server Configuration queries.",Server Configuration,73,93,IT_TERM,AUTO_MATCH
+619,"As assigned, Assisted the administrative supervisor with daily CLERICAL.",CLERICAL,63,71,CLERICAL_TERM,AUTO_MATCH
+620,"First, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+621,"In the afternoon, Completed the assigned weekly tasks regarding Client Satisfaction Survey on schedule.",Client Satisfaction Survey,64,90,CLERICAL_TERM,AUTO_MATCH
+622,"In the afternoon, Facilitated document routing and tracked outgoing mail for Information Updating.",Information Updating,77,97,CLERICAL_TERM,AUTO_MATCH
+623,Cleaned the intern workstation and organized desk accessories before logging out.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+624,"First, Took detailed personal notes during the department town hall assembly.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+625,"As assigned, Verified signatures and filed department clearance forms during File Checking.",File Checking,77,90,CLERICAL_TERM,AUTO_MATCH
+626,"This week, Conducted automated unit testing and performance benchmarks on Flutter.",Flutter,74,81,IT_TERM,AUTO_MATCH
+627,"Early in the day, Took detailed personal notes during the department town hall assembly.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+628,"This week, Assisted our senior engineer in deploying our application using UI Design.",UI Design,75,84,IT_TERM,AUTO_MATCH
+629,Implemented background asynchronous task workers using Technical Assistance.,Technical Assistance,55,75,IT_TERM,AUTO_MATCH
+630,"In the morning, Created an interactive user interface component with Dashboard Interface.",Dashboard Interface,69,88,IT_TERM,AUTO_MATCH
+631,"During my shift, Compiled weekly department statistics and created charts for Document Delivery.",Document Delivery,78,95,CLERICAL_TERM,AUTO_MATCH
+632,Implemented secure authentication and access controls in DevOps.,DevOps,57,63,IT_TERM,AUTO_MATCH
+633,Managed physical inventory counts and logged discrepancies during ID Distribution.,ID Distribution,66,81,CLERICAL_TERM,AUTO_MATCH
+634,"In the morning, Installed necessary security patches and updated the Web Hosting dependency.",Web Hosting,69,80,IT_TERM,AUTO_MATCH
+635,"Today, Researched modern architectural best practices involving Google Forms.",Google Forms,64,76,IT_TERM,AUTO_MATCH
+636,"Today, Drafted official correspondence and summarized notes for Clerical Duties.",Clerical Duties,64,79,CLERICAL_TERM,AUTO_MATCH
+637,"On Thursday, Participated in the company-wide orientation regarding workplace ethics and rules.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+638,"First, Checked my work email inbox and responded to routine greeting messages.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+639,"In the morning, Monitored server resource utilization and optimized Git Branches queries.",Git Branches,68,80,IT_TERM,AUTO_MATCH
+640,Assisted the administrative supervisor with daily Medicine Labeling.,Medicine Labeling,50,67,CLERICAL_TERM,AUTO_MATCH
+641,"Afterwards, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+642,"First, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+643,"As assigned, Maintained office order and coordinated department logistics through Ticket Serial Numbers.",Ticket Serial Numbers,82,103,CLERICAL_TERM,AUTO_MATCH
+644,"Today, Assisted our senior engineer in deploying our application using IT Fest.",IT Fest,71,78,IT_TERM,AUTO_MATCH
+645,"Today, Completed the assigned weekly tasks regarding Scholarship Data on schedule.",Scholarship Data,53,69,CLERICAL_TERM,AUTO_MATCH
+646,"In the morning, Installed necessary security patches and updated the Application Management dependency.",Application Management,69,91,IT_TERM,AUTO_MATCH
+647,"First, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+648,"In the afternoon, Verified signatures and filed department clearance forms during Document Management.",Document Management,82,101,CLERICAL_TERM,AUTO_MATCH
+649,"Today, Created an interactive user interface component with UI Components.",UI Components,60,73,IT_TERM,AUTO_MATCH
+650,"Today, Assisted our senior engineer in deploying our application using Repository.",Repository,71,81,IT_TERM,AUTO_MATCH
+651,Implemented background asynchronous task workers using Nutrimap System.,Nutrimap System,55,70,IT_TERM,AUTO_MATCH
+652,"In the afternoon, Facilitated document routing and tracked outgoing mail for Attendance Records.",Attendance Records,77,95,CLERICAL_TERM,AUTO_MATCH
+653,"This week, Created an interactive user interface component with System Encryption.",System Encryption,64,81,IT_TERM,AUTO_MATCH
+654,"In the morning, Implemented secure authentication and access controls in Login.",Login,73,78,IT_TERM,AUTO_MATCH
+655,Configured the development environment and set up Troubleshooting.,Troubleshooting,50,65,IT_TERM,AUTO_MATCH
+656,"Today, I developed a web application feature using Printer Troubleshooting.",Printer Troubleshooting,51,74,IT_TERM,AUTO_MATCH
+657,"In the morning, Implemented secure authentication and access controls in Code Refactoring.",Code Refactoring,73,89,IT_TERM,AUTO_MATCH
+658,Implemented background asynchronous task workers using Data Input.,Data Input,55,65,IT_TERM,AUTO_MATCH
+659,"As assigned, Completed the assigned weekly tasks regarding Loans on schedule.",Loans,59,64,CLERICAL_TERM,AUTO_MATCH
+660,Discussed project deadlines and milestone expectations during the afternoon huddle.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+661,"In the morning, Worked on backend API services and integrated Canva for persistent storage.",Canva,62,67,IT_TERM,AUTO_MATCH
+662,Created an interactive user interface component with Microsoft Word.,Microsoft Word,53,67,IT_TERM,AUTO_MATCH
+663,"First, Organized notebook notes and planned personal task priorities for tomorrow morning.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+664,Troubleshot network connectivity and configuration errors in System Modules.,System Modules,61,75,IT_TERM,AUTO_MATCH
+665,"Early in the day, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+666,"Early in the day, Had a quick alignment call with the project mentor to review weekly objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+667,"As assigned, Printed, stamped, and organized physical documents for Folder Organization.",Folder Organization,68,87,CLERICAL_TERM,AUTO_MATCH
+668,"In the afternoon, Distributed printed handouts and supported the team during Ticket Serial Numbers.",Ticket Serial Numbers,77,98,CLERICAL_TERM,AUTO_MATCH
+669,"Today, Facilitated document routing and tracked outgoing mail for Account Balances.",Account Balances,66,82,CLERICAL_TERM,AUTO_MATCH
+670,"First, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+671,"During my shift, Maintained office order and coordinated department logistics through Financial Records.",Financial Records,86,103,CLERICAL_TERM,AUTO_MATCH
+672,"As assigned, Prepared the required paperwork and verified attachments for Stock Transfer.",Stock Transfer,74,88,CLERICAL_TERM,AUTO_MATCH
+673,"In the afternoon, Printed, stamped, and organized physical documents for Office Tasks.",Office Tasks,73,85,CLERICAL_TERM,AUTO_MATCH
+674,"For my primary task, Installed necessary security patches and updated the Capstone Study dependency.",Capstone Study,74,88,IT_TERM,AUTO_MATCH
+675,"Today, Monitored server resource utilization and optimized Computer queries.",Computer,59,67,IT_TERM,AUTO_MATCH
+676,"For my primary task, Created comprehensive documentation and guidelines for Production Deployment usage.",Production Deployment,76,97,IT_TERM,AUTO_MATCH
+677,"In the afternoon, Prepared the required paperwork and verified attachments for Orientation.",Orientation,79,90,CLERICAL_TERM,AUTO_MATCH
+678,"Today, Resolved an unexpected crash in production by debugging our Version Control service.",Version Control,67,82,IT_TERM,AUTO_MATCH
+679,"Today, Verified signatures and filed department clearance forms during Document Review.",Document Review,71,86,CLERICAL_TERM,AUTO_MATCH
+680,"During my shift, Handled confidential student records during File Organization.",File Organization,61,78,CLERICAL_TERM,AUTO_MATCH
+681,"Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+682,"During my shift, Organized file cabinets, categorized binders, and conducted Presentation Materials.",Presentation Materials,77,99,CLERICAL_TERM,AUTO_MATCH
+683,"For my primary task, Configured the development environment and set up Spring Boot.",Spring Boot,71,82,IT_TERM,AUTO_MATCH
+684,"Today, Conducted automated unit testing and performance benchmarks on AWS.",AWS,70,73,IT_TERM,AUTO_MATCH
+685,"In the morning, Attended a technical workshop on best practices for Adobe Photoshop.",Adobe Photoshop,68,83,IT_TERM,AUTO_MATCH
+686,"Today, Distributed printed handouts and supported the team during Office Operations.",Office Operations,66,83,CLERICAL_TERM,AUTO_MATCH
+687,"Afterwards, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+688,"Afterwards, Signed the visitor logbook and collected the guest identification badges.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+689,"During my shift, Handled confidential student records during Payment Records.",Payment Records,61,76,CLERICAL_TERM,AUTO_MATCH
+690,"First, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+691,"In the afternoon, Handled confidential student records during Training Activities.",Training Activities,62,81,CLERICAL_TERM,AUTO_MATCH
+692,"As assigned, Completed the assigned weekly tasks regarding Medicine Sachets on schedule.",Medicine Sachets,59,75,CLERICAL_TERM,AUTO_MATCH
+693,"Today, Verified signatures and filed department clearance forms during Document Handling.",Document Handling,71,88,CLERICAL_TERM,AUTO_MATCH
+694,"Today, Installed necessary security patches and updated the System Testing dependency.",System Testing,60,74,IT_TERM,AUTO_MATCH
+695,"This week, Installed necessary security patches and updated the Dashboard dependency.",Dashboard,64,73,IT_TERM,AUTO_MATCH
+696,"For my primary task, Attended a technical workshop on best practices for Google Sheets.",Google Sheets,73,86,IT_TERM,AUTO_MATCH
+697,"Today, Maintained office order and coordinated department logistics through Student Enrollment.",Student Enrollment,76,94,CLERICAL_TERM,AUTO_MATCH
+698,"Today, Facilitated document routing and tracked outgoing mail for Meeting Transcription.",Meeting Transcription,66,87,CLERICAL_TERM,AUTO_MATCH
+699,Submitted the bi-weekly intern time log sheet to the human resource assistant.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+700,I developed a web application feature using Digital File Management.,Digital File Management,44,67,IT_TERM,AUTO_MATCH
+701,"During my shift, Managed physical inventory counts and logged discrepancies during Member ID.",Member ID,83,92,CLERICAL_TERM,AUTO_MATCH
+702,"This week, I developed a web application feature using Error Handling.",Error Handling,55,69,IT_TERM,AUTO_MATCH
+703,"Today, Automated our daily build and deployment pipeline using Java.",Java,63,67,IT_TERM,AUTO_MATCH
+704,"Today, Reviewed transaction logs and audited files as part of Student Records.",Student Records,62,77,CLERICAL_TERM,AUTO_MATCH
+705,"As assigned, Completed the assigned weekly tasks regarding Workspace Organization on schedule.",Workspace Organization,59,81,CLERICAL_TERM,AUTO_MATCH
+706,"In the morning, Automated our daily build and deployment pipeline using System Encryption.",System Encryption,72,89,IT_TERM,AUTO_MATCH
+707,"This week, Attended a technical workshop on best practices for React.",React,63,68,IT_TERM,AUTO_MATCH
+708,"In the afternoon, Assisted staff members and visitors with inquiries regarding Prescription Records.",Prescription Records,79,99,CLERICAL_TERM,AUTO_MATCH
+709,Researched modern architectural best practices involving Navbar.,Navbar,57,63,IT_TERM,AUTO_MATCH
+710,"For my primary task, Created comprehensive documentation and guidelines for Programming Tools usage.",Programming Tools,76,93,IT_TERM,AUTO_MATCH
+711,Drafted official correspondence and summarized notes for Passbooks.,Passbooks,57,66,CLERICAL_TERM,AUTO_MATCH
+712,Implemented secure authentication and access controls in Deployment Testing.,Deployment Testing,57,75,IT_TERM,AUTO_MATCH
+713,"Afterwards, Attended the morning standup meeting with the supervisor to discuss daily goals.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+714,"During my shift, Compiled weekly department statistics and created charts for Payment Records.",Payment Records,78,93,CLERICAL_TERM,AUTO_MATCH
+715,"For my primary task, Implemented secure authentication and access controls in Code Debugging.",Code Debugging,78,92,IT_TERM,AUTO_MATCH
+716,"For my primary task, Worked on backend API services and integrated Microsoft Excel for persistent storage.",Microsoft Excel,67,82,IT_TERM,AUTO_MATCH
+717,"Today, Reviewed transaction logs and audited files as part of File Management.",File Management,62,77,CLERICAL_TERM,AUTO_MATCH
+718,Cleaned the intern workstation and organized desk accessories before logging out.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+719,"In the morning, Created an interactive user interface component with PostgreSQL.",PostgreSQL,69,79,IT_TERM,AUTO_MATCH
+720,"During my shift, Handled confidential student records during Certificate Release.",Certificate Release,61,80,CLERICAL_TERM,AUTO_MATCH
+721,"In the morning, Installed necessary security patches and updated the Computer Hardware Maintenance dependency.",Computer Hardware Maintenance,69,98,IT_TERM,AUTO_MATCH
+722,"Printed, stamped, and organized physical documents for Shares Accounts.",Shares Accounts,55,70,CLERICAL_TERM,AUTO_MATCH
+723,"In the afternoon, Completed the assigned weekly tasks regarding Document Routing on schedule.",Document Routing,64,80,CLERICAL_TERM,AUTO_MATCH
+724,"During my shift, Compiled weekly department statistics and created charts for Document Sorting.",Document Sorting,78,94,CLERICAL_TERM,AUTO_MATCH
+725,"As assigned, Cross-checked incoming department requests as part of Contact Details.",Contact Details,67,82,CLERICAL_TERM,AUTO_MATCH
+726,"In the afternoon, Verified signatures and filed department clearance forms during Medicine Distribution.",Medicine Distribution,82,103,CLERICAL_TERM,AUTO_MATCH
+727,Implemented background asynchronous task workers using Network.,Network,55,62,IT_TERM,AUTO_MATCH
+728,"On Thursday, Greeted visitors at the entrance and escorted them to the conference room.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+729,"Today, Installed necessary security patches and updated the Hardware Troubleshooting dependency.",Hardware Troubleshooting,60,84,IT_TERM,AUTO_MATCH
+730,"As assigned, Assisted staff members and visitors with inquiries regarding Information Updating.",Information Updating,74,94,CLERICAL_TERM,AUTO_MATCH
+731,"Early in the day, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+732,"In the afternoon, Cross-checked incoming department requests as part of Document Distribution.",Document Distribution,72,93,CLERICAL_TERM,AUTO_MATCH
+733,"As assigned, Facilitated document routing and tracked outgoing mail for Client Assistance.",Client Assistance,72,89,CLERICAL_TERM,AUTO_MATCH
+734,"In the morning, Created an interactive user interface component with Web Server.",Web Server,69,79,IT_TERM,AUTO_MATCH
+735,"Today, Maintained office order and coordinated department logistics through Document Preparation.",Document Preparation,76,96,CLERICAL_TERM,AUTO_MATCH
+736,"This week, Configured the development environment and set up API Endpoints.",API Endpoints,61,74,IT_TERM,AUTO_MATCH
+737,"For my primary task, Created an interactive user interface component with Facebook Posting.",Facebook Posting,74,90,IT_TERM,AUTO_MATCH
+738,"In the morning, Resolved an unexpected crash in production by debugging our Computer Assembly service.",Computer Assembly,76,93,IT_TERM,AUTO_MATCH
+739,"During my shift, Organized file cabinets, categorized binders, and conducted Savings Accounts.",Savings Accounts,77,93,CLERICAL_TERM,AUTO_MATCH
+740,"Today, Installed necessary security patches and updated the System Development dependency.",System Development,60,78,IT_TERM,AUTO_MATCH
+741,"As assigned, Submitted the finalized documentation package required for Charter Day.",Charter Day,72,83,CLERICAL_TERM,AUTO_MATCH
+742,"As assigned, Verified signatures and filed department clearance forms during Transfer Slips.",Transfer Slips,77,91,CLERICAL_TERM,AUTO_MATCH
+743,"First, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+744,"First, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+745,Installed necessary security patches and updated the Technical Support dependency.,Technical Support,53,70,IT_TERM,AUTO_MATCH
+746,"Today, Organized file cabinets, categorized binders, and conducted Record Organization.",Record Organization,67,86,CLERICAL_TERM,AUTO_MATCH
+747,Handled confidential student records during Document Labeling.,Document Labeling,44,61,CLERICAL_TERM,AUTO_MATCH
+748,"For my primary task, Refactored legacy code modules and migrated the system to UI/UX Design.",UI/UX Design,79,91,IT_TERM,AUTO_MATCH
+749,"Early in the day, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+750,Researched modern architectural best practices involving Figma Prototype.,Figma Prototype,57,72,IT_TERM,AUTO_MATCH
+751,"Today, Organized file cabinets, categorized binders, and conducted CLERICAL.",CLERICAL,67,75,CLERICAL_TERM,AUTO_MATCH
+752,"Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+753,"In the morning, Researched modern architectural best practices involving GitHub Workflow.",GitHub Workflow,73,88,IT_TERM,AUTO_MATCH
+754,"Today, Submitted the finalized documentation package required for Printing.",Printing,66,74,CLERICAL_TERM,AUTO_MATCH
+755,"For my primary task, Refactored legacy code modules and migrated the system to Object-Oriented Programming.",Object-Oriented Programming,79,106,IT_TERM,AUTO_MATCH
+756,Created comprehensive documentation and guidelines for Phone Troubleshooting usage.,Phone Troubleshooting,55,76,IT_TERM,AUTO_MATCH
+757,"In the afternoon, Compiled weekly department statistics and created charts for File Arrangement.",File Arrangement,79,95,CLERICAL_TERM,AUTO_MATCH
+758,"In the morning, Wrote clean, maintainable microservice code in Data Structures under supervision.",Data Structures,63,78,IT_TERM,AUTO_MATCH
+759,Greeted visitors at the entrance and escorted them to the conference room.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+760,"As assigned, Completed the assigned weekly tasks regarding Data Consolidation on schedule.",Data Consolidation,59,77,CLERICAL_TERM,AUTO_MATCH
+761,"This week, Created an interactive user interface component with Angular.",Angular,64,71,IT_TERM,AUTO_MATCH
+762,"In the morning, Implemented secure authentication and access controls in Computer Skills.",Computer Skills,73,88,IT_TERM,AUTO_MATCH
+763,"Today, Compiled weekly department statistics and created charts for Activity Documentation.",Activity Documentation,68,90,CLERICAL_TERM,AUTO_MATCH
+764,Submitted the finalized documentation package required for Scanning Documents.,Scanning Documents,59,77,CLERICAL_TERM,AUTO_MATCH
+765,"For my primary task, Monitored server resource utilization and optimized Computer Support queries.",Computer Support,73,89,IT_TERM,AUTO_MATCH
+766,"For my primary task, Implemented secure authentication and access controls in Authentication.",authentication,40,54,IT_TERM,AUTO_MATCH
+766,"For my primary task, Implemented secure authentication and access controls in Authentication.",Authentication,78,92,IT_TERM,AUTO_MATCH
+767,Conducted automated unit testing and performance benchmarks on Frontend.,Frontend,63,71,IT_TERM,AUTO_MATCH
+768,"For my primary task, Designed the database schema and executed migrations using Frontend.",Frontend,80,88,IT_TERM,AUTO_MATCH
+769,"In the afternoon, Handled confidential student records during PhilHealth Eligibility.",PhilHealth Eligibility,62,84,CLERICAL_TERM,AUTO_MATCH
+770,"This week, Attended a technical workshop on best practices for Linux.",Linux,63,68,IT_TERM,AUTO_MATCH
+771,Prepared the required paperwork and verified attachments for Records.,Records,61,68,CLERICAL_TERM,AUTO_MATCH
+772,"Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+773,"In the afternoon, Handled confidential student records during Information Updating.",Information Updating,62,82,CLERICAL_TERM,AUTO_MATCH
+774,"Today, Refactored legacy code modules and migrated the system to PostgreSQL.",PostgreSQL,65,75,IT_TERM,AUTO_MATCH
+775,I developed a web application feature using PhpSpreadsheet.,PhpSpreadsheet,44,58,IT_TERM,AUTO_MATCH
+776,"For my primary task, Researched modern architectural best practices involving Brochure Design.",Brochure Design,78,93,IT_TERM,AUTO_MATCH
+777,"Early in the day, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+778,Drafted official correspondence and summarized notes for Document Organization.,Document Organization,57,78,CLERICAL_TERM,AUTO_MATCH
+779,"In the morning, Designed the database schema and executed migrations using MongoDB.",MongoDB,75,82,IT_TERM,AUTO_MATCH
+780,Listened to a presentation given by the department head on strategic objectives.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+781,"Today, Assisted our senior engineer in deploying our application using Web Hosting.",Web Hosting,71,82,IT_TERM,AUTO_MATCH
+782,"During my shift, Drafted official correspondence and summarized notes for Document Filing.",Document Filing,74,89,CLERICAL_TERM,AUTO_MATCH
+783,"Today, Organized file cabinets, categorized binders, and conducted Team Task Division.",Team Task Division,67,85,CLERICAL_TERM,AUTO_MATCH
+784,"Today, Reviewed transaction logs and audited files as part of BNS Meeting.",BNS Meeting,62,73,CLERICAL_TERM,AUTO_MATCH
+785,"On Thursday, Participated in the company-wide orientation regarding workplace ethics and rules.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+786,"During my shift, Reviewed transaction logs and audited files as part of Reports.",Reports,72,79,CLERICAL_TERM,AUTO_MATCH
+787,"On Thursday, Organized notebook notes and planned personal task priorities for tomorrow morning.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+788,"For my primary task, Monitored server resource utilization and optimized Schema Backup queries.",Schema Backup,73,86,IT_TERM,AUTO_MATCH
+789,"This week, Assisted our senior engineer in deploying our application using Facebook Management.",Facebook Management,75,94,IT_TERM,AUTO_MATCH
+790,"For my primary task, Created comprehensive documentation and guidelines for System Design usage.",System Design,76,89,IT_TERM,AUTO_MATCH
+791,Reviewed general company guidelines regarding data privacy and acceptable use.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+792,"In the morning, Resolved an unexpected crash in production by debugging our Research Summit service.",Research Summit,76,91,IT_TERM,AUTO_MATCH
+793,"This week, Implemented background asynchronous task workers using System Interface.",System Interface,66,82,IT_TERM,AUTO_MATCH
+794,"In the morning, Collaborated with the infrastructure team to configure Git.",Git,71,74,IT_TERM,AUTO_MATCH
+795,"In the afternoon, Facilitated document routing and tracked outgoing mail for Police Clearance.",Police Clearance,77,93,CLERICAL_TERM,AUTO_MATCH
+796,Verified signatures and filed department clearance forms during Team Task Division.,Team Task Division,64,82,CLERICAL_TERM,AUTO_MATCH
+797,Attended the farewell gathering for the departing senior supervisor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+798,"As assigned, Cross-checked incoming department requests as part of Passbooks.",Passbooks,67,76,CLERICAL_TERM,AUTO_MATCH
+799,Cross-checked incoming department requests as part of Customer Service.,Customer Service,54,70,CLERICAL_TERM,AUTO_MATCH
+800,"Afterwards, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+801,"Afterwards, Organized notebook notes and planned personal task priorities for tomorrow morning.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+802,"During my shift, Prepared the required paperwork and verified attachments for Document Checking.",Document Checking,78,95,CLERICAL_TERM,AUTO_MATCH
+803,"As assigned, Submitted the finalized documentation package required for Office Errands.",Office Errands,72,86,CLERICAL_TERM,AUTO_MATCH
+804,"For my primary task, Created comprehensive documentation and guidelines for Sidebar usage.",Sidebar,76,83,IT_TERM,AUTO_MATCH
+805,"As assigned, Assisted staff members and visitors with inquiries regarding Reports.",Reports,74,81,CLERICAL_TERM,AUTO_MATCH
+806,Created comprehensive documentation and guidelines for Composer usage.,Composer,55,63,IT_TERM,AUTO_MATCH
+807,"Early in the day, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+808,Submitted the finalized documentation package required for Record Management.,Record Management,59,76,CLERICAL_TERM,AUTO_MATCH
+809,"In the morning, Implemented background asynchronous task workers using Mailer.",Mailer,71,77,IT_TERM,AUTO_MATCH
+810,"Early in the day, Participated in an open discussion regarding team workflow enhancements.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+811,"Today, Monitored server resource utilization and optimized Flask queries.",Flask,59,64,IT_TERM,AUTO_MATCH
+812,"As assigned, Assisted the administrative supervisor with daily File Labels.",File Labels,63,74,CLERICAL_TERM,AUTO_MATCH
+813,"In the afternoon, Verified signatures and filed department clearance forms during Document Editing.",Document Editing,82,98,CLERICAL_TERM,AUTO_MATCH
+814,"In the afternoon, Assisted staff members and visitors with inquiries regarding Medicine Refill.",Medicine Refill,79,94,CLERICAL_TERM,AUTO_MATCH
+815,"In the morning, Refactored legacy code modules and migrated the system to AI Chatbot.",AI Chatbot,74,84,IT_TERM,AUTO_MATCH
+816,"Today, Organized file cabinets, categorized binders, and conducted Document Distribution.",Document Distribution,67,88,CLERICAL_TERM,AUTO_MATCH
+817,"For my primary task, Assisted our senior engineer in deploying our application using Application Development.",Application Development,85,108,IT_TERM,AUTO_MATCH
+818,"First, Greeted visitors at the entrance and escorted them to the conference room.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+819,"For my primary task, Created an interactive user interface component with Computer.",Computer,74,82,IT_TERM,AUTO_MATCH
+820,"In the afternoon, Distributed printed handouts and supported the team during Labels.",Labels,77,83,CLERICAL_TERM,AUTO_MATCH
+821,Researched modern architectural best practices involving Troubleshooting.,Troubleshooting,57,72,IT_TERM,AUTO_MATCH
+822,"Afterwards, Greeted visitors at the entrance and escorted them to the conference room.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+823,Completed the assigned weekly tasks regarding Routine Office Tasks on schedule.,Routine Office Tasks,46,66,CLERICAL_TERM,AUTO_MATCH
+824,"As assigned, Submitted the finalized documentation package required for Event Preparation.",Event Preparation,72,89,CLERICAL_TERM,AUTO_MATCH
+825,"As assigned, Facilitated document routing and tracked outgoing mail for Outdoor Activities.",Outdoor Activities,72,90,CLERICAL_TERM,AUTO_MATCH
+826,Had a quick alignment call with the project mentor to review weekly objectives.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+827,"In the afternoon, Submitted the finalized documentation package required for Office Workflow.",Office Workflow,77,92,CLERICAL_TERM,AUTO_MATCH
+828,"During my shift, Completed the assigned weekly tasks regarding Materials Preparation on schedule.",Materials Preparation,63,84,CLERICAL_TERM,AUTO_MATCH
+829,"In the morning, Conducted automated unit testing and performance benchmarks on Digital File Organization.",Digital File Organization,79,104,IT_TERM,AUTO_MATCH
+830,"As assigned, Assisted the administrative supervisor with daily ID Release.",ID Release,63,73,CLERICAL_TERM,AUTO_MATCH
+831,"Today, Managed physical inventory counts and logged discrepancies during Document Arrangement.",Document Arrangement,73,93,CLERICAL_TERM,AUTO_MATCH
+832,"This week, Assisted our senior engineer in deploying our application using Postman.",Postman,75,82,IT_TERM,AUTO_MATCH
+833,"Today, Distributed printed handouts and supported the team during Administrative Tasks.",Administrative Tasks,66,86,CLERICAL_TERM,AUTO_MATCH
+834,"In the morning, Collaborated with the infrastructure team to configure Backend API.",Backend API,71,82,IT_TERM,AUTO_MATCH
+835,"As assigned, Verified signatures and filed department clearance forms during Scanning Documents.",Scanning Documents,77,95,CLERICAL_TERM,AUTO_MATCH
+836,"This week, Refactored legacy code modules and migrated the system to Server Configuration.",Server Configuration,69,89,IT_TERM,AUTO_MATCH
+837,"Today, Collaborated with the infrastructure team to configure PHP.",PHP,62,65,IT_TERM,AUTO_MATCH
+838,"First, Cleaned the intern workstation and organized desk accessories before logging out.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+839,Verified signatures and filed department clearance forms during Captions.,Captions,64,72,CLERICAL_TERM,AUTO_MATCH
+840,"Today, Cross-checked incoming department requests as part of Document Safekeeping.",Document Safekeeping,61,81,CLERICAL_TERM,AUTO_MATCH
+841,"This week, Designed the database schema and executed migrations using Certificate Design.",Certificate Design,70,88,IT_TERM,AUTO_MATCH
+842,"In the morning, Designed the database schema and executed migrations using Data Calculation.",Data Calculation,75,91,IT_TERM,AUTO_MATCH
+843,"As assigned, Organized file cabinets, categorized binders, and conducted Photocopying.",Photocopying,73,85,CLERICAL_TERM,AUTO_MATCH
+844,"Afterwards, Arrived at the office on time and logged in to the biometric attendance machine.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+845,"Today, Implemented background asynchronous task workers using Laravel.",Laravel,62,69,IT_TERM,AUTO_MATCH
+846,Created an interactive user interface component with Agile.,Agile,53,58,IT_TERM,AUTO_MATCH
+847,"Printed, stamped, and organized physical documents for File Organization.",File Organization,55,72,CLERICAL_TERM,AUTO_MATCH
+848,"Today, Verified signatures and filed department clearance forms during Data Verification.",Data Verification,71,88,CLERICAL_TERM,AUTO_MATCH
+849,"First, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+850,"On Thursday, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+851,"In the afternoon, Distributed printed handouts and supported the team during Office Tasks.",Office Tasks,77,89,CLERICAL_TERM,AUTO_MATCH
+852,"Today, Refactored legacy code modules and migrated the system to Spatie.",Spatie,65,71,IT_TERM,AUTO_MATCH
+853,"In the afternoon, Assisted the administrative supervisor with daily Savings Accounts.",Savings Accounts,68,84,CLERICAL_TERM,AUTO_MATCH
+854,"Early in the day, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+855,"Early in the day, Attended the farewell gathering for the departing senior supervisor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+856,"Afterwards, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+857,"Today, Monitored server resource utilization and optimized System Performance queries.",System Performance,59,77,IT_TERM,AUTO_MATCH
+858,"First, Participated in the company-wide orientation regarding workplace ethics and rules.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+859,"Organized file cabinets, categorized binders, and conducted Office Documentation.",Office Documentation,60,80,CLERICAL_TERM,AUTO_MATCH
+860,Managed physical inventory counts and logged discrepancies during Record Management.,Record Management,66,83,CLERICAL_TERM,AUTO_MATCH
+861,"Afterwards, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+862,"Today, Organized file cabinets, categorized binders, and conducted Medical Records.",Medical Records,67,82,CLERICAL_TERM,AUTO_MATCH
+863,Automated our daily build and deployment pipeline using System Planning.,System Planning,56,71,IT_TERM,AUTO_MATCH
+864,Waited for feedback from the team lead before proceeding with the next assignment.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+865,"Afterwards, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+866,"Today, Assisted our senior engineer in deploying our application using System Development.",System Development,71,89,IT_TERM,AUTO_MATCH
+867,"Today, Verified signatures and filed department clearance forms during Event Preparation.",Event Preparation,71,88,CLERICAL_TERM,AUTO_MATCH
+868,"During my shift, Prepared the required paperwork and verified attachments for Signatories.",Signatories,78,89,CLERICAL_TERM,AUTO_MATCH
+869,"In the afternoon, Reviewed transaction logs and audited files as part of Barangay Coordination.",Barangay Coordination,73,94,CLERICAL_TERM,AUTO_MATCH
+870,Helped a colleague locate the designated conference room on the third floor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+871,"Afterwards, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+872,Cleaned the intern workstation and organized desk accessories before logging out.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+873,"During my shift, Handled confidential student records during Information Checking.",Information Checking,61,81,CLERICAL_TERM,AUTO_MATCH
+874,"For my primary task, Collaborated with the infrastructure team to configure Landing Page.",Landing Page,76,88,IT_TERM,AUTO_MATCH
+875,"Today, Completed the assigned weekly tasks regarding Health Records on schedule.",Health Records,53,67,CLERICAL_TERM,AUTO_MATCH
+876,"This week, Refactored legacy code modules and migrated the system to iClinicSys.",iClinicSys,69,79,IT_TERM,AUTO_MATCH
+877,"For my primary task, Collaborated with the infrastructure team to configure Laptop.",Laptop,76,82,IT_TERM,AUTO_MATCH
+878,"Today, Monitored server resource utilization and optimized Printer Installation queries.",Printer Installation,59,79,IT_TERM,AUTO_MATCH
+879,"First, Had a quick alignment call with the project mentor to review weekly objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+880,"During my shift, Drafted official correspondence and summarized notes for Team Coordination.",Team Coordination,74,91,CLERICAL_TERM,AUTO_MATCH
+881,Attended the farewell gathering for the departing senior supervisor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+882,Submitted the finalized documentation package required for Information Reviewing.,Information Reviewing,59,80,CLERICAL_TERM,AUTO_MATCH
+883,Verified signatures and filed department clearance forms during Certificate Distribution.,Certificate Distribution,64,88,CLERICAL_TERM,AUTO_MATCH
+884,"Today, Verified signatures and filed department clearance forms during Document Review.",Document Review,71,86,CLERICAL_TERM,AUTO_MATCH
+885,"As assigned, Drafted official correspondence and summarized notes for ID Release.",ID Release,70,80,CLERICAL_TERM,AUTO_MATCH
+886,Waited for feedback from the team lead before proceeding with the next assignment.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+887,Attended the morning standup meeting with the supervisor to discuss daily goals.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+888,"During my shift, Completed the assigned weekly tasks regarding Physical Files on schedule.",Physical Files,63,77,CLERICAL_TERM,AUTO_MATCH
+889,Worked on backend API services and integrated REST API for persistent storage.,REST API,46,54,IT_TERM,AUTO_MATCH
+890,"Today, Assisted the administrative supervisor with daily Photo Documentation.",Photo Documentation,57,76,CLERICAL_TERM,AUTO_MATCH
+891,Resolved an unexpected crash in production by debugging our API Endpoints service.,API Endpoints,60,73,IT_TERM,AUTO_MATCH
+892,"On Thursday, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+893,Distributed printed handouts and supported the team during Nutrition Activities.,Nutrition Activities,59,79,CLERICAL_TERM,AUTO_MATCH
+894,"As assigned, Assisted staff members and visitors with inquiries regarding File Organization.",File Organization,74,91,CLERICAL_TERM,AUTO_MATCH
+895,"Early in the day, Listened to a presentation given by the department head on strategic objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+896,"In the morning, Worked on backend API services and integrated Vue.js for persistent storage.",Vue.js,62,68,IT_TERM,AUTO_MATCH
+897,"In the morning, Conducted automated unit testing and performance benchmarks on JavaScript.",JavaScript,79,89,IT_TERM,AUTO_MATCH
+898,"Organized file cabinets, categorized binders, and conducted Document Handling.",Document Handling,60,77,CLERICAL_TERM,AUTO_MATCH
+899,"Early in the day, Had a quick alignment call with the project mentor to review weekly objectives.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+900,"Today, Created comprehensive documentation and guidelines for Scanning usage.",Scanning,62,70,IT_TERM,AUTO_MATCH
+901,"Afterwards, Reviewed general company guidelines regarding data privacy and acceptable use.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+902,Encoded information accurately into the office registry during Event Coordination.,Event Coordination,63,81,CLERICAL_TERM,AUTO_MATCH
+903,Installed necessary security patches and updated the Node.js dependency.,Node.js,53,60,IT_TERM,AUTO_MATCH
+904,"Organized file cabinets, categorized binders, and conducted Document Delivery.",Document Delivery,60,77,CLERICAL_TERM,AUTO_MATCH
+905,"During my shift, Maintained office order and coordinated department logistics through File Checking.",File Checking,86,99,CLERICAL_TERM,AUTO_MATCH
+906,"During my shift, Managed physical inventory counts and logged discrepancies during Awarding Ceremony.",Awarding Ceremony,83,100,CLERICAL_TERM,AUTO_MATCH
+907,"First, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+908,"Today, Created an interactive user interface component with UX Design.",UX Design,60,69,IT_TERM,AUTO_MATCH
+909,"Today, Maintained office order and coordinated department logistics through Workspace Organization.",Workspace Organization,76,98,CLERICAL_TERM,AUTO_MATCH
+910,"Today, Configured the development environment and set up REST API.",REST API,57,65,IT_TERM,AUTO_MATCH
+911,"This week, Wrote clean, maintainable microservice code in Password Recovery under supervision.",Password Recovery,58,75,IT_TERM,AUTO_MATCH
+912,"On Thursday, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+913,"Today, Monitored server resource utilization and optimized Technical Support queries.",Technical Support,59,76,IT_TERM,AUTO_MATCH
+914,"As assigned, Completed the assigned weekly tasks regarding ID Distribution on schedule.",ID Distribution,59,74,CLERICAL_TERM,AUTO_MATCH
+915,"Today, Encoded information accurately into the office registry during Document Organization.",Document Organization,70,91,CLERICAL_TERM,AUTO_MATCH
+916,"As assigned, Completed the assigned weekly tasks regarding Client Records on schedule.",Client Records,59,73,CLERICAL_TERM,AUTO_MATCH
+917,"In the afternoon, Managed physical inventory counts and logged discrepancies during Flyer Distribution.",Flyer Distribution,84,102,CLERICAL_TERM,AUTO_MATCH
+918,"This week, Created comprehensive documentation and guidelines for UI usage.",UI,66,68,IT_TERM,AUTO_MATCH
+919,"For my primary task, Conducted automated unit testing and performance benchmarks on Codebase.",Codebase,84,92,IT_TERM,AUTO_MATCH
+920,"Printed, stamped, and organized physical documents for Records Management.",Records Management,55,73,CLERICAL_TERM,AUTO_MATCH
+921,"Early in the day, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+922,"Today, Distributed printed handouts and supported the team during Inventory Organization.",Inventory Organization,66,88,CLERICAL_TERM,AUTO_MATCH
+923,"For my primary task, Refactored legacy code modules and migrated the system to Scanning.",Scanning,79,87,IT_TERM,AUTO_MATCH
+924,"On Thursday, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+925,"This week, Researched modern architectural best practices involving Backup.",Backup,68,74,IT_TERM,AUTO_MATCH
+926,"During my shift, Reviewed transaction logs and audited files as part of Financial Transactions.",Financial Transactions,72,94,CLERICAL_TERM,AUTO_MATCH
+927,"Today, Conducted automated unit testing and performance benchmarks on Data Encoding.",Data Encoding,70,83,IT_TERM,AUTO_MATCH
+928,"Today, Wrote clean, maintainable microservice code in Bug Fixing under supervision.",Bug Fixing,54,64,IT_TERM,AUTO_MATCH
+929,"For my primary task, Researched modern architectural best practices involving Flash Drive.",Flash Drive,78,89,IT_TERM,AUTO_MATCH
+930,"Today, Printed, stamped, and organized physical documents for Inventory Analysis.",Inventory Analysis,62,80,CLERICAL_TERM,AUTO_MATCH
+931,"Today, Compiled weekly department statistics and created charts for Stock Records.",Stock Records,68,81,CLERICAL_TERM,AUTO_MATCH
+932,"Today, Cross-checked incoming department requests as part of Medicine Labeling.",Medicine Labeling,61,78,CLERICAL_TERM,AUTO_MATCH
+933,"First, Submitted the bi-weekly intern time log sheet to the human resource assistant.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+934,"For my primary task, Conducted automated unit testing and performance benchmarks on Windows Server.",Windows Server,84,98,IT_TERM,AUTO_MATCH
+935,"As assigned, Reviewed transaction logs and audited files as part of Certificate Distribution.",Certificate Distribution,68,92,CLERICAL_TERM,AUTO_MATCH
+936,"Afterwards, Helped a colleague locate the designated conference room on the third floor.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+937,"In the afternoon, Submitted the finalized documentation package required for Community Outreach.",Community Outreach,77,95,CLERICAL_TERM,AUTO_MATCH
+938,"In the afternoon, Drafted official correspondence and summarized notes for Medicine Refill.",Medicine Refill,75,90,CLERICAL_TERM,AUTO_MATCH
+939,"In the morning, Automated our daily build and deployment pipeline using Jira.",Jira,72,76,IT_TERM,AUTO_MATCH
+940,Created comprehensive documentation and guidelines for Adobe Photoshop usage.,Adobe Photoshop,55,70,IT_TERM,AUTO_MATCH
+941,"For my primary task, Wrote clean, maintainable microservice code in Code Debugging under supervision.",Code Debugging,68,82,IT_TERM,AUTO_MATCH
+942,"Organized file cabinets, categorized binders, and conducted PhilHealth Eligibility.",PhilHealth Eligibility,60,82,CLERICAL_TERM,AUTO_MATCH
+943,"For my primary task, Conducted automated unit testing and performance benchmarks on Django.",Django,84,90,IT_TERM,AUTO_MATCH
+944,Installed necessary security patches and updated the CSS dependency.,CSS,53,56,IT_TERM,AUTO_MATCH
+945,"Today, Drafted official correspondence and summarized notes for Document Verification.",Document Verification,64,85,CLERICAL_TERM,AUTO_MATCH
+946,"Today, Encoded information accurately into the office registry during Material Distribution.",Material Distribution,70,91,CLERICAL_TERM,AUTO_MATCH
+947,"For my primary task, Created an interactive user interface component with Tarpaulin Design.",Tarpaulin Design,74,90,IT_TERM,AUTO_MATCH
+948,"Today, Assisted staff members and visitors with inquiries regarding Presentation Materials.",Presentation Materials,68,90,CLERICAL_TERM,AUTO_MATCH
+949,"In the morning, Monitored server resource utilization and optimized Database Storage queries.",Database Storage,68,84,IT_TERM,AUTO_MATCH
+950,Checked my work email inbox and responded to routine greeting messages.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+951,"As assigned, Managed physical inventory counts and logged discrepancies during Document Distribution.",Document Distribution,79,100,CLERICAL_TERM,AUTO_MATCH
+952,"As assigned, Managed physical inventory counts and logged discrepancies during Event Coordination.",Event Coordination,79,97,CLERICAL_TERM,AUTO_MATCH
+953,"In the morning, Implemented secure authentication and access controls in Docker.",Docker,73,79,IT_TERM,AUTO_MATCH
+954,"As assigned, Completed the assigned weekly tasks regarding Materials Preparation on schedule.",Materials Preparation,59,80,CLERICAL_TERM,AUTO_MATCH
+955,Designed the database schema and executed migrations using Database Seeder.,Database Seeder,59,74,IT_TERM,AUTO_MATCH
+956,Organized notebook notes and planned personal task priorities for tomorrow morning.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+957,"Today, Assisted our senior engineer in deploying our application using UX Design.",UX Design,71,80,IT_TERM,AUTO_MATCH
+958,"Today, Distributed printed handouts and supported the team during Office Coordination.",Office Coordination,66,85,CLERICAL_TERM,AUTO_MATCH
+959,"Today, Assisted our senior engineer in deploying our application using Git Branches.",Git Branches,71,83,IT_TERM,AUTO_MATCH
+960,"First, Waited for feedback from the team lead before proceeding with the next assignment.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+961,Troubleshot network connectivity and configuration errors in Application Development.,Application Development,61,84,IT_TERM,AUTO_MATCH
+962,"In the afternoon, Assisted staff members and visitors with inquiries regarding Inventory.",Inventory,79,88,CLERICAL_TERM,AUTO_MATCH
+963,"For my primary task, Assisted our senior engineer in deploying our application using System Modules.",System Modules,85,99,IT_TERM,AUTO_MATCH
+964,Assisted staff members and visitors with inquiries regarding Audit Preparation.,Audit Preparation,61,78,CLERICAL_TERM,AUTO_MATCH
+965,Reviewed transaction logs and audited files as part of Field Activity.,Field Activity,55,69,CLERICAL_TERM,AUTO_MATCH
+966,"Today, Encoded information accurately into the office registry during Student Records.",Student Records,70,85,CLERICAL_TERM,AUTO_MATCH
+967,"On Thursday, Attended the morning standup meeting with the supervisor to discuss daily goals.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+968,"Early in the day, Took a short lunch break with fellow student interns at the company cafeteria.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+969,"During my shift, Managed physical inventory counts and logged discrepancies during Records Management.",Records Management,83,101,CLERICAL_TERM,AUTO_MATCH
+970,Compiled weekly department statistics and created charts for Contact Details.,Contact Details,61,76,CLERICAL_TERM,AUTO_MATCH
+971,"For my primary task, Worked on backend API services and integrated Printer Repair for persistent storage.",Printer Repair,67,81,IT_TERM,AUTO_MATCH
+972,"This week, Automated our daily build and deployment pipeline using Logbook Template.",Logbook Template,67,83,IT_TERM,AUTO_MATCH
+973,"In the morning, Researched modern architectural best practices involving System Stability.",System Stability,73,89,IT_TERM,AUTO_MATCH
+974,"This week, Attended a technical workshop on best practices for Backend.",Backend,63,70,IT_TERM,AUTO_MATCH
+975,"In the afternoon, Handled confidential student records during Document Processing.",Document Processing,62,81,CLERICAL_TERM,AUTO_MATCH
+976,"Today, Researched modern architectural best practices involving Hardware Maintenance.",Hardware Maintenance,64,84,IT_TERM,AUTO_MATCH
+977,"This week, Implemented background asynchronous task workers using Machine Learning.",Machine Learning,66,82,IT_TERM,AUTO_MATCH
+978,"As assigned, Facilitated document routing and tracked outgoing mail for Document Labeling.",Document Labeling,72,89,CLERICAL_TERM,AUTO_MATCH
+979,Facilitated document routing and tracked outgoing mail for Office Cleaning.,Office Cleaning,59,74,CLERICAL_TERM,AUTO_MATCH
+980,"As assigned, Facilitated document routing and tracked outgoing mail for Certificate Recognition.",Certificate Recognition,72,95,CLERICAL_TERM,AUTO_MATCH
+981,"Afterwards, Signed the visitor logbook and collected the guest identification badges.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+982,"For my primary task, Collaborated with the infrastructure team to configure Error Handling.",Error Handling,76,90,IT_TERM,AUTO_MATCH
+983,"For my primary task, Refactored legacy code modules and migrated the system to Geospatial Tracking.",Geospatial Tracking,79,98,IT_TERM,AUTO_MATCH
+984,"As assigned, Compiled weekly department statistics and created charts for Medical Records.",Medical Records,74,89,CLERICAL_TERM,AUTO_MATCH
+985,"This week, Designed the database schema and executed migrations using UI/UX Design.",UI/UX Design,70,82,IT_TERM,AUTO_MATCH
+986,"On Thursday, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+987,Helped a colleague locate the designated conference room on the third floor.,[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+988,"Today, Encoded information accurately into the office registry during Form Distribution.",Form Distribution,70,87,CLERICAL_TERM,AUTO_MATCH
+989,"In the afternoon, Organized file cabinets, categorized binders, and conducted Health Records.",Health Records,78,92,CLERICAL_TERM,AUTO_MATCH
+990,"During my shift, Assisted the administrative supervisor with daily Client Payments.",Client Payments,67,82,CLERICAL_TERM,AUTO_MATCH
+991,"In the morning, Automated our daily build and deployment pipeline using eGOV.PH.",eGOV.PH,72,79,IT_TERM,AUTO_MATCH
+992,"In the afternoon, Completed the assigned weekly tasks regarding Attendance Records on schedule.",Attendance Records,64,82,CLERICAL_TERM,AUTO_MATCH
+993,"This week, Configured the development environment and set up RBAC.",RBAC,61,65,IT_TERM,AUTO_MATCH
+994,"Today, Automated our daily build and deployment pipeline using PC Assembly.",PC Assembly,63,74,IT_TERM,AUTO_MATCH
+995,"Today, Cross-checked incoming department requests as part of Information Reviewing.",Information Reviewing,61,82,CLERICAL_TERM,AUTO_MATCH
+996,"As assigned, Drafted official correspondence and summarized notes for Routine Office Tasks.",Routine Office Tasks,70,90,CLERICAL_TERM,AUTO_MATCH
+997,"First, Joined the weekly team retrospective to share progress updates and blockers.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
+998,Implemented secure authentication and access controls in Bug Fixing.,Bug Fixing,57,67,IT_TERM,AUTO_MATCH
+999,"Afterwards, Participated in an open discussion regarding team workflow enhancements.",[NO_ENTITY],-1,-1,NONE,AUTO_NEGATIVE
