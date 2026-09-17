@@ -18,15 +18,15 @@ from typing import List, Dict, Any, Tuple, Optional
 import pandas as pd
 import spacy
 from spacy.tokens import DocBin, Doc
+from scripts.labels import (
+    LABEL_MAPPING,
+    normalize_to_ner_label,
+    normalize_to_dictionary_label,
+    CANONICAL_NER_LABELS,
+    CANONICAL_DICTIONARY_LABELS,
+)
 
 logger = logging.getLogger("ojt_pipeline.annotation")
-
-LABEL_MAPPING = {
-    "IT_TASK": "IT_TERM",
-    "CLERICAL": "CLERICAL_TERM",
-    "IT_TERM": "IT_TERM",
-    "CLERICAL_TERM": "CLERICAL_TERM",
-}
 
 
 def load_terms_dictionary(terms_csv_path: str = "data/terms.csv") -> Dict[str, str]:
