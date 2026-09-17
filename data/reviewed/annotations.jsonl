@@ -79,7 +79,6 @@
 {"text": "This week, Wrote clean, maintainable microservice code in Data Calculation under supervision.", "entities": [{"start": 58, "end": 74, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Maintained office order and coordinated department logistics through Payment Records.", "entities": [{"start": 87, "end": 102, "label": "CLERICAL_TERM"}]}
 {"text": "Encoded information accurately into the office registry during PhilHealth Eligibility.", "entities": [{"start": 63, "end": 85, "label": "CLERICAL_TERM"}]}
-{"text": "On Thursday, Walked over to the records counter to ask for the latest transmittal sheet.", "entities": []}
 {"text": "First, The campus facilities office arranged additional seating in the computer lab.", "entities": []}
 {"text": "Today, Researched modern architectural best practices involving React.", "entities": [{"start": 64, "end": 69, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Maintained office order and coordinated department logistics through Filing System.", "entities": [{"start": 87, "end": 100, "label": "CLERICAL_TERM"}]}
@@ -88,7 +87,6 @@
 {"text": "For my primary task, Installed necessary security patches and updated the Server Settings dependency.", "entities": [{"start": 74, "end": 89, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Managed physical inventory counts and logged discrepancies during Microsoft Excel.", "entities": [{"start": 84, "end": 99, "label": "CLERICAL_TERM"}]}
 {"text": "For my primary task, Refactored legacy code modules and migrated the system to Hardware Installation.", "entities": [{"start": 79, "end": 100, "label": "IT_TERM"}]}
-{"text": "Afterwards, The department clerk provided guidance on properly archiving retired paper records.", "entities": []}
 {"text": "Afterwards, The university announced updated schedules for the upcoming computer laboratory sessions.", "entities": []}
 {"text": "Today, Verified signatures and filed department clearance forms during File Organization.", "entities": [{"start": 71, "end": 88, "label": "CLERICAL_TERM"}]}
 {"text": "In the afternoon, Handled confidential student records during PhilHealth Eligibility.", "entities": [{"start": 62, "end": 84, "label": "CLERICAL_TERM"}]}
@@ -139,7 +137,6 @@
 {"text": "For my primary task, Attended a technical workshop on best practices for Computer Support.", "entities": [{"start": 73, "end": 89, "label": "IT_TERM"}]}
 {"text": "Joined the other student interns in the break room during the morning coffee break.", "entities": []}
 {"text": "In the afternoon, Prepared the required paperwork and verified attachments for Report Preparation.", "entities": [{"start": 79, "end": 97, "label": "CLERICAL_TERM"}]}
-{"text": "Early in the day, The internship coordinator scheduled an onsite progress evaluation for next Tuesday.", "entities": []}
 {"text": "During my shift, Reviewed transaction logs and audited files as part of Police Clearance.", "entities": [{"start": 72, "end": 88, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Implemented background asynchronous task workers using Docker.", "entities": [{"start": 62, "end": 68, "label": "IT_TERM"}]}
 {"text": "In the morning, Implemented secure authentication and access controls in Database Schema.", "entities": [{"start": 73, "end": 88, "label": "IT_TERM"}]}
@@ -154,7 +151,6 @@
 {"text": "As assigned, Reviewed transaction logs and audited files as part of Certificate Distribution.", "entities": [{"start": 68, "end": 92, "label": "CLERICAL_TERM"}]}
 {"text": "Early in the day, Walked over to the records counter to ask for the latest transmittal sheet.", "entities": []}
 {"text": "In the afternoon, Drafted official correspondence and summarized notes for Medical Inventory.", "entities": [{"start": 75, "end": 92, "label": "CLERICAL_TERM"}]}
-{"text": "On Thursday, Reviewed general company guidelines regarding data privacy and acceptable use.", "entities": []}
 {"text": "Reviewed transaction logs and audited files as part of Shares Accounts.", "entities": [{"start": 55, "end": 70, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Conducted automated unit testing and performance benchmarks on Deployment Testing.", "entities": [{"start": 70, "end": 88, "label": "IT_TERM"}]}
 {"text": "On Thursday, The university computer lab technician showed us how the workstations are maintained.", "entities": []}
@@ -177,7 +173,6 @@
 {"text": "Early in the day, The office manager reminded all employees to power down their desktop computers.", "entities": []}
 {"text": "In the afternoon, Handled confidential student records during Client Payments.", "entities": [{"start": 62, "end": 77, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Researched modern architectural best practices involving Password Recovery.", "entities": [{"start": 64, "end": 81, "label": "IT_TERM"}]}
-{"text": "Early in the day, First day was mostly about getting settled in at the MIS office.", "entities": []}
 {"text": "Consulted with our technical supervisor regarding edge cases in data parsing.", "entities": []}
 {"text": "During my shift, Maintained office order and coordinated department logistics through Document Safekeeping.", "entities": [{"start": 86, "end": 106, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Designed the database schema and executed migrations using Git Branches.", "entities": [{"start": 75, "end": 87, "label": "IT_TERM"}]}
@@ -208,7 +203,6 @@
 {"text": "In the morning, Assisted our senior engineer in deploying our application using Merge Conflict.", "entities": [{"start": 80, "end": 94, "label": "IT_TERM"}]}
 {"text": "Today, Cross-checked incoming department requests as part of Police Clearance.", "entities": [{"start": 61, "end": 77, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Installed necessary security patches and updated the System Features dependency.", "entities": [{"start": 60, "end": 75, "label": "IT_TERM"}]}
-{"text": "Afterwards, The student interns took turns presenting their module contributions to the team.", "entities": []}
 {"text": "First, Sat in the department office waiting for the supervisor to assign my morning tasks.", "entities": []}
 {"text": "First, Collaborated with senior personnel to understand the organization standard workflows.", "entities": []}
 {"text": "In the morning, Installed necessary security patches and updated the System Performance dependency.", "entities": [{"start": 69, "end": 87, "label": "IT_TERM"}]}
@@ -258,7 +252,6 @@
 {"text": "Automated our daily build and deployment pipeline using System Stability.", "entities": [{"start": 56, "end": 72, "label": "IT_TERM"}]}
 {"text": "Today, Monitored server resource utilization and optimized GitHub Workflow queries.", "entities": [{"start": 59, "end": 74, "label": "IT_TERM"}]}
 {"text": "On Thursday, The university IT department announced upcoming scheduled downtime for system upgrades.", "entities": []}
-{"text": "On Thursday, Discussed project deadlines and milestone expectations during the afternoon huddle.", "entities": []}
 {"text": "Participated in a university workshop on data ethics and security best practices.", "entities": []}
 {"text": "In the morning, Resolved an unexpected crash in production by debugging our AI Chatbot service.", "entities": [{"start": 76, "end": 86, "label": "IT_TERM"}]}
 {"text": "For my primary task, Resolved an unexpected crash in production by debugging our Hardware Maintenance service.", "entities": [{"start": 81, "end": 101, "label": "IT_TERM"}]}
@@ -296,16 +289,13 @@
 {"text": "On Thursday, Cleaned the whiteboard in the department meeting room after the presentation.", "entities": []}
 {"text": "The campus computer society hosted an introductory programming session.", "entities": []}
 {"text": "In the morning, Implemented secure authentication and access controls in System Interface.", "entities": [{"start": 73, "end": 89, "label": "IT_TERM"}]}
-{"text": "On Thursday, I attended a technical seminar at the university about modern software architectures.", "entities": []}
 {"text": "The security personnel checked our identification badges at the front gate.", "entities": []}
-{"text": "Early in the day, Helped a colleague locate the designated conference room on the third floor.", "entities": []}
 {"text": "This week, Assisted our senior engineer in deploying our application using QR Code.", "entities": [{"start": 75, "end": 82, "label": "IT_TERM"}]}
 {"text": "On Thursday, The development company hosted an open house for prospective engineering graduates.", "entities": []}
 {"text": "Refactored legacy code modules and migrated the system to DevOps.", "entities": [{"start": 58, "end": 64, "label": "IT_TERM"}]}
 {"text": "Designed the database schema and executed migrations using System Development.", "entities": [{"start": 59, "end": 77, "label": "IT_TERM"}]}
 {"text": "This week, Resolved an unexpected crash in production by debugging our CSS service.", "entities": [{"start": 71, "end": 74, "label": "IT_TERM"}]}
 {"text": "On Thursday, Attended an online webinar hosted by the university computer science society.", "entities": []}
-{"text": "First, Sat in the department office waiting for the supervisor to assign my morning tasks.", "entities": []}
 {"text": "Today, Cross-checked incoming department requests as part of Health Records.", "entities": [{"start": 61, "end": 75, "label": "CLERICAL_TERM"}]}
 {"text": "Reviewed transaction logs and audited files as part of Record Management.", "entities": [{"start": 55, "end": 72, "label": "CLERICAL_TERM"}]}
 {"text": "Early in the day, Distributed meeting minutes to all department supervisors via internal company mail.", "entities": []}
@@ -346,10 +336,8 @@
 {"text": "Afterwards, The company intranet portal provided links to all internal training materials.", "entities": []}
 {"text": "Today, Reviewed transaction logs and audited files as part of Field Activity.", "entities": [{"start": 62, "end": 76, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Cross-checked incoming department requests as part of General Cleaning.", "entities": [{"start": 71, "end": 87, "label": "CLERICAL_TERM"}]}
-{"text": "Early in the day, Met with the marketing department lead to understand the website redesign requirements.", "entities": []}
 {"text": "For my primary task, Conducted automated unit testing and performance benchmarks on Machine Learning.", "entities": [{"start": 84, "end": 100, "label": "IT_TERM"}]}
 {"text": "On Thursday, Arrived at the office on time and logged in to the biometric attendance machine.", "entities": []}
-{"text": "On Thursday, Discussed project deadlines and milestone expectations during the afternoon huddle.", "entities": []}
 {"text": "Afterwards, Collaborated with senior personnel to understand the organization standard workflows.", "entities": []}
 {"text": "In the morning, Assisted our senior engineer in deploying our application using Version Control.", "entities": [{"start": 80, "end": 95, "label": "IT_TERM"}]}
 {"text": "As assigned, Prepared the required paperwork and verified attachments for Charter Day.", "entities": [{"start": 74, "end": 85, "label": "CLERICAL_TERM"}]}
@@ -402,12 +390,10 @@
 {"text": "In the afternoon, Managed physical inventory counts and logged discrepancies during Task Alignment.", "entities": [{"start": 84, "end": 98, "label": "CLERICAL_TERM"}]}
 {"text": "In the afternoon, Maintained office order and coordinated department logistics through Record Organization.", "entities": [{"start": 87, "end": 106, "label": "CLERICAL_TERM"}]}
 {"text": "First, Set up power extension cords and display monitors in the temporary workshop room.", "entities": []}
-{"text": "On Thursday, The university academic council met to discuss proposed degree curriculum revisions.", "entities": []}
 {"text": "On Thursday, The internship coordinator conducted an onsite visit to assess our training environment.", "entities": []}
 {"text": "Implemented secure authentication and access controls in Server Settings.", "entities": [{"start": 57, "end": 72, "label": "IT_TERM"}]}
 {"text": "In the morning, Monitored server resource utilization and optimized Geospatial Tracking queries.", "entities": [{"start": 68, "end": 87, "label": "IT_TERM"}]}
 {"text": "On Thursday, Our campus network was slow while the engineering team was testing endpoints.", "entities": []}
-{"text": "First, Walked over to the records counter to ask for the latest transmittal sheet.", "entities": []}
 {"text": "First, Listened to a presentation given by the department head on strategic objectives.", "entities": []}
 {"text": "Afterwards, Checked in with the project management office to confirm our deliverable deadlines.", "entities": []}
 {"text": "Today, Conducted automated unit testing and performance benchmarks on Web Server.", "entities": [{"start": 70, "end": 80, "label": "IT_TERM"}]}
@@ -436,16 +422,13 @@
 {"text": "For my primary task, Created comprehensive documentation and guidelines for eGOV.PH usage.", "entities": [{"start": 76, "end": 83, "label": "IT_TERM"}]}
 {"text": "For my primary task, I developed a web application feature using Jira.", "entities": [{"start": 65, "end": 69, "label": "IT_TERM"}]}
 {"text": "Assisted staff members and visitors with inquiries regarding Audit Preparation.", "entities": [{"start": 61, "end": 78, "label": "CLERICAL_TERM"}]}
-{"text": "First, The department secretary asked me to organize incoming mail on the front desk.", "entities": []}
 {"text": "Today, Created comprehensive documentation and guidelines for PhpSpreadsheet usage.", "entities": [{"start": 62, "end": 76, "label": "IT_TERM"}]}
 {"text": "This week, Installed necessary security patches and updated the Digital File Management dependency.", "entities": [{"start": 64, "end": 87, "label": "IT_TERM"}]}
 {"text": "Installed necessary security patches and updated the Postman dependency.", "entities": [{"start": 53, "end": 60, "label": "IT_TERM"}]}
-{"text": "On Thursday, The university academic council met to discuss proposed degree curriculum revisions.", "entities": []}
 {"text": "Implemented secure authentication and access controls in Figma Prototype.", "entities": [{"start": 57, "end": 72, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Distributed printed handouts and supported the team during Promotional Materials.", "entities": [{"start": 77, "end": 98, "label": "CLERICAL_TERM"}]}
 {"text": "Verified signatures and filed department clearance forms during Audit Preparation.", "entities": [{"start": 64, "end": 81, "label": "CLERICAL_TERM"}]}
 {"text": "Installed necessary security patches and updated the Dashboard Interface dependency.", "entities": [{"start": 53, "end": 72, "label": "IT_TERM"}]}
-{"text": "On Thursday, The university IT department announced upcoming scheduled downtime for system upgrades.", "entities": []}
 {"text": "Handled confidential student records during Medicine Refill.", "entities": [{"start": 44, "end": 59, "label": "CLERICAL_TERM"}]}
 {"text": "On Thursday, Our internship mentor explained the development lifecycle used by the senior team.", "entities": []}
 {"text": "Reviewed transaction logs and audited files as part of Task Alignment.", "entities": [{"start": 55, "end": 69, "label": "CLERICAL_TERM"}]}
@@ -465,8 +448,6 @@
 {"text": "Created comprehensive documentation and guidelines for Data Structures usage.", "entities": [{"start": 55, "end": 70, "label": "IT_TERM"}]}
 {"text": "For my primary task, I developed a web application feature using QR Code.", "entities": [{"start": 65, "end": 72, "label": "IT_TERM"}]}
 {"text": "On Thursday, Discussed weekly learning goals with my internship advisor during our one-on-one call.", "entities": []}
-{"text": "Today, Conducted automated unit testing and performance benchmarks on Google Sheets.", "entities": [{"start": 70, "end": 83, "label": "IT_TERM"}]}
-{"text": "Attended the farewell gathering for the departing senior supervisor.", "entities": []}
 {"text": "In the morning, Monitored server resource utilization and optimized Ubuntu queries.", "entities": [{"start": 68, "end": 74, "label": "IT_TERM"}]}
 {"text": "For my primary task, Collaborated with the infrastructure team to configure System Interface.", "entities": [{"start": 76, "end": 92, "label": "IT_TERM"}]}
 {"text": "For my primary task, Created comprehensive documentation and guidelines for Production Deployment usage.", "entities": [{"start": 76, "end": 97, "label": "IT_TERM"}]}
@@ -519,7 +500,6 @@
 {"text": "Researched modern architectural best practices involving Database Connections.", "entities": [{"start": 57, "end": 77, "label": "IT_TERM"}]}
 {"text": "Today, Attended a technical workshop on best practices for Flask.", "entities": [{"start": 59, "end": 64, "label": "IT_TERM"}]}
 {"text": "This week, Worked on backend API services and integrated Hosting Environment for persistent storage.", "entities": [{"start": 57, "end": 76, "label": "IT_TERM"}]}
-{"text": "Today, Created comprehensive documentation and guidelines for GitHub usage.", "entities": [{"start": 62, "end": 68, "label": "IT_TERM"}]}
 {"text": "Delivered signed clearance packets to the personnel office on the second floor.", "entities": []}
 {"text": "Handled confidential student records during Office Documentation.", "entities": [{"start": 44, "end": 64, "label": "CLERICAL_TERM"}]}
 {"text": "In the afternoon, Facilitated document routing and tracked outgoing mail for Information Checking.", "entities": [{"start": 77, "end": 97, "label": "CLERICAL_TERM"}]}
@@ -528,7 +508,6 @@
 {"text": "The development company hosted an open house for prospective engineering graduates.", "entities": []}
 {"text": "Implemented secure authentication and access controls in System Maintenance.", "entities": [{"start": 57, "end": 75, "label": "IT_TERM"}]}
 {"text": "For my primary task, Designed the database schema and executed migrations using Database Management.", "entities": [{"start": 80, "end": 99, "label": "IT_TERM"}]}
-{"text": "Afterwards, The development company hosted an open house for prospective engineering graduates.", "entities": []}
 {"text": "Afterwards, Attended an online webinar hosted by the university computer science society.", "entities": []}
 {"text": "Afterwards, Assisted the administrative assistant in the dean office with preparing handouts.", "entities": []}
 {"text": "Assisted the administrative supervisor with daily Client Satisfaction Survey.", "entities": [{"start": 50, "end": 76, "label": "CLERICAL_TERM"}]}
@@ -571,7 +550,6 @@
 {"text": "Today, Managed physical inventory counts and logged discrepancies during Record Keeping.", "entities": [{"start": 73, "end": 87, "label": "CLERICAL_TERM"}]}
 {"text": "The computer laboratory was reserved for hands-on programming practical exams.", "entities": []}
 {"text": "In the morning, Troubleshot network connectivity and configuration errors in Template Design.", "entities": [{"start": 77, "end": 92, "label": "IT_TERM"}]}
-{"text": "First, Distributed meeting minutes to all department supervisors via internal company mail.", "entities": []}
 {"text": "First, The executive office requested a compiled list of all ongoing student internship assignments.", "entities": []}
 {"text": "This week, Worked on backend API services and integrated Tarpaulin Design for persistent storage.", "entities": [{"start": 57, "end": 73, "label": "IT_TERM"}]}
 {"text": "As assigned, Distributed printed handouts and supported the team during Document Stamping.", "entities": [{"start": 72, "end": 89, "label": "CLERICAL_TERM"}]}
@@ -585,17 +563,14 @@
 {"text": "Today, I developed a web application feature using Data Calculation.", "entities": [{"start": 51, "end": 67, "label": "IT_TERM"}]}
 {"text": "As assigned, Facilitated document routing and tracked outgoing mail for Certificate Recognition.", "entities": [{"start": 72, "end": 95, "label": "CLERICAL_TERM"}]}
 {"text": "First, Helped prospective students find their assigned testing rooms across the university.", "entities": []}
-{"text": "On Thursday, Assisted the department clerk with organizing file folders on the metal shelving unit.", "entities": []}
 {"text": "Today, Implemented secure authentication and access controls in C#.", "entities": [{"start": 64, "end": 66, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Cross-checked incoming department requests as part of BNS Activities.", "entities": [{"start": 72, "end": 86, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Printed, stamped, and organized physical documents for Document Labeling.", "entities": [{"start": 72, "end": 89, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Compiled weekly department statistics and created charts for Records Management.", "entities": [{"start": 68, "end": 86, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Verified signatures and filed department clearance forms during Photocopying.", "entities": [{"start": 71, "end": 83, "label": "CLERICAL_TERM"}]}
-{"text": "On Thursday, Waited in the university lobby for the supervisor to begin the morning briefing.", "entities": []}
 {"text": "In the afternoon, Assisted staff members and visitors with inquiries regarding Medical Inventory.", "entities": [{"start": 79, "end": 96, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Configured the development environment and set up Production Deployment.", "entities": [{"start": 57, "end": 78, "label": "IT_TERM"}]}
 {"text": "In the morning, Collaborated with the infrastructure team to configure Figma.", "entities": [{"start": 71, "end": 76, "label": "IT_TERM"}]}
-{"text": "The security personnel checked our identification badges at the front gate.", "entities": []}
 {"text": "In the morning, Researched modern architectural best practices involving Computer Support.", "entities": [{"start": 73, "end": 89, "label": "IT_TERM"}]}
 {"text": "In the morning, Created an interactive user interface component with RBAC.", "entities": [{"start": 69, "end": 73, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Drafted official correspondence and summarized notes for OPT Plus.", "entities": [{"start": 75, "end": 83, "label": "CLERICAL_TERM"}]}
@@ -603,16 +578,13 @@
 {"text": "Cross-checked incoming department requests as part of Document Arrangement.", "entities": [{"start": 54, "end": 74, "label": "CLERICAL_TERM"}]}
 {"text": "Collaborated with the infrastructure team to configure Application Development.", "entities": [{"start": 55, "end": 78, "label": "IT_TERM"}]}
 {"text": "Maintained office order and coordinated department logistics through Collection Reports.", "entities": [{"start": 69, "end": 87, "label": "CLERICAL_TERM"}]}
-{"text": "First, Attended the university annual research symposium held in the main auditorium.", "entities": []}
 {"text": "As assigned, Facilitated document routing and tracked outgoing mail for Transfer Slips.", "entities": [{"start": 72, "end": 86, "label": "CLERICAL_TERM"}]}
 {"text": "On Thursday, The administrative office announced new operating hours for public inquiries.", "entities": []}
 {"text": "Today, Facilitated document routing and tracked outgoing mail for Workplace Organization.", "entities": [{"start": 66, "end": 88, "label": "CLERICAL_TERM"}]}
-{"text": "Afterwards, The student interns took turns presenting their module contributions to the team.", "entities": []}
 {"text": "For my primary task, Resolved an unexpected crash in production by debugging our SQLite service.", "entities": [{"start": 81, "end": 87, "label": "IT_TERM"}]}
 {"text": "Created an interactive user interface component with eGOV.PH.", "entities": [{"start": 53, "end": 60, "label": "IT_TERM"}]}
 {"text": "Submitted the finalized documentation package required for Document Preparation.", "entities": [{"start": 59, "end": 79, "label": "CLERICAL_TERM"}]}
 {"text": "As assigned, Facilitated document routing and tracked outgoing mail for Data Verification.", "entities": [{"start": 72, "end": 89, "label": "CLERICAL_TERM"}]}
-{"text": "First, Collaborated with senior personnel to understand the organization standard workflows.", "entities": []}
 {"text": "During my shift, Reviewed transaction logs and audited files as part of Document Editing.", "entities": [{"start": 72, "end": 88, "label": "CLERICAL_TERM"}]}
 {"text": "Early in the day, The technical staff conducted maintenance on the backup power supply systems.", "entities": []}
 {"text": "Completed the assigned weekly tasks regarding Document Forwarding on schedule.", "entities": [{"start": 46, "end": 65, "label": "CLERICAL_TERM"}]}
@@ -632,7 +604,6 @@
 {"text": "Wrote clean, maintainable microservice code in Python under supervision.", "entities": [{"start": 47, "end": 53, "label": "IT_TERM"}]}
 {"text": "In the morning, Designed the database schema and executed migrations using PC Assembly.", "entities": [{"start": 75, "end": 86, "label": "IT_TERM"}]}
 {"text": "Troubleshot network connectivity and configuration errors in Vue.js.", "entities": [{"start": 61, "end": 67, "label": "IT_TERM"}]}
-{"text": "Early in the day, Wiped down my intern workstation desk and cleaned the department cubicle.", "entities": []}
 {"text": "In the afternoon, Assisted staff members and visitors with inquiries regarding Exit Clearance Forms.", "entities": [{"start": 79, "end": 99, "label": "CLERICAL_TERM"}]}
 {"text": "Waited for feedback from the team lead before proceeding with the next assignment.", "entities": []}
 {"text": "Drafted official correspondence and summarized notes for Community Coordination.", "entities": [{"start": 57, "end": 79, "label": "CLERICAL_TERM"}]}
@@ -647,7 +618,6 @@
 {"text": "Today, Implemented secure authentication and access controls in System Planning.", "entities": [{"start": 64, "end": 79, "label": "IT_TERM"}]}
 {"text": "In the morning, Refactored legacy code modules and migrated the system to CSS.", "entities": [{"start": 74, "end": 77, "label": "IT_TERM"}]}
 {"text": "During my shift, Prepared the required paperwork and verified attachments for Scholarship Data.", "entities": [{"start": 78, "end": 94, "label": "CLERICAL_TERM"}]}
-{"text": "The training hall was prepared for the upcoming professional development seminar.", "entities": []}
 {"text": "In the afternoon, Organized file cabinets, categorized binders, and conducted Stock Records.", "entities": [{"start": 78, "end": 91, "label": "CLERICAL_TERM"}]}
 {"text": "In the afternoon, Compiled weekly department statistics and created charts for Photo Documentation.", "entities": [{"start": 79, "end": 98, "label": "CLERICAL_TERM"}]}
 {"text": "Verified signatures and filed department clearance forms during Presentation Materials.", "entities": [{"start": 64, "end": 86, "label": "CLERICAL_TERM"}]}
@@ -686,23 +656,16 @@
 {"text": "As assigned, Facilitated document routing and tracked outgoing mail for Client Records.", "entities": [{"start": 72, "end": 86, "label": "CLERICAL_TERM"}]}
 {"text": "This week, Created comprehensive documentation and guidelines for Password Reset usage.", "entities": [{"start": 66, "end": 80, "label": "IT_TERM"}]}
 {"text": "On Thursday, First day was mostly about getting settled in at the MIS office.", "entities": []}
-{"text": "Today, Submitted the finalized documentation package required for Prescription Records.", "entities": [{"start": 66, "end": 86, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Distributed printed handouts and supported the team during Meeting Materials.", "entities": [{"start": 76, "end": 93, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Automated our daily build and deployment pipeline using Facebook Management.", "entities": [{"start": 63, "end": 82, "label": "IT_TERM"}]}
 {"text": "As assigned, Handled confidential student records during Photo Documentation.", "entities": [{"start": 57, "end": 76, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Refactored legacy code modules and migrated the system to Oracle Database.", "entities": [{"start": 74, "end": 89, "label": "IT_TERM"}]}
-{"text": "Afterwards, Arrived at the office on time and logged in to the biometric attendance machine.", "entities": []}
 {"text": "This week, Researched modern architectural best practices involving Deployment Testing.", "entities": [{"start": 68, "end": 86, "label": "IT_TERM"}]}
-{"text": "Today, Monitored server resource utilization and optimized GitHub Workflow queries.", "entities": [{"start": 59, "end": 74, "label": "IT_TERM"}]}
-{"text": "Afterwards, Submitted my weekly internship accomplishment report to the supervisor for signing.", "entities": []}
 {"text": "In the afternoon, Submitted the finalized documentation package required for Document Handling.", "entities": [{"start": 77, "end": 94, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Attended a technical workshop on best practices for JavaScript.", "entities": [{"start": 68, "end": 78, "label": "IT_TERM"}]}
 {"text": "As assigned, Distributed printed handouts and supported the team during OPT Plus.", "entities": [{"start": 72, "end": 80, "label": "CLERICAL_TERM"}]}
-{"text": "Today, Conducted automated unit testing and performance benchmarks on Deployment Testing.", "entities": [{"start": 70, "end": 88, "label": "IT_TERM"}]}
 {"text": "Today, Created an interactive user interface component with Computer Hardware Maintenance.", "entities": [{"start": 60, "end": 89, "label": "IT_TERM"}]}
-{"text": "Early in the day, The training hall was prepared for the upcoming professional development seminar.", "entities": []}
 {"text": "Cross-checked incoming department requests as part of File Arrangement.", "entities": [{"start": 54, "end": 70, "label": "CLERICAL_TERM"}]}
-{"text": "First, Configured local environment settings on the workstation provided by the company.", "entities": []}
 {"text": "Each student intern was assigned a dedicated mentor from the technical staff.", "entities": []}
 {"text": "For my primary task, Collaborated with the infrastructure team to configure Production Deployment.", "entities": [{"start": 76, "end": 97, "label": "IT_TERM"}]}
 {"text": "This week, Implemented background asynchronous task workers using Printer Repair.", "entities": [{"start": 66, "end": 80, "label": "IT_TERM"}]}
@@ -722,7 +685,6 @@
 {"text": "In the morning, Implemented secure authentication and access controls in Role Assignment.", "entities": [{"start": 73, "end": 88, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Distributed printed handouts and supported the team during Data Correction.", "entities": [{"start": 77, "end": 92, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Prepared the required paperwork and verified attachments for Medicine Distribution.", "entities": [{"start": 78, "end": 99, "label": "CLERICAL_TERM"}]}
-{"text": "Early in the day, Met with the university department head to review our internship project milestones.", "entities": []}
 {"text": "In the morning, Worked on backend API services and integrated C# for persistent storage.", "entities": [{"start": 62, "end": 64, "label": "IT_TERM"}]}
 {"text": "Inspected emergency lighting fixtures in the campus science and technology wing.", "entities": []}
 {"text": "Today, Attended a technical workshop on best practices for Printer Driver.", "entities": [{"start": 59, "end": 73, "label": "IT_TERM"}]}
@@ -730,7 +692,6 @@
 {"text": "First, Helped our supervisor conduct a routine count of spare office supplies in the storage closet.", "entities": []}
 {"text": "On Thursday, Cleaned the intern workstation and organized desk accessories before logging out.", "entities": []}
 {"text": "For my primary task, Assisted our senior engineer in deploying our application using Code Refactoring.", "entities": [{"start": 85, "end": 101, "label": "IT_TERM"}]}
-{"text": "Assisted with distributing visitor passes at the main campus entrance gate.", "entities": []}
 {"text": "Today, Worked on backend API services and integrated Linux for persistent storage.", "entities": [{"start": 53, "end": 58, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Handled confidential student records during Material Distribution.", "entities": [{"start": 62, "end": 83, "label": "CLERICAL_TERM"}]}
 {"text": "This week, Created comprehensive documentation and guidelines for System Deployment usage.", "entities": [{"start": 66, "end": 83, "label": "IT_TERM"}]}
@@ -739,11 +700,9 @@
 {"text": "Prepared the required paperwork and verified attachments for Document Management.", "entities": [{"start": 61, "end": 80, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Resolved an unexpected crash in production by debugging our API Routes service.", "entities": [{"start": 76, "end": 86, "label": "IT_TERM"}]}
 {"text": "On Thursday, The conference room was booked for the executive steering committee meeting.", "entities": []}
-{"text": "Early in the day, Distributed meeting minutes to all department supervisors via internal company mail.", "entities": []}
 {"text": "For my primary task, Attended a technical workshop on best practices for Tarpaulin Design.", "entities": [{"start": 73, "end": 89, "label": "IT_TERM"}]}
 {"text": "The company leadership shared strategic growth targets during the quarterly town hall.", "entities": []}
 {"text": "During my shift, Drafted official correspondence and summarized notes for Account Balances.", "entities": [{"start": 74, "end": 90, "label": "CLERICAL_TERM"}]}
-{"text": "During my shift, Printed, stamped, and organized physical documents for Event Coordination.", "entities": [{"start": 72, "end": 90, "label": "CLERICAL_TERM"}]}
 {"text": "On Thursday, Coordinated with the academic affairs office regarding student clearance requirements.", "entities": []}
 {"text": "First, Attended the company anniversary celebration held at the main courtyard.", "entities": []}
 {"text": "Afterwards, Assisted the human resources assistant with sorting employee evaluation forms.", "entities": []}
@@ -753,7 +712,6 @@
 {"text": "In the afternoon, Drafted official correspondence and summarized notes for Attendance Records.", "entities": [{"start": 75, "end": 93, "label": "CLERICAL_TERM"}]}
 {"text": "This week, Refactored legacy code modules and migrated the system to Hardware Troubleshooting.", "entities": [{"start": 69, "end": 93, "label": "IT_TERM"}]}
 {"text": "Managed physical inventory counts and logged discrepancies during Presentation Materials.", "entities": [{"start": 66, "end": 88, "label": "CLERICAL_TERM"}]}
-{"text": "Afterwards, The company intranet portal provided links to all internal training materials.", "entities": []}
 {"text": "On Thursday, The department director praised our automated script for saving hours of manual work.", "entities": []}
 {"text": "Worked on backend API services and integrated Code Debugging for persistent storage.", "entities": [{"start": 46, "end": 60, "label": "IT_TERM"}]}
 {"text": "In the morning, Automated our daily build and deployment pipeline using Application Development.", "entities": [{"start": 72, "end": 95, "label": "IT_TERM"}]}
@@ -780,7 +738,6 @@
 {"text": "Assisted the administrative assistant in the dean office with preparing handouts.", "entities": []}
 {"text": "In the afternoon, Distributed printed handouts and supported the team during Medicine Distribution.", "entities": [{"start": 77, "end": 98, "label": "CLERICAL_TERM"}]}
 {"text": "First, Helped fellow student interns locate reference materials in the technical library.", "entities": []}
-{"text": "On Thursday, Helped set up the projector and sound system in conference room B.", "entities": []}
 {"text": "Had a quick alignment call with the project mentor to review weekly objectives.", "entities": []}
 {"text": "Reflected on the technical and interpersonal skills gained throughout the internship.", "entities": []}
 {"text": "For my primary task, Created comprehensive documentation and guidelines for Email Verification usage.", "entities": [{"start": 76, "end": 94, "label": "IT_TERM"}]}
@@ -788,11 +745,8 @@
 {"text": "Assisted staff members and visitors with inquiries regarding Information Reviewing.", "entities": [{"start": 61, "end": 82, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Verified signatures and filed department clearance forms during Stock Transfer.", "entities": [{"start": 71, "end": 85, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Collaborated with the infrastructure team to configure Certificate Design.", "entities": [{"start": 71, "end": 89, "label": "IT_TERM"}]}
-{"text": "Afterwards, Participated in an open discussion regarding team workflow enhancements.", "entities": []}
 {"text": "On Thursday, The university student portal had scheduled maintenance over the weekend.", "entities": []}
-{"text": "Attended the morning standup meeting in the engineering team room to discuss blockers.", "entities": []}
 {"text": "Conducted automated unit testing and performance benchmarks on Layout Design.", "entities": [{"start": 63, "end": 76, "label": "IT_TERM"}]}
-{"text": "For my primary task, Attended a technical workshop on best practices for Backend API.", "entities": [{"start": 73, "end": 84, "label": "IT_TERM"}]}
 {"text": "Today, Configured the development environment and set up Printer Installation.", "entities": [{"start": 57, "end": 77, "label": "IT_TERM"}]}
 {"text": "As assigned, Managed physical inventory counts and logged discrepancies during Meeting Proceedings.", "entities": [{"start": 79, "end": 98, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Cross-checked incoming department requests as part of Meeting Proceedings.", "entities": [{"start": 71, "end": 90, "label": "CLERICAL_TERM"}]}
@@ -802,19 +756,15 @@
 {"text": "Afterwards, The conference room was booked for the executive steering committee meeting.", "entities": []}
 {"text": "The incoming student interns were introduced to the department personnel during the morning huddle.", "entities": []}
 {"text": "On Thursday, Assisted the administrative assistant in the dean office with preparing handouts.", "entities": []}
-{"text": "Early in the day, Helped the department director route administrative communications to the staff.", "entities": []}
 {"text": "Walked over to the records counter to ask for the latest transmittal sheet.", "entities": []}
 {"text": "Today, Monitored server resource utilization and optimized Database Connections queries.", "entities": [{"start": 59, "end": 79, "label": "IT_TERM"}]}
 {"text": "Designed the database schema and executed migrations using Google Cloud Platform.", "entities": [{"start": 59, "end": 80, "label": "IT_TERM"}]}
 {"text": "During my shift, Encoded information accurately into the office registry during Document Arrangement.", "entities": [{"start": 80, "end": 100, "label": "CLERICAL_TERM"}]}
 {"text": "On Thursday, Listened to the company chief executive deliver the opening keynote address.", "entities": []}
 {"text": "During my shift, Assisted staff members and visitors with inquiries regarding Materials Preparation.", "entities": [{"start": 78, "end": 99, "label": "CLERICAL_TERM"}]}
-{"text": "Afterwards, Asked a senior colleague for guidance on navigating the enterprise code repository.", "entities": []}
-{"text": "On Thursday, Reviewed general company guidelines regarding data privacy and acceptable use.", "entities": []}
 {"text": "During my shift, Prepared the required paperwork and verified attachments for Patient Records.", "entities": [{"start": 78, "end": 93, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Managed physical inventory counts and logged discrepancies during Information Checking.", "entities": [{"start": 73, "end": 93, "label": "CLERICAL_TERM"}]}
 {"text": "Distributed printed handouts and supported the team during Record Checking.", "entities": [{"start": 59, "end": 74, "label": "CLERICAL_TERM"}]}
-{"text": "Afterwards, The support personnel resolved our ticket regarding access permissions promptly.", "entities": []}
 {"text": "Today, Cross-checked incoming department requests as part of Document Processing.", "entities": [{"start": 61, "end": 80, "label": "CLERICAL_TERM"}]}
 {"text": "Assisted administrative staff with welcoming guest speakers to the auditorium.", "entities": []}
 {"text": "Today, Assisted the administrative supervisor with daily Data Recording.", "entities": [{"start": 57, "end": 71, "label": "CLERICAL_TERM"}]}
@@ -825,7 +775,6 @@
 {"text": "For my primary task, Monitored server resource utilization and optimized Data Management queries.", "entities": [{"start": 73, "end": 88, "label": "IT_TERM"}]}
 {"text": "I developed a web application feature using Digital File Management.", "entities": [{"start": 44, "end": 67, "label": "IT_TERM"}]}
 {"text": "This week, Monitored server resource utilization and optimized Figma queries.", "entities": [{"start": 63, "end": 68, "label": "IT_TERM"}]}
-{"text": "The security personnel checked our identification badges at the front gate.", "entities": []}
 {"text": "This week, I developed a web application feature using Brochure Design.", "entities": [{"start": 55, "end": 70, "label": "IT_TERM"}]}
 {"text": "For my primary task, Monitored server resource utilization and optimized Brochure Design queries.", "entities": [{"start": 73, "end": 88, "label": "IT_TERM"}]}
 {"text": "Printed, stamped, and organized physical documents for File Filing.", "entities": [{"start": 55, "end": 66, "label": "CLERICAL_TERM"}]}
@@ -833,7 +782,6 @@
 {"text": "On Thursday, The department clerk provided guidance on properly archiving retired paper records.", "entities": []}
 {"text": "On Thursday, The university registrar posted official announcements regarding semester enrollment dates.", "entities": []}
 {"text": "As assigned, Managed physical inventory counts and logged discrepancies during Activity Documentation.", "entities": [{"start": 79, "end": 101, "label": "CLERICAL_TERM"}]}
-{"text": "In the morning, Researched modern architectural best practices involving Capstone Project.", "entities": [{"start": 73, "end": 89, "label": "IT_TERM"}]}
 {"text": "As assigned, Prepared the required paperwork and verified attachments for Folder Organization.", "entities": [{"start": 74, "end": 93, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Troubleshot network connectivity and configuration errors in Computer Setup.", "entities": [{"start": 68, "end": 82, "label": "IT_TERM"}]}
 {"text": "In the morning, Collaborated with the infrastructure team to configure System Encryption.", "entities": [{"start": 71, "end": 88, "label": "IT_TERM"}]}
@@ -875,11 +823,9 @@
 {"text": "This week, Conducted automated unit testing and performance benchmarks on Agile.", "entities": [{"start": 74, "end": 79, "label": "IT_TERM"}]}
 {"text": "For my primary task, Installed necessary security patches and updated the Flutter dependency.", "entities": [{"start": 74, "end": 81, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Assisted staff members and visitors with inquiries regarding Office Documentation.", "entities": [{"start": 79, "end": 99, "label": "CLERICAL_TERM"}]}
-{"text": "During my shift, Prepared the required paperwork and verified attachments for Scholarship Data.", "entities": [{"start": 78, "end": 94, "label": "CLERICAL_TERM"}]}
 {"text": "Verified signatures and filed department clearance forms during Data Verification.", "entities": [{"start": 64, "end": 81, "label": "CLERICAL_TERM"}]}
 {"text": "As assigned, Prepared the required paperwork and verified attachments for Form Distribution.", "entities": [{"start": 74, "end": 91, "label": "CLERICAL_TERM"}]}
 {"text": "Organized file cabinets, categorized binders, and conducted Scholarship Records.", "entities": [{"start": 60, "end": 79, "label": "CLERICAL_TERM"}]}
-{"text": "Afterwards, The support personnel resolved our ticket regarding access permissions promptly.", "entities": []}
 {"text": "In the morning, Resolved an unexpected crash in production by debugging our Printer Installation service.", "entities": [{"start": 76, "end": 96, "label": "IT_TERM"}]}
 {"text": "Early in the day, Arranged chairs and tables neatly in the conference room after the department meeting.", "entities": []}
 {"text": "Walked to the south campus to retrieve equipment manuals from the archive room.", "entities": []}
@@ -887,9 +833,7 @@
 {"text": "Early in the day, Listened to the company chief executive deliver the opening keynote address.", "entities": []}
 {"text": "Submitted the finalized documentation package required for Flyer Distribution.", "entities": [{"start": 59, "end": 77, "label": "CLERICAL_TERM"}]}
 {"text": "Afterwards, The enterprise architecture team published updated API design standards.", "entities": []}
-{"text": "Early in the day, Helped a colleague locate the designated conference room on the third floor.", "entities": []}
 {"text": "Today, Automated our daily build and deployment pipeline using MySQL.", "entities": [{"start": 63, "end": 68, "label": "IT_TERM"}]}
-{"text": "Afterwards, Helped set up the projector and sound system in conference room B.", "entities": []}
 {"text": "Afterwards, Cleaned the whiteboard in the department meeting room after the presentation.", "entities": []}
 {"text": "The legal affairs office requested assistance with compiling printed contract copies.", "entities": []}
 {"text": "First, Locked the computer laboratory doors and turned off the lights at the end of the shift.", "entities": []}
@@ -905,7 +849,6 @@
 {"text": "Configured the development environment and set up Poster Design.", "entities": [{"start": 50, "end": 63, "label": "IT_TERM"}]}
 {"text": "This week, Designed the database schema and executed migrations using DevOps.", "entities": [{"start": 70, "end": 76, "label": "IT_TERM"}]}
 {"text": "I developed a web application feature using System Deployment.", "entities": [{"start": 44, "end": 61, "label": "IT_TERM"}]}
-{"text": "Assisted staff members and visitors with inquiries regarding Information Reviewing.", "entities": [{"start": 61, "end": 82, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Printed, stamped, and organized physical documents for Document Arrangement.", "entities": [{"start": 72, "end": 92, "label": "CLERICAL_TERM"}]}
 {"text": "Today, Verified signatures and filed department clearance forms during Client Assistance.", "entities": [{"start": 71, "end": 88, "label": "CLERICAL_TERM"}]}
 {"text": "Created an interactive user interface component with File Conversion.", "entities": [{"start": 53, "end": 68, "label": "IT_TERM"}]}
@@ -917,7 +860,6 @@
 {"text": "As assigned, Completed the assigned weekly tasks regarding Workspace Organization on schedule.", "entities": [{"start": 59, "end": 81, "label": "CLERICAL_TERM"}]}
 {"text": "This week, Designed the database schema and executed migrations using System Debugging.", "entities": [{"start": 70, "end": 86, "label": "IT_TERM"}]}
 {"text": "Today, Drafted official correspondence and summarized notes for Inventory Records.", "entities": [{"start": 64, "end": 81, "label": "CLERICAL_TERM"}]}
-{"text": "Signed the non-disclosure agreement required by the company legal department.", "entities": []}
 {"text": "The senior engineer commended the student interns for their punctuality and focus.", "entities": []}
 {"text": "The university IT department announced upcoming scheduled downtime for system upgrades.", "entities": []}
 {"text": "Helped a colleague locate the designated conference room on the third floor.", "entities": []}
@@ -928,7 +870,6 @@
 {"text": "This week, Configured the development environment and set up Session Management.", "entities": [{"start": 61, "end": 79, "label": "IT_TERM"}]}
 {"text": "Wrote clean, maintainable microservice code in Capstone Project under supervision.", "entities": [{"start": 47, "end": 63, "label": "IT_TERM"}]}
 {"text": "This week, Monitored server resource utilization and optimized Hardware Maintenance queries.", "entities": [{"start": 63, "end": 83, "label": "IT_TERM"}]}
-{"text": "Afterwards, Assisted administrative staff with welcoming guest speakers to the auditorium.", "entities": []}
 {"text": "For my primary task, Worked on backend API services and integrated Django for persistent storage.", "entities": [{"start": 67, "end": 73, "label": "IT_TERM"}]}
 {"text": "Today, Implemented background asynchronous task workers using Printer Troubleshooting.", "entities": [{"start": 62, "end": 85, "label": "IT_TERM"}]}
 {"text": "Afterwards, Adjusted the monitor height and ergonomic chair settings at my assigned workstation.", "entities": []}
@@ -953,7 +894,6 @@
 {"text": "Installed necessary security patches and updated the Spring Boot dependency.", "entities": [{"start": 53, "end": 64, "label": "IT_TERM"}]}
 {"text": "For my primary task, Created an interactive user interface component with Data Structures.", "entities": [{"start": 74, "end": 89, "label": "IT_TERM"}]}
 {"text": "Today, Collaborated with the infrastructure team to configure Email Verification.", "entities": [{"start": 62, "end": 80, "label": "IT_TERM"}]}
-{"text": "Afterwards, Attended an online webinar hosted by the university computer science society.", "entities": []}
 {"text": "Distributed printed handouts and supported the team during Microsoft Excel.", "entities": [{"start": 59, "end": 74, "label": "CLERICAL_TERM"}]}
 {"text": "Organized file cabinets, categorized binders, and conducted Document Safekeeping.", "entities": [{"start": 60, "end": 80, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Refactored legacy code modules and migrated the system to API Endpoints.", "entities": [{"start": 74, "end": 87, "label": "IT_TERM"}]}
@@ -975,12 +915,10 @@
 {"text": "On Thursday, The senior engineer commended the student interns for their punctuality and focus.", "entities": []}
 {"text": "Today, Drafted official correspondence and summarized notes for Collection Reports.", "entities": [{"start": 64, "end": 82, "label": "CLERICAL_TERM"}]}
 {"text": "Installed necessary security patches and updated the Database Seeder dependency.", "entities": [{"start": 53, "end": 68, "label": "IT_TERM"}]}
-{"text": "Afterwards, The admissions department launched an online portal for prospective college students.", "entities": []}
 {"text": "During my shift, Encoded information accurately into the office registry during Meeting Materials.", "entities": [{"start": 80, "end": 97, "label": "CLERICAL_TERM"}]}
 {"text": "Our internship mentor explained the development lifecycle used by the senior team.", "entities": []}
 {"text": "For my primary task, Conducted automated unit testing and performance benchmarks on Ubuntu.", "entities": [{"start": 84, "end": 90, "label": "IT_TERM"}]}
 {"text": "During my shift, Printed, stamped, and organized physical documents for Meeting Materials.", "entities": [{"start": 72, "end": 89, "label": "CLERICAL_TERM"}]}
-{"text": "Our internship mentor explained the development lifecycle used by the senior team.", "entities": []}
 {"text": "Early in the day, Participated in a company-wide survey regarding workplace wellness and tools.", "entities": []}
 {"text": "This week, Assisted our senior engineer in deploying our application using Form Validation.", "entities": [{"start": 75, "end": 90, "label": "IT_TERM"}]}
 {"text": "Afterwards, Reviewed the company code of conduct and workplace safety guidelines.", "entities": []}
@@ -990,7 +928,6 @@
 {"text": "In the afternoon, Completed the assigned weekly tasks regarding BNS Meeting on schedule.", "entities": [{"start": 64, "end": 75, "label": "CLERICAL_TERM"}]}
 {"text": "Today, I developed a web application feature using Geospatial Tracking.", "entities": [{"start": 51, "end": 70, "label": "IT_TERM"}]}
 {"text": "Today, Monitored server resource utilization and optimized Microsoft Azure queries.", "entities": [{"start": 59, "end": 74, "label": "IT_TERM"}]}
-{"text": "On Thursday, Discussed weekly learning goals with my internship advisor during our one-on-one call.", "entities": []}
 {"text": "Installed necessary security patches and updated the Flask dependency.", "entities": [{"start": 53, "end": 58, "label": "IT_TERM"}]}
 {"text": "During my shift, Printed, stamped, and organized physical documents for Meeting Transcription.", "entities": [{"start": 72, "end": 93, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Handled confidential student records during Prescription Records.", "entities": [{"start": 61, "end": 81, "label": "CLERICAL_TERM"}]}
@@ -1003,7 +940,6 @@
 {"text": "Cross-checked incoming department requests as part of Community Coordination.", "entities": [{"start": 54, "end": 76, "label": "CLERICAL_TERM"}]}
 {"text": "Afterwards, Coordinated with the property management office to request additional desk supplies.", "entities": []}
 {"text": "For my primary task, Automated our daily build and deployment pipeline using Server Configuration.", "entities": [{"start": 77, "end": 97, "label": "IT_TERM"}]}
-{"text": "On Thursday, The university library opened a new collaborative space for student researchers.", "entities": []}
 {"text": "In the morning, Designed the database schema and executed migrations using Facebook Posting.", "entities": [{"start": 75, "end": 91, "label": "IT_TERM"}]}
 {"text": "Today, Reviewed transaction logs and audited files as part of Data Recording.", "entities": [{"start": 62, "end": 76, "label": "CLERICAL_TERM"}]}
 {"text": "In the afternoon, Facilitated document routing and tracked outgoing mail for Training Activities.", "entities": [{"start": 77, "end": 96, "label": "CLERICAL_TERM"}]}
@@ -1025,11 +961,8 @@
 {"text": "Wrote clean, maintainable microservice code in REST API under supervision.", "entities": [{"start": 47, "end": 55, "label": "IT_TERM"}]}
 {"text": "During my shift, Assisted the administrative supervisor with daily Document Review.", "entities": [{"start": 67, "end": 82, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Managed physical inventory counts and logged discrepancies during Savings Accounts.", "entities": [{"start": 83, "end": 99, "label": "CLERICAL_TERM"}]}
-{"text": "As assigned, Completed the assigned weekly tasks regarding Workspace Organization on schedule.", "entities": [{"start": 59, "end": 81, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Organized file cabinets, categorized binders, and conducted Financial Transactions.", "entities": [{"start": 77, "end": 99, "label": "CLERICAL_TERM"}]}
 {"text": "Early in the day, Arrived at the office on time and logged in to the biometric attendance machine.", "entities": []}
-{"text": "Organized file cabinets, categorized binders, and conducted Data Organization.", "entities": [{"start": 60, "end": 77, "label": "CLERICAL_TERM"}]}
-{"text": "First, Delivered printed curriculum documents across different university buildings.", "entities": []}
 {"text": "For my primary task, Conducted automated unit testing and performance benchmarks on Gemini API.", "entities": [{"start": 84, "end": 94, "label": "IT_TERM"}]}
 {"text": "For my primary task, Configured the development environment and set up Kubernetes.", "entities": [{"start": 71, "end": 81, "label": "IT_TERM"}]}
 {"text": "Today, Submitted the finalized documentation package required for Training Activities.", "entities": [{"start": 66, "end": 85, "label": "CLERICAL_TERM"}]}
@@ -1046,25 +979,21 @@
 {"text": "Today, Managed physical inventory counts and logged discrepancies during Document Preparation.", "entities": [{"start": 73, "end": 93, "label": "CLERICAL_TERM"}]}
 {"text": "Assisted staff members and visitors with inquiries regarding Document Filing.", "entities": [{"start": 61, "end": 76, "label": "CLERICAL_TERM"}]}
 {"text": "This week, Designed the database schema and executed migrations using Hardware Assembly.", "entities": [{"start": 70, "end": 87, "label": "IT_TERM"}]}
-{"text": "Our team mentor shared valuable insights on effective communication during code reviews.", "entities": []}
 {"text": "This week, Automated our daily build and deployment pipeline using User Management.", "entities": [{"start": 67, "end": 82, "label": "IT_TERM"}]}
 {"text": "Today, Installed necessary security patches and updated the Role Assignment dependency.", "entities": [{"start": 60, "end": 75, "label": "IT_TERM"}]}
 {"text": "In the morning, Automated our daily build and deployment pipeline using Data Structures.", "entities": [{"start": 72, "end": 87, "label": "IT_TERM"}]}
 {"text": "During my shift, Maintained office order and coordinated department logistics through Resource Management.", "entities": [{"start": 86, "end": 105, "label": "CLERICAL_TERM"}]}
 {"text": "For my primary task, Researched modern architectural best practices involving Mailer.", "entities": [{"start": 78, "end": 84, "label": "IT_TERM"}]}
 {"text": "During my shift, Verified signatures and filed department clearance forms during Community Outreach.", "entities": [{"start": 81, "end": 99, "label": "CLERICAL_TERM"}]}
-{"text": "Early in the day, Listened to the company chief executive deliver the opening keynote address.", "entities": []}
 {"text": "Attended the university annual research symposium held in the main auditorium.", "entities": []}
 {"text": "Submitted the finalized documentation package required for Inventory Records.", "entities": [{"start": 59, "end": 76, "label": "CLERICAL_TERM"}]}
 {"text": "In the afternoon, Cross-checked incoming department requests as part of Certificate Distribution.", "entities": [{"start": 72, "end": 96, "label": "CLERICAL_TERM"}]}
 {"text": "Attended the company anniversary celebration held at the main courtyard.", "entities": []}
-{"text": "Early in the day, The training hall was prepared for the upcoming professional development seminar.", "entities": []}
 {"text": "During my shift, Managed physical inventory counts and logged discrepancies during Account Balances.", "entities": [{"start": 83, "end": 99, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Monitored server resource utilization and optimized Logbook Template queries.", "entities": [{"start": 68, "end": 84, "label": "IT_TERM"}]}
 {"text": "In the morning, Assisted our senior engineer in deploying our application using Network Troubleshooting.", "entities": [{"start": 80, "end": 103, "label": "IT_TERM"}]}
 {"text": "As assigned, Reviewed transaction logs and audited files as part of Patient Assistance.", "entities": [{"start": 68, "end": 86, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Created an interactive user interface component with System Design.", "entities": [{"start": 69, "end": 82, "label": "IT_TERM"}]}
-{"text": "Inspected emergency lighting fixtures in the campus science and technology wing.", "entities": []}
 {"text": "Researched modern architectural best practices involving Computer Assembly.", "entities": [{"start": 57, "end": 74, "label": "IT_TERM"}]}
 {"text": "First, First day was mostly about getting settled in at the MIS office.", "entities": []}
 {"text": "Today, Organized file cabinets, categorized binders, and conducted Document Checking.", "entities": [{"start": 67, "end": 84, "label": "CLERICAL_TERM"}]}
@@ -1086,7 +1015,6 @@
 {"text": "Designed the database schema and executed migrations using iClinicSys.", "entities": [{"start": 59, "end": 69, "label": "IT_TERM"}]}
 {"text": "In the morning, Configured the development environment and set up Laravel.", "entities": [{"start": 66, "end": 73, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Submitted the finalized documentation package required for Event Coordination.", "entities": [{"start": 77, "end": 95, "label": "CLERICAL_TERM"}]}
-{"text": "First, Attended the university annual research symposium held in the main auditorium.", "entities": []}
 {"text": "For my primary task, Collaborated with the infrastructure team to configure Schema Backup.", "entities": [{"start": 76, "end": 89, "label": "IT_TERM"}]}
 {"text": "Conducted automated unit testing and performance benchmarks on Spatie.", "entities": [{"start": 63, "end": 69, "label": "IT_TERM"}]}
 {"text": "In the afternoon, Assisted the administrative supervisor with daily Records Management.", "entities": [{"start": 68, "end": 86, "label": "CLERICAL_TERM"}]}
@@ -1097,7 +1025,6 @@
 {"text": "As assigned, Assisted staff members and visitors with inquiries regarding Record Keeping.", "entities": [{"start": 74, "end": 88, "label": "CLERICAL_TERM"}]}
 {"text": "On Thursday, Signed the visitor logbook and collected the guest identification badges.", "entities": []}
 {"text": "Assisted our senior engineer in deploying our application using AI Chatbot.", "entities": [{"start": 64, "end": 74, "label": "IT_TERM"}]}
-{"text": "Afterwards, Cleaned the whiteboard in the department meeting room after the presentation.", "entities": []}
 {"text": "On Thursday, Helped prospective students find their assigned testing rooms across the university.", "entities": []}
 {"text": "First, Our department supervisor approved the revised project timeline and milestones.", "entities": []}
 {"text": "Designed the database schema and executed migrations using UI/UX Design.", "entities": [{"start": 59, "end": 71, "label": "IT_TERM"}]}
@@ -1106,7 +1033,6 @@
 {"text": "First, The registrar office staff asked the interns to verify applicant documents.", "entities": []}
 {"text": "Early in the day, Walked across the campus to deliver official letters to the administrative office.", "entities": []}
 {"text": "Designed the database schema and executed migrations using Database Management.", "entities": [{"start": 59, "end": 78, "label": "IT_TERM"}]}
-{"text": "Participated in a company webinar discussing future career pathways in technology.", "entities": []}
 {"text": "During my shift, Completed the assigned weekly tasks regarding Material Distribution on schedule.", "entities": [{"start": 63, "end": 84, "label": "CLERICAL_TERM"}]}
 {"text": "In the morning, Resolved an unexpected crash in production by debugging our Interactive Map service.", "entities": [{"start": 76, "end": 91, "label": "IT_TERM"}]}
 {"text": "Early in the day, Had a quick alignment call with the project mentor to review weekly objectives.", "entities": []}
@@ -1116,7 +1042,6 @@
 {"text": "Resolved an unexpected crash in production by debugging our IT Fest service.", "entities": [{"start": 60, "end": 67, "label": "IT_TERM"}]}
 {"text": "Afterwards, Delivered signed clearance packets to the personnel office on the second floor.", "entities": []}
 {"text": "As assigned, Drafted official correspondence and summarized notes for Information Reviewing.", "entities": [{"start": 70, "end": 91, "label": "CLERICAL_TERM"}]}
-{"text": "Met with fellow student interns at the campus cafeteria to discuss our tasks.", "entities": []}
 {"text": "In the morning, Worked on backend API services and integrated REST API for persistent storage.", "entities": [{"start": 62, "end": 70, "label": "IT_TERM"}]}
 {"text": "Troubleshot network connectivity and configuration errors in Nutrimap System.", "entities": [{"start": 61, "end": 76, "label": "IT_TERM"}]}
 {"text": "Today, Monitored server resource utilization and optimized Java queries.", "entities": [{"start": 59, "end": 63, "label": "IT_TERM"}]}
@@ -1128,8 +1053,6 @@
 {"text": "Compiled weekly department statistics and created charts for Record Keeping.", "entities": [{"start": 61, "end": 75, "label": "CLERICAL_TERM"}]}
 {"text": "During my shift, Handled confidential student records during Incoming Documents.", "entities": [{"start": 61, "end": 79, "label": "CLERICAL_TERM"}]}
 {"text": "The university library opened a new collaborative space for student researchers.", "entities": []}
-{"text": "On Thursday, I attended a technical seminar at the university about modern software architectures.", "entities": []}
-{"text": "Early in the day, Met with the marketing department lead to understand the website redesign requirements.", "entities": []}
 {"text": "First, Reflected on the technical and interpersonal skills gained throughout the internship.", "entities": []}
 {"text": "As assigned, Distributed printed handouts and supported the team during Task Alignment.", "entities": [{"start": 72, "end": 86, "label": "CLERICAL_TERM"}]}
 {"text": "First, Shared tips on time management and task logging with the junior student interns.", "entities": []}
@@ -1142,9 +1065,7 @@
 {"text": "Today, Prepared the required paperwork and verified attachments for Awarding Ceremony.", "entities": [{"start": 68, "end": 85, "label": "CLERICAL_TERM"}]}
 {"text": "Created comprehensive documentation and guidelines for File Management usage.", "entities": [{"start": 55, "end": 70, "label": "IT_TERM"}]}
 {"text": "Today, Completed the assigned weekly tasks regarding Public Notices on schedule.", "entities": [{"start": 53, "end": 67, "label": "CLERICAL_TERM"}]}
-{"text": "Helped the finance office staff arrange paper invoices in chronological order.", "entities": []}
 {"text": "On Thursday, Submitted my weekly internship report to the university coordinator.", "entities": []}
 {"text": "Today, Attended a technical workshop on best practices for Jira.", "entities": [{"start": 59, "end": 63, "label": "IT_TERM"}]}
 {"text": "As assigned, Printed, stamped, and organized physical documents for ID Distribution.", "entities": [{"start": 68, "end": 83, "label": "CLERICAL_TERM"}]}
-{"text": "On Thursday, Helped set up the projector and sound system in conference room B.", "entities": []}
 {"text": "Wrote clean, maintainable microservice code in Windows Server under supervision.", "entities": [{"start": 47, "end": 61, "label": "IT_TERM"}]}

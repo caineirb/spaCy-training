@@ -489,6 +489,69 @@ def generate_synthetic_ojt_dataset(
     return records, negative_sentences
 
 
+def deduplicate_records(
+    records: List[Dict[str, Any]]
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """Deduplicates annotation records on exact sentence text match before splitting.
+
+    Verifies whether duplicate sentences carry identical or conflicting entity annotations.
+    Preserves original record ordering for the first occurrence.
+
+    Returns:
+        (deduplicated_records, audit_stats)
+    """
+    seen_texts: Dict[str, Tuple[int, List[Dict[str, Any]]]] = {}
+    deduped: List[Dict[str, Any]] = []
+    inconsistent: List[Dict[str, Any]] = []
+    duplicates_removed = 0
+
+    for idx, r in enumerate(records):
+        text = r.get("text", "").strip()
+        if not text:
+            continue
+
+        ents = sorted(
+            r.get("entities", []),
+            key=lambda e: (e.get("start", -1), e.get("end", -1), str(e.get("label", "")))
+        )
+
+        if text in seen_texts:
+            duplicates_removed += 1
+            prev_idx, prev_ents = seen_texts[text]
+            if ents != prev_ents:
+                inconsistent.append({
+                    "text": text,
+                    "first_seen_index": prev_idx,
+                    "first_seen_entities": prev_ents,
+                    "duplicate_index": idx,
+                    "duplicate_entities": ents,
+                })
+        else:
+            seen_texts[text] = (idx, ents)
+            deduped.append(r)
+
+    if inconsistent:
+        logger.warning(
+            f"Found {len(inconsistent)} duplicate sentence texts with conflicting annotations!"
+        )
+        for inc in inconsistent[:5]:
+            logger.warning(f"  Conflict on: '{inc['text']}'")
+    else:
+        logger.info(
+            f"Deduplication complete: {len(records)} -> {len(deduped)} records "
+            f"({duplicates_removed} duplicates removed, 0 annotation conflicts)."
+        )
+
+    stats = {
+        "original_count": len(records),
+        "deduped_count": len(deduped),
+        "duplicates_removed": duplicates_removed,
+        "inconsistent_count": len(inconsistent),
+        "inconsistent_details": inconsistent,
+    }
+    return deduped, stats
+
+
 def split_and_convert_dataset(
     records: List[Dict[str, Any]],
     output_dir: str = "data/training",
@@ -496,9 +559,11 @@ def split_and_convert_dataset(
     dev_ratio: float = 0.15,
     seed: int = 42
 ) -> Dict[str, str]:
-    """Splits records into train/dev/test and exports spaCy binary files."""
+    """Deduplicates records, splits into train/dev/test, and exports spaCy binary files."""
+    deduped_records, stats = deduplicate_records(records)
+
     random.seed(seed)
-    shuffled = list(records)
+    shuffled = list(deduped_records)
     random.shuffle(shuffled)
 
     n_total = len(shuffled)
@@ -516,13 +581,47 @@ def split_and_convert_dataset(
     }
 
     nlp = spacy.blank("en")
-    logger.info(f"Dataset split: Train={len(train_recs)}, Dev={len(dev_recs)}, Test={len(test_recs)}")
+    logger.info(
+        f"Dataset split ({n_total} unique records): "
+        f"Train={len(train_recs)}, Dev={len(dev_recs)}, Test={len(test_recs)}"
+    )
 
     convert_records_to_docbin(train_recs, paths["train"], nlp=nlp)
     convert_records_to_docbin(dev_recs, paths["dev"], nlp=nlp)
     convert_records_to_docbin(test_recs, paths["test"], nlp=nlp)
 
     return paths
+
+
+def deduplicate_and_resplit_existing(
+    annotations_jsonl_path: str = "data/reviewed/annotations.jsonl",
+    output_review_csv: str = "data/reviewed/annotations_review.csv",
+    output_training_dir: str = "data/training",
+    train_ratio: float = 0.70,
+    dev_ratio: float = 0.15,
+    seed: int = 42,
+) -> Dict[str, Any]:
+    """Loads existing annotations.jsonl, deduplicates it, updates JSONL & CSV, and regenerates train/dev/test DocBins."""
+    records = load_jsonl(annotations_jsonl_path)
+    deduped_records, stats = deduplicate_records(records)
+
+    # Save cleaned JSONL and review CSV
+    save_jsonl(deduped_records, annotations_jsonl_path)
+    export_for_review_csv(deduped_records, output_review_csv)
+
+    # Split and convert into binary DocBins
+    spacy_paths = split_and_convert_dataset(
+        deduped_records,
+        output_dir=output_training_dir,
+        train_ratio=train_ratio,
+        dev_ratio=dev_ratio,
+        seed=seed,
+    )
+
+    return {
+        "stats": stats,
+        "spacy_paths": spacy_paths,
+    }
 
 
 def build_full_dataset_pipeline(
@@ -542,6 +641,9 @@ def build_full_dataset_pipeline(
         target_negatives=negatives
     )
 
+    # Deduplicate before saving raw, JSONL, review CSV, and DocBin splits
+    records, stats = deduplicate_records(records)
+
     # Save raw sentences
     os.makedirs(os.path.dirname(output_raw_txt), exist_ok=True)
     with open(output_raw_txt, "w", encoding="utf-8") as f:
@@ -557,6 +659,7 @@ def build_full_dataset_pipeline(
 
     return {
         "total_records": len(records),
+        "dedup_stats": stats,
         "jsonl_path": output_jsonl,
         "review_csv_path": output_review_csv,
         "spacy_paths": spacy_paths,
