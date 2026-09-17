@@ -27,7 +27,7 @@ def _bootstrap_cuda_environment() -> None:
                 nvidia_lib_dirs.add(lib_dir)
                 for so_path in sorted(glob.glob(os.path.join(lib_dir, "*.so*"))):
                     try:
-                        ctypes.CDLL(so_path)
+                        ctypes.CDLL(so_path, mode=ctypes.RTLD_GLOBAL)
                     except Exception:
                         pass
 

@@ -21,14 +21,345 @@
     "benchmark_sample_size": 85,
     "total_unseen_entities": 65,
     "total_unseen_benchmark_entities": 65,
-    "correctly_identified_raw": "62/65",
-    "dictionary_recall": "0/65 (0.0%)",
-    "dictionary_recall_pct": 0.0,
+    "modes": {
+      "transformer_only": {
+        "mode": "transformer_only",
+        "true_positives": 62,
+        "false_positives": 3,
+        "false_negatives": 3,
+        "total_gold_entities": 65,
+        "precision_pct": 95.38,
+        "recall_pct": 95.38,
+        "f1_pct": 95.38,
+        "correctly_identified_raw": "62/65",
+        "confidence_calibration": {
+          "mean_confidence_correct_entities": 0.9963,
+          "mean_confidence_spurious_entities": 0.8484,
+          "confidence_discrimination_delta": 0.1479
+        },
+        "sample_preview": [
+          {
+            "text": "I developed a scalable microservice using FastAPI and connected it to our database.",
+            "gold": [
+              "FastAPI"
+            ],
+            "pred": [
+              "FastAPI"
+            ],
+            "conf": [
+              0.9971
+            ]
+          },
+          {
+            "text": "Migrated our legacy serverless functions to Bun for faster runtime execution.",
+            "gold": [
+              "Bun"
+            ],
+            "pred": [
+              "Bun"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Built an interactive reactive dashboard component using Svelte.",
+            "gold": [
+              "Svelte"
+            ],
+            "pred": [
+              "Svelte"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Configured modern responsive web styling using Tailwind CSS.",
+            "gold": [
+              "Tailwind CSS"
+            ],
+            "pred": [
+              "Tailwind CSS"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Set up authentication and cloud backend storage using Supabase.",
+            "gold": [
+              "Supabase"
+            ],
+            "pred": [
+              "Supabase"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Defined database schema models and executed migrations with Prisma.",
+            "gold": [
+              "Prisma"
+            ],
+            "pred": [
+              "Prisma"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Implemented caching layers and message queuing services using Redis.",
+            "gold": [
+              "Redis"
+            ],
+            "pred": [
+              "Redis"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Constructed our enterprise backend architecture using NestJS.",
+            "gold": [
+              "NestJS"
+            ],
+            "pred": [
+              "NestJS"
+            ],
+            "conf": [
+              0.9999
+            ]
+          }
+        ]
+      },
+      "entity_ruler_only": {
+        "mode": "entity_ruler_only",
+        "true_positives": 1,
+        "false_positives": 4,
+        "false_negatives": 64,
+        "total_gold_entities": 65,
+        "precision_pct": 20.0,
+        "recall_pct": 1.54,
+        "f1_pct": 2.86,
+        "correctly_identified_raw": "1/65",
+        "confidence_calibration": {
+          "mean_confidence_correct_entities": 1.0,
+          "mean_confidence_spurious_entities": 1.0,
+          "confidence_discrimination_delta": 0.0
+        },
+        "sample_preview": [
+          {
+            "text": "I developed a scalable microservice using FastAPI and connected it to our database.",
+            "gold": [
+              "FastAPI"
+            ],
+            "pred": [],
+            "conf": []
+          },
+          {
+            "text": "Migrated our legacy serverless functions to Bun for faster runtime execution.",
+            "gold": [
+              "Bun"
+            ],
+            "pred": [],
+            "conf": []
+          },
+          {
+            "text": "Built an interactive reactive dashboard component using Svelte.",
+            "gold": [
+              "Svelte"
+            ],
+            "pred": [],
+            "conf": []
+          },
+          {
+            "text": "Configured modern responsive web styling using Tailwind CSS.",
+            "gold": [
+              "Tailwind CSS"
+            ],
+            "pred": [
+              "CSS"
+            ],
+            "conf": [
+              1.0
+            ]
+          },
+          {
+            "text": "Set up authentication and cloud backend storage using Supabase.",
+            "gold": [
+              "Supabase"
+            ],
+            "pred": [],
+            "conf": []
+          },
+          {
+            "text": "Defined database schema models and executed migrations with Prisma.",
+            "gold": [
+              "Prisma"
+            ],
+            "pred": [
+              "database schema"
+            ],
+            "conf": [
+              1.0
+            ]
+          },
+          {
+            "text": "Implemented caching layers and message queuing services using Redis.",
+            "gold": [
+              "Redis"
+            ],
+            "pred": [],
+            "conf": []
+          },
+          {
+            "text": "Constructed our enterprise backend architecture using NestJS.",
+            "gold": [
+              "NestJS"
+            ],
+            "pred": [],
+            "conf": []
+          }
+        ]
+      },
+      "hybrid": {
+        "mode": "hybrid",
+        "true_positives": 62,
+        "false_positives": 6,
+        "false_negatives": 3,
+        "total_gold_entities": 65,
+        "precision_pct": 91.18,
+        "recall_pct": 95.38,
+        "f1_pct": 93.23,
+        "correctly_identified_raw": "62/65",
+        "confidence_calibration": {
+          "mean_confidence_correct_entities": 0.9963,
+          "mean_confidence_spurious_entities": 0.9253,
+          "confidence_discrimination_delta": 0.071
+        },
+        "sample_preview": [
+          {
+            "text": "I developed a scalable microservice using FastAPI and connected it to our database.",
+            "gold": [
+              "FastAPI"
+            ],
+            "pred": [
+              "FastAPI"
+            ],
+            "conf": [
+              0.9971
+            ]
+          },
+          {
+            "text": "Migrated our legacy serverless functions to Bun for faster runtime execution.",
+            "gold": [
+              "Bun"
+            ],
+            "pred": [
+              "Bun"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Built an interactive reactive dashboard component using Svelte.",
+            "gold": [
+              "Svelte"
+            ],
+            "pred": [
+              "Svelte"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Configured modern responsive web styling using Tailwind CSS.",
+            "gold": [
+              "Tailwind CSS"
+            ],
+            "pred": [
+              "Tailwind CSS"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Set up authentication and cloud backend storage using Supabase.",
+            "gold": [
+              "Supabase"
+            ],
+            "pred": [
+              "Supabase"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Defined database schema models and executed migrations with Prisma.",
+            "gold": [
+              "Prisma"
+            ],
+            "pred": [
+              "database schema",
+              "Prisma"
+            ],
+            "conf": [
+              1.0,
+              0.9999
+            ]
+          },
+          {
+            "text": "Implemented caching layers and message queuing services using Redis.",
+            "gold": [
+              "Redis"
+            ],
+            "pred": [
+              "Redis"
+            ],
+            "conf": [
+              0.9999
+            ]
+          },
+          {
+            "text": "Constructed our enterprise backend architecture using NestJS.",
+            "gold": [
+              "NestJS"
+            ],
+            "pred": [
+              "NestJS"
+            ],
+            "conf": [
+              0.9999
+            ]
+          }
+        ]
+      }
+    },
+    "transformer_only_precision_pct": 95.38,
+    "transformer_only_recall_pct": 95.38,
+    "transformer_only_f1_pct": 95.38,
+    "transformer_only_identified_raw": "62/65",
+    "entity_ruler_only_precision_pct": 20.0,
+    "entity_ruler_only_recall_pct": 1.54,
+    "entity_ruler_only_f1_pct": 2.86,
+    "entity_ruler_only_identified_raw": "1/65",
     "hybrid_precision_pct": 91.18,
     "hybrid_recall_pct": 95.38,
     "hybrid_f1_pct": 93.23,
-    "generalization_lift": "+95.38%",
-    "generalization_lift_recall": "+95.38%",
+    "hybrid_identified_raw": "62/65",
+    "correctly_identified_raw": "62/65",
+    "dictionary_recall": "1/65 (1.54%)",
+    "dictionary_recall_pct": 1.54,
+    "generalization_lift": "+93.84%",
+    "generalization_lift_recall": "+93.84%",
     "confidence_calibration": {
       "mean_confidence_correct_entities": 0.9963,
       "mean_confidence_spurious_entities": 0.9253,
@@ -134,5 +465,10 @@
         ]
       }
     ]
+  },
+  "real_world_holdout_evaluation": {
+    "status": "SKIPPED",
+    "message": "Holdout dataset 'data/test/holdout.jsonl' is empty or not yet populated. Populate with gold examples to benchmark.",
+    "total_records": 0
   }
 }

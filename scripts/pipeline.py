@@ -149,8 +149,19 @@ class HybridJournalPipeline:
 
         return merged
 
-    def extract_entities_from_doc(self, doc: Doc, text: str) -> List[Dict[str, Any]]:
-        """Extracts, scores, and merges entities from a processed Doc."""
+    def extract_entities_from_doc(
+        self,
+        doc: Doc,
+        text: str,
+        mode: str = "hybrid",
+    ) -> List[Dict[str, Any]]:
+        """Extracts, scores, and merges entities from a processed Doc.
+
+        Args:
+            doc: Processed spaCy Doc.
+            text: Original journal entry text.
+            mode: Pipeline mode ("hybrid", "transformer_only", "entity_ruler_only").
+        """
         raw_entities = []
         for ent in doc.ents:
             term = ent.text.strip()
@@ -160,16 +171,24 @@ class HybridJournalPipeline:
             start = ent.start_char
             end = ent.end_char
 
-            is_dict_match = term.lower() in self._lower_terms_set
-
-            if is_dict_match:
-                source = "dictionary"
-                confidence = 1.00
-                status = "ACCEPTED"
-            else:
+            if mode == "transformer_only":
                 source = "ML"
                 confidence = self._calculate_ml_confidence(doc, ent)
                 status = "ACCEPTED" if confidence >= self.confidence_threshold else "NEEDS_REVIEW"
+            elif mode == "entity_ruler_only":
+                source = "dictionary"
+                confidence = 1.00
+                status = "ACCEPTED"
+            else:  # hybrid
+                is_dict_match = term.lower() in self._lower_terms_set
+                if is_dict_match:
+                    source = "dictionary"
+                    confidence = 1.00
+                    status = "ACCEPTED"
+                else:
+                    source = "ML"
+                    confidence = self._calculate_ml_confidence(doc, ent)
+                    status = "ACCEPTED" if confidence >= self.confidence_threshold else "NEEDS_REVIEW"
 
             entity_record = {
                 "term": term,
@@ -188,29 +207,52 @@ class HybridJournalPipeline:
         # Apply adjacency merge pass to prevent split multi-word spans
         return self._merge_adjacent_entities(text, raw_entities)
 
-    def predict(self, text: str) -> Dict[str, Any]:
+    def predict(self, text: str, mode: str = "hybrid") -> Dict[str, Any]:
         """Processes a single journal entry text and returns structured extraction metadata.
-        
+
+        Args:
+            text: Original journal entry text.
+            mode: Evaluation or execution mode:
+                - "hybrid": Combined EntityRuler + Transformer NER (default).
+                - "transformer_only": Runs Transformer NER directly, bypassing EntityRuler.
+                - "entity_ruler_only": Dictionary matching only, bypassing Transformer NER.
+
         Returns:
             Dict containing:
                 - text: Original journal entry
                 - entities: List of extracted entities with term, category, start, end,
                             confidence, source ("dictionary" | "ML"), and status ("ACCEPTED" | "NEEDS_REVIEW")
                 - has_review_items: True if any entity requires human validation
+                - mode: Pipeline execution mode used
         """
-        doc = self.nlp(text)
-        merged_entities = self.extract_entities_from_doc(doc, text)
+        if mode == "transformer_only":
+            disable_pipes = [p for p in ["entity_ruler"] if p in self.nlp.pipe_names]
+            with self.nlp.select_pipes(disable=disable_pipes):
+                doc = self.nlp(text)
+        elif mode == "entity_ruler_only":
+            disable_pipes = [p for p in ["ner", "transformer"] if p in self.nlp.pipe_names]
+            with self.nlp.select_pipes(disable=disable_pipes):
+                doc = self.nlp(text)
+        elif mode == "hybrid":
+            doc = self.nlp(text)
+        else:
+            raise ValueError(
+                f"Invalid mode '{mode}'. Expected 'hybrid', 'transformer_only', or 'entity_ruler_only'."
+            )
+
+        merged_entities = self.extract_entities_from_doc(doc, text, mode=mode)
         has_review = any(e["status"] == "NEEDS_REVIEW" for e in merged_entities)
 
         return {
             "text": text,
             "entities": merged_entities,
             "has_review_items": has_review,
+            "mode": mode,
         }
 
-    def predict_batch(self, texts: List[str]) -> List[Dict[str, Any]]:
+    def predict_batch(self, texts: List[str], mode: str = "hybrid") -> List[Dict[str, Any]]:
         """Processes a batch of journal entries efficiently."""
-        return [self.predict(t) for t in texts]
+        return [self.predict(t, mode=mode) for t in texts]
 
     def save(self, output_dir: str = "models/hybrid_pipeline") -> None:
         """Saves the complete hybrid pipeline (weights, ruler patterns, config) to disk."""
