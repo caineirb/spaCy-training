@@ -21,18 +21,18 @@
     "benchmark_sample_size": 85,
     "total_unseen_entities": 65,
     "total_unseen_benchmark_entities": 65,
-    "correctly_identified_raw": "63/65",
+    "correctly_identified_raw": "65/65",
     "dictionary_recall": "0/65 (0.0%)",
     "dictionary_recall_pct": 0.0,
-    "hybrid_precision_pct": 85.14,
-    "hybrid_recall_pct": 96.92,
-    "hybrid_f1_pct": 90.65,
-    "generalization_lift": "+96.92%",
-    "generalization_lift_recall": "+96.92%",
+    "hybrid_precision_pct": 86.67,
+    "hybrid_recall_pct": 100.0,
+    "hybrid_f1_pct": 92.86,
+    "generalization_lift": "+100.0%",
+    "generalization_lift_recall": "+100.0%",
     "confidence_calibration": {
-      "mean_confidence_correct_entities": 0.9981,
-      "mean_confidence_spurious_entities": 0.9609,
-      "confidence_discrimination_delta": 0.0372
+      "mean_confidence_correct_entities": 0.9996,
+      "mean_confidence_spurious_entities": 0.9664,
+      "confidence_discrimination_delta": 0.0332
     },
     "sample_preview": [
       {
@@ -44,7 +44,7 @@
           "FastAPI"
         ],
         "conf": [
-          0.9834
+          0.999
         ]
       },
       {
@@ -56,7 +56,7 @@
           "Bun"
         ],
         "conf": [
-          0.9996
+          0.9997
         ]
       },
       {
@@ -68,7 +68,7 @@
           "Svelte"
         ],
         "conf": [
-          0.9994
+          0.9999
         ]
       },
       {
@@ -92,7 +92,7 @@
           "Supabase"
         ],
         "conf": [
-          0.9989
+          0.9998
         ]
       },
       {
@@ -106,7 +106,7 @@
         ],
         "conf": [
           1.0,
-          0.9997
+          0.9998
         ]
       },
       {
@@ -118,7 +118,7 @@
           "Redis"
         ],
         "conf": [
-          0.9996
+          0.9998
         ]
       },
       {
@@ -130,7 +130,7 @@
           "NestJS"
         ],
         "conf": [
-          0.9977
+          0.9991
         ]
       }
     ]

@@ -40,7 +40,7 @@ Version Control,IT_TASK
 Agile,IT_TASK
 Scrum,IT_TASK
 DevOps,IT_TASK
-Microsoft Excel,IT_TASK
+Microsoft Excel,CLERICAL
 Computer Setup,IT_TASK
 Computer Support,IT_TASK
 Computer Assembly,IT_TASK
@@ -299,3 +299,5 @@ Materials Preparation,CLERICAL
 Material Distribution,CLERICAL
 Inventory Analysis,CLERICAL
 GraphQL,IT_TASK
+Photocopying,CLERICAL
+General Cleaning,CLERICAL
