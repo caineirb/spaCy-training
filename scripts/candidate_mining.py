@@ -25,35 +25,48 @@ from scripts.pipeline import HybridJournalPipeline
 
 logger = logging.getLogger("ojt_pipeline.candidate_mining")
 
-# Linguistic syntactic trigger patterns for candidate discovery
+# Stopwords and connector words that must never end a candidate term
+CONNECTOR_WORDS = {"and", "with", "for", "in", "to", "the", "or", "from", "of", "on", "as", "by", "into", "during"}
+
+# Linguistic syntactic trigger patterns with scoped case-insensitivity on verbs/prepositions only
+# Capture group strictly enforces initial capital letter [A-Z]
 TRIGGER_PATTERNS = [
     # IT triggers
     (
-        r"(?:developed|built|coded|implemented|created|refactored|designed)\s+(?:.*?)\s+(?:using|in|with)\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
+        r"(?i:(?:developed|built|coded|implemented|created|refactored|designed)\s+(?:.*?)\s+(?:using|in|with))\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
         "IT_TERM",
     ),
     (
-        r"(?:configured|deployed|installed|setup|hosted)\s+(?:.*?)\s+(?:on|via|using)\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
+        r"(?i:(?:configured|deployed|installed|setup|hosted)\s+(?:.*?)\s+(?:on|via|using))\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
         "IT_TERM",
     ),
     (
-        r"(?:debugged|optimized|migrated|benchmarked)\s+(?:.*?)\s+(?:in|for|on)\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
+        r"(?i:(?:debugged|optimized|migrated|benchmarked)\s+(?:.*?)\s+(?:in|for|on))\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
         "IT_TERM",
     ),
     # Clerical triggers
     (
-        r"(?:encoded|transcribed|filed|audited|organized|logged)\s+(?:.*?)\s+(?:during|for|into)\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
+        r"(?i:(?:encoded|transcribed|filed|audited|organized|logged)\s+(?:.*?)\s+(?:during|for|into))\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
         "CLERICAL_TERM",
     ),
     (
-        r"(?:prepared|printed|distributed|sorted)\s+(?:the\s+)?([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})\s+(?:reports|files|records|paperwork|documents)",
+        r"(?i:(?:prepared|printed|distributed|sorted)\s+(?:the\s+)?)([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})\s+(?i:(?:reports|files|records|paperwork|documents))",
         "CLERICAL_TERM",
     ),
     (
-        r"(?:assisted\s+(?:the\s+)?supervisor\s+with)\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
+        r"(?i:(?:assisted\s+(?:the\s+)?supervisor\s+with))\s+([A-Z][A-Za-z0-9\.\+#_\-]+(?:\s+[A-Z][A-Za-z0-9\.\+#_\-]+){0,2})",
         "CLERICAL_TERM",
     ),
 ]
+
+
+def _clean_candidate_term(term: str) -> str:
+    """Cleans trailing punctuation and removes trailing connector words."""
+    term = re.sub(r"[,\.;:\-\)\(\[\]\"']+$", "", term.strip()).strip()
+    words = term.split()
+    while words and words[-1].lower() in CONNECTOR_WORDS:
+        words.pop()
+    return " ".join(words).strip()
 
 
 class CandidateMiner:
@@ -89,7 +102,7 @@ class CandidateMiner:
         for pred in predictions:
             text = pred["text"]
             for ent in pred["entities"]:
-                term = ent["term"].strip()
+                term = _clean_candidate_term(ent["term"])
                 if term.lower() not in self.known_terms_lower and len(term) > 1:
                     candidate_counts[term] += 1
                     candidate_labels[term][ent["category"]] += 1
@@ -97,13 +110,11 @@ class CandidateMiner:
                     if len(candidate_contexts[term]) < 2:
                         candidate_contexts[term].append(text)
 
-        # 2. Mine via linguistic syntactic trigger regex patterns
+        # 2. Mine via linguistic syntactic trigger regex patterns (WITHOUT global ignorecase)
         for text in sentences:
             for pattern, suggested_lbl in TRIGGER_PATTERNS:
-                for match in re.finditer(pattern, text, flags=re.IGNORECASE):
-                    matched_term = match.group(1).strip()
-                    # Clean trailing punctuation
-                    matched_term = re.sub(r"[,\.;:]$", "", matched_term).strip()
+                for match in re.finditer(pattern, text):
+                    matched_term = _clean_candidate_term(match.group(1))
                     if matched_term.lower() not in self.known_terms_lower and len(matched_term) > 2:
                         candidate_counts[matched_term] += 1
                         candidate_labels[matched_term][suggested_lbl] += 1
@@ -143,7 +154,6 @@ class CandidateMiner:
         term = term.strip()
         label = label.strip()
 
-        # Read existing terms CSV
         df = pd.read_csv(self.terms_csv_path)
         existing_terms = set(df["term"].str.lower())
 
@@ -151,14 +161,12 @@ class CandidateMiner:
             logger.info(f"Term '{term}' is already present in {self.terms_csv_path}")
             return
 
-        # Append new row
         raw_label = "IT_TASK" if "IT" in label else "CLERICAL"
         new_row = pd.DataFrame([{"term": term, "label": raw_label}])
         df = pd.concat([df, new_row], ignore_index=True)
         df.to_csv(self.terms_csv_path, index=False)
         logger.info(f"Added validated term '{term}' ({label}) to {self.terms_csv_path}")
 
-        # Refresh in-memory dictionary & pipeline EntityRuler
         self.terms_dict = load_terms_dictionary(self.terms_csv_path)
         self.known_terms_lower.add(term.lower())
         self.pipeline._setup_entity_ruler()

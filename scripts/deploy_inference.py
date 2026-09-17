@@ -105,24 +105,15 @@ def process_text_file(
             docs = list(pipeline.nlp.pipe(texts, batch_size=len(texts)))
 
             for line_no, text, doc in zip(line_numbers, texts, docs):
+                extracted_entities = pipeline.extract_entities_from_doc(doc, text)
                 line_entities = []
 
-                for ent in doc.ents:
-                    term = ent.text.strip()
-                    if not term:
-                        continue
-
-                    label = ent.label_
-                    is_dict = term.lower() in pipeline._lower_terms_set
-
-                    if is_dict:
-                        source = "dictionary"
-                        conf = 1.00
-                        status = "ACCEPTED"
-                    else:
-                        source = "ML"
-                        conf = pipeline._calculate_ml_confidence(doc, ent)
-                        status = "ACCEPTED" if conf >= confidence_threshold else "NEEDS_REVIEW"
+                for ent_info in extracted_entities:
+                    term = ent_info["term"]
+                    label = ent_info["category"]
+                    source = ent_info["source"]
+                    conf = ent_info["confidence"]
+                    status = ent_info["status"]
 
                     # Update aggregated term metrics
                     term_counts[term] += 1
@@ -139,10 +130,10 @@ def process_text_file(
                         "term": term,
                         "classification": label,
                         "source": source,
-                        "confidence": round(conf, 4),
+                        "confidence": conf,
                         "status": status,
-                        "start": ent.start_char,
-                        "end": ent.end_char,
+                        "start": ent_info["start"],
+                        "end": ent_info["end"],
                     })
 
                 # Stream detailed log immediately to disk
