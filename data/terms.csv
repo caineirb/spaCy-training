@@ -195,11 +195,7 @@ Record Keeping,CLERICAL
 Record Organization,CLERICAL
 Record Checking,CLERICAL
 Records Management,CLERICAL
-Physical Files,CLERICAL
-File Cabinets,CLERICAL
 Incoming Documents,CLERICAL
-File Labels,CLERICAL
-Name Labels,CLERICAL
 Scanning Documents,CLERICAL
 Information Updating,CLERICAL
 Information Reviewing,CLERICAL
@@ -214,12 +210,8 @@ Shares Accounts,CLERICAL
 Account Balances,CLERICAL
 Financial Transactions,CLERICAL
 Payment Records,CLERICAL
-Insurance Details,CLERICAL
 Collection Reports,CLERICAL
 Financial Records,CLERICAL
-Ticket Serial Numbers,CLERICAL
-Contact Details,CLERICAL
-Member ID,CLERICAL
 Beneficiary Records,CLERICAL
 Scholarship Data,CLERICAL
 Student Records,CLERICAL
@@ -232,7 +224,6 @@ Client Payments,CLERICAL
 Inventory Records,CLERICAL
 Stock Records,CLERICAL
 Medicine Stocks,CLERICAL
-Medicine Sachets,CLERICAL
 Medicine Distribution,CLERICAL
 Medicine Labeling,CLERICAL
 Stock Transfer,CLERICAL
@@ -247,7 +238,6 @@ Flyer Distribution,CLERICAL
 Promotional Materials,CLERICAL
 Office Documentation,CLERICAL
 Office Coordination,CLERICAL
-Records Office,CLERICAL
 Resource Management,CLERICAL
 Workplace Organization,CLERICAL
 Workspace Organization,CLERICAL

@@ -1,19 +1,19 @@
 {
   "held_out_test_set": {
-    "overall_precision": 85.71,
+    "overall_precision": 86.9,
     "overall_recall": 100.0,
-    "overall_f1": 92.31,
-    "total_test_documents": 150,
+    "overall_f1": 92.99,
+    "total_test_documents": 173,
     "labels": {
-      "IT_TERM": {
-        "precision": 91.38,
-        "recall": 100.0,
-        "f1": 95.5
-      },
       "CLERICAL_TERM": {
-        "precision": 81.33,
+        "precision": 79.73,
         "recall": 100.0,
-        "f1": 89.71
+        "f1": 88.72
+      },
+      "IT_TERM": {
+        "precision": 94.37,
+        "recall": 100.0,
+        "f1": 97.1
       }
     }
   },
@@ -21,18 +21,18 @@
     "benchmark_sample_size": 85,
     "total_unseen_entities": 65,
     "total_unseen_benchmark_entities": 65,
-    "correctly_identified_raw": "65/65",
+    "correctly_identified_raw": "62/65",
     "dictionary_recall": "0/65 (0.0%)",
     "dictionary_recall_pct": 0.0,
-    "hybrid_precision_pct": 86.67,
-    "hybrid_recall_pct": 100.0,
-    "hybrid_f1_pct": 92.86,
-    "generalization_lift": "+100.0%",
-    "generalization_lift_recall": "+100.0%",
+    "hybrid_precision_pct": 91.18,
+    "hybrid_recall_pct": 95.38,
+    "hybrid_f1_pct": 93.23,
+    "generalization_lift": "+95.38%",
+    "generalization_lift_recall": "+95.38%",
     "confidence_calibration": {
-      "mean_confidence_correct_entities": 0.9996,
-      "mean_confidence_spurious_entities": 0.9664,
-      "confidence_discrimination_delta": 0.0332
+      "mean_confidence_correct_entities": 0.9963,
+      "mean_confidence_spurious_entities": 0.9253,
+      "confidence_discrimination_delta": 0.071
     },
     "sample_preview": [
       {
@@ -44,7 +44,7 @@
           "FastAPI"
         ],
         "conf": [
-          0.999
+          0.9971
         ]
       },
       {
@@ -56,7 +56,7 @@
           "Bun"
         ],
         "conf": [
-          0.9997
+          0.9999
         ]
       },
       {
@@ -92,7 +92,7 @@
           "Supabase"
         ],
         "conf": [
-          0.9998
+          0.9999
         ]
       },
       {
@@ -106,7 +106,7 @@
         ],
         "conf": [
           1.0,
-          0.9998
+          0.9999
         ]
       },
       {
@@ -118,7 +118,7 @@
           "Redis"
         ],
         "conf": [
-          0.9998
+          0.9999
         ]
       },
       {
@@ -130,7 +130,7 @@
           "NestJS"
         ],
         "conf": [
-          0.9991
+          0.9999
         ]
       }
     ]
