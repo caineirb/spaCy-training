@@ -83,26 +83,31 @@ def load_eval_sentences_and_terms() -> Tuple[Set[str], Set[str]]:
 
 
 def is_near_duplicate(text: str, eval_sentences: Set[str], threshold: float = 0.70) -> bool:
-    """Checks if text has >= threshold normalized string similarity to any evaluation sentence."""
-    t_clean = text.strip().lower()
-    if t_clean in eval_sentences:
-        return True
+    """Checks if text or any constituent sentence has >= threshold similarity to any evaluation sentence."""
+    nlp = spacy.blank("en")
+    nlp.add_pipe("sentencizer")
+    doc = nlp(text)
+    candidate_sents = [s.text.strip().lower() for s in doc.sents if s.text.strip()]
+    if not candidate_sents:
+        candidate_sents = [text.strip().lower()]
 
-    # Check quick word-jaccard first to prune
-    t_words = set(re.findall(r"\w+", t_clean))
-    if not t_words:
-        return False
+    for s_clean in candidate_sents:
+        if s_clean in eval_sentences:
+            return True
 
-    for ev in eval_sentences:
-        ev_words = set(re.findall(r"\w+", ev))
-        if not ev_words:
+        s_words = set(re.findall(r"\w+", s_clean))
+        if not s_words:
             continue
-        jaccard = len(t_words & ev_words) / len(t_words | ev_words)
-        if jaccard >= 0.60:
-            # Run sequence matcher for precision
-            sim = difflib.SequenceMatcher(None, t_clean, ev).ratio()
-            if sim >= threshold:
-                return True
+
+        for ev in eval_sentences:
+            ev_words = set(re.findall(r"\w+", ev))
+            if not ev_words:
+                continue
+            jaccard = len(s_words & ev_words) / len(s_words | ev_words)
+            if jaccard >= 0.35:
+                sim = difflib.SequenceMatcher(None, s_clean, ev).ratio()
+                if sim >= threshold:
+                    return True
     return False
 
 
@@ -486,7 +491,7 @@ def run_synthetic_pipeline():
     print(f"Loaded {len(real_train_records)} real training records from train.spacy.")
 
     # 3. Generate paraphrase pool
-    paraphrase_pool = generate_paraphrase_pool(real_train_records, eval_sentences, bench_terms, max_variants_per_record=1)
+    paraphrase_pool = generate_paraphrase_pool(real_train_records, eval_sentences, bench_terms, max_variants_per_record=3)
     save_jsonl(paraphrase_pool, "data/synthetic_paraphrases.jsonl")
 
     # 4. Generate template pool
