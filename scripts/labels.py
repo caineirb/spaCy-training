@@ -1,28 +1,27 @@
 """
 Project Label Taxonomy & Normalization Layer.
 
-Explicitly formalizes the two-tier label architecture used across this project:
+Canonical Label Taxonomy (Unified Single Tier):
+    - `IT_TERM`: Technical tool, technology, programming language, database, or IT task phrase.
+    - `CLERICAL_TERM`: Clerical activity, office suite software, or administrative workflow phrase.
 
-Tier 1 — Dictionary Vocabulary Labels (data/terms.csv):
-    - `IT_TASK`: Seed technology, programming language, software tool, or IT task phrase.
-    - `CLERICAL`: Seed clerical activity, office suite software, or administrative workflow phrase.
+Deprecated Legacy Mappings (Phase 1–2 Two-Tier Scheme, retained for backward compatibility):
+    - `IT_TASK` -> Normalized to `IT_TERM`
+    - `CLERICAL` -> Normalized to `CLERICAL_TERM`
 
-Tier 2 — NER Span Entity Labels (annotations.jsonl, DocBins, NER model checkpoints):
-    - `IT_TERM`: Token span extracted by spaCy NER identifying an IT task, tool, or technology.
-    - `CLERICAL_TERM`: Token span extracted by spaCy NER identifying a clerical/administrative activity or office tool.
-
-This explicit mapping layer guarantees traceability between vocabulary definitions and NER spans.
+`data/terms.csv` and all active training/test files now directly use canonical `IT_TERM` and `CLERICAL_TERM`.
+This module provides defensive normalization when ingesting external or historical seed datasets.
 """
 
 from typing import Dict, Set
 
 # Canonical label sets
-CANONICAL_DICTIONARY_LABELS: Set[str] = {"IT_TASK", "CLERICAL"}
 CANONICAL_NER_LABELS: Set[str] = {"IT_TERM", "CLERICAL_TERM"}
+CANONICAL_DICTIONARY_LABELS: Set[str] = {"IT_TASK", "CLERICAL"}  # Deprecated legacy categories
 
 # Explicit mapping from dictionary vocabulary categories to NER span entity labels
 DICTIONARY_TO_NER_MAP: Dict[str, str] = {
-    "IT_TASK": "IT_TERM",
+    "IT_TASK": "IT_TERM",  # Deprecated legacy mapping
     "CLERICAL": "CLERICAL_TERM",
     "IT_TERM": "IT_TERM",               # Identity for already normalized labels
     "CLERICAL_TERM": "CLERICAL_TERM",   # Identity for already normalized labels
