@@ -386,9 +386,17 @@ def run_all_leakage_checks() -> bool:
         print(f"       train <-> dev sentence overlap : {c2_details['train_dev_sentence_overlap_count']} duplicates")
         print(f"       train <-> test sentence overlap: {c2_details['train_test_sentence_overlap_count']} duplicates")
         print(f"       dev   <-> test sentence overlap: {c2_details['dev_test_sentence_overlap_count']} duplicates")
-        if c2_details["train_test_samples"]:
+        if c2_details.get("train_dev_samples"):
+            print("       Sample train <-> dev sentence overlap:")
+            for s in c2_details["train_dev_samples"][:3]:
+                print(f"         - {repr(s)}")
+        if c2_details.get("train_test_samples"):
             print("       Sample train <-> test sentence overlap:")
             for s in c2_details["train_test_samples"][:3]:
+                print(f"         - {repr(s)}")
+        if c2_details.get("dev_test_samples"):
+            print("       Sample dev <-> test sentence overlap:")
+            for s in c2_details["dev_test_samples"][:3]:
                 print(f"         - {repr(s)}")
         results["Check 2 (Sentence Duplication)"] = (
             False,

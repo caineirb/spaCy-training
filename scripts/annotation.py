@@ -11,14 +11,18 @@ Provides:
 """
 
 import os
+import sys
 import re
 import json
 import random
 import logging
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Tuple, Optional, Set
 import pandas as pd
 import spacy
 from spacy.tokens import DocBin, Doc
+
+# Ensure project root is in sys.path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from scripts.labels import (
     LABEL_MAPPING,
     normalize_to_ner_label,
@@ -305,21 +309,67 @@ def split_and_convert_dataset(
 ) -> Dict[str, str]:
     """Deduplicates records, splits into train/dev/test, and exports spaCy binary files.
     
+    Guarantees zero sentence-level data leakage across splits by grouping
+    multi-sentence records that share sentences into the same split.
     Reports per-split diagnostics (negative ratio, class balance) at split time.
     """
     deduped_records, stats = deduplicate_records(records)
 
+    nlp = spacy.blank("en")
+    nlp.add_pipe("sentencizer")
+
+    # Map each sentence to the record indices that contain it
+    sent_to_idxs: Dict[str, List[int]] = {}
+    for idx, r in enumerate(deduped_records):
+        doc = nlp(r.get("text", ""))
+        for s in doc.sents:
+            st = s.text.strip()
+            if st:
+                sent_to_idxs.setdefault(st, []).append(idx)
+
+    # Build connected components of records that share sentences
+    adj: Dict[int, Set[int]] = {i: set() for i in range(len(deduped_records))}
+    for st, idxs in sent_to_idxs.items():
+        if len(idxs) > 1:
+            for i in idxs:
+                for j in idxs:
+                    if i != j:
+                        adj[i].add(j)
+
+    visited: Set[int] = set()
+    components: List[List[int]] = []
+    for i in range(len(deduped_records)):
+        if i not in visited:
+            comp: List[int] = []
+            queue = [i]
+            visited.add(i)
+            while queue:
+                curr = queue.pop()
+                comp.append(curr)
+                for neighbor in adj[curr]:
+                    if neighbor not in visited:
+                        visited.add(neighbor)
+                        queue.append(neighbor)
+            components.append(comp)
+
     random.seed(seed)
-    shuffled = list(deduped_records)
-    random.shuffle(shuffled)
+    random.shuffle(components)
 
-    n_total = len(shuffled)
-    n_train = int(n_total * train_ratio)
-    n_dev = int(n_total * dev_ratio)
+    train_recs: List[Dict[str, Any]] = []
+    dev_recs: List[Dict[str, Any]] = []
+    test_recs: List[Dict[str, Any]] = []
 
-    train_recs = shuffled[:n_train]
-    dev_recs = shuffled[n_train:n_train + n_dev]
-    test_recs = shuffled[n_train + n_dev:]
+    target_train = int(len(deduped_records) * train_ratio)
+    target_dev = int(len(deduped_records) * dev_ratio)
+
+    for comp in components:
+        comp_recs = [deduped_records[i] for i in comp]
+        if len(train_recs) + len(comp_recs) <= target_train or (len(dev_recs) >= target_dev and len(train_recs) < target_train):
+            train_recs.extend(comp_recs)
+        elif len(dev_recs) + len(comp_recs) <= target_dev:
+            dev_recs.extend(comp_recs)
+        else:
+            test_recs.extend(comp_recs)
 
     paths = {
         "train": os.path.join(output_dir, "train.spacy"),
@@ -327,9 +377,8 @@ def split_and_convert_dataset(
         "test": os.path.join(output_dir, "test.spacy"),
     }
 
-    nlp = spacy.blank("en")
     logger.info(
-        f"Dataset split ({n_total} unique records): "
+        f"Dataset split ({len(deduped_records)} unique records, {len(components)} sentence components): "
         f"Train={len(train_recs)}, Dev={len(dev_recs)}, Test={len(test_recs)}"
     )
 

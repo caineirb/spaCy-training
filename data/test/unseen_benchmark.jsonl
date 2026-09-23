@@ -2,7 +2,7 @@
 {"text": "Migrated our legacy serverless functions to Bun for faster runtime execution.", "entities": [{"start": 44, "end": 47, "label": "IT_TERM", "term": "Bun"}]}
 {"text": "Built an interactive reactive dashboard component using Svelte.", "entities": [{"start": 56, "end": 62, "label": "IT_TERM", "term": "Svelte"}]}
 {"text": "Configured modern responsive web styling using Tailwind CSS.", "entities": [{"start": 47, "end": 59, "label": "IT_TERM", "term": "Tailwind CSS"}]}
-{"text": "Set up authentication and cloud backend storage using Supabase.", "entities": [{"start": 54, "end": 62, "label": "IT_TERM", "term": "Supabase"}]}
+{"text": "Set up authentication and cloud backend storage using Appwrite.", "entities": [{"start": 54, "end": 62, "label": "IT_TERM", "term": "Appwrite"}]}
 {"text": "Defined database schema models and executed migrations with Prisma.", "entities": [{"start": 60, "end": 66, "label": "IT_TERM", "term": "Prisma"}]}
 {"text": "Implemented caching layers and message queuing services using Redis.", "entities": [{"start": 62, "end": 67, "label": "IT_TERM", "term": "Redis"}]}
 {"text": "Constructed our enterprise backend architecture using NestJS.", "entities": [{"start": 54, "end": 60, "label": "IT_TERM", "term": "NestJS"}]}
