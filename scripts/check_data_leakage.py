@@ -5,7 +5,7 @@ Verifies and prints PASS/FAIL for each of 6 strict leakage checks:
 1. No duplicate documents across train/dev/test splits.
 2. No duplicate sentences across train/dev/test splits.
 3. No unseen-benchmark terms appear in data/terms.csv.
-4. No unseen-benchmark terms appear in training annotations (data/reviewed/annotations.jsonl).
+4. No unseen-benchmark terms appear in training annotations (data/data.jsonl).
 5. No unseen-benchmark terms are matchable by the EntityRuler as currently configured.
 6. No sentences in data/test/holdout.jsonl or data/test/raw/ also appear in
    train.spacy / dev.spacy / test.spacy or the synthetic annotation pipeline's source data.
@@ -26,7 +26,7 @@ import spacy
 from spacy.tokens import DocBin
 from scripts.annotation import load_terms_dictionary
 from scripts.pipeline import HybridJournalPipeline
-from scripts.eval import UNSEEN_BENCHMARK_SAMPLES
+from scripts.eval import load_unseen_benchmark
 
 
 def print_section(title: str) -> None:
@@ -145,9 +145,9 @@ def check_unseen_in_terms_csv(
 
 def check_unseen_in_training_annotations(
     unseen_gold_terms: Set[str],
-    annotations_path: str = "data/reviewed/annotations.jsonl",
+    annotations_path: str = "data/data.jsonl",
 ) -> Tuple[bool, Dict[str, Any]]:
-    """Check 4: Verify zero unseen benchmark terms appear in data/reviewed/annotations.jsonl."""
+    """Check 4: Verify zero unseen benchmark terms appear in data/data.jsonl."""
     annotated_entities: Set[str] = set()
 
     if os.path.exists(annotations_path):
@@ -247,7 +247,7 @@ def check_real_holdout_isolation(
     test_docs: List[str],
     holdout_jsonl_path: str = "data/test/holdout.jsonl",
     raw_holdout_dir: str = "data/test/raw",
-    annotations_path: str = "data/reviewed/annotations.jsonl",
+    annotations_path: str = "data/data.jsonl",
 ) -> Tuple[bool, Dict[str, Any]]:
     """Check 6: Verify zero sentences in holdout.jsonl or data/test/raw/ appear in training/dev/test/synthetic data."""
     def extract_sentences_from_text(text: str) -> List[str]:
@@ -335,8 +335,9 @@ def run_all_leakage_checks() -> bool:
     test_docs = load_docbin_texts("data/training/test.spacy")
 
     # 2. Extract unseen benchmark terms
+    benchmark_samples = load_unseen_benchmark()
     unseen_gold_terms: Set[str] = set()
-    for sample in UNSEEN_BENCHMARK_SAMPLES:
+    for sample in benchmark_samples:
         for ent in sample.get("entities", []):
             term = ent.get("term", "").strip()
             if term:
@@ -414,7 +415,7 @@ def run_all_leakage_checks() -> bool:
     print_section("Check 4: Unseen Benchmark Terms in Training Annotations")
     c4_pass, c4_details = check_unseen_in_training_annotations(unseen_gold_terms)
     if c4_pass:
-        print(f"[PASS] Zero of {c4_details['total_unseen_terms_checked']} unseen benchmark terms appear in data/reviewed/annotations.jsonl.")
+        print(f"[PASS] Zero of {c4_details['total_unseen_terms_checked']} unseen benchmark terms appear in data/data.jsonl.")
         print(f"       Annotated entity pool: {c4_details['total_annotated_entities_pool']} unique entity strings.")
         results["Check 4 (Training Annotation Leakage)"] = (True, "PASS")
     else:
@@ -426,7 +427,7 @@ def run_all_leakage_checks() -> bool:
     # Check 5: Unseen benchmark terms matchable by EntityRuler
     # -------------------------------------------------------------
     print_section("Check 5: EntityRuler Matchability on Unseen Benchmark")
-    c5_pass, c5_details = check_unseen_matchable_by_entity_ruler(pipeline, UNSEEN_BENCHMARK_SAMPLES, unseen_gold_terms)
+    c5_pass, c5_details = check_unseen_matchable_by_entity_ruler(pipeline, benchmark_samples, unseen_gold_terms)
     if c5_pass:
         print("[PASS] Zero unseen benchmark terms are matchable as exact entities by the EntityRuler.")
         if c5_details["subspan_partial_matches_count"] > 0:

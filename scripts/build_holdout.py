@@ -6,7 +6,7 @@ Workflow:
 2. Segments text into sentences.
 3. Runs the HybridJournalPipeline to predict candidate task entities.
 4. Suggests a 'term_status' ('seen' vs. 'unseen') by cross-referencing data/terms.csv
-   and the training annotations in data/reviewed/annotations.jsonl.
+   and the training annotations in data/data.jsonl.
 5. Emits candidate records to data/test/holdout_draft.jsonl for manual audit and verification.
 
 NOTE: This script DOES NOT overwrite data/test/holdout.jsonl. Promotion from draft
@@ -30,7 +30,7 @@ logger = logging.getLogger("ojt_pipeline.build_holdout")
 
 def load_known_training_terms(
     terms_csv_path: str = "data/terms.csv",
-    annotations_jsonl_path: str = "data/reviewed/annotations.jsonl",
+    annotations_jsonl_path: str = "data/data.jsonl",
 ) -> Set[str]:
     """Loads all known lowercase term strings from terms.csv and training annotations.
     
@@ -109,7 +109,7 @@ def generate_holdout_draft(
     raw_dir: str = "data/test/raw",
     draft_output_path: str = "data/test/holdout_draft.jsonl",
     terms_csv_path: str = "data/terms.csv",
-    annotations_jsonl_path: str = "data/reviewed/annotations.jsonl",
+    annotations_jsonl_path: str = "data/data.jsonl",
     pipeline: Optional[HybridJournalPipeline] = None,
 ) -> Dict[str, Any]:
     """Processes raw journal text files to produce a draft holdout JSONL for human audit."""

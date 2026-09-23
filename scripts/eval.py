@@ -23,104 +23,32 @@ from spacy.training import Example
 # Ensure project root is in sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import scripts
-from scripts.annotation import load_terms_dictionary
 from scripts.pipeline import HybridJournalPipeline
 
 logger = logging.getLogger("ojt_pipeline.eval")
 
-# Expanded Unseen-Term Benchmark (65 unique entities strictly NOT in data/terms.csv)
-UNSEEN_BENCHMARK_SAMPLES = [
-    # --- Modern IT Frameworks & Tools (40 unseen entities) ---
-    {"text": "I developed a scalable microservice using FastAPI and connected it to our database.", "entities": [{"start": 42, "end": 49, "label": "IT_TERM", "term": "FastAPI"}]},
-    {"text": "Migrated our legacy serverless functions to Bun for faster runtime execution.", "entities": [{"start": 44, "end": 47, "label": "IT_TERM", "term": "Bun"}]},
-    {"text": "Built an interactive reactive dashboard component using Svelte.", "entities": [{"start": 56, "end": 62, "label": "IT_TERM", "term": "Svelte"}]},
-    {"text": "Configured modern responsive web styling using Tailwind CSS.", "entities": [{"start": 47, "end": 59, "label": "IT_TERM", "term": "Tailwind CSS"}]},
-    {"text": "Set up authentication and cloud backend storage using Supabase.", "entities": [{"start": 54, "end": 62, "label": "IT_TERM", "term": "Supabase"}]},
-    {"text": "Defined database schema models and executed migrations with Prisma.", "entities": [{"start": 60, "end": 66, "label": "IT_TERM", "term": "Prisma"}]},
-    {"text": "Implemented caching layers and message queuing services using Redis.", "entities": [{"start": 62, "end": 67, "label": "IT_TERM", "term": "Redis"}]},
-    {"text": "Constructed our enterprise backend architecture using NestJS.", "entities": [{"start": 54, "end": 60, "label": "IT_TERM", "term": "NestJS"}]},
-    {"text": "Automated cloud infrastructure provisioning using Terraform.", "entities": [{"start": 50, "end": 59, "label": "IT_TERM", "term": "Terraform"}]},
-    {"text": "Developed a modern server-rendered portal using Next.js for our campus users.", "entities": [{"start": 48, "end": 55, "label": "IT_TERM", "term": "Next.js"}]},
-    {"text": "Implemented universal state management in Nuxt for high SEO performance.", "entities": [{"start": 43, "end": 47, "label": "IT_TERM", "term": "Nuxt"}]},
-    {"text": "Refactored the documentation landing page using Astro for static generation.", "entities": [{"start": 48, "end": 53, "label": "IT_TERM", "term": "Astro"}]},
-    {"text": "Configured the rapid module bundler using Vite to optimize local build times.", "entities": [{"start": 42, "end": 46, "label": "IT_TERM", "term": "Vite"}]},
-    {"text": "Accelerated monorepo build pipelines using Turbopack during continuous integration.", "entities": [{"start": 43, "end": 52, "label": "IT_TERM", "term": "Turbopack"}]},
-    {"text": "Streamed analytics and analytical aggregations into ClickHouse for reporting.", "entities": [{"start": 52, "end": 62, "label": "IT_TERM", "term": "ClickHouse"}]},
-    {"text": "Configured high-availability distributed data replication in Cassandra.", "entities": [{"start": 61, "end": 70, "label": "IT_TERM", "term": "Cassandra"}]},
-    {"text": "Implemented distributed event streaming pipelines with Kafka across microservices.", "entities": [{"start": 55, "end": 60, "label": "IT_TERM", "term": "Kafka"}]},
-    {"text": "Handled asynchronous email queues and task workers using RabbitMQ.", "entities": [{"start": 57, "end": 65, "label": "IT_TERM", "term": "RabbitMQ"}]},
-    {"text": "Scheduled recurring background computation tasks in Celery with redis brokers.", "entities": [{"start": 52, "end": 58, "label": "IT_TERM", "term": "Celery"}]},
-    {"text": "Orchestrated complex data engineering pipelines using Airflow DAGs.", "entities": [{"start": 54, "end": 61, "label": "IT_TERM", "term": "Airflow"}]},
-    {"text": "Integrated distributed tracing and performance metrics via OpenTelemetry.", "entities": [{"start": 59, "end": 72, "label": "IT_TERM", "term": "OpenTelemetry"}]},
-    {"text": "Designed operational system health dashboards in Grafana for server monitoring.", "entities": [{"start": 49, "end": 56, "label": "IT_TERM", "term": "Grafana"}]},
-    {"text": "Configured metric alerting rules and query scraping using Prometheus.", "entities": [{"start": 58, "end": 68, "label": "IT_TERM", "term": "Prometheus"}]},
-    {"text": "Packaged Kubernetes deployment charts and configuration values using Helm.", "entities": [{"start": 69, "end": 73, "label": "IT_TERM", "term": "Helm"}]},
-    {"text": "Automated GitOps continuous deployment synchronization through ArgoCD.", "entities": [{"start": 63, "end": 69, "label": "IT_TERM", "term": "ArgoCD"}]},
-    {"text": "Wrote smart contract verification scripts using Solidity on an Ethereum testnet.", "entities": [{"start": 48, "end": 56, "label": "IT_TERM", "term": "Solidity"}]},
-    {"text": "Queried decentralized wallet balances using Web3.js client libraries.", "entities": [{"start": 44, "end": 51, "label": "IT_TERM", "term": "Web3.js"}]},
-    {"text": "Enforced strict API runtime request validation using Zod schemas.", "entities": [{"start": 53, "end": 56, "label": "IT_TERM", "term": "Zod"}]},
-    {"text": "Implemented end-to-end type-safe client procedures with tRPC.", "entities": [{"start": 56, "end": 60, "label": "IT_TERM", "term": "tRPC"}]},
-    {"text": "Automated cross-browser UI regression test suites using Playwright.", "entities": [{"start": 56, "end": 66, "label": "IT_TERM", "term": "Playwright"}]},
-    {"text": "Authored automated frontend integration assertions in Cypress.", "entities": [{"start": 54, "end": 61, "label": "IT_TERM", "term": "Cypress"}]},
-    {"text": "Constructed an isolated component library showcase with Storybook.", "entities": [{"start": 56, "end": 65, "label": "IT_TERM", "term": "Storybook"}]},
-    {"text": "Deployed headless content management instances via Directus.", "entities": [{"start": 51, "end": 59, "label": "IT_TERM", "term": "Directus"}]},
-    {"text": "Configured customizable headless REST collections using Strapi.", "entities": [{"start": 56, "end": 62, "label": "IT_TERM", "term": "Strapi"}]},
-    {"text": "Implemented instant full-text search indexing with Meilisearch.", "entities": [{"start": 51, "end": 62, "label": "IT_TERM", "term": "Meilisearch"}]},
-    {"text": "Engineered real-time document graph synchronization with SurrealDB.", "entities": [{"start": 57, "end": 66, "label": "IT_TERM", "term": "SurrealDB"}]},
-    {"text": "Built a self-hosted single-binary backend prototype in PocketBase.", "entities": [{"start": 55, "end": 65, "label": "IT_TERM", "term": "PocketBase"}]},
-    {"text": "Executed high-speed TypeScript scripts on the server using Deno.", "entities": [{"start": 59, "end": 63, "label": "IT_TERM", "term": "Deno"}]},
-    {"text": "Enforced rigorous data structure parsing models using Pydantic.", "entities": [{"start": 54, "end": 62, "label": "IT_TERM", "term": "Pydantic"}]},
-    {"text": "Processed multi-million row tabular datasets rapidly with Polars dataframes.", "entities": [{"start": 58, "end": 64, "label": "IT_TERM", "term": "Polars"}]},
+def load_unseen_benchmark(
+    benchmark_path: str = "data/test/unseen_benchmark.jsonl",
+) -> List[Dict[str, Any]]:
+    """Loads the unseen-term generalization benchmark from an external JSONL file.
+    
+    The benchmark contains synthetically-authored sentences with 65 unique entity
+    terms guaranteed absent from data/terms.csv. Used as a controlled generalization
+    probe — separate from real-data evaluation.
+    """
+    if not os.path.exists(benchmark_path):
+        logger.warning(f"Unseen benchmark file not found at '{benchmark_path}'. Skipping.")
+        return []
 
-    # --- Institutional & Clerical Workflows (25 unseen entities) ---
-    {"text": "Assisted the department head with Curriculum Verification during the semester audit.", "entities": [{"start": 34, "end": 57, "label": "CLERICAL_TERM", "term": "Curriculum Verification"}]},
-    {"text": "Organized faculty schedules and facilitated Thesis Defense Scheduling.", "entities": [{"start": 44, "end": 69, "label": "CLERICAL_TERM", "term": "Thesis Defense Scheduling"}]},
-    {"text": "Verified institutional compliance folders for Accreditation Auditing.", "entities": [{"start": 46, "end": 68, "label": "CLERICAL_TERM", "term": "Accreditation Auditing"}]},
-    {"text": "Logged incoming visitor IDs and managed Visitor Escorting duties.", "entities": [{"start": 40, "end": 57, "label": "CLERICAL_TERM", "term": "Visitor Escorting"}]},
-    {"text": "Assisted staff members with daily Biometric Clearance procedures.", "entities": [{"start": 34, "end": 53, "label": "CLERICAL_TERM", "term": "Biometric Clearance"}]},
-    {"text": "Sorted physical graduation credentials for Diploma Archiving in the vault.", "entities": [{"start": 43, "end": 60, "label": "CLERICAL_TERM", "term": "Diploma Archiving"}]},
-    {"text": "Checked senior requirements and audited files for Graduation Clearance.", "entities": [{"start": 50, "end": 70, "label": "CLERICAL_TERM", "term": "Graduation Clearance"}]},
-    {"text": "Compiled faculty academic records as part of Faculty Docketing.", "entities": [{"start": 45, "end": 62, "label": "CLERICAL_TERM", "term": "Faculty Docketing"}]},
-    {"text": "Verified official registrar seals for Transcript Notarization packages.", "entities": [{"start": 38, "end": 61, "label": "CLERICAL_TERM", "term": "Transcript Notarization"}]},
-    {"text": "Encoded departmental office expenses on the Petty Cash Voucher ledger.", "entities": [{"start": 44, "end": 62, "label": "CLERICAL_TERM", "term": "Petty Cash Voucher"}]},
-    {"text": "Prepared itemized office supply lists for Procurement Requisition approval.", "entities": [{"start": 42, "end": 65, "label": "CLERICAL_TERM", "term": "Procurement Requisition"}]},
-    {"text": "Assisted legal counsel with notarized Affidavit Processing records.", "entities": [{"start": 38, "end": 58, "label": "CLERICAL_TERM", "term": "Affidavit Processing"}]},
-    {"text": "Drafted student order of ceremonies during Commencement Program Drafting.", "entities": [{"start": 43, "end": 72, "label": "CLERICAL_TERM", "term": "Commencement Program Drafting"}]},
-    {"text": "Facilitated local community requests for Barangay Certification releases.", "entities": [{"start": 41, "end": 63, "label": "CLERICAL_TERM", "term": "Barangay Certification"}]},
-    {"text": "Organized official court summons folders for Subpoena Tracking.", "entities": [{"start": 45, "end": 62, "label": "CLERICAL_TERM", "term": "Subpoena Tracking"}]},
-    {"text": "Processed employee leave records during Leave Application Encoding.", "entities": [{"start": 40, "end": 66, "label": "CLERICAL_TERM", "term": "Leave Application Encoding"}]},
-    {"text": "Calculated fiscal department line items during Budget Allocation Tabulation.", "entities": [{"start": 47, "end": 75, "label": "CLERICAL_TERM", "term": "Budget Allocation Tabulation"}]},
-    {"text": "Audited payroll discrepancies during Salary Differential Auditing.", "entities": [{"start": 37, "end": 65, "label": "CLERICAL_TERM", "term": "Salary Differential Auditing"}]},
-    {"text": "Cataloged deed logs and public oaths in Notarial Registry Encoding.", "entities": [{"start": 40, "end": 66, "label": "CLERICAL_TERM", "term": "Notarial Registry Encoding"}]},
-    {"text": "Assisted professors with incoming Grade Completion Verification forms.", "entities": [{"start": 34, "end": 63, "label": "CLERICAL_TERM", "term": "Grade Completion Verification"}]},
-    {"text": "Distributed financial aid allowances for Scholarship Stipend Distribution.", "entities": [{"start": 42, "end": 74, "label": "CLERICAL_TERM", "term": "Scholarship Stipend Distribution"}]},
-    {"text": "Archived retired personnel personnel files for Service Record Archiving.", "entities": [{"start": 47, "end": 71, "label": "CLERICAL_TERM", "term": "Service Record Archiving"}]},
-    {"text": "Cross-checked employee tax forms during Tax Withholding Verification.", "entities": [{"start": 40, "end": 68, "label": "CLERICAL_TERM", "term": "Tax Withholding Verification"}]},
-    {"text": "Audited warehouse receipt ledgers for Supplies Inventory Balancing.", "entities": [{"start": 38, "end": 66, "label": "CLERICAL_TERM", "term": "Supplies Inventory Balancing"}]},
-    {"text": "Reconciled adjunct lecturer timesheets in Honorarium Reconciliation.", "entities": [{"start": 42, "end": 67, "label": "CLERICAL_TERM", "term": "Honorarium Reconciliation"}]},
+    records: List[Dict[str, Any]] = []
+    with open(benchmark_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                records.append(json.loads(line))
 
-    # --- Negative Controls (20 sentences with NO entities) ---
-    {"text": "Attended the morning standup meeting with the supervisor to discuss daily goals.", "entities": []},
-    {"text": "Joined the weekly team retrospective to share progress updates and blockers.", "entities": []},
-    {"text": "Took a short lunch break with fellow student interns at the company cafeteria.", "entities": []},
-    {"text": "Participated in the company-wide orientation regarding workplace ethics and rules.", "entities": []},
-    {"text": "Cleaned the intern workstation and organized desk accessories before logging out.", "entities": []},
-    {"text": "Waited for feedback from the team lead before proceeding with the next assignment.", "entities": []},
-    {"text": "Helped a colleague locate the designated conference room on the third floor.", "entities": []},
-    {"text": "Listened to a presentation given by the department head on strategic objectives.", "entities": []},
-    {"text": "Took detailed personal notes during the department town hall assembly.", "entities": []},
-    {"text": "Arrived at the office on time and logged in to the biometric attendance machine.", "entities": []},
-    {"text": "Discussed project deadlines and milestone expectations during the afternoon huddle.", "entities": []},
-    {"text": "Reviewed general company guidelines regarding data privacy and acceptable use.", "entities": []},
-    {"text": "Attended the farewell gathering for the departing senior supervisor.", "entities": []},
-    {"text": "Submitted the bi-weekly intern time log sheet to the human resource assistant.", "entities": []},
-    {"text": "Participated in an open discussion regarding team workflow enhancements.", "entities": []},
-    {"text": "Signed the visitor logbook and collected the guest identification badges.", "entities": []},
-    {"text": "Checked my work email inbox and responded to routine greeting messages.", "entities": []},
-    {"text": "Organized notebook notes and planned personal task priorities for tomorrow morning.", "entities": []},
-    {"text": "Had a quick alignment call with the project mentor to review weekly objectives.", "entities": []},
-    {"text": "Wiped down the conference room whiteboard and turned off projector monitors.", "entities": []},
-]
+    logger.info(f"Loaded {len(records)} unseen benchmark samples from {benchmark_path}")
+    return records
 
 
 def evaluate_test_docbin(
@@ -254,6 +182,7 @@ def evaluate_unseen_mode(
 def evaluate_unseen_generalization(
     pipeline: HybridJournalPipeline,
     benchmark_samples: Optional[List[Dict[str, Any]]] = None,
+    benchmark_path: str = "data/test/unseen_benchmark.jsonl",
 ) -> Dict[str, Any]:
     """Evaluates pipeline performance on the unseen-term benchmark across 3 explicit modes:
     1. Transformer-only: EntityRuler disabled/bypassed entirely.
@@ -261,9 +190,15 @@ def evaluate_unseen_generalization(
     3. Hybrid: Combined EntityRuler + Transformer NER pipeline.
     
     Reports precision, recall, and F1 separately for each mode without merging.
+    This is a controlled generalization probe using synthetic sentences — separate
+    from the real-data held-out test set evaluation.
     """
     if benchmark_samples is None:
-        benchmark_samples = UNSEEN_BENCHMARK_SAMPLES
+        benchmark_samples = load_unseen_benchmark(benchmark_path)
+
+    if not benchmark_samples:
+        logger.warning("No unseen benchmark samples available. Skipping generalization evaluation.")
+        return {"status": "SKIPPED", "message": "No benchmark samples found."}
 
     logger.info("Evaluating unseen benchmark: Mode 1/3 (Transformer-only)...")
     trf_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="transformer_only")
@@ -314,7 +249,7 @@ def evaluate_real_holdout(
     pipeline: HybridJournalPipeline,
     holdout_jsonl_path: str = "data/test/holdout.jsonl",
     terms_csv_path: str = "data/terms.csv",
-    annotations_jsonl_path: str = "data/reviewed/annotations.jsonl",
+    annotations_jsonl_path: str = "data/data.jsonl",
 ) -> Dict[str, Any]:
     """Evaluates the hybrid pipeline against the permanent real-world holdout dataset.
     
@@ -480,13 +415,22 @@ def generate_full_evaluation_report(
     terms_csv_path: str = "data/terms.csv",
     test_spacy_path: str = "data/training/test.spacy",
     holdout_jsonl_path: str = "data/test/holdout.jsonl",
+    benchmark_path: str = "data/test/unseen_benchmark.jsonl",
     output_report_json: str = "data/evaluation_report.json",
 ) -> Dict[str, Any]:
-    """Generates comprehensive evaluation and exports a thesis-ready summary report."""
+    """Generates comprehensive evaluation and exports a thesis-ready summary report.
+    
+    Runs three separate evaluation sections:
+    1. Held-out test set (real data, from data/training/test.spacy)
+    2. Unseen-term generalization benchmark (controlled synthetic probe)
+    3. Real-world holdout evaluation (data/test/holdout.jsonl)
+    """
     pipeline = HybridJournalPipeline(model_path=model_path, terms_csv_path=terms_csv_path)
 
     test_metrics = evaluate_test_docbin(pipeline, test_spacy_path=test_spacy_path)
-    unseen_metrics = evaluate_unseen_generalization(pipeline)
+    unseen_metrics = evaluate_unseen_generalization(
+        pipeline, benchmark_path=benchmark_path
+    )
     real_holdout_metrics = evaluate_real_holdout(
         pipeline,
         holdout_jsonl_path=holdout_jsonl_path,

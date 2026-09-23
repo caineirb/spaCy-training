@@ -6,7 +6,7 @@ Takes one or more manually reviewed/verified details.jsonl files
 (e.g., data/human_written_details.jsonl and/or data/structured_details.jsonl):
 1. Ingests approved entities (skipping any line marked REJECTED, DISCARD, or FALSE_POSITIVE).
 2. Automatically updates `data/terms.csv` with newly validated terms.
-3. Groups entity spans by sentence into the standard project JSONL schema and appends to `data/reviewed/annotations.jsonl`.
+3. Groups entity spans by sentence into the standard project JSONL schema and appends to `data/data.jsonl`.
 4. Re-compiles spaCy binary DocBins (`train.spacy`, `dev.spacy`).
 5. Fine-tunes the transformer model on the GPU (RTX 3060).
 6. Re-packages the updated hybrid pipeline into `models/hybrid_pipeline`.
@@ -151,7 +151,7 @@ def update_terms_csv(
 def retrain_from_verified_data(
     details_paths: Union[str, List[str]],
     terms_csv_path: str = "data/terms.csv",
-    annotations_jsonl_path: str = "data/reviewed/annotations.jsonl",
+    annotations_jsonl_path: str = "data/data.jsonl",
     training_data_dir: str = "data/training",
     model_output_dir: str = "models/ner_trf",
     hybrid_pipeline_dir: str = "models/hybrid_pipeline",
@@ -245,7 +245,7 @@ def main():
     )
     parser.add_argument(
         "--annotations-path",
-        default="data/reviewed/annotations.jsonl",
+        default="data/data.jsonl",
         help="Path to golden reviewed annotations"
     )
     parser.add_argument(

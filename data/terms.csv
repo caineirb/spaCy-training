@@ -1,293 +1,293 @@
 term,label
-Python,IT_TASK
-Java,IT_TASK
-JavaScript,IT_TASK
-TypeScript,IT_TASK
-C#,IT_TASK
-PHP,IT_TASK
-React,IT_TASK
-Angular,IT_TASK
-Vue.js,IT_TASK
-Django,IT_TASK
-Flask,IT_TASK
-Laravel,IT_TASK
-Spring Boot,IT_TASK
-Node.js,IT_TASK
-MySQL,IT_TASK
-PostgreSQL,IT_TASK
-MongoDB,IT_TASK
-SQLite,IT_TASK
-Oracle Database,IT_TASK
-Git,IT_TASK
-GitHub,IT_TASK
-Docker,IT_TASK
-Kubernetes,IT_TASK
-Jenkins,IT_TASK
-Postman,IT_TASK
-Jira,IT_TASK
-Figma,IT_TASK
-AWS,IT_TASK
-Microsoft Azure,IT_TASK
-Google Cloud Platform,IT_TASK
-Linux,IT_TASK
-Windows Server,IT_TASK
-Ubuntu,IT_TASK
-REST API,IT_TASK
-Machine Learning,IT_TASK
-Data Structures,IT_TASK
-Object-Oriented Programming,IT_TASK
-Version Control,IT_TASK
-Agile,IT_TASK
-Scrum,IT_TASK
-DevOps,IT_TASK
-Microsoft Excel,CLERICAL
-Computer Setup,IT_TASK
-Computer Support,IT_TASK
-Computer Assembly,IT_TASK
-PC Assembly,IT_TASK
-Hardware Assembly,IT_TASK
-Hardware Maintenance,IT_TASK
-Hardware Installation,IT_TASK
-Hardware Repair,IT_TASK
-Hardware Troubleshooting,IT_TASK
-Printer Installation,IT_TASK
-Printer Repair,IT_TASK
-Printer Troubleshooting,IT_TASK
-Printer Driver,IT_TASK
-PDF Conversion,IT_TASK
-File Conversion,IT_TASK
-Network Troubleshooting,IT_TASK
-Data Management,IT_TASK
-Data Encoding,IT_TASK
-Data Entry,IT_TASK
-Data Validation,IT_TASK
-Data Calculation,IT_TASK
-Data Input,IT_TASK
-Database Management,IT_TASK
-Database Schema,IT_TASK
-Database Queries,IT_TASK
-Database Seeder,IT_TASK
-Database Connections,IT_TASK
-Database Storage,IT_TASK
-Database Normalization,IT_TASK
-Schema Backup,IT_TASK
-System Development,IT_TASK
-System Design,IT_TASK
-System Planning,IT_TASK
-System Testing,IT_TASK
-System Debugging,IT_TASK
-System Deployment,IT_TASK
-System Maintenance,IT_TASK
-System Encryption,IT_TASK
-System Features,IT_TASK
-System Modules,IT_TASK
-System Interface,IT_TASK
-System Performance,IT_TASK
-System Stability,IT_TASK
-Application Development,IT_TASK
-Application Management,IT_TASK
-Family Profiling Application,IT_TASK
-Nutrimap System,IT_TASK
-Inquiry System,IT_TASK
-AI Chatbot,IT_TASK
-Gemini API,IT_TASK
-Backend API,IT_TASK
-API Routes,IT_TASK
-API Endpoints,IT_TASK
-Livewire,IT_TASK
-Spatie,IT_TASK
-Composer,IT_TASK
-PhpSpreadsheet,IT_TASK
-Flutter,IT_TASK
-Code Debugging,IT_TASK
-Code Refactoring,IT_TASK
-Bug Fixing,IT_TASK
-Error Handling,IT_TASK
-Form Validation,IT_TASK
-Session Management,IT_TASK
-RBAC,IT_TASK
-Access Control,IT_TASK
-Role Assignment,IT_TASK
-User Management,IT_TASK
-Password Recovery,IT_TASK
-Password Reset,IT_TASK
-Email Verification,IT_TASK
-Email Service,IT_TASK
-Mailer,IT_TASK
-Rate Limiting,IT_TASK
-GitHub Workflow,IT_TASK
-Git Commits,IT_TASK
-Git Branches,IT_TASK
-Merge Conflict,IT_TASK
-CSS,IT_TASK
-Responsive Design,IT_TASK
-UI Components,IT_TASK
-UI/UX Design,IT_TASK
-UI Design,IT_TASK
-UX Design,IT_TASK
-Figma Prototype,IT_TASK
-Dashboard Interface,IT_TASK
-Landing Page,IT_TASK
-Layout Design,IT_TASK
-Visual Design,IT_TASK
-Canva,IT_TASK
-Adobe Photoshop,IT_TASK
-Poster Design,IT_TASK
-Brochure Design,IT_TASK
-Certificate Design,IT_TASK
-Template Design,IT_TASK
-Logbook Template,IT_TASK
-Tarpaulin Design,IT_TASK
-Identification Card Design,IT_TASK
-QR Code,IT_TASK
-Interactive Map,IT_TASK
-GeoJSON,IT_TASK
-Geospatial Tracking,IT_TASK
-Web Hosting,IT_TASK
-InfinityFree,IT_TASK
-Hosting Environment,IT_TASK
-Web Server,IT_TASK
-Server Settings,IT_TASK
-Server Configuration,IT_TASK
-Deployment Testing,IT_TASK
-Production Deployment,IT_TASK
-Computer Hardware Maintenance,IT_TASK
-iClinicSys,IT_TASK
-eGOV.PH,IT_TASK
-Microsoft Word,IT_TASK
-Google Forms,IT_TASK
-Google Sheets,IT_TASK
-Facebook Management,IT_TASK
-Facebook Posting,IT_TASK
-Digital File Management,IT_TASK
-File Management,IT_TASK
-Digital File Organization,IT_TASK
-Capstone Project,IT_TASK
-Capstone Study,IT_TASK
-IT Fest,IT_TASK
-Research Summit,IT_TASK
-Document Organization,CLERICAL
-Document Filing,CLERICAL
-Document Sorting,CLERICAL
-Document Arrangement,CLERICAL
-Document Management,CLERICAL
-Document Handling,CLERICAL
-Document Preparation,CLERICAL
-Document Distribution,CLERICAL
-Document Routing,CLERICAL
-Document Review,CLERICAL
-Document Checking,CLERICAL
-Document Verification,CLERICAL
-Document Editing,CLERICAL
-Document Processing,CLERICAL
-Document Forwarding,CLERICAL
-Document Delivery,CLERICAL
-Document Safekeeping,CLERICAL
-Document Labeling,CLERICAL
-File Organization,CLERICAL
-File Arrangement,CLERICAL
-File Filing,CLERICAL
-File Checking,CLERICAL
-Folder Organization,CLERICAL
-Filing System,CLERICAL
-Record Management,CLERICAL
-Record Keeping,CLERICAL
-Record Organization,CLERICAL
-Record Checking,CLERICAL
-Records Management,CLERICAL
-Incoming Documents,CLERICAL
-Scanning Documents,CLERICAL
-Information Updating,CLERICAL
-Information Reviewing,CLERICAL
-Information Checking,CLERICAL
-Data Correction,CLERICAL
-Data Recording,CLERICAL
-Data Consolidation,CLERICAL
-Data Organization,CLERICAL
-Data Verification,CLERICAL
-Savings Accounts,CLERICAL
-Shares Accounts,CLERICAL
-Account Balances,CLERICAL
-Financial Transactions,CLERICAL
-Payment Records,CLERICAL
-Collection Reports,CLERICAL
-Financial Records,CLERICAL
-Beneficiary Records,CLERICAL
-Scholarship Data,CLERICAL
-Student Records,CLERICAL
-Patient Records,CLERICAL
-Medical Records,CLERICAL
-Prescription Records,CLERICAL
-PhilHealth Eligibility,CLERICAL
-Client Records,CLERICAL
-Client Payments,CLERICAL
-Inventory Records,CLERICAL
-Stock Records,CLERICAL
-Medicine Stocks,CLERICAL
-Medicine Distribution,CLERICAL
-Medicine Labeling,CLERICAL
-Stock Transfer,CLERICAL
-Transfer Slips,CLERICAL
-Document Stamping,CLERICAL
-Certificate Distribution,CLERICAL
-Certificate Release,CLERICAL
-ID Release,CLERICAL
-ID Distribution,CLERICAL
-Form Distribution,CLERICAL
-Flyer Distribution,CLERICAL
-Promotional Materials,CLERICAL
-Office Documentation,CLERICAL
-Office Coordination,CLERICAL
-Resource Management,CLERICAL
-Workplace Organization,CLERICAL
-Workspace Organization,CLERICAL
-Meeting Materials,CLERICAL
-Meeting Proceedings,CLERICAL
-Student Enrollment,CLERICAL
-Scholarship Records,CLERICAL
-Police Clearance,CLERICAL
-Audit Preparation,CLERICAL
-Clearance Forms,CLERICAL
-Exit Clearance Forms,CLERICAL
-Public Notices,CLERICAL
-Report Preparation,CLERICAL
-Activity Documentation,CLERICAL
-Photo Documentation,CLERICAL
-Attendance Records,CLERICAL
-Event Coordination,CLERICAL
-Event Preparation,CLERICAL
-Field Activity,CLERICAL
-Community Coordination,CLERICAL
-Barangay Coordination,CLERICAL
-Client Assistance,CLERICAL
-Customer Service,CLERICAL
-Nutrition Counseling,CLERICAL
-Health Records,CLERICAL
-Medical Inventory,CLERICAL
-Medicine Dispensing,CLERICAL
-Medicine Refill,CLERICAL
-Patient Assistance,CLERICAL
-Client Satisfaction Survey,CLERICAL
-Inventory Counting,CLERICAL
-Inventory Organization,CLERICAL
-Community Outreach,CLERICAL
-Certificate Recognition,CLERICAL
-Awarding Ceremony,CLERICAL
-Charter Day,CLERICAL
-BNS Meeting,CLERICAL
-BNS Activities,CLERICAL
-OPT Plus,CLERICAL
-Nutrition Activities,CLERICAL
-Training Activities,CLERICAL
-Presentation Materials,CLERICAL
-Research Activities,CLERICAL
-Task Alignment,CLERICAL
-Team Coordination,CLERICAL
-Team Task Division,CLERICAL
-Meeting Transcription,CLERICAL
-Materials Preparation,CLERICAL
-Material Distribution,CLERICAL
-Inventory Analysis,CLERICAL
-GraphQL,IT_TASK
-Photocopying,CLERICAL
-General Cleaning,CLERICAL
+Python,IT_TERM
+Java,IT_TERM
+JavaScript,IT_TERM
+TypeScript,IT_TERM
+C#,IT_TERM
+PHP,IT_TERM
+React,IT_TERM
+Angular,IT_TERM
+Vue.js,IT_TERM
+Django,IT_TERM
+Flask,IT_TERM
+Laravel,IT_TERM
+Spring Boot,IT_TERM
+Node.js,IT_TERM
+MySQL,IT_TERM
+PostgreSQL,IT_TERM
+MongoDB,IT_TERM
+SQLite,IT_TERM
+Oracle Database,IT_TERM
+Git,IT_TERM
+GitHub,IT_TERM
+Docker,IT_TERM
+Kubernetes,IT_TERM
+Jenkins,IT_TERM
+Postman,IT_TERM
+Jira,IT_TERM
+Figma,IT_TERM
+AWS,IT_TERM
+Microsoft Azure,IT_TERM
+Google Cloud Platform,IT_TERM
+Linux,IT_TERM
+Windows Server,IT_TERM
+Ubuntu,IT_TERM
+REST API,IT_TERM
+Machine Learning,IT_TERM
+Data Structures,IT_TERM
+Object-Oriented Programming,IT_TERM
+Version Control,IT_TERM
+Agile,IT_TERM
+Scrum,IT_TERM
+DevOps,IT_TERM
+Microsoft Excel,CLERICAL_TERM
+Computer Setup,IT_TERM
+Computer Support,IT_TERM
+Computer Assembly,IT_TERM
+PC Assembly,IT_TERM
+Hardware Assembly,IT_TERM
+Hardware Maintenance,IT_TERM
+Hardware Installation,IT_TERM
+Hardware Repair,IT_TERM
+Hardware Troubleshooting,IT_TERM
+Printer Installation,IT_TERM
+Printer Repair,IT_TERM
+Printer Troubleshooting,IT_TERM
+Printer Driver,IT_TERM
+PDF Conversion,IT_TERM
+File Conversion,IT_TERM
+Network Troubleshooting,IT_TERM
+Data Management,IT_TERM
+Data Encoding,IT_TERM
+Data Entry,IT_TERM
+Data Validation,IT_TERM
+Data Calculation,IT_TERM
+Data Input,IT_TERM
+Database Management,IT_TERM
+Database Schema,IT_TERM
+Database Queries,IT_TERM
+Database Seeder,IT_TERM
+Database Connections,IT_TERM
+Database Storage,IT_TERM
+Database Normalization,IT_TERM
+Schema Backup,IT_TERM
+System Development,IT_TERM
+System Design,IT_TERM
+System Planning,IT_TERM
+System Testing,IT_TERM
+System Debugging,IT_TERM
+System Deployment,IT_TERM
+System Maintenance,IT_TERM
+System Encryption,IT_TERM
+System Features,IT_TERM
+System Modules,IT_TERM
+System Interface,IT_TERM
+System Performance,IT_TERM
+System Stability,IT_TERM
+Application Development,IT_TERM
+Application Management,IT_TERM
+Family Profiling Application,IT_TERM
+Nutrimap System,IT_TERM
+Inquiry System,IT_TERM
+AI Chatbot,IT_TERM
+Gemini API,IT_TERM
+Backend API,IT_TERM
+API Routes,IT_TERM
+API Endpoints,IT_TERM
+Livewire,IT_TERM
+Spatie,IT_TERM
+Composer,IT_TERM
+PhpSpreadsheet,IT_TERM
+Flutter,IT_TERM
+Code Debugging,IT_TERM
+Code Refactoring,IT_TERM
+Bug Fixing,IT_TERM
+Error Handling,IT_TERM
+Form Validation,IT_TERM
+Session Management,IT_TERM
+RBAC,IT_TERM
+Access Control,IT_TERM
+Role Assignment,IT_TERM
+User Management,IT_TERM
+Password Recovery,IT_TERM
+Password Reset,IT_TERM
+Email Verification,IT_TERM
+Email Service,IT_TERM
+Mailer,IT_TERM
+Rate Limiting,IT_TERM
+GitHub Workflow,IT_TERM
+Git Commits,IT_TERM
+Git Branches,IT_TERM
+Merge Conflict,IT_TERM
+CSS,IT_TERM
+Responsive Design,IT_TERM
+UI Components,IT_TERM
+UI/UX Design,IT_TERM
+UI Design,IT_TERM
+UX Design,IT_TERM
+Figma Prototype,IT_TERM
+Dashboard Interface,IT_TERM
+Landing Page,IT_TERM
+Layout Design,IT_TERM
+Visual Design,IT_TERM
+Canva,IT_TERM
+Adobe Photoshop,IT_TERM
+Poster Design,IT_TERM
+Brochure Design,IT_TERM
+Certificate Design,IT_TERM
+Template Design,IT_TERM
+Logbook Template,IT_TERM
+Tarpaulin Design,IT_TERM
+Identification Card Design,IT_TERM
+QR Code,IT_TERM
+Interactive Map,IT_TERM
+GeoJSON,IT_TERM
+Geospatial Tracking,IT_TERM
+Web Hosting,IT_TERM
+InfinityFree,IT_TERM
+Hosting Environment,IT_TERM
+Web Server,IT_TERM
+Server Settings,IT_TERM
+Server Configuration,IT_TERM
+Deployment Testing,IT_TERM
+Production Deployment,IT_TERM
+Computer Hardware Maintenance,IT_TERM
+iClinicSys,IT_TERM
+eGOV.PH,IT_TERM
+Microsoft Word,IT_TERM
+Google Forms,IT_TERM
+Google Sheets,IT_TERM
+Facebook Management,IT_TERM
+Facebook Posting,IT_TERM
+Digital File Management,IT_TERM
+File Management,IT_TERM
+Digital File Organization,IT_TERM
+Capstone Project,IT_TERM
+Capstone Study,IT_TERM
+IT Fest,IT_TERM
+Research Summit,IT_TERM
+Document Organization,CLERICAL_TERM
+Document Filing,CLERICAL_TERM
+Document Sorting,CLERICAL_TERM
+Document Arrangement,CLERICAL_TERM
+Document Management,CLERICAL_TERM
+Document Handling,CLERICAL_TERM
+Document Preparation,CLERICAL_TERM
+Document Distribution,CLERICAL_TERM
+Document Routing,CLERICAL_TERM
+Document Review,CLERICAL_TERM
+Document Checking,CLERICAL_TERM
+Document Verification,CLERICAL_TERM
+Document Editing,CLERICAL_TERM
+Document Processing,CLERICAL_TERM
+Document Forwarding,CLERICAL_TERM
+Document Delivery,CLERICAL_TERM
+Document Safekeeping,CLERICAL_TERM
+Document Labeling,CLERICAL_TERM
+File Organization,CLERICAL_TERM
+File Arrangement,CLERICAL_TERM
+File Filing,CLERICAL_TERM
+File Checking,CLERICAL_TERM
+Folder Organization,CLERICAL_TERM
+Filing System,CLERICAL_TERM
+Record Management,CLERICAL_TERM
+Record Keeping,CLERICAL_TERM
+Record Organization,CLERICAL_TERM
+Record Checking,CLERICAL_TERM
+Records Management,CLERICAL_TERM
+Incoming Documents,CLERICAL_TERM
+Scanning Documents,CLERICAL_TERM
+Information Updating,CLERICAL_TERM
+Information Reviewing,CLERICAL_TERM
+Information Checking,CLERICAL_TERM
+Data Correction,CLERICAL_TERM
+Data Recording,CLERICAL_TERM
+Data Consolidation,CLERICAL_TERM
+Data Organization,CLERICAL_TERM
+Data Verification,CLERICAL_TERM
+Savings Accounts,CLERICAL_TERM
+Shares Accounts,CLERICAL_TERM
+Account Balances,CLERICAL_TERM
+Financial Transactions,CLERICAL_TERM
+Payment Records,CLERICAL_TERM
+Collection Reports,CLERICAL_TERM
+Financial Records,CLERICAL_TERM
+Beneficiary Records,CLERICAL_TERM
+Scholarship Data,CLERICAL_TERM
+Student Records,CLERICAL_TERM
+Patient Records,CLERICAL_TERM
+Medical Records,CLERICAL_TERM
+Prescription Records,CLERICAL_TERM
+PhilHealth Eligibility,CLERICAL_TERM
+Client Records,CLERICAL_TERM
+Client Payments,CLERICAL_TERM
+Inventory Records,CLERICAL_TERM
+Stock Records,CLERICAL_TERM
+Medicine Stocks,CLERICAL_TERM
+Medicine Distribution,CLERICAL_TERM
+Medicine Labeling,CLERICAL_TERM
+Stock Transfer,CLERICAL_TERM
+Transfer Slips,CLERICAL_TERM
+Document Stamping,CLERICAL_TERM
+Certificate Distribution,CLERICAL_TERM
+Certificate Release,CLERICAL_TERM
+ID Release,CLERICAL_TERM
+ID Distribution,CLERICAL_TERM
+Form Distribution,CLERICAL_TERM
+Flyer Distribution,CLERICAL_TERM
+Promotional Materials,CLERICAL_TERM
+Office Documentation,CLERICAL_TERM
+Office Coordination,CLERICAL_TERM
+Resource Management,CLERICAL_TERM
+Workplace Organization,CLERICAL_TERM
+Workspace Organization,CLERICAL_TERM
+Meeting Materials,CLERICAL_TERM
+Meeting Proceedings,CLERICAL_TERM
+Student Enrollment,CLERICAL_TERM
+Scholarship Records,CLERICAL_TERM
+Police Clearance,CLERICAL_TERM
+Audit Preparation,CLERICAL_TERM
+Clearance Forms,CLERICAL_TERM
+Exit Clearance Forms,CLERICAL_TERM
+Public Notices,CLERICAL_TERM
+Report Preparation,CLERICAL_TERM
+Activity Documentation,CLERICAL_TERM
+Photo Documentation,CLERICAL_TERM
+Attendance Records,CLERICAL_TERM
+Event Coordination,CLERICAL_TERM
+Event Preparation,CLERICAL_TERM
+Field Activity,CLERICAL_TERM
+Community Coordination,CLERICAL_TERM
+Barangay Coordination,CLERICAL_TERM
+Client Assistance,CLERICAL_TERM
+Customer Service,CLERICAL_TERM
+Nutrition Counseling,CLERICAL_TERM
+Health Records,CLERICAL_TERM
+Medical Inventory,CLERICAL_TERM
+Medicine Dispensing,CLERICAL_TERM
+Medicine Refill,CLERICAL_TERM
+Patient Assistance,CLERICAL_TERM
+Client Satisfaction Survey,CLERICAL_TERM
+Inventory Counting,CLERICAL_TERM
+Inventory Organization,CLERICAL_TERM
+Community Outreach,CLERICAL_TERM
+Certificate Recognition,CLERICAL_TERM
+Awarding Ceremony,CLERICAL_TERM
+Charter Day,CLERICAL_TERM
+BNS Meeting,CLERICAL_TERM
+BNS Activities,CLERICAL_TERM
+OPT Plus,CLERICAL_TERM
+Nutrition Activities,CLERICAL_TERM
+Training Activities,CLERICAL_TERM
+Presentation Materials,CLERICAL_TERM
+Research Activities,CLERICAL_TERM
+Task Alignment,CLERICAL_TERM
+Team Coordination,CLERICAL_TERM
+Team Task Division,CLERICAL_TERM
+Meeting Transcription,CLERICAL_TERM
+Materials Preparation,CLERICAL_TERM
+Material Distribution,CLERICAL_TERM
+Inventory Analysis,CLERICAL_TERM
+GraphQL,IT_TERM
+Photocopying,CLERICAL_TERM
+General Cleaning,CLERICAL_TERM
