@@ -1,0 +1,974 @@
+[
+  {
+    "record_id": 1,
+    "original_text": "Performed basic internet connection troubleshooting.",
+    "original_entities": [
+      {
+        "text": "internet connection troubleshooting",
+        "label": "IT_TERM",
+        "start": 16,
+        "end": 51
+      }
+    ],
+    "paraphrase_text": "Executed a straightforward internet connection troubleshooting.",
+    "paraphrase_entities": [
+      {
+        "text": "internet connection troubleshooting",
+        "label": "IT_TERM",
+        "start": 27,
+        "end": 62
+      }
+    ],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 2,
+    "original_text": "I was assigned to create the dashboard for the monitoring system.",
+    "original_entities": [
+      {
+        "text": "monitoring system",
+        "label": "IT_TERM",
+        "start": 47,
+        "end": 64
+      }
+    ],
+    "paraphrase_text": "I was tasked with designing the dashboard for the monitoring system.",
+    "paraphrase_entities": [
+      {
+        "text": "monitoring system",
+        "label": "IT_TERM",
+        "start": 50,
+        "end": 67
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 3,
+    "original_text": "Updated the UpdateTrainee page because some information, such as educational attainment, type of disability, and employment status, was not being fetched correctly due to mismatched values between the traineelist page and the updateTraine page.",
+    "original_entities": [
+      {
+        "text": "UpdateTrainee page",
+        "label": "IT_TERM",
+        "start": 12,
+        "end": 30
+      },
+      {
+        "text": "traineelist page",
+        "label": "IT_TERM",
+        "start": 201,
+        "end": 217
+      }
+    ],
+    "paraphrase_text": "Changed the UpdateTrainee page because some data, such as educational level, disability type, and job status, were not being accurately retrieved due to a discrepancy between the traineelist page and updateTraines page.",
+    "paraphrase_entities": [
+      {
+        "text": "UpdateTrainee page",
+        "label": "IT_TERM",
+        "start": 12,
+        "end": 30
+      },
+      {
+        "text": "traineelist page",
+        "label": "IT_TERM",
+        "start": 179,
+        "end": 195
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 4,
+    "original_text": "Tuesday (April 21, 2026): We temporarily moved to another office because the MESDRU office was going to be used for a meeting. I transferred and set up the computer I was using and connected it to a Smart TV to serve as my monitor. After setting up the workstation, I continued working on the PPMP for the day.",
+    "original_entities": [
+      {
+        "text": "Smart TV",
+        "label": "IT_TERM",
+        "start": 199,
+        "end": 207
+      },
+      {
+        "text": "PPMP",
+        "label": "IT_TERM",
+        "start": 293,
+        "end": 297
+      }
+    ],
+    "paraphrase_text": "Due to a meeting at the MESDRU office on Tuesday (April 21, 2026), we temporarily relocated to another office. I transferred and connected my current computer and Smart TV to it to serve as my screen. After setting up the workstation, I continued working on the PPMP for the day.",
+    "paraphrase_entities": [
+      {
+        "text": "Smart TV",
+        "label": "IT_TERM",
+        "start": 163,
+        "end": 171
+      },
+      {
+        "text": "PPMP",
+        "label": "IT_TERM",
+        "start": 262,
+        "end": 266
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 5,
+    "original_text": "Drafted data-linking logic to connect map coordinates directly to logbook records.",
+    "original_entities": [
+      {
+        "text": "data-linking logic",
+        "label": "IT_TERM",
+        "start": 8,
+        "end": 26
+      },
+      {
+        "text": "map coordinates",
+        "label": "IT_TERM",
+        "start": 38,
+        "end": 53
+      },
+      {
+        "text": "logbook records",
+        "label": "CLERICAL_TERM",
+        "start": 66,
+        "end": 81
+      }
+    ],
+    "paraphrase_text": "Formulated data-linking logic to connect map coordinates and logbook records without any intermediaries.",
+    "paraphrase_entities": [
+      {
+        "text": "data-linking logic",
+        "label": "IT_TERM",
+        "start": 11,
+        "end": 29
+      },
+      {
+        "text": "map coordinates",
+        "label": "IT_TERM",
+        "start": 41,
+        "end": 56
+      },
+      {
+        "text": "logbook records",
+        "label": "CLERICAL_TERM",
+        "start": 61,
+        "end": 76
+      }
+    ],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 6,
+    "original_text": "May 30 (Day 45) Work from home - coding and inserting employee information",
+    "original_entities": [
+      {
+        "text": "coding",
+        "label": "IT_TERM",
+        "start": 33,
+        "end": 39
+      },
+      {
+        "text": "employee information",
+        "label": "CLERICAL_TERM",
+        "start": 54,
+        "end": 74
+      }
+    ],
+    "paraphrase_text": "Work from home on May 30 (Day 45) will involve coding and adding employee information.",
+    "paraphrase_entities": [
+      {
+        "text": "coding",
+        "label": "IT_TERM",
+        "start": 47,
+        "end": 53
+      },
+      {
+        "text": "employee information",
+        "label": "CLERICAL_TERM",
+        "start": 65,
+        "end": 85
+      }
+    ],
+    "all_valid_count": 3
+  },
+  {
+    "record_id": 7,
+    "original_text": "Day1(March 19, 2026): Conducted a quick orientation an planning session to identify the specific system requirements of the clinic.",
+    "original_entities": [
+      {
+        "text": "system requirements",
+        "label": "IT_TERM",
+        "start": 97,
+        "end": 116
+      }
+    ],
+    "paraphrase_text": "On Day 1 (March 19, 2026), a brief orientation and planning session was held to determine the system requirements of the clinic.",
+    "paraphrase_entities": [
+      {
+        "text": "system requirements",
+        "label": "IT_TERM",
+        "start": 94,
+        "end": 113
+      }
+    ],
+    "all_valid_count": 5
+  },
+  {
+    "record_id": 8,
+    "original_text": "Git version control managed code changes effectively",
+    "original_entities": [
+      {
+        "text": "Git version control",
+        "label": "IT_TERM",
+        "start": 0,
+        "end": 19
+      }
+    ],
+    "paraphrase_text": "The effectiveness of Git version control was evident in its management of code revisions.",
+    "paraphrase_entities": [
+      {
+        "text": "Git version control",
+        "label": "IT_TERM",
+        "start": 21,
+        "end": 40
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 9,
+    "original_text": "System Development Flow",
+    "original_entities": [
+      {
+        "text": "System Development",
+        "label": "IT_TERM",
+        "start": 0,
+        "end": 18
+      }
+    ],
+    "paraphrase_text": "The System Development Flow",
+    "paraphrase_entities": [
+      {
+        "text": "System Development",
+        "label": "IT_TERM",
+        "start": 4,
+        "end": 22
+      }
+    ],
+    "all_valid_count": 4
+  },
+  {
+    "record_id": 10,
+    "original_text": "I improved my skills in social media management",
+    "original_entities": [
+      {
+        "text": "social media",
+        "label": "IT_TERM",
+        "start": 24,
+        "end": 36
+      }
+    ],
+    "paraphrase_text": "My proficiency in managing social media was enhanced.",
+    "paraphrase_entities": [
+      {
+        "text": "social media",
+        "label": "IT_TERM",
+        "start": 27,
+        "end": 39
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 11,
+    "original_text": "I realized the value of automated testing procedures",
+    "original_entities": [
+      {
+        "text": "automated testing",
+        "label": "IT_TERM",
+        "start": 24,
+        "end": 41
+      }
+    ],
+    "paraphrase_text": "I comprehended the necessity of automated testing methods.",
+    "paraphrase_entities": [
+      {
+        "text": "automated testing",
+        "label": "IT_TERM",
+        "start": 32,
+        "end": 49
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 12,
+    "original_text": "I became proficient in security assessment methods.",
+    "original_entities": [
+      {
+        "text": "security",
+        "label": "IT_TERM",
+        "start": 23,
+        "end": 31
+      }
+    ],
+    "paraphrase_text": "I acquired expertise in security assessment methods.",
+    "paraphrase_entities": [
+      {
+        "text": "security",
+        "label": "IT_TERM",
+        "start": 24,
+        "end": 32
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 13,
+    "original_text": "I improved my understanding of foreign key relationships.",
+    "original_entities": [
+      {
+        "text": "foreign key relationships",
+        "label": "IT_TERM",
+        "start": 31,
+        "end": 56
+      }
+    ],
+    "paraphrase_text": "I developed a better grasp of foreign key relationships.",
+    "paraphrase_entities": [
+      {
+        "text": "foreign key relationships",
+        "label": "IT_TERM",
+        "start": 30,
+        "end": 55
+      }
+    ],
+    "all_valid_count": 4
+  },
+  {
+    "record_id": 14,
+    "original_text": "I learned how design choices affect user experience and system usability",
+    "original_entities": [
+      {
+        "text": "user experience",
+        "label": "IT_TERM",
+        "start": 36,
+        "end": 51
+      },
+      {
+        "text": "system usability",
+        "label": "IT_TERM",
+        "start": 56,
+        "end": 72
+      }
+    ],
+    "paraphrase_text": "The impact of design decisions on user experience and system usability was something I learned as well.",
+    "paraphrase_entities": [
+      {
+        "text": "user experience",
+        "label": "IT_TERM",
+        "start": 34,
+        "end": 49
+      },
+      {
+        "text": "system usability",
+        "label": "IT_TERM",
+        "start": 54,
+        "end": 70
+      }
+    ],
+    "all_valid_count": 4
+  },
+  {
+    "record_id": 15,
+    "original_text": "After the recognition event, we continued our assigned duties, particularly focusing on the filing and organization of the office documents.",
+    "original_entities": [
+      {
+        "text": "office documents",
+        "label": "IT_TERM",
+        "start": 123,
+        "end": 139
+      }
+    ],
+    "paraphrase_text": "Following the recognition event, we proceeded with our assigned tasks, with a particular emphasis on the filing and organizing of office documents.",
+    "paraphrase_entities": [
+      {
+        "text": "office documents",
+        "label": "IT_TERM",
+        "start": 130,
+        "end": 146
+      }
+    ],
+    "all_valid_count": 5
+  },
+  {
+    "record_id": 16,
+    "original_text": "Encoded and organized vendor evaluation data using Microsoft Excel.",
+    "original_entities": [
+      {
+        "text": "evaluation data",
+        "label": "CLERICAL_TERM",
+        "start": 29,
+        "end": 44
+      },
+      {
+        "text": "Microsoft Excel",
+        "label": "CLERICAL_TERM",
+        "start": 51,
+        "end": 66
+      }
+    ],
+    "paraphrase_text": "Transformed vendor evaluation data into a structured format using Microsoft Excel.",
+    "paraphrase_entities": [
+      {
+        "text": "evaluation data",
+        "label": "CLERICAL_TERM",
+        "start": 19,
+        "end": 34
+      },
+      {
+        "text": "Microsoft Excel",
+        "label": "CLERICAL_TERM",
+        "start": 66,
+        "end": 81
+      }
+    ],
+    "all_valid_count": 4
+  },
+  {
+    "record_id": 17,
+    "original_text": "Continued printing important office documents and notices.",
+    "original_entities": [
+      {
+        "text": "notices",
+        "label": "CLERICAL_TERM",
+        "start": 50,
+        "end": 57
+      }
+    ],
+    "paraphrase_text": "Mainstream printing of important office papers and notices continued.",
+    "paraphrase_entities": [
+      {
+        "text": "notices",
+        "label": "CLERICAL_TERM",
+        "start": 51,
+        "end": 58
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 18,
+    "original_text": "Encoded reports and office records using Excel.",
+    "original_entities": [
+      {
+        "text": "reports",
+        "label": "CLERICAL_TERM",
+        "start": 8,
+        "end": 15
+      },
+      {
+        "text": "Excel",
+        "label": "CLERICAL_TERM",
+        "start": 41,
+        "end": 46
+      }
+    ],
+    "paraphrase_text": "Office records and coded reports in Excel.",
+    "paraphrase_entities": [
+      {
+        "text": "reports",
+        "label": "CLERICAL_TERM",
+        "start": 25,
+        "end": 32
+      },
+      {
+        "text": "Excel",
+        "label": "CLERICAL_TERM",
+        "start": 36,
+        "end": 41
+      }
+    ],
+    "all_valid_count": 3
+  },
+  {
+    "record_id": 19,
+    "original_text": "Thursday (March 26, 2026): I created layout designs for tokens for the Safe Motherhood program. I also refined the planner, mug, and tarpaulin designs to ensure consistency and alignment with the overall theme.",
+    "original_entities": [
+      {
+        "text": "layout designs",
+        "label": "CLERICAL_TERM",
+        "start": 37,
+        "end": 51
+      },
+      {
+        "text": "tokens",
+        "label": "CLERICAL_TERM",
+        "start": 56,
+        "end": 62
+      },
+      {
+        "text": "planner",
+        "label": "CLERICAL_TERM",
+        "start": 115,
+        "end": 122
+      },
+      {
+        "text": "mug",
+        "label": "CLERICAL_TERM",
+        "start": 124,
+        "end": 127
+      },
+      {
+        "text": "tarpaulin designs",
+        "label": "CLERICAL_TERM",
+        "start": 133,
+        "end": 150
+      }
+    ],
+    "paraphrase_text": "On Thursday (March 26, 2026), I designed the layout designs for the Safe Motherhood program's tokens. I also worked on the planner, mug, and tarpaulin designs to ensure their adherence to the theme.",
+    "paraphrase_entities": [
+      {
+        "text": "layout designs",
+        "label": "CLERICAL_TERM",
+        "start": 45,
+        "end": 59
+      },
+      {
+        "text": "tokens",
+        "label": "CLERICAL_TERM",
+        "start": 94,
+        "end": 100
+      },
+      {
+        "text": "planner",
+        "label": "CLERICAL_TERM",
+        "start": 123,
+        "end": 130
+      },
+      {
+        "text": "mug",
+        "label": "CLERICAL_TERM",
+        "start": 132,
+        "end": 135
+      },
+      {
+        "text": "tarpaulin designs",
+        "label": "CLERICAL_TERM",
+        "start": 141,
+        "end": 158
+      }
+    ],
+    "all_valid_count": 4
+  },
+  {
+    "record_id": 20,
+    "original_text": "Monday (May 18, 2026): I was tasked by Ma'am Kathy to add the logos of the Department of Health (DOH), LGU Manolo Fortich, and Municipal Health Office (MHO) Manola Fortich to the tarpaulin for the 5S Lean Workplace program. I ensured that the logos were properly placed and aligned with the overall design.",
+    "original_entities": [
+      {
+        "text": "logos",
+        "label": "CLERICAL_TERM",
+        "start": 62,
+        "end": 67
+      },
+      {
+        "text": "tarpaulin",
+        "label": "CLERICAL_TERM",
+        "start": 179,
+        "end": 188
+      }
+    ],
+    "paraphrase_text": "On Monday (May 18, 2026), I was tasked by Ma'am Kathy to add the logos of the Department of Health (DOH), LGU Manolo Fortich, and Municipal Health Office (MHO) Manula Fortick to the tarpaulin for the 5S Lean Workplace program. I made sure the placement was well-defined and complemented the overall design.",
+    "paraphrase_entities": [
+      {
+        "text": "logos",
+        "label": "CLERICAL_TERM",
+        "start": 65,
+        "end": 70
+      },
+      {
+        "text": "tarpaulin",
+        "label": "CLERICAL_TERM",
+        "start": 182,
+        "end": 191
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 21,
+    "original_text": "Making sure that the person delivering the internal documents answers on the Client Satisfaction Survey.",
+    "original_entities": [
+      {
+        "text": "internal documents",
+        "label": "CLERICAL_TERM",
+        "start": 43,
+        "end": 61
+      },
+      {
+        "text": "Client Satisfaction Survey",
+        "label": "CLERICAL_TERM",
+        "start": 77,
+        "end": 103
+      }
+    ],
+    "paraphrase_text": "Verifying that the individual who answers the internal documents on the Client Satisfaction Survey has provided their input.",
+    "paraphrase_entities": [
+      {
+        "text": "internal documents",
+        "label": "CLERICAL_TERM",
+        "start": 46,
+        "end": 64
+      },
+      {
+        "text": "Client Satisfaction Survey",
+        "label": "CLERICAL_TERM",
+        "start": 72,
+        "end": 98
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 22,
+    "original_text": "Making an IS on the Received Documents",
+    "original_entities": [
+      {
+        "text": "IS",
+        "label": "CLERICAL_TERM",
+        "start": 10,
+        "end": 12
+      },
+      {
+        "text": "Received Documents",
+        "label": "CLERICAL_TERM",
+        "start": 20,
+        "end": 38
+      }
+    ],
+    "paraphrase_text": "Constructing an IS on the Received Documents.",
+    "paraphrase_entities": [
+      {
+        "text": "IS",
+        "label": "CLERICAL_TERM",
+        "start": 16,
+        "end": 18
+      },
+      {
+        "text": "Received Documents",
+        "label": "CLERICAL_TERM",
+        "start": 26,
+        "end": 44
+      }
+    ],
+    "all_valid_count": 3
+  },
+  {
+    "record_id": 23,
+    "original_text": "MONDAY(MARCH 30) Today, we continued working on the PESO book by arranging and editing the pages to improve the overall layout and design. We also checked the content for errors and made necessary corrections to ensure the information was clear and organized.",
+    "original_entities": [
+      {
+        "text": "PESO book",
+        "label": "CLERICAL_TERM",
+        "start": 52,
+        "end": 61
+      }
+    ],
+    "paraphrase_text": "During our work on MONDAY(MARCH 30), we sorted and edited the pages of the PESO book to improve its overall layout and design. We also made corrections to the content to prevent any errors and ensure the information was clear.",
+    "paraphrase_entities": [
+      {
+        "text": "PESO book",
+        "label": "CLERICAL_TERM",
+        "start": 75,
+        "end": 84
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 24,
+    "original_text": "Designing the System / Processing Police Clearance",
+    "original_entities": [
+      {
+        "text": "Police Clearance",
+        "label": "CLERICAL_TERM",
+        "start": 34,
+        "end": 50
+      }
+    ],
+    "paraphrase_text": "Processing the Police Clearance System / Designing the System",
+    "paraphrase_entities": [
+      {
+        "text": "Police Clearance",
+        "label": "CLERICAL_TERM",
+        "start": 15,
+        "end": 31
+      }
+    ],
+    "all_valid_count": 4
+  },
+  {
+    "record_id": 25,
+    "original_text": "Redesigning the Tarpaulin Design in Desk Office",
+    "original_entities": [
+      {
+        "text": "Tarpaulin Design",
+        "label": "CLERICAL_TERM",
+        "start": 16,
+        "end": 32
+      }
+    ],
+    "paraphrase_text": "Revamping the Tarpaulin Design in Desk Office.",
+    "paraphrase_entities": [
+      {
+        "text": "Tarpaulin Design",
+        "label": "CLERICAL_TERM",
+        "start": 14,
+        "end": 30
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 26,
+    "original_text": "Office supplies management maintained equipment inventory",
+    "original_entities": [
+      {
+        "text": "supplies management",
+        "label": "CLERICAL_TERM",
+        "start": 7,
+        "end": 26
+      }
+    ],
+    "paraphrase_text": "The office supplies management was in charge of managing the inventory of equipment.",
+    "paraphrase_entities": [
+      {
+        "text": "supplies management",
+        "label": "CLERICAL_TERM",
+        "start": 11,
+        "end": 30
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 27,
+    "original_text": "I learned the importance of encoding the members' names and updating their individual passbooks",
+    "original_entities": [
+      {
+        "text": "encoding",
+        "label": "CLERICAL_TERM",
+        "start": 28,
+        "end": 36
+      }
+    ],
+    "paraphrase_text": "I was educated on the significance of encoding the members' names and updating their individual passbooks.",
+    "paraphrase_entities": [
+      {
+        "text": "encoding",
+        "label": "CLERICAL_TERM",
+        "start": 38,
+        "end": 46
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 28,
+    "original_text": "Through this experience, I understood disaster recovery",
+    "original_entities": [
+      {
+        "text": "disaster recovery",
+        "label": "CLERICAL_TERM",
+        "start": 38,
+        "end": 55
+      }
+    ],
+    "paraphrase_text": "I gained knowledge about disaster recovery through this experience.",
+    "paraphrase_entities": [
+      {
+        "text": "disaster recovery",
+        "label": "CLERICAL_TERM",
+        "start": 25,
+        "end": 42
+      }
+    ],
+    "all_valid_count": 6
+  },
+  {
+    "record_id": 29,
+    "original_text": "Participated and assisted in the LGU 109th Charter Day celebration.",
+    "original_entities": [],
+    "paraphrase_text": "Enabled and aided in the commemoration of the LGU 109th Charter Day.",
+    "paraphrase_entities": [],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 30,
+    "original_text": "Converted and organized staff and vendor files into digital format.",
+    "original_entities": [],
+    "paraphrase_text": "digitized and formatted staff and vendor files.",
+    "paraphrase_entities": [],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 31,
+    "original_text": "Sorted, classified, and arranged office documents and papers.",
+    "original_entities": [],
+    "paraphrase_text": "Organized, sorted, and tidied office documents and papers.",
+    "paraphrase_entities": [],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 32,
+    "original_text": "Assisted in preparing and organizing printed documents for distribution and filing.",
+    "original_entities": [],
+    "paraphrase_text": "Aided in the preparation and arrangement of printed materials for distribution and filing.",
+    "paraphrase_entities": [],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 33,
+    "original_text": "Assisted in checking and maintaining office equipment.",
+    "original_entities": [],
+    "paraphrase_text": "Aided in the inspection and upkeep of office equipment.",
+    "paraphrase_entities": [],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 34,
+    "original_text": "Assisted in the distribution of electricity tracer documents during outdoor field activities.",
+    "original_entities": [],
+    "paraphrase_text": "Aided in the distribution of electricity tracer documents during outdoor fieldwork.",
+    "paraphrase_entities": [],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 35,
+    "original_text": "Assisted in preparing and arranging documents needed for daily office transactions.",
+    "original_entities": [],
+    "paraphrase_text": "Aided in the preparation and coordination of paperwork required for everyday office tasks.",
+    "paraphrase_entities": [],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 36,
+    "original_text": "Noted the process of vehicle records monitoring and tracking by the staff.",
+    "original_entities": [],
+    "paraphrase_text": "Described the staff's approach to monitoring and tracking vehicle records.",
+    "paraphrase_entities": [],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 37,
+    "original_text": "Assisted in delivering lectures and safety demonstrations on fire fighting techniques.",
+    "original_entities": [
+      {
+        "text": "lectures",
+        "label": "CLERICAL_TERM",
+        "start": 23,
+        "end": 31
+      },
+      {
+        "text": "safety demonstrations",
+        "label": "CLERICAL_TERM",
+        "start": 36,
+        "end": 57
+      }
+    ],
+    "paraphrase_text": "Aided in delivering lectures and safety demonstrations on fire fighting techniques.",
+    "paraphrase_entities": [
+      {
+        "text": "lectures",
+        "label": "CLERICAL_TERM",
+        "start": 20,
+        "end": 28
+      },
+      {
+        "text": "safety demonstrations",
+        "label": "CLERICAL_TERM",
+        "start": 33,
+        "end": 54
+      }
+    ],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 38,
+    "original_text": "Organized and managed the fire safety-themed drawing competition.",
+    "original_entities": [
+      {
+        "text": "drawing competition",
+        "label": "CLERICAL_TERM",
+        "start": 45,
+        "end": 64
+      }
+    ],
+    "paraphrase_text": "Oversaw the fire safety drawing competition.",
+    "paraphrase_entities": [
+      {
+        "text": "drawing competition",
+        "label": "CLERICAL_TERM",
+        "start": 24,
+        "end": 43
+      }
+    ],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 39,
+    "original_text": "Conducted multiple field trials across different locations in Manolo Fortich.",
+    "original_entities": [
+      {
+        "text": "field trials",
+        "label": "CLERICAL_TERM",
+        "start": 19,
+        "end": 31
+      }
+    ],
+    "paraphrase_text": "Carried out multiple field trials across various locations in Manolo Fortich.",
+    "paraphrase_entities": [
+      {
+        "text": "field trials",
+        "label": "CLERICAL_TERM",
+        "start": 21,
+        "end": 33
+      }
+    ],
+    "all_valid_count": 1
+  },
+  {
+    "record_id": 40,
+    "original_text": "Identified and logged location inaccuracies and coordinate drift bugs.",
+    "original_entities": [
+      {
+        "text": "location inaccuracies",
+        "label": "IT_TERM",
+        "start": 22,
+        "end": 43
+      },
+      {
+        "text": "coordinate drift bugs",
+        "label": "IT_TERM",
+        "start": 48,
+        "end": 69
+      }
+    ],
+    "paraphrase_text": "Identified and documented location inaccuracies and coordinate drift bugs.",
+    "paraphrase_entities": [
+      {
+        "text": "location inaccuracies",
+        "label": "IT_TERM",
+        "start": 26,
+        "end": 47
+      },
+      {
+        "text": "coordinate drift bugs",
+        "label": "IT_TERM",
+        "start": 52,
+        "end": 73
+      }
+    ],
+    "all_valid_count": 1
+  }
+]

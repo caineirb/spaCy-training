@@ -1,7 +1,7 @@
 """
 Data Leakage and Benchmark Isolation Audit Script.
 
-Verifies and prints PASS/FAIL for each of 6 strict leakage checks:
+Verifies and prints PASS/FAIL for each of 7 strict leakage checks:
 1. No duplicate documents across train/dev/test splits.
 2. No duplicate sentences across train/dev/test splits.
 3. No unseen-benchmark terms appear in data/terms.csv.
@@ -9,12 +9,17 @@ Verifies and prints PASS/FAIL for each of 6 strict leakage checks:
 5. No unseen-benchmark terms are matchable by the EntityRuler as currently configured.
 6. No sentences in data/test/holdout.jsonl or data/test/raw/ also appear in
    train.spacy / dev.spacy / test.spacy or the synthetic annotation pipeline's source data.
+7. No synthetic sentences (paraphrase or template) are exact or near-duplicates (similarity >= 0.70)
+   of any sentence in test.spacy, dev.spacy, unseen_benchmark.jsonl, or holdout.jsonl,
+   and no synthetic sentences contain unseen benchmark terms.
 
 Exits with code 1 if ANY check fails. Exits with code 0 only if ALL checks PASS.
 """
 
 import os
 import sys
+import re
+import difflib
 import json
 import glob
 from typing import Dict, List, Set, Tuple, Any
@@ -313,6 +318,123 @@ def check_real_holdout_isolation(
     return passed, details
 
 
+def check_synthetic_pool_isolation(
+    nlp: spacy.language.Language,
+    test_docs: List[str],
+    dev_docs: List[str],
+    unseen_benchmark_samples: List[Dict[str, Any]],
+    unseen_gold_terms: Set[str],
+    paraphrase_path: str = "data/synthetic_paraphrases.jsonl",
+    template_path: str = "data/synthetic_templates.jsonl",
+    holdout_path: str = "data/test/holdout.jsonl",
+    similarity_threshold: float = 0.70
+) -> Tuple[bool, Dict[str, Any]]:
+    """Check 7: Verify zero synthetic sentences are exact or near-duplicates of evaluation sentences,
+    and verify zero unseen benchmark terms appear in synthetic sentences.
+    """
+    def extract_sentences(docs: List[str]) -> List[str]:
+        sents = []
+        for text in docs:
+            if not text.strip():
+                continue
+            doc = nlp(text)
+            for s in doc.sents:
+                clean = s.text.strip()
+                if clean:
+                    sents.append(clean)
+        return sents
+
+    eval_sents: List[str] = []
+    eval_sents.extend(extract_sentences(test_docs))
+    eval_sents.extend(extract_sentences(dev_docs))
+
+    for sample in unseen_benchmark_samples:
+        clean = sample.get("text", "").strip()
+        if clean:
+            eval_sents.extend(extract_sentences([clean]))
+
+    if os.path.exists(holdout_path) and os.path.getsize(holdout_path) > 0:
+        with open(holdout_path, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        rec = json.loads(line)
+                        clean = rec.get("text", "").strip()
+                        if clean:
+                            eval_sents.extend(extract_sentences([clean]))
+                    except Exception:
+                        pass
+
+    eval_norm_map = {s.lower(): s for s in eval_sents}
+
+    # Load synthetic pool
+    synthetic_records: List[Dict[str, Any]] = []
+    for p in [paraphrase_path, template_path]:
+        if os.path.exists(p):
+            with open(p, "r", encoding="utf-8") as f:
+                for line in f:
+                    if line.strip():
+                        try:
+                            rec = json.loads(line)
+                            synthetic_records.append(rec)
+                        except Exception:
+                            pass
+
+    synthetic_sents: List[str] = []
+    for r in synthetic_records:
+        text = r.get("text", "").strip()
+        if text:
+            synthetic_sents.extend(extract_sentences([text]))
+
+    exact_duplicates = []
+    near_duplicates = []
+    term_leakages = []
+
+    # Check unseen benchmark terms in synthetic pool
+    for r in synthetic_records:
+        t_low = r.get("text", "").lower()
+        for bt in unseen_gold_terms:
+            if bt.lower() in t_low:
+                term_leakages.append((r.get("text", ""), bt))
+
+    # Check exact and near duplicates against eval sentences
+    for syn_s in synthetic_sents:
+        syn_low = syn_s.lower()
+        if syn_low in eval_norm_map:
+            exact_duplicates.append((syn_s, eval_norm_map[syn_low]))
+            continue
+
+        syn_words = set(re.findall(r"\w+", syn_low))
+        if not syn_words:
+            continue
+
+        for ev_low, orig_ev in eval_norm_map.items():
+            ev_words = set(re.findall(r"\w+", ev_low))
+            if not ev_words:
+                continue
+            jaccard = len(syn_words & ev_words) / len(syn_words | ev_words)
+            if jaccard >= 0.60:
+                sim = difflib.SequenceMatcher(None, syn_low, ev_low).ratio()
+                if sim >= similarity_threshold:
+                    near_duplicates.append((syn_s, orig_ev, round(sim, 3)))
+                    break
+
+    passed = (len(exact_duplicates) == 0 and len(near_duplicates) == 0 and len(term_leakages) == 0)
+    details = {
+        "synthetic_records_checked": len(synthetic_records),
+        "synthetic_sentences_checked": len(synthetic_sents),
+        "eval_sentences_checked": len(eval_norm_map),
+        "exact_duplicate_count": len(exact_duplicates),
+        "exact_duplicates": exact_duplicates[:5],
+        "near_duplicate_count": len(near_duplicates),
+        "near_duplicates": near_duplicates[:5],
+        "term_leakage_count": len(term_leakages),
+        "term_leakages": term_leakages[:5],
+        "similarity_threshold": similarity_threshold,
+    }
+    return passed, details
+
+
 def run_all_leakage_checks() -> bool:
     """Executes all 6 leakage checks, prints structured output, and returns overall success."""
     print("\n" + "#" * 75)
@@ -470,6 +592,44 @@ def run_all_leakage_checks() -> bool:
         results["Check 6 (Holdout Isolation)"] = (False, f"FAIL ({c6_details['overlap_count']} sentences overlap)")
 
     # -------------------------------------------------------------
+    # Check 7: Synthetic pool isolation (exact & near-duplicate check)
+    # -------------------------------------------------------------
+    print_section("Check 7: Synthetic Pool Isolation (Exact & Near-Duplicate Check)")
+    c7_pass, c7_details = check_synthetic_pool_isolation(
+        sentencizer_nlp,
+        test_docs,
+        dev_docs,
+        benchmark_samples,
+        unseen_gold_terms,
+        similarity_threshold=0.70
+    )
+    if c7_pass:
+        print(f"[PASS] Zero synthetic sentences overlap with evaluation sets (exact or near-duplicate >= {c7_details['similarity_threshold']}).")
+        print(f"       Synthetic sentences checked : {c7_details['synthetic_sentences_checked']} ({c7_details['synthetic_records_checked']} records)")
+        print(f"       Evaluation sentences guarded: {c7_details['eval_sentences_checked']}")
+        print(f"       Unseen benchmark term leaks : 0")
+        results["Check 7 (Synthetic Pool Isolation)"] = (True, "PASS")
+    else:
+        print(f"[FAIL] Synthetic pool violates evaluation isolation!")
+        if c7_details["exact_duplicate_count"] > 0:
+            print(f"       Exact duplicate matches with evaluation: {c7_details['exact_duplicate_count']}")
+            for syn_s, ev_s in c7_details["exact_duplicates"]:
+                print(f"         - Synthetic : {repr(syn_s)}")
+                print(f"           Evaluation: {repr(ev_s)}")
+        if c7_details["near_duplicate_count"] > 0:
+            print(f"       Near duplicate matches (>= {c7_details['similarity_threshold']}): {c7_details['near_duplicate_count']}")
+            for syn_s, ev_s, sim in c7_details["near_duplicates"]:
+                print(f"         - Sim {sim}: Synthetic={repr(syn_s)} <-> Eval={repr(ev_s)}")
+        if c7_details["term_leakage_count"] > 0:
+            print(f"       Unseen benchmark terms leaked into synthetic pool: {c7_details['term_leakage_count']}")
+            for txt, bt in c7_details["term_leakages"]:
+                print(f"         - Term '{bt}' in: {repr(txt)}")
+        results["Check 7 (Synthetic Pool Isolation)"] = (
+            False,
+            f"FAIL (exact: {c7_details['exact_duplicate_count']}, near: {c7_details['near_duplicate_count']}, term_leaks: {c7_details['term_leakage_count']})"
+        )
+
+    # -------------------------------------------------------------
     # Overall Audit Summary
     # -------------------------------------------------------------
     print_section("AUDIT SUMMARY")
@@ -482,7 +642,7 @@ def run_all_leakage_checks() -> bool:
 
     print("=" * 75)
     if all_passed:
-        print(">>> RESULT: ALL 6 CHECKS PASSED. ZERO DATA LEAKAGE DETECTED.")
+        print(">>> RESULT: ALL 7 CHECKS PASSED. ZERO DATA LEAKAGE DETECTED.")
         print("=" * 75)
         return True
     else:

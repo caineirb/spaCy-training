@@ -81,41 +81,45 @@ spaCy-training/
 ├── main.ipynb                         # Narrative Jupyter walkthrough notebook
 ├── config_trf.cfg                     # spaCy GPU transformer training configuration
 ├── data/
-│   ├── terms.csv                      # Seed dictionary (IT_TASK -> IT_TERM, CLERICAL -> CLERICAL_TERM)
-│   ├── data.jsonl                     # Real annotated training data (manually labeled OJT entries)
-│   ├── raw/
-│   │   ├── human_written_journal_input.txt   # Real conversational OJT journal entries
-│   │   └── structured_journal_input.txt      # Real structured OJT log entries
+│   ├── terms.csv                      # Seed dictionary (IT_TERM, CLERICAL_TERM)
+│   ├── data.jsonl                     # Real annotated training data (1,044 entries)
+│   ├── synthetic_paraphrases.jsonl    # T5-generated paraphrase augmentation pool (416 entries)
+│   ├── synthetic_templates.jsonl      # Template-based syntactic diversification pool (132 entries)
+│   ├── training_trstr.jsonl           # Combined TRSTR training pool (1,235 entries: 687 real, 548 synthetic)
 │   ├── training/
-│   │   ├── train.spacy                # spaCy DocBin binary training partition (70%)
-│   │   ├── dev.spacy                  # spaCy DocBin evaluation partition (15%)
-│   │   └── test.spacy                 # spaCy DocBin held-out testing partition (15%)
+│   │   ├── train.spacy                # Real training partition (687 docs)
+│   │   ├── dev.spacy                  # Real evaluation partition (147 docs)
+│   │   ├── test.spacy                 # Real held-out testing partition (148 docs)
+│   │   └── train_trstr.spacy          # Combined TRSTR training partition (1,235 docs)
 │   ├── test/
-│   │   ├── unseen_benchmark.jsonl     # Controlled unseen-term generalization probe (synthetic)
+│   │   ├── unseen_benchmark.jsonl     # Controlled unseen-term generalization probe (65 terms)
 │   │   ├── holdout.jsonl              # Permanent real-world holdout evaluation set
 │   │   └── raw/                       # Raw holdout journal text files
 │   ├── candidates/
 │   │   └── mined_candidates.csv       # Ranked active learning candidates
 │   └── evaluation_report.json         # Automated evaluation report & generalization metrics
 ├── models/
-│   ├── ner_trf/
-│   │   ├── model-best/                # Checkpoint with highest dev F1
-│   │   └── model-last/                # Final checkpoint
+│   ├── ner_trf_trtr/                  # Pure-real model (TRTR: Train Real, Test Real)
+│   │   └── model-best/                # Checkpoint with peak dev F1
+│   ├── ner_trf_trstr/                 # Augmented model (TRSTR: Train Real+Synth, Test Real)
+│   │   └── model-best/                # Checkpoint with peak dev F1
 │   └── hybrid_pipeline/               # Packaged EntityRuler + Transformer NER pipeline
 ├── scripts/
 │   ├── __init__.py                    # Automatic CUDA runtime library preloader
 │   ├── annotation.py                  # Real-data ingestion, diagnostics, dedup & DocBin conversion
-│   ├── training.py                    # Transformer fine-tuning script with GPU support
+│   ├── generate_synthetic_augmentation.py # Zero-leakage T5 paraphraser & template generator
+│   ├── training.py                    # Transformer fine-tuning script with patience-based stopping
 │   ├── pipeline.py                    # HybridJournalPipeline inference & confidence routing
 │   ├── candidate_mining.py            # Syntactic trigger pattern mining & active learning feedback
 │   ├── eval.py                        # Precision, Recall, F1 & unseen generalization benchmark
-│   ├── check_data_leakage.py          # 6-check data leakage & benchmark isolation audit
+│   ├── check_data_leakage.py          # 7-check data leakage & benchmark isolation audit
 │   ├── retrain.py                     # Active learning retraining workflow
 │   ├── build_holdout.py               # Real-world holdout scaffolding
 │   ├── deploy_inference.py            # Production streaming inference CLI
 │   └── labels.py                      # Label taxonomy & normalization
 └── docs/
-    └── annotation_guidelines.md       # Official annotation policy & label taxonomy
+    ├── annotation_guidelines.md       # Official annotation policy & label taxonomy
+    └── synthetic_augmentation_methodology.md # Full augmentation methodology & ablation report
 ```
 
 ---
@@ -241,7 +245,35 @@ python scripts/deploy_inference.py -i data/raw/human_written_journal_input.txt -
 
 ---
 
-## 6. Extensibility for Thesis Defense
+## 6. Empirical Results: TRTR vs. TRSTR Ablation
+
+To evaluate the effect of syntactic diversity and data volume, we conduct a controlled ablation between two training conditions under identical patience settings (`max_steps=2500`, `patience=400`):
+- **TRTR (Train Real, Test Real)**: Trained purely on authentic student journal annotations (`data/data.jsonl`, 687 training records).
+- **TRSTR (Train Real + Synthetic, Test Real)**: Trained on authentic data augmented with T5 paraphrases and syntactic templates (1,235 records: 687 real, 548 synthetic).
+
+Both conditions are evaluated on the exact same real evaluation partitions (`test.spacy` and `unseen_benchmark.jsonl`):
+
+| Evaluation Dimension | Metric | TRTR (Real Only) | TRSTR (Real + Synth) | Absolute Delta | Relative Gain |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Held-Out Real Test Set** | **Overall F1** | 60.06% | **61.25%** | **+1.19%** | +1.98% |
+| (`data/training/test.spacy`) | Overall Precision | 57.32% | 57.31% | -0.01% | -0.02% |
+| | Overall Recall | 63.09% | **65.77%** | **+2.68%** | +4.25% |
+| *Per-Label Performance* | `IT_TERM` F1 | **62.22%** | 60.00% | -2.22% | -3.57% |
+| | `IT_TERM` Recall | **70.89%** | 68.35% | -2.54% | -3.58% |
+| | `CLERICAL_TERM` F1 | 57.14% | **62.86%** | **+5.72%** | +10.01% |
+| | `CLERICAL_TERM` Recall | 54.29% | **62.86%** | **+8.57%** | +15.79% |
+| **Unseen Benchmark** | **Transformer Recall** | 33.85% (22/65) | **61.54% (40/65)** | **+27.69%** | **+81.80%** |
+| (Out-of-Vocabulary Probes) | Transformer Precision | 22.45% | **38.10%** | **+15.65%** | +69.71% |
+| | Transformer F1 | 26.99% | **47.06%** | **+20.07%** | +74.36% |
+| *Hybrid Pipeline* | **Hybrid Recall** | 33.85% | **61.54%** | **+27.69%** | +81.80% |
+| | **Generalization Lift** | +32.31% | **+60.00%** | **+27.69%** | +85.70% |
+
+> [!WARNING]
+> **Limitations Statement**: Synthetic augmentation was introduced to compensate for the limited volume of the authentic annotated corpus and to evaluate the impact of syntactic variety. TRSTR results demonstrate the transformer's capacity for zero-shot inductive generalization given broader linguistic variety, but should not be misconstrued as evidence that the final system was trained exclusively on authentic data. See [`docs/synthetic_augmentation_methodology.md`](docs/synthetic_augmentation_methodology.md) for full procedural documentation.
+
+---
+
+## 7. Extensibility for Thesis Defense
 
 - **Extensible Label Taxonomies**: The architecture seamlessly scales to more OJT categories (e.g. `ADMINISTRATIVE_TERM`, `FINANCE_TERM`, `MARKETING_TERM`, `DESIGN_TERM`) simply by adding labels to `data/terms.csv` and re-running `scripts/training.py`.
 - **Modular Decoupling**: The dictionary layer (`EntityRuler`) and contextual ML layer (`Transformer NER`) remain completely decoupled, allowing either layer to be swapped or upgraded independently without architectural refactoring.
