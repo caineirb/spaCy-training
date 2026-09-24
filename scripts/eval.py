@@ -13,6 +13,7 @@ import sys
 import json
 import math
 import logging
+from datetime import datetime
 from typing import Dict, Any, List, Tuple, Optional
 import pandas as pd
 import spacy
@@ -26,6 +27,124 @@ import scripts
 from scripts.pipeline import HybridJournalPipeline
 
 logger = logging.getLogger("ojt_pipeline.eval")
+
+EVAL_RESULTS_DIR = "data/eval_results"
+
+
+def _classify_entity_status(
+    gold_ents: List[Dict],
+    pred_ents: List[Dict],
+) -> List[Dict[str, Any]]:
+    """Classifies each gold and predicted entity into per-item status categories.
+    
+    Status categories (consistent with project error-analysis terminology):
+    - correct: exact span+label match
+    - false_negative: gold entity with no matching prediction
+    - false_positive: predicted entity with no matching gold
+    - label_error: right span, wrong label
+    - boundary_error: overlapping but not exact span match
+    """
+    results = []
+    matched_pred_indices = set()
+    
+    for g in gold_ents:
+        g_start, g_end, g_label = g["start"], g["end"], g["label"]
+        g_term = g.get("term", "")
+        best_status = "false_negative"
+        best_pred = None
+        
+        for p_idx, p in enumerate(pred_ents):
+            p_start, p_end = p.get("start", -1), p.get("end", -1)
+            p_label = p.get("category", p.get("label", ""))
+            p_term = p.get("term", "")
+            
+            # Exact span match
+            if p_start == g_start and p_end == g_end:
+                if p_label == g_label:
+                    best_status = "correct"
+                    best_pred = p
+                    matched_pred_indices.add(p_idx)
+                    break
+                else:
+                    best_status = "label_error"
+                    best_pred = p
+                    matched_pred_indices.add(p_idx)
+                    break
+            
+            # Overlapping span
+            if p_start < g_end and p_end > g_start:
+                best_status = "boundary_error"
+                best_pred = p
+                matched_pred_indices.add(p_idx)
+        
+        results.append({
+            "type": "gold",
+            "status": best_status,
+            "gold_term": g_term,
+            "gold_label": g_label,
+            "gold_start": g_start,
+            "gold_end": g_end,
+            "pred_term": best_pred.get("term", "") if best_pred else None,
+            "pred_label": best_pred.get("category", best_pred.get("label", "")) if best_pred else None,
+            "pred_confidence": best_pred.get("confidence", None) if best_pred else None,
+            "pred_source": best_pred.get("source", None) if best_pred else None,
+        })
+    
+    # Unmatched predictions are false positives
+    for p_idx, p in enumerate(pred_ents):
+        if p_idx not in matched_pred_indices:
+            results.append({
+                "type": "prediction",
+                "status": "false_positive",
+                "gold_term": None,
+                "gold_label": None,
+                "gold_start": None,
+                "gold_end": None,
+                "pred_term": p.get("term", ""),
+                "pred_label": p.get("category", p.get("label", "")),
+                "pred_confidence": p.get("confidence", None),
+                "pred_source": p.get("source", None),
+            })
+    
+    return results
+
+
+def _write_eval_results(
+    per_item_records: List[Dict[str, Any]],
+    eval_name: str,
+    run_label: str = "",
+) -> Tuple[str, str]:
+    """Writes per-item evaluation results to JSONL files.
+    
+    Produces two files:
+    - <eval_name>_<run_label>.jsonl: all items
+    - <eval_name>_<run_label>_errors_only.jsonl: only non-correct items
+    
+    Returns (all_path, errors_path).
+    """
+    os.makedirs(EVAL_RESULTS_DIR, exist_ok=True)
+    
+    suffix = f"_{run_label}" if run_label else f"_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    all_path = os.path.join(EVAL_RESULTS_DIR, f"{eval_name}{suffix}.jsonl")
+    errors_path = os.path.join(EVAL_RESULTS_DIR, f"{eval_name}{suffix}_errors_only.jsonl")
+    
+    error_count = 0
+    with open(all_path, "w", encoding="utf-8") as f_all, \
+         open(errors_path, "w", encoding="utf-8") as f_err:
+        for rec in per_item_records:
+            line = json.dumps(rec, ensure_ascii=False) + "\n"
+            f_all.write(line)
+            # Check if any entity_results are non-correct
+            has_error = any(
+                er["status"] != "correct"
+                for er in rec.get("entity_results", [])
+            )
+            if has_error:
+                f_err.write(line)
+                error_count += 1
+    
+    logger.info(f"Per-item results: {all_path} ({len(per_item_records)} items, {error_count} with errors)")
+    return all_path, errors_path
 
 def load_unseen_benchmark(
     benchmark_path: str = "data/test/unseen_benchmark.jsonl",
@@ -53,7 +172,8 @@ def load_unseen_benchmark(
 
 def evaluate_test_docbin(
     pipeline: HybridJournalPipeline,
-    test_spacy_path: str = "data/training/test.spacy"
+    test_spacy_path: str = "data/training/test.spacy",
+    run_label: str = "",
 ) -> Dict[str, Any]:
     """Evaluates the hybrid pipeline on the held-out test.spacy DocBin dataset."""
     if not os.path.exists(test_spacy_path):
@@ -65,10 +185,30 @@ def evaluate_test_docbin(
 
     scorer = Scorer()
     scored_examples = []
+    per_item_records = []
 
     for gold_doc in docs:
         pred_doc = nlp(gold_doc.text)
         scored_examples.append(Example(pred_doc, gold_doc))
+
+        # Per-item results
+        pred_result = pipeline.predict(gold_doc.text)
+        gold_ents = [
+            {"term": ent.text, "label": ent.label_, "start": ent.start_char, "end": ent.end_char}
+            for ent in gold_doc.ents
+        ]
+        pred_ents = pred_result["entities"]
+        entity_results = _classify_entity_status(gold_ents, pred_ents)
+
+        per_item_records.append({
+            "text": gold_doc.text,
+            "gold_entities": [{"term": e["term"], "label": e["label"]} for e in gold_ents],
+            "pred_entities": [{"term": e["term"], "label": e.get("category", ""), "confidence": e.get("confidence"), "source": e.get("source")} for e in pred_ents],
+            "entity_results": entity_results,
+        })
+
+    # Write per-item results
+    _write_eval_results(per_item_records, "held_out_test", run_label)
 
     scores = scorer.score(scored_examples)
 
@@ -99,6 +239,7 @@ def evaluate_unseen_mode(
     pipeline: HybridJournalPipeline,
     benchmark_samples: List[Dict[str, Any]],
     mode: str = "hybrid",
+    run_label: str = "",
 ) -> Dict[str, Any]:
     """Evaluates a single execution mode on the unseen-term benchmark."""
     tp = 0
@@ -110,6 +251,7 @@ def evaluate_unseen_mode(
     confidences_incorrect: List[float] = []
     all_confidences: List[float] = []
     detailed_results = []
+    per_item_records = []
 
     for sample in benchmark_samples:
         text = sample["text"]
@@ -152,6 +294,23 @@ def evaluate_unseen_mode(
             "conf": [e["confidence"] for e in pred_ents],
         })
 
+        # Per-item results for export
+        gold_for_classify = [
+            {"term": e.get("term", text[e["start"]:e["end"]]), "label": e["label"], "start": e["start"], "end": e["end"]}
+            for e in gold_ents
+        ]
+        entity_results = _classify_entity_status(gold_for_classify, pred_ents)
+        per_item_records.append({
+            "text": text,
+            "gold_entities": [{"term": e.get("term", ""), "label": e["label"]} for e in gold_ents],
+            "pred_entities": [{"term": e["term"], "label": e.get("category", ""), "confidence": e.get("confidence"), "source": e.get("source")} for e in pred_ents],
+            "entity_results": entity_results,
+        })
+
+    # Write per-item results
+    if per_item_records:
+        _write_eval_results(per_item_records, f"unseen_benchmark_{mode}", run_label)
+
     prec = (tp / (tp + fp)) if (tp + fp) > 0 else 0.0
     rec = (tp / (tp + fn)) if (tp + fn) > 0 else 0.0
     f1 = (2 * prec * rec / (prec + rec)) if (prec + rec) > 0 else 0.0
@@ -183,6 +342,7 @@ def evaluate_unseen_generalization(
     pipeline: HybridJournalPipeline,
     benchmark_samples: Optional[List[Dict[str, Any]]] = None,
     benchmark_path: str = "data/test/unseen_benchmark.jsonl",
+    run_label: str = "",
 ) -> Dict[str, Any]:
     """Evaluates pipeline performance on the unseen-term benchmark across 3 explicit modes:
     1. Transformer-only: EntityRuler disabled/bypassed entirely.
@@ -201,13 +361,13 @@ def evaluate_unseen_generalization(
         return {"status": "SKIPPED", "message": "No benchmark samples found."}
 
     logger.info("Evaluating unseen benchmark: Mode 1/3 (Transformer-only)...")
-    trf_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="transformer_only")
+    trf_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="transformer_only", run_label=run_label)
 
     logger.info("Evaluating unseen benchmark: Mode 2/3 (EntityRuler-only)...")
-    ruler_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="entity_ruler_only")
+    ruler_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="entity_ruler_only", run_label=run_label)
 
     logger.info("Evaluating unseen benchmark: Mode 3/3 (Hybrid)...")
-    hybrid_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="hybrid")
+    hybrid_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="hybrid", run_label=run_label)
 
     return {
         "benchmark_sample_size": len(benchmark_samples),
@@ -250,6 +410,7 @@ def evaluate_real_holdout(
     holdout_jsonl_path: str = "data/test/holdout.jsonl",
     terms_csv_path: str = "data/terms.csv",
     annotations_jsonl_path: str = "data/data.jsonl",
+    run_label: str = "",
 ) -> Dict[str, Any]:
     """Evaluates the hybrid pipeline against the permanent real-world holdout dataset.
     
@@ -295,6 +456,7 @@ def evaluate_real_holdout(
     unseen_tp, unseen_fp, unseen_fn = 0, 0, 0
     total_gold_seen, total_gold_unseen = 0, 0
     false_positives: List[Dict[str, Any]] = []
+    per_item_records: List[Dict[str, Any]] = []
 
     for rec in records:
         text = rec["text"]
@@ -363,6 +525,23 @@ def evaluate_real_holdout(
                     "sentence_snippet": text[:80] + ("..." if len(text) > 80 else ""),
                 })
 
+        # Per-item results
+        gold_for_classify = [
+            {"term": g["term"], "label": g["label"], "start": g.get("start", 0), "end": g.get("end", 0)}
+            for g in gold_items
+        ]
+        entity_results = _classify_entity_status(gold_for_classify, pred_ents)
+        per_item_records.append({
+            "text": text,
+            "gold_entities": [{"term": g["term"], "label": g["label"]} for g in gold_items],
+            "pred_entities": [{"term": p["term"], "label": p.get("category", ""), "confidence": p.get("confidence"), "source": p.get("source")} for p in pred_ents],
+            "entity_results": entity_results,
+        })
+
+    # Write per-item results
+    if per_item_records:
+        _write_eval_results(per_item_records, "real_holdout", run_label)
+
     def calc_metrics(tp: int, fp: int, fn: int) -> Dict[str, float]:
         p = round((tp / (tp + fp)) * 100, 2) if (tp + fp) > 0 else 0.0
         r = round((tp / (tp + fn)) * 100, 2) if (tp + fn) > 0 else 0.0
@@ -417,6 +596,7 @@ def generate_full_evaluation_report(
     holdout_jsonl_path: str = "data/test/holdout.jsonl",
     benchmark_path: str = "data/test/unseen_benchmark.jsonl",
     output_report_json: str = "data/evaluation_report.json",
+    run_label: str = "",
 ) -> Dict[str, Any]:
     """Generates comprehensive evaluation and exports a thesis-ready summary report.
     
@@ -424,17 +604,20 @@ def generate_full_evaluation_report(
     1. Held-out test set (real data, from data/training/test.spacy)
     2. Unseen-term generalization benchmark (controlled synthetic probe)
     3. Real-world holdout evaluation (data/test/holdout.jsonl)
+    
+    Each section also produces per-item JSONL result files under data/eval_results/.
     """
     pipeline = HybridJournalPipeline(model_path=model_path, terms_csv_path=terms_csv_path)
 
-    test_metrics = evaluate_test_docbin(pipeline, test_spacy_path=test_spacy_path)
+    test_metrics = evaluate_test_docbin(pipeline, test_spacy_path=test_spacy_path, run_label=run_label)
     unseen_metrics = evaluate_unseen_generalization(
-        pipeline, benchmark_path=benchmark_path
+        pipeline, benchmark_path=benchmark_path, run_label=run_label
     )
     real_holdout_metrics = evaluate_real_holdout(
         pipeline,
         holdout_jsonl_path=holdout_jsonl_path,
         terms_csv_path=terms_csv_path,
+        run_label=run_label,
     )
 
     full_report = {

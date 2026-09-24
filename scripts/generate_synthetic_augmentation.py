@@ -36,6 +36,29 @@ SEED = 42
 random.seed(SEED)
 torch.manual_seed(SEED)
 
+# Generic nouns that exist in data.jsonl but should NOT propagate into synthetic data.
+# These are borderline annotations (activities/concepts rather than specific tools/tasks)
+# that we keep in real training data but filter out during augmentation to avoid
+# amplifying annotation noise.
+GENERIC_NOUN_BLOCKLIST = {
+    "coding", "system design", "system development", "encode",
+    "accounts", "formatting", "notices", "requirements", "network",
+    "copies", "coordination", "policies", "orientation", "survey",
+    "stalls", "proctoring", "deployment", "front page", "drivers",
+    "office systems", "data organization", "field trials",
+    "reference numbers", "data quality", "system workflows",
+    "data requirements", "system exploration",
+    # Added after Task 3 quality review:
+    "office documents", "program", "issued", "encoded", "technical",
+    "layouts", "debugging",
+}
+
+# Entities that should be relabeled (not removed) during synthetic generation.
+# Key: lowercased entity surface text. Value: corrected label.
+ENTITY_RELABEL_MAP = {
+    "printing": "CLERICAL_TERM",
+}
+
 
 def load_eval_sentences_and_terms() -> Tuple[Set[str], Set[str]]:
     """Loads all sentences from evaluation sets and all unseen benchmark terms."""
@@ -210,7 +233,18 @@ def generate_paraphrase_pool(
     # Process positive records
     for idx, r in enumerate(pos_records):
         orig_text = r["text"].strip()
-        entities = r["entities"]
+        # Filter out generic-noun entities and apply relabeling before paraphrasing
+        entities = []
+        for e in r["entities"]:
+            surface = orig_text[e["start"]:e["end"]].strip().lower()
+            if surface in GENERIC_NOUN_BLOCKLIST:
+                continue
+            if surface in ENTITY_RELABEL_MAP:
+                e = {**e, "label": ENTITY_RELABEL_MAP[surface]}
+            entities.append(e)
+        if not entities:
+            # All entities were generic — skip this record entirely
+            continue
         labels = [e["label"] for e in entities]
         ent_texts = [orig_text[e["start"]:e["end"]].lower() for e in entities]
 
@@ -330,8 +364,8 @@ def generate_template_pool(
     - Gerund fronted: 'Assisting in [TERM], our team completed the task.'
     - Inverted/Prepositional: 'For daily workflows, we relied on [TERM].'
     """
-    it_terms = [t for t, l in terms_dict.items() if l == "IT_TERM" and t.lower() not in bench_terms]
-    clerical_terms = [t for t, l in terms_dict.items() if l == "CLERICAL_TERM" and t.lower() not in bench_terms]
+    it_terms = [t for t, l in terms_dict.items() if l == "IT_TERM" and t.lower() not in bench_terms and t.lower() not in GENERIC_NOUN_BLOCKLIST]
+    clerical_terms = [t for t, l in terms_dict.items() if l == "CLERICAL_TERM" and t.lower() not in bench_terms and t.lower() not in GENERIC_NOUN_BLOCKLIST]
 
     # Syntactic frames: {slot} will be replaced with term
     it_frames = [

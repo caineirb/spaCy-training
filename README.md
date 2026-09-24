@@ -83,14 +83,14 @@ spaCy-training/
 ├── data/
 │   ├── terms.csv                      # Seed dictionary (IT_TERM, CLERICAL_TERM)
 │   ├── data.jsonl                     # Real annotated training data (1,044 entries)
-│   ├── synthetic_paraphrases.jsonl    # T5-generated paraphrase augmentation pool (416 entries)
+│   ├── synthetic_paraphrases.jsonl    # T5-generated paraphrase augmentation pool (928 entries)
 │   ├── synthetic_templates.jsonl      # Template-based syntactic diversification pool (132 entries)
-│   ├── training_trstr.jsonl           # Combined TRSTR training pool (1,235 entries: 687 real, 548 synthetic)
+│   ├── training_trstr.jsonl           # Combined TRSTR training pool (1,747 entries: 687 real, 1,060 synthetic)
 │   ├── training/
 │   │   ├── train.spacy                # Real training partition (687 docs)
 │   │   ├── dev.spacy                  # Real evaluation partition (147 docs)
 │   │   ├── test.spacy                 # Real held-out testing partition (148 docs)
-│   │   └── train_trstr.spacy          # Combined TRSTR training partition (1,235 docs)
+│   │   └── train_trstr.spacy          # Combined TRSTR training partition (1,747 docs)
 │   ├── test/
 │   │   ├── unseen_benchmark.jsonl     # Controlled unseen-term generalization probe (65 terms)
 │   │   ├── holdout.jsonl              # Permanent real-world holdout evaluation set
@@ -249,24 +249,26 @@ python scripts/deploy_inference.py -i data/raw/human_written_journal_input.txt -
 
 To evaluate the effect of syntactic diversity and data volume, we conduct a controlled ablation between two training conditions under identical patience settings (`max_steps=2500`, `patience=400`):
 - **TRTR (Train Real, Test Real)**: Trained purely on authentic student journal annotations (`data/data.jsonl`, 687 training records).
-- **TRSTR (Train Real + Synthetic, Test Real)**: Trained on authentic data augmented with T5 paraphrases and syntactic templates (1,235 records: 687 real, 548 synthetic).
+- **TRSTR (Train Real + Synthetic, Test Real)**: Trained on authentic data augmented with T5 paraphrases and syntactic templates (1,747 records: 687 real, 1,060 synthetic).
 
 Both conditions are evaluated on the exact same real evaluation partitions (`test.spacy` and `unseen_benchmark.jsonl`):
 
 | Evaluation Dimension | Metric | TRTR (Real Only) | TRSTR (Real + Synth) | Absolute Delta | Relative Gain |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Held-Out Real Test Set** | **Overall F1** | 60.06% | **61.25%** | **+1.19%** | +1.98% |
-| (`data/training/test.spacy`) | Overall Precision | 57.32% | 57.31% | -0.01% | -0.02% |
-| | Overall Recall | 63.09% | **65.77%** | **+2.68%** | +4.25% |
-| *Per-Label Performance* | `IT_TERM` F1 | **62.22%** | 60.00% | -2.22% | -3.57% |
-| | `IT_TERM` Recall | **70.89%** | 68.35% | -2.54% | -3.58% |
-| | `CLERICAL_TERM` F1 | 57.14% | **62.86%** | **+5.72%** | +10.01% |
+| **Held-Out Real Test Set** | **Overall F1** | 60.06% | **63.19%** | **+3.13%** | +5.21% |
+| (`data/training/test.spacy`) | Overall Precision | 57.32% | **61.39%** | **+4.07%** | +7.10% |
+| | Overall Recall | 63.09% | **65.10%** | **+2.01%** | +3.19% |
+| *Per-Label Performance* | `IT_TERM` F1 | **62.22%** | 61.99% | -0.23% | -0.37% |
+| | `IT_TERM` Precision | 55.45% | **57.61%** | **+2.16%** | +3.90% |
+| | `IT_TERM` Recall | **70.89%** | 67.09% | -3.80% | -5.36% |
+| | `CLERICAL_TERM` F1 | 57.14% | **64.71%** | **+7.57%** | +13.25% |
+| | `CLERICAL_TERM` Precision | 60.32% | **66.67%** | **+6.35%** | +10.53% |
 | | `CLERICAL_TERM` Recall | 54.29% | **62.86%** | **+8.57%** | +15.79% |
-| **Unseen Benchmark** | **Transformer Recall** | 33.85% (22/65) | **61.54% (40/65)** | **+27.69%** | **+81.80%** |
-| (Out-of-Vocabulary Probes) | Transformer Precision | 22.45% | **38.10%** | **+15.65%** | +69.71% |
-| | Transformer F1 | 26.99% | **47.06%** | **+20.07%** | +74.36% |
-| *Hybrid Pipeline* | **Hybrid Recall** | 33.85% | **61.54%** | **+27.69%** | +81.80% |
-| | **Generalization Lift** | +32.31% | **+60.00%** | **+27.69%** | +85.70% |
+| **Unseen Benchmark** | **Transformer Recall** | 33.85% (22/65) | **66.15% (43/65)** | **+32.30%** | **+95.42%** |
+| (Out-of-Vocabulary Probes) | Transformer Precision | 22.45% | **37.72%** | **+15.27%** | +68.02% |
+| | Transformer F1 | 26.99% | **48.04%** | **+21.05%** | +77.99% |
+| *Hybrid Pipeline* | **Hybrid Recall** | 33.85% | **66.15%** | **+32.30%** | +95.42% |
+| | **Generalization Lift** | +32.31% | **+64.61%** | **+32.30%** | +100.0% |
 
 > [!WARNING]
 > **Limitations Statement**: Synthetic augmentation was introduced to compensate for the limited volume of the authentic annotated corpus and to evaluate the impact of syntactic variety. TRSTR results demonstrate the transformer's capacity for zero-shot inductive generalization given broader linguistic variety, but should not be misconstrued as evidence that the final system was trained exclusively on authentic data. See [`docs/synthetic_augmentation_methodology.md`](docs/synthetic_augmentation_methodology.md) for full procedural documentation.
