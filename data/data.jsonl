@@ -1041,4 +1041,4 @@
 {"text": "We summarized all the daily collections and made sure that the total amount matched the records at the end of the day.", "entities": [{"start": 22, "end": 39, "label": "CLERICAL_TERM"}]}
 {"text": "We handled and encoded the information of new members, especially from iligan dealers, and organized their data in the system.", "entities": [{"start": 15, "end": 22, "label": "CLERICAL_TERM"}]}
 {"text": "We prepared receipts for transactions and assisted in making audit reports to ensure all records are properly documented.", "entities": []}
-{"text": "2. Created an accomplishment report video in Baranggay Tankulan General Cleaning.", "entities": [{"start": 14, "end": 35, "label": "CLERICAL_TERM"}]}
+{"text": "2. Created an accomplishment report video in Baranggay Tankulan General Cleaning.", "entities": [{"start": 14, "end": 41, "label": "CLERICAL_TERM"}]}
