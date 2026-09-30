@@ -138,14 +138,16 @@ Production Deployment,IT_TERM
 Computer Hardware Maintenance,IT_TERM
 iClinicSys,IT_TERM
 eGOV.PH,IT_TERM
-Microsoft Word,IT_TERM
-Google Forms,IT_TERM
-Google Sheets,IT_TERM
+Microsoft Excel,CLERICAL_TERM
+Excel,CLERICAL_TERM
+Microsoft Word,CLERICAL_TERM
+Google Forms,CLERICAL_TERM
+Google Sheets,CLERICAL_TERM
 Facebook Management,IT_TERM
 Facebook Posting,IT_TERM
-Digital File Management,IT_TERM
-File Management,IT_TERM
-Digital File Organization,IT_TERM
+Digital File Management,CLERICAL_TERM
+File Management,CLERICAL_TERM
+Digital File Organization,CLERICAL_TERM
 GraphQL,IT_TERM
 Data Entry,CLERICAL_TERM
 Document Organization,CLERICAL_TERM

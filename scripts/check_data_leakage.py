@@ -27,6 +27,7 @@ from typing import Dict, List, Set, Tuple, Any
 # Ensure project root is in sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import scripts
+scripts.init_gpu()
 import spacy
 from spacy.tokens import DocBin
 from scripts.annotation import load_terms_dictionary
