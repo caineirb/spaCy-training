@@ -9,10 +9,10 @@ This is a utility for manual inspection — it is NOT part of the annotation,
 training, or evaluation pipeline.
 
 Usage:
-    python scripts/inspect_entity_terms.py data/synthetic_paraphrases.jsonl
+    python scripts/inspect_entity_terms.py data/synthetic_llm_generated.jsonl
 
 Output:
-    data/review/synthetic_paraphrases_with_terms.jsonl
+    data/review/synthetic_llm_generated_with_terms.jsonl
 """
 
 import sys

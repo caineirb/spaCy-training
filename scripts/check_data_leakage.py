@@ -9,7 +9,7 @@ Verifies and prints PASS/FAIL for each of 7 strict leakage checks:
 5. No unseen-benchmark terms are matchable by the EntityRuler as currently configured.
 6. No sentences in data/test/holdout.jsonl or data/test/raw/ also appear in
    train.spacy / dev.spacy / test.spacy or the synthetic annotation pipeline's source data.
-7. No synthetic sentences (paraphrase or template) are exact or near-duplicates (similarity >= 0.70)
+7. No synthetic sentences are exact or near-duplicates (similarity >= 0.70)
    of any sentence in test.spacy, dev.spacy, unseen_benchmark.jsonl, or holdout.jsonl,
    and no synthetic sentences contain unseen benchmark terms.
 
@@ -324,13 +324,16 @@ def check_synthetic_pool_isolation(
     dev_docs: List[str],
     unseen_benchmark_samples: List[Dict[str, Any]],
     unseen_gold_terms: Set[str],
-    paraphrase_path: str = "data/synthetic_paraphrases.jsonl",
-    template_path: str = "data/synthetic_templates.jsonl",
+    synthetic_paths: List[str] = None,
     holdout_path: str = "data/test/holdout.jsonl",
     similarity_threshold: float = 0.70
 ) -> Tuple[bool, Dict[str, Any]]:
     """Check 7: Verify zero synthetic sentences are exact or near-duplicates of evaluation sentences,
     and verify zero unseen benchmark terms appear in synthetic sentences.
+
+    Args:
+        synthetic_paths: List of JSONL file paths containing synthetic records.
+            Defaults to ["data/synthetic_llm_generated.jsonl"] if not provided.
     """
     def extract_sentences(docs: List[str]) -> List[str]:
         sents = []
@@ -367,9 +370,12 @@ def check_synthetic_pool_isolation(
 
     eval_norm_map = {s.lower(): s for s in eval_sents}
 
+    if synthetic_paths is None:
+        synthetic_paths = ["data/synthetic_llm_generated.jsonl"]
+
     # Load synthetic pool
     synthetic_records: List[Dict[str, Any]] = []
-    for p in [paraphrase_path, template_path]:
+    for p in synthetic_paths:
         if os.path.exists(p):
             with open(p, "r", encoding="utf-8") as f:
                 for line in f:
@@ -394,7 +400,8 @@ def check_synthetic_pool_isolation(
     for r in synthetic_records:
         t_low = r.get("text", "").lower()
         for bt in unseen_gold_terms:
-            if bt.lower() in t_low:
+            pattern = r"\b" + re.escape(bt.lower()) + r"\b"
+            if re.search(pattern, t_low):
                 term_leakages.append((r.get("text", ""), bt))
 
     # Check exact and near duplicates against eval sentences
