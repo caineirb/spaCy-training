@@ -67,6 +67,21 @@ class JSONLEntityAnnotator:
         self.root.bind("<Control-d>", lambda event: self.remove_duplicates())
 
     def create_ui(self):
+        # Status bar - packed first with side=tk.BOTTOM so it remains at the window's bottom
+        self.status_var = tk.StringVar(
+            value="Open a JSONL file to begin."
+        )
+
+        ttk.Label(
+            self.root,
+            textvariable=self.status_var,
+            relief=tk.SUNKEN,
+            anchor=tk.W
+        ).pack(
+            side=tk.BOTTOM,
+            fill=tk.X
+        )
+
         # ========================================================
         # TOP SECTION - TEXT RECORDS
         # ========================================================
@@ -214,6 +229,7 @@ class JSONLEntityAnnotator:
         # Current sentence display
         sentence_frame = ttk.Frame(bottom_frame)
         sentence_frame.pack(
+            side=tk.TOP,
             fill=tk.X,
             pady=(0, 8)
         )
@@ -240,9 +256,42 @@ class JSONLEntityAnnotator:
             state=tk.DISABLED
         )
 
-        # Entity table
+        # ========================================================
+        # ENTITY BUTTONS (Anchored to bottom so they always remain visible)
+        # ========================================================
+
+        button_frame = ttk.Frame(bottom_frame)
+        button_frame.pack(
+            side=tk.BOTTOM,
+            fill=tk.X,
+            pady=(8, 0)
+        )
+
+        ttk.Button(
+            button_frame,
+            text="Add Entity",
+            command=self.add_entity
+        ).pack(side=tk.LEFT, padx=(0, 5))
+
+        ttk.Button(
+            button_frame,
+            text="Edit Entity",
+            command=self.edit_entity
+        ).pack(side=tk.LEFT, padx=5)
+
+        ttk.Button(
+            button_frame,
+            text="Delete Entity",
+            command=self.delete_entity
+        ).pack(side=tk.LEFT, padx=5)
+
+        # ========================================================
+        # ENTITY TABLE (Expands into remaining space)
+        # ========================================================
+
         entity_tree_frame = ttk.Frame(bottom_frame)
         entity_tree_frame.pack(
+            side=tk.TOP,
             fill=tk.BOTH,
             expand=True
         )
@@ -323,48 +372,7 @@ class JSONLEntityAnnotator:
         entity_tree_frame.rowconfigure(0, weight=1)
         entity_tree_frame.columnconfigure(0, weight=1)
 
-        # ========================================================
-        # ENTITY BUTTONS
-        # ========================================================
 
-        button_frame = ttk.Frame(bottom_frame)
-        button_frame.pack(
-            fill=tk.X,
-            pady=(8, 0)
-        )
-
-        ttk.Button(
-            button_frame,
-            text="Add Entity",
-            command=self.add_entity
-        ).pack(side=tk.LEFT, padx=(0, 5))
-
-        ttk.Button(
-            button_frame,
-            text="Edit Entity",
-            command=self.edit_entity
-        ).pack(side=tk.LEFT, padx=5)
-
-        ttk.Button(
-            button_frame,
-            text="Delete Entity",
-            command=self.delete_entity
-        ).pack(side=tk.LEFT, padx=5)
-
-        # Status
-        self.status_var = tk.StringVar(
-            value="Open a JSONL file to begin."
-        )
-
-        ttk.Label(
-            self.root,
-            textvariable=self.status_var,
-            relief=tk.SUNKEN,
-            anchor=tk.W
-        ).pack(
-            side=tk.BOTTOM,
-            fill=tk.X
-        )
 
     # ============================================================
     # FILE OPERATIONS

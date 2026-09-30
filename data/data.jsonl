@@ -1,21 +1,19 @@
-{"text": "Encoded and organized vendor evaluation data using Microsoft Excel.", "entities": [{"start": 29, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 66, "label": "CLERICAL_TERM"}]}
+{"text": "Encoded and organized vendor evaluation data using Microsoft Excel.", "entities": [{"start": 22, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 66, "label": "CLERICAL_TERM"}]}
 {"text": "Organized and digitized vendor-related documents.", "entities": []}
-{"text": "Created vendor profiles in the system/database.", "entities": [{"start": 15, "end": 23, "label": "CLERICAL_TERM"}]}
-{"text": "Managed and updated records in the office database.", "entities": []}
-{"text": "Designed identification (ID) cards for vendors/staff.", "entities": [{"start": 29, "end": 34, "label": "CLERICAL_TERM"}]}
+{"text": "Created vendor profiles in the system/database.", "entities": [{"start": 38, "end": 46, "label": "IT_TERM"}]}
+{"text": "Managed and updated records in the office database.", "entities": [{"start": 42, "end": 50, "label": "IT_TERM"}]}
+{"text": "Designed identification (ID) cards for vendors/staff.", "entities": [{"start": 9, "end": 34, "label": "CLERICAL_TERM"}]}
 {"text": "Performed basic internet connection troubleshooting.", "entities": [{"start": 16, "end": 51, "label": "IT_TERM"}]}
 {"text": "Distributed information to vendors (outdoor activity).", "entities": []}
-{"text": "Conducted evaluation of vendors.", "entities": [{"start": 10, "end": 20, "label": "CLERICAL_TERM"}]}
-{"text": "Added and updated vendor information in the office database.", "entities": []}
+{"text": "Conducted evaluation of vendors.", "entities": []}
+{"text": "Added and updated vendor information in the office database.", "entities": [{"start": 51, "end": 59, "label": "IT_TERM"}]}
 {"text": "Updated ID design and layout.", "entities": []}
-{"text": "Encoded and organized vendor evaluation data using Microsoft Excel.", "entities": [{"start": 29, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 66, "label": "CLERICAL_TERM"}]}
-{"text": "Managed and updated records in the office database.", "entities": []}
-{"text": "Added and updated vendor details in the database.", "entities": []}
-{"text": "Maintained and updated records in the office database.", "entities": []}
-{"text": "Performed outdoor tasks such as file distribution.", "entities": []}
-{"text": "Encoded and organized vendor evaluation data using Excel.", "entities": [{"start": 29, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 56, "label": "CLERICAL_TERM"}]}
-{"text": "Conducted vendor evaluation.", "entities": [{"start": 17, "end": 27, "label": "CLERICAL_TERM"}]}
-{"text": "Sorted, classified, and arranged office documents, contracts, and papers.", "entities": [{"start": 51, "end": 60, "label": "CLERICAL_TERM"}]}
+{"text": "Added and updated vendor details in the database.", "entities": [{"start": 40, "end": 48, "label": "IT_TERM"}]}
+{"text": "Maintained and updated records in the office database.", "entities": [{"start": 45, "end": 53, "label": "IT_TERM"}]}
+{"text": "Performed outdoor tasks such as file distribution.", "entities": [{"start": 32, "end": 49, "label": "CLERICAL_TERM"}]}
+{"text": "Encoded and organized vendor evaluation data using Excel.", "entities": [{"start": 22, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 56, "label": "CLERICAL_TERM"}]}
+{"text": "Conducted vendor evaluation.", "entities": []}
+{"text": "Sorted, classified, and arranged office documents, contracts, and papers.", "entities": [{"start": 33, "end": 49, "label": "CLERICAL_TERM"}, {"start": 51, "end": 60, "label": "CLERICAL_TERM"}]}
 {"text": "Transformed physical documents into digital copies.", "entities": [{"start": 44, "end": 50, "label": "CLERICAL_TERM"}]}
 {"text": "Developed signage layout designs.", "entities": [{"start": 25, "end": 32, "label": "CLERICAL_TERM"}]}
 {"text": "Updated the vendor database by attaching their electric bill records.", "entities": []}
@@ -64,7 +62,6 @@
 {"text": "Observed the way updates on vehicle records are managed by the personnel.", "entities": []}
 {"text": "Helps out with office work, when necessary.", "entities": []}
 {"text": "Shared ideas and progress with teammates.", "entities": []}
-{"text": "Consulting with teammates regarding ideas on Vehicular Record Expiration Alert System.", "entities": [{"start": 45, "end": 85, "label": "IT_TERM"}]}
 {"text": "Brainstormed with the team members on how to improve the system.", "entities": []}
 {"text": "Scanned the office vehicle records in Excel.", "entities": [{"start": 38, "end": 43, "label": "CLERICAL_TERM"}]}
 {"text": "Developed the expiration alert pop-up.", "entities": [{"start": 14, "end": 37, "label": "IT_TERM"}]}
@@ -277,7 +274,6 @@
 {"text": "Conducted basic PC troubleshooting for staff", "entities": [{"start": 16, "end": 18, "label": "IT_TERM"}]}
 {"text": "Organized and verified data entries in the database", "entities": [{"start": 23, "end": 35, "label": "CLERICAL_TERM"}]}
 {"text": "Coordinated with staff regarding member information and system concerns", "entities": [{"start": 33, "end": 51, "label": "CLERICAL_TERM"}, {"start": 56, "end": 71, "label": "IT_TERM"}]}
-{"text": "Updated and encoded CIF (Customer Information File) records", "entities": [{"start": 20, "end": 59, "label": "CLERICAL_TERM"}]}
 {"text": "I updated customer passbooks and verified balances to ensure accuracy.", "entities": [{"start": 10, "end": 28, "label": "CLERICAL_TERM"}, {"start": 42, "end": 50, "label": "CLERICAL_TERM"}]}
 {"text": "I created new passbooks and organized account details properly.", "entities": [{"start": 14, "end": 23, "label": "CLERICAL_TERM"}, {"start": 38, "end": 53, "label": "CLERICAL_TERM"}]}
 {"text": "I updated CIF records by checking and completing member information.", "entities": [{"start": 10, "end": 21, "label": "CLERICAL_TERM"}, {"start": 49, "end": 67, "label": "CLERICAL_TERM"}]}
@@ -317,7 +313,6 @@
 {"text": "Analyzed coordinate accuracy and identified data entry pain points.", "entities": [{"start": 9, "end": 28, "label": "IT_TERM"}, {"start": 44, "end": 66, "label": "IT_TERM"}]}
 {"text": "Formulated smart logic rules for automated radius validation (Geofencing).", "entities": [{"start": 33, "end": 73, "label": "IT_TERM"}]}
 {"text": "Drafted data-linking logic to connect map coordinates directly to logbook records.", "entities": [{"start": 8, "end": 26, "label": "IT_TERM"}, {"start": 38, "end": 53, "label": "IT_TERM"}, {"start": 66, "end": 81, "label": "CLERICAL_TERM"}]}
-{"text": "Diagnosed and fixed hardware issues on a desktop computer", "entities": [{"start": 20, "end": 35, "label": "IT_TERM"}, {"start": 41, "end": 57, "label": "IT_TERM"}]}
 {"text": "Cleaned and maintained computer units.", "entities": [{"start": 23, "end": 37, "label": "IT_TERM"}]}
 {"text": "Assisted staff with minor technical concerns.", "entities": [{"start": 26, "end": 44, "label": "IT_TERM"}]}
 {"text": "Compiled and finalized all weekly progress reports and OUT documentation.", "entities": [{"start": 27, "end": 50, "label": "CLERICAL_TERM"}, {"start": 55, "end": 72, "label": "CLERICAL_TERM"}]}
@@ -374,56 +369,29 @@
 {"text": "Re-routing Documents after Referral Action has been made.", "entities": [{"start": 27, "end": 42, "label": "CLERICAL_TERM"}]}
 {"text": "Writing Remarks on the Log Books after the Routed Documents Arrive on its Designated Offices.", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 23, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 59, "label": "CLERICAL_TERM"}]}
 {"text": "Renaming Flies on the Computer.", "entities": [{"start": 9, "end": 14, "label": "CLERICAL_TERM"}]}
-{"text": "Receiving Internal and External Documents.", "entities": []}
-{"text": "Scanning the Received Documents, Delivering Important Documents to its Respective Offices.", "entities": [{"start": 13, "end": 31, "label": "CLERICAL_TERM"}, {"start": 44, "end": 63, "label": "CLERICAL_TERM"}]}
-{"text": "Re-routing Documents after Referral Action has been made.", "entities": [{"start": 27, "end": 42, "label": "CLERICAL_TERM"}]}
 {"text": "Coding Master List on the computer.", "entities": [{"start": 0, "end": 6, "label": "IT_TERM"}, {"start": 7, "end": 18, "label": "CLERICAL_TERM"}]}
 {"text": "Organizing Files in File Rack.", "entities": []}
 {"text": "Writing Remarks on the Log Books after the Routed Documents Arrive on its Designated Offices", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 23, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 59, "label": "CLERICAL_TERM"}]}
 {"text": "Putting Files on the File Arc", "entities": []}
-{"text": "Receiving Internal and External Documents.", "entities": []}
-{"text": "Scanning the Received Documents, Delivering Important Documents to its Respective Offices.", "entities": [{"start": 13, "end": 31, "label": "CLERICAL_TERM"}, {"start": 44, "end": 63, "label": "CLERICAL_TERM"}]}
 {"text": "Printing Files", "entities": []}
 {"text": "Recording the contents of the Internal and External Log Books in Excel", "entities": [{"start": 30, "end": 61, "label": "CLERICAL_TERM"}, {"start": 65, "end": 70, "label": "CLERICAL_TERM"}]}
 {"text": "Shredding Discarded Files on the File Shredder", "entities": [{"start": 10, "end": 25, "label": "CLERICAL_TERM"}]}
-{"text": "Writing Remarks on the Log Books after the Routed Documents Arrive on its Designated Offices", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 23, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 59, "label": "CLERICAL_TERM"}]}
-{"text": "Receiving Internal and External Documents.", "entities": []}
-{"text": "Scanning the Received Documents, Delivering Important Documents to its Respective Offices.", "entities": [{"start": 13, "end": 31, "label": "CLERICAL_TERM"}, {"start": 44, "end": 63, "label": "CLERICAL_TERM"}]}
-{"text": "Writing Remarks on the Log Books after the Routed Documents Arrive on its Designated Offices.", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 23, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 59, "label": "CLERICAL_TERM"}]}
-{"text": "Receiving Internal and External Documents", "entities": []}
-{"text": "Scanning the Received Documents, Delivering Important Documents to its Respective Offices", "entities": [{"start": 13, "end": 31, "label": "CLERICAL_TERM"}, {"start": 44, "end": 63, "label": "CLERICAL_TERM"}]}
-{"text": "Writing Remarks on the Log Books after the Routed Documents Arrive on its Designated Offices.", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 23, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 59, "label": "CLERICAL_TERM"}]}
 {"text": "Receiving Internal and External Documents", "entities": []}
 {"text": "Scanning the Received Documents, Delivering Important Documents to its Respective Offices", "entities": [{"start": 13, "end": 31, "label": "CLERICAL_TERM"}, {"start": 44, "end": 63, "label": "CLERICAL_TERM"}]}
 {"text": "Stamping the Received Documents", "entities": []}
-{"text": "Writing Remarks on the Log Books after the Routed Documents Arrive on its Designated Offices", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 23, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 59, "label": "CLERICAL_TERM"}]}
-{"text": "Receiving Internal and External Documents", "entities": []}
-{"text": "Scanning the Received Documents, Delivering Important Documents to its Respective Offices", "entities": [{"start": 13, "end": 31, "label": "CLERICAL_TERM"}, {"start": 44, "end": 63, "label": "CLERICAL_TERM"}]}
 {"text": "Stamping the Received Documents.", "entities": []}
-{"text": "Writing Remarks on the Log Books after the Routed Documents Arrive on its Designated Offices", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 23, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 59, "label": "CLERICAL_TERM"}]}
-{"text": "Receiving Internal and External Documents.", "entities": []}
 {"text": "Writing Attendance Log Book", "entities": [{"start": 8, "end": 27, "label": "CLERICAL_TERM"}]}
-{"text": "Writing Remarks on the Log Books after the Routed Documents Arrive on its Designated Offices", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 23, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 59, "label": "CLERICAL_TERM"}]}
-{"text": "Receiving Internal and External Documents", "entities": []}
-{"text": "Receiving Internal and External Documents", "entities": []}
 {"text": "Making Tags for the Documents", "entities": [{"start": 7, "end": 11, "label": "CLERICAL_TERM"}]}
 {"text": "Editing Master List in the Computer", "entities": [{"start": 8, "end": 19, "label": "CLERICAL_TERM"}]}
 {"text": "Scanning the Master List.", "entities": [{"start": 13, "end": 24, "label": "CLERICAL_TERM"}]}
 {"text": "Arranging the Documents.", "entities": []}
-{"text": "Receiving Internal and External Documents", "entities": []}
 {"text": "Recording Request Slip in the Attendance Logbook", "entities": [{"start": 10, "end": 22, "label": "CLERICAL_TERM"}, {"start": 30, "end": 48, "label": "CLERICAL_TERM"}]}
 {"text": "Making Written Remarks in the Logbooks", "entities": [{"start": 7, "end": 22, "label": "CLERICAL_TERM"}, {"start": 30, "end": 38, "label": "CLERICAL_TERM"}]}
 {"text": "Editing PDFs for attendance in the computer", "entities": [{"start": 8, "end": 12, "label": "CLERICAL_TERM"}, {"start": 17, "end": 27, "label": "CLERICAL_TERM"}]}
 {"text": "Writing on the Referral Slip for the documents", "entities": [{"start": 15, "end": 28, "label": "CLERICAL_TERM"}]}
-{"text": "Receiving Internal and External Documents", "entities": []}
-{"text": "Recording Request Slip in the Attendance Logbook", "entities": [{"start": 10, "end": 22, "label": "CLERICAL_TERM"}, {"start": 30, "end": 48, "label": "CLERICAL_TERM"}]}
-{"text": "Making Written Remarks in the Logbooks", "entities": [{"start": 7, "end": 22, "label": "CLERICAL_TERM"}, {"start": 30, "end": 38, "label": "CLERICAL_TERM"}]}
 {"text": "Scanning Attendance Sheet", "entities": [{"start": 9, "end": 25, "label": "CLERICAL_TERM"}]}
 {"text": "Making an IS on the Received Documents", "entities": [{"start": 10, "end": 12, "label": "CLERICAL_TERM"}, {"start": 20, "end": 38, "label": "CLERICAL_TERM"}]}
-{"text": "Receiving Internal and External Documents", "entities": []}
 {"text": "Recording Request Slip in the Attendance Logbook.", "entities": [{"start": 10, "end": 22, "label": "CLERICAL_TERM"}, {"start": 30, "end": 48, "label": "CLERICAL_TERM"}]}
-{"text": "Making Written Remarks in the Logbooks", "entities": [{"start": 7, "end": 22, "label": "CLERICAL_TERM"}, {"start": 30, "end": 38, "label": "CLERICAL_TERM"}]}
-{"text": "Scanning Attendance Sheet", "entities": [{"start": 9, "end": 25, "label": "CLERICAL_TERM"}]}
 {"text": "Delivering the Received Documents", "entities": [{"start": 15, "end": 33, "label": "CLERICAL_TERM"}]}
 {"text": "MONDAY (MARCH 9, 2026) In the second week of our OJT, we finished the new version of the front page and presented it to our head. She reviewed our work carefully and gave us additional changes and helpful suggestions to improve the overall design. Because of this, we went back to another brainstorming session to discuss new ideas and make the layout more creative, clear, and professional.", "entities": []}
 {"text": "TUESDAY (MARCH 10, 2026) I started designing the other pages of the book for the whole day. I focused on arranging the content properly, choosing the right fonts, and applying consistent colors and elements. I made sure that the style and design matched the front page so that the entire book would look organized, visually appealing, and consistent.", "entities": []}
@@ -432,7 +400,6 @@
 {"text": "MONDAY (MARCH 9, 2026) In the second week of our OJT, we finished the new version of the front page and presented it to our head. She reviewed our work carefully and gave us additional changes and helpful suggestions to improve the overall design.", "entities": [{"start": 91, "end": 101, "label": "CLERICAL_TERM"}]}
 {"text": "TUESDAY (MARCH 10, 2026)I started designing the other pages of the book for the whole day. I focused on arranging the content properly, choosing the right fonts, and applying consistent colors and elements.", "entities": []}
 {"text": "WEDNSDAY (MARCH 11, 2026) I continued working in the morning until the afternoon. I made final edits on the front page, improving small details such as alignment, spacing, and design balance.", "entities": []}
-{"text": "THURSDAY (MARCH 12, 2026) I focused on enhancing the front page to make it more visually attractive and professional. I adjusted some design elements and refined the overall look.", "entities": [{"start": 53, "end": 63, "label": "CLERICAL_TERM"}]}
 {"text": "MONDAY (MARCH 16, 2026) Continued working on the PESO office book by reviewing pages, improving layouts, adding information, and editing the design using Canva.", "entities": [{"start": 49, "end": 65, "label": "CLERICAL_TERM"}, {"start": 96, "end": 103, "label": "CLERICAL_TERM"}]}
 {"text": "TUESDAY (MARCH 17, 2026) Created and improved the layout of the PESO office book by organizing the content and enhancing the design elements using Canva.", "entities": [{"start": 64, "end": 80, "label": "CLERICAL_TERM"}, {"start": 125, "end": 140, "label": "CLERICAL_TERM"}]}
 {"text": "WEDNSDAY (MARCH 18, 2026) Edited and revised the PESO office boo based on the suggestions of the supervisor and organized the content properly.", "entities": [{"start": 49, "end": 64, "label": "CLERICAL_TERM"}]}
@@ -460,7 +427,6 @@
 {"text": "Processes Police Clearance", "entities": [{"start": 10, "end": 26, "label": "CLERICAL_TERM"}]}
 {"text": "Fixing Pnp Zelo App", "entities": [{"start": 7, "end": 19, "label": "IT_TERM"}]}
 {"text": "Pc Troubleshooting", "entities": [{"start": 0, "end": 18, "label": "IT_TERM"}]}
-{"text": "Processes Police Clearance", "entities": [{"start": 10, "end": 26, "label": "CLERICAL_TERM"}]}
 {"text": "Planning System for Pnp Operation Office", "entities": []}
 {"text": "Day 1 - Ui/Ux Designing for Pnp Operation Office", "entities": [{"start": 8, "end": 13, "label": "IT_TERM"}]}
 {"text": "Day 2 - Ui/Ux Designing for Pnp Operation Office", "entities": [{"start": 8, "end": 13, "label": "IT_TERM"}]}
@@ -469,24 +435,14 @@
 {"text": "Developing System", "entities": []}
 {"text": "Troubleshooting Laptop and Pc Assembling", "entities": [{"start": 27, "end": 40, "label": "IT_TERM"}]}
 {"text": "Developing the System", "entities": []}
-{"text": "Developing the System", "entities": []}
 {"text": "Developing the System & Assembling PC", "entities": [{"start": 24, "end": 37, "label": "IT_TERM"}]}
 {"text": "Troubleshooting PC & Developing the System", "entities": [{"start": 0, "end": 18, "label": "IT_TERM"}]}
-{"text": "Developing the System", "entities": []}
 {"text": "Designing the System / Processing Police Clearance", "entities": [{"start": 34, "end": 50, "label": "CLERICAL_TERM"}]}
-{"text": "Developing the System", "entities": []}
-{"text": "Developing the System", "entities": []}
 {"text": "Fixing Bugs and Errors of the System", "entities": []}
-{"text": "Designing the System / Processing Police Clearance", "entities": [{"start": 34, "end": 50, "label": "CLERICAL_TERM"}]}
-{"text": "Developing the System", "entities": []}
 {"text": "Designing the System / Processing Police", "entities": []}
 {"text": "Clearance", "entities": [{"start": 0, "end": 9, "label": "CLERICAL_TERM"}]}
-{"text": "Fixing Bugs and Errors of the System", "entities": []}
-{"text": "Developing the System", "entities": []}
-{"text": "Designing the System / Processing Police Clearance", "entities": [{"start": 34, "end": 50, "label": "CLERICAL_TERM"}]}
 {"text": "Day 1 of IT FEST", "entities": []}
 {"text": "Day 2 of IT FEST", "entities": []}
-{"text": "Processing Police Clearance", "entities": [{"start": 11, "end": 27, "label": "CLERICAL_TERM"}]}
 {"text": "Processing Police Clearance", "entities": [{"start": 11, "end": 27, "label": "CLERICAL_TERM"}]}
 {"text": "Fixing bugs and errors the File and Storage System", "entities": [{"start": 27, "end": 50, "label": "IT_TERM"}]}
 {"text": "Additional features of the File and Storage Systems", "entities": [{"start": 27, "end": 51, "label": "IT_TERM"}]}
@@ -501,13 +457,9 @@
 {"text": "Transferring 2026 incident reports data from physical documents to Excel. Day 3", "entities": [{"start": 13, "end": 39, "label": "CLERICAL_TERM"}, {"start": 45, "end": 63, "label": "CLERICAL_TERM"}, {"start": 67, "end": 72, "label": "CLERICAL_TERM"}]}
 {"text": "Day1 of Emotional Intelligence (EI)", "entities": []}
 {"text": "Day 2 of Emotional Intelligence (El)", "entities": []}
-{"text": "Processing Police Clearance", "entities": [{"start": 11, "end": 27, "label": "CLERICAL_TERM"}]}
 {"text": "Redesigning the Tarpaulin Design in Desk Office", "entities": [{"start": 16, "end": 32, "label": "CLERICAL_TERM"}]}
 {"text": "Day 1", "entities": []}
-{"text": "Redesigning the Tarpaulin Design in Desk Office", "entities": [{"start": 16, "end": 32, "label": "CLERICAL_TERM"}]}
 {"text": "Day 2", "entities": []}
-{"text": "Processing Police Clearance", "entities": [{"start": 11, "end": 27, "label": "CLERICAL_TERM"}]}
-{"text": "Processing Police Clearance", "entities": [{"start": 11, "end": 27, "label": "CLERICAL_TERM"}]}
 {"text": "WEEK 1: ID Creation", "entities": [{"start": 8, "end": 19, "label": "CLERICAL_TERM"}]}
 {"text": "WEEK 2: ROUTING & ID CREATION", "entities": [{"start": 8, "end": 29, "label": "CLERICAL_TERM"}]}
 {"text": "WEEK 3: ROUTING & ID CREATION", "entities": [{"start": 8, "end": 29, "label": "CLERICAL_TERM"}]}
@@ -593,11 +545,9 @@
 {"text": "Website deployment launched online platforms", "entities": [{"start": 8, "end": 18, "label": "IT_TERM"}]}
 {"text": "Database schema design organized data structure", "entities": [{"start": 33, "end": 47, "label": "IT_TERM"}]}
 {"text": "Office supplies management maintained equipment inventory", "entities": [{"start": 38, "end": 57, "label": "CLERICAL_TERM"}]}
-{"text": "Office supplies management maintained equipment inventory", "entities": [{"start": 7, "end": 26, "label": "CLERICAL_TERM"}]}
 {"text": "Code refactoring improved software quality", "entities": [{"start": 0, "end": 16, "label": "IT_TERM"}]}
 {"text": "Task assignment delegation distributed workload", "entities": [{"start": 0, "end": 15, "label": "CLERICAL_TERM"}]}
 {"text": "User authentication system protected data security", "entities": [{"start": 5, "end": 26, "label": "IT_TERM"}]}
-{"text": "User authentication system protected data security", "entities": [{"start": 37, "end": 50, "label": "IT_TERM"}]}
 {"text": "Appointment scheduling coordinated time management", "entities": [{"start": 0, "end": 22, "label": "CLERICAL_TERM"}]}
 {"text": "Software update installation maintained system functionality", "entities": [{"start": 0, "end": 15, "label": "IT_TERM"}]}
 {"text": "Server configuration managed hosting infrastructure", "entities": [{"start": 0, "end": 20, "label": "IT_TERM"}]}
@@ -659,7 +609,6 @@
 {"text": "Wrapped up with equipment borrowing", "entities": [{"start": 26, "end": 35, "label": "CLERICAL_TERM"}]}
 {"text": "Excel digitilization and printing", "entities": [{"start": 0, "end": 5, "label": "CLERICAL_TERM"}]}
 {"text": "Canva editing for posters", "entities": [{"start": 0, "end": 5, "label": "IT_TERM"}]}
-{"text": "Data entry and filing tasks", "entities": [{"start": 0, "end": 10, "label": "CLERICAL_TERM"}]}
 {"text": "Making Admin and User accounts", "entities": [{"start": 22, "end": 30, "label": "IT_TERM"}]}
 {"text": "Created Employer Login page", "entities": [{"start": 17, "end": 22, "label": "IT_TERM"}]}
 {"text": "Developed Employer Sign-up form", "entities": [{"start": 19, "end": 26, "label": "IT_TERM"}]}
@@ -667,7 +616,6 @@
 {"text": "Integrated PESO Job Post", "entities": []}
 {"text": "Applied Capstone design principles", "entities": []}
 {"text": "Managed code versioning with Git", "entities": []}
-{"text": "Managed code versioning with Git", "entities": [{"start": 29, "end": 32, "label": "IT_TERM"}]}
 {"text": "Attended task alignment session", "entities": [{"start": 0, "end": 8, "label": "CLERICAL_TERM"}]}
 {"text": "Presented landing page designs", "entities": [{"start": 10, "end": 22, "label": "IT_TERM"}]}
 {"text": "Merged design elements based", "entities": [{"start": 7, "end": 22, "label": "IT_TERM"}]}
@@ -720,7 +668,6 @@
 {"text": "I learned that development of a system requires patience", "entities": []}
 {"text": "Fixing bugs was challenging, but it helped me improve problem-solving skills", "entities": [{"start": 0, "end": 11, "label": "IT_TERM"}]}
 {"text": "Through consultation, I realized that communication and teamwork are important", "entities": []}
-{"text": "I learned how to organize medicines properly for easy access", "entities": [{"start": 17, "end": 25, "label": "CLERICAL_TERM"}]}
 {"text": "I discovered that rapid coordination and effective communication are essential", "entities": [{"start": 51, "end": 64, "label": "CLERICAL_TERM"}]}
 {"text": "I understood the value of accuracy in police clearance records", "entities": [{"start": 45, "end": 54, "label": "CLERICAL_TERM"}]}
 {"text": "Following these steps allows me to analyze possible causes and find solutions", "entities": []}
@@ -774,7 +721,6 @@
 {"text": "This activity enhanced my understanding of risk assessment.", "entities": []}
 {"text": "I realized how monitoring tools track system health", "entities": []}
 {"text": "Through proper documentation, I understood audit trails", "entities": [{"start": 43, "end": 48, "label": "CLERICAL_TERM"}]}
-{"text": "Through proper documentation, I understood audit trails", "entities": []}
 {"text": "I learned how log analysis identifies issues", "entities": [{"start": 14, "end": 26, "label": "IT_TERM"}]}
 {"text": "This task taught me performance monitoring essentials.", "entities": []}
 {"text": "I understood how capacity planning prevents outages.", "entities": []}
@@ -828,9 +774,6 @@
 {"text": "This activity taught me the importance of teamwork and proper preparation", "entities": []}
 {"text": "I learned how to assemble computers which improved my understanding of components", "entities": [{"start": 17, "end": 35, "label": "IT_TERM"}]}
 {"text": "I understood the importance of accuracy in data entry for legal documents", "entities": [{"start": 58, "end": 73, "label": "CLERICAL_TERM"}]}
-{"text": "Following these steps allows me to analyze possible causes and find solutions", "entities": []}
-{"text": "During our activity, we disassembled and assembled a computer", "entities": []}
-{"text": "I learned how to carefully remove and reconnect different components", "entities": [{"start": 58, "end": 68, "label": "IT_TERM"}]}
 {"text": "Through this task, I learned the importance of attention to detail", "entities": []}
 {"text": "I improved my skills in social media management and content creation", "entities": [{"start": 24, "end": 47, "label": "IT_TERM"}]}
 {"text": "This task helped me understand how to create engaging content", "entities": []}
@@ -969,13 +912,11 @@
 {"text": "I ensured that all encoded data were accurate, complete, and properly recorded.", "entities": []}
 {"text": "I also arrange and categorize documents to maintain an orderly filing system and improve the accessiility of records within the office.", "entities": [{"start": 19, "end": 39, "label": "CLERICAL_TERM"}]}
 {"text": "In addition, I gathered relevant personal details from clients through interviews to support proper documentation and record-keeping.", "entities": [{"start": 71, "end": 81, "label": "CLERICAL_TERM"}, {"start": 118, "end": 132, "label": "CLERICAL_TERM"}]}
-{"text": "During the week, I was assigned to encode client information using Microsoft Excel and assist in the filing and organization of the office documents.", "entities": [{"start": 35, "end": 41, "label": "CLERICAL_TERM"}, {"start": 67, "end": 82, "label": "CLERICAL_TERM"}]}
 {"text": "Performed data entry tasks and updated files using Microsoft Excel and other office applications.", "entities": [{"start": 10, "end": 20, "label": "CLERICAL_TERM"}, {"start": 31, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 66, "label": "CLERICAL_TERM"}]}
 {"text": "Filing papers", "entities": [{"start": 0, "end": 13, "label": "CLERICAL_TERM"}]}
 {"text": "Distribute a fliers in MFCES students", "entities": []}
 {"text": "Input the information of the probationers in excel.", "entities": []}
 {"text": "Continuing Created a prototype based on the client's request", "entities": [{"start": 21, "end": 30, "label": "IT_TERM"}]}
-{"text": "Input the information of the probationers in excel.", "entities": []}
 {"text": "Cleaning the Laptop", "entities": []}
 {"text": "Filing of the probationers papers in whole week.", "entities": [{"start": 0, "end": 6, "label": "CLERICAL_TERM"}]}
 {"text": "Observed the daily workflow and familiarized myself with the office environment and staff responsibilities.", "entities": []}
@@ -1004,14 +945,12 @@
 {"text": "Submitted the letter to a partner agency for the Mini Job Fair and continued designing the PESO book.", "entities": []}
 {"text": "Assisted in the conduct of the JobStart graduation and documented the activities during", "entities": []}
 {"text": "Attended an orientation regarding rescue operations.", "entities": []}
-{"text": "Processes Police Clearance", "entities": [{"start": 0, "end": 9, "label": "CLERICAL_TERM"}]}
 {"text": "Pc Assembling/Paper works", "entities": [{"start": 0, "end": 13, "label": "IT_TERM"}]}
 {"text": "Planning System for PNP Operation Office", "entities": []}
 {"text": "Day 1 - Ui/Ux Designing", "entities": [{"start": 8, "end": 13, "label": "IT_TERM"}]}
 {"text": "Encode Excel PNP Database", "entities": [{"start": 7, "end": 12, "label": "CLERICAL_TERM"}]}
 {"text": "Encode paper works", "entities": [{"start": 0, "end": 6, "label": "CLERICAL_TERM"}]}
 {"text": "Ui/Ux Designing", "entities": [{"start": 0, "end": 5, "label": "IT_TERM"}]}
-{"text": "Pc Assembling/Paper works", "entities": [{"start": 0, "end": 13, "label": "IT_TERM"}]}
 {"text": "Police clearance", "entities": [{"start": 0, "end": 16, "label": "CLERICAL_TERM"}]}
 {"text": "Encode Excel File", "entities": [{"start": 0, "end": 6, "label": "CLERICAL_TERM"}]}
 {"text": "Stencil Firearms", "entities": [{"start": 0, "end": 16, "label": "CLERICAL_TERM"}]}
@@ -1024,7 +963,6 @@
 {"text": "Tarp Editing/Paperwork's", "entities": [{"start": 5, "end": 12, "label": "IT_TERM"}, {"start": 13, "end": 24, "label": "CLERICAL_TERM"}]}
 {"text": "Excel Encoding", "entities": [{"start": 6, "end": 14, "label": "CLERICAL_TERM"}]}
 {"text": "Paperwork's/Printer Troubleshooting", "entities": [{"start": 0, "end": 11, "label": "CLERICAL_TERM"}, {"start": 12, "end": 35, "label": "IT_TERM"}]}
-{"text": "Day1 of Emotional Intelligence (EI)", "entities": []}
 {"text": "Day2 of Emotional Intelligence (EI)", "entities": []}
 {"text": "Feb 23 I set up my dev environment, installed necessary apps, and migrated the capstone UI.", "entities": [{"start": 19, "end": 34, "label": "IT_TERM"}, {"start": 36, "end": 60, "label": "IT_TERM"}]}
 {"text": "I added the landing page and cleared the repo by removing old burial/genealogy sections.", "entities": [{"start": 41, "end": 45, "label": "IT_TERM"}]}

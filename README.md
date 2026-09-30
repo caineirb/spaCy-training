@@ -80,6 +80,10 @@ spaCy-training/
 ├── README.md                          # Comprehensive methodology & usage guide
 ├── main.ipynb                         # Narrative Jupyter walkthrough notebook
 ├── config_trf.cfg                     # spaCy GPU transformer training configuration
+├── api/
+│   ├── __init__.py
+│   ├── main.py                        # FastAPI entity extraction HTTP endpoint
+│   └── README.md                      # API run instructions, curl examples, PHP integration
 ├── data/
 │   ├── terms.csv                      # Seed dictionary (IT_TERM, CLERICAL_TERM)
 │   ├── data.jsonl                     # Real annotated training data (1,044 entries)
@@ -223,7 +227,23 @@ import json; print(json.dumps(res, indent=2))
 "
 ```
 
-### 3. Production Deployment Script (Streaming Inference)
+### 3. Entity Extraction API (HTTP Service)
+
+The FastAPI service exposes the hybrid pipeline over HTTP for integration with PHP or any other caller:
+
+```bash
+# Start the API server:
+uvicorn api.main:app --host 0.0.0.0 --port 8000
+
+# Test with curl:
+curl -X POST http://localhost:8000/extract \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Used Microsoft Excel for data encoding."}'
+```
+
+See [`api/README.md`](api/README.md) for full documentation, response shapes, and PHP integration examples.
+
+### 4. Production Deployment Script (Streaming Inference)
 
 The deployment script handles arbitrary text file sizes using **streaming line batches with constant memory overhead**:
 
