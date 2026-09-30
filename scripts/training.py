@@ -46,6 +46,7 @@ def train_ner_trf(
     eval_frequency: int = 100,
     patience: int = 800,
     use_gpu: int = 0,
+    max_batch_items: int = 2048,
 ) -> Dict[str, Any]:
     """Trains/fine-tunes the transformer NER pipeline on GPU with patience-based early stopping.
     
@@ -58,10 +59,17 @@ def train_ner_trf(
         eval_frequency: Frequency of evaluation on dev set (default: 100).
         patience: Steps without improvement on dev set before early stopping (default: 800, 8 evals).
         use_gpu: GPU device ID (0 for RTX 3060).
+        max_batch_items: Maximum items per transformer batch (default: 2048 to prevent CUDA OOM).
         
     Returns:
         Dict with paths to best model and dev evaluation metrics.
     """
+    import gc
+    import torch
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
     scripts.init_gpu()
     ensure_config_exists(config_path)
 
@@ -75,11 +83,12 @@ def train_ner_trf(
         "training.eval_frequency": eval_frequency,
         "training.patience": patience,
         "components.transformer.model.mixed_precision": True,
+        "components.transformer.max_batch_items": max_batch_items,
     }
 
     logger.info(
         f"Starting transformer training on GPU {use_gpu} for up to {max_steps} steps "
-        f"(eval_frequency={eval_frequency}, patience={patience} steps)..."
+        f"(eval_frequency={eval_frequency}, patience={patience} steps, max_batch_items={max_batch_items})..."
     )
     spacy_train(config_path, output_dir, use_gpu=use_gpu, overrides=overrides)
 

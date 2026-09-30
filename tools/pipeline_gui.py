@@ -50,6 +50,7 @@ _WS_RE = re.compile(r"\s+")
 
 DEFAULT_MODEL_CANDIDATES = [
     ("models/ner_trf_trstr_llm/model-best", "TRSTR-LLM (Direct Synthetic, High Recall)"),
+    ("models/ner_trf_trstr_paraphrase/model-best", "TRSTR-Paraphrase (T5 Augmentation)"),
     ("models/ner_trf/model-best", "Production Baseline (Real Data)"),
     ("models/ner_trf_trtr/model-best", "TRTR Baseline (Real-Only Archive)"),
     ("models/hybrid_pipeline", "Packaged Hybrid Pipeline"),

@@ -866,419 +866,559 @@
 {"text": "Added new features based on the suggestions of the IT personnel. ", "entities": [{"start": 6, "end": 18, "label": "IT_TERM"}], "augmentation_type": "real"}
 {"text": "Day2(May 12, 2026): Assisted the busy clinic staff by measuring the height and weight of students.", "entities": [], "augmentation_type": "real"}
 {"text": "In the first day Arranging the dismissed cases improved my organization skills and made records easier to review and manage.", "entities": [], "augmentation_type": "real"}
-{"text": "Today, we focused on Record Checking for the new batch of scholarship applicants.", "entities": [{"start": 21, "end": 36, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I spent the morning deploying our project on Google Cloud Platform to test its scalability.", "entities": [{"start": 45, "end": 66, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My task for today was Document Arrangement of the older files from the previous registrar's archives.", "entities": [{"start": 22, "end": 42, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "They assigned me to build the frontend component using Angular while my co-intern works on the design.", "entities": [{"start": 55, "end": 62, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Spent the afternoon doing Records Management for the physical files of the HR department.", "entities": [{"start": 26, "end": 44, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We ran multiple tests on Postman to ensure all endpoints were returning the correct status codes.", "entities": [{"start": 25, "end": 32, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I assisted the administrative staff in doing Certificate Release for the seminar attendees.", "entities": [{"start": 45, "end": 64, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived early at the main office and greeted the supervisors and staff before logging in my attendance.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We attended a brief orientation about the company rules, core values, and daily routines.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Spent the afternoon cleaning up my designated workstation and chatting with my fellow interns during lunch.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, our supervisor assigned us to perform Document Verification on the hard copies submitted last week to ensure all entries are accurate.", "entities": [{"start": 45, "end": 66, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My partner and I spent the entire afternoon resolving a difficult Merge Conflict in our shared repository.", "entities": [{"start": 66, "end": 80, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We completed the File Arrangement of old student folders today, making it much easier for the administrative staff to retrieve them.", "entities": [{"start": 17, "end": 33, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I assisted the IT team in executing the Production Deployment for the new client portal, ensuring everything went smoothly.", "entities": [{"start": 40, "end": 61, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The team lead guided me through designing a stable Database Schema for the inventory module of the project.", "entities": [{"start": 51, "end": 66, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My main task this morning was Document Labeling for the incoming regional records so they could be categorized properly.", "entities": [{"start": 30, "end": 47, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I spent my day implementing robust Error Handling in the registration form to prevent unexpected application crashes.", "entities": [{"start": 35, "end": 49, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived at the office early today and had a quick chat with the other interns before starting our daily routine.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We attended the weekly general assembly where the department heads shared their achievements for the past quarter.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Before leaving the office, we cleaned up our work area and made sure all the monitors and power outlets were turned off.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My supervisor assigned me to optimize our existing data structure by applying Database Normalization to the tables.", "entities": [{"start": 78, "end": 100, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I spent the entire morning doing Document Organization for the pending clearance papers from the previous semester.", "entities": [{"start": 33, "end": 54, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We successfully executed the System Deployment on the staging environment, making sure everything runs smoothly on Linux.", "entities": [{"start": 29, "end": 46, "label": "IT_TERM"}, {"start": 115, "end": 120, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Today, my task was Data Verification, where I cross-referenced the physical logbook entries with the digital records.", "entities": [{"start": 19, "end": 36, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I created complex Database Queries to retrieve the active user list for the new report.", "entities": [{"start": 18, "end": 34, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I assisted the administrative staff with Photocopying the training materials for the upcoming seminar next week.", "entities": [{"start": 41, "end": 53, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "After completing the Folder Organization in the cabinet, I transitioned to coding and implemented Responsive Design for the mobile view.", "entities": [{"start": 21, "end": 40, "label": "CLERICAL_TERM"}, {"start": 98, "end": 115, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We had a brief meeting with our department head this morning to discuss our weekly attendance and task assignments.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "I arrived at the office early today because of the light traffic along Commonwealth Avenue, so I just waited for my supervisor at the reception area.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "During our lunch break, my fellow interns and I ate at a nearby canteen and talked about our upcoming graduation.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, our team utilized Python to build the backend logic and integrated a PostgreSQL database for better data retrieval.", "entities": [{"start": 25, "end": 31, "label": "IT_TERM"}, {"start": 76, "end": 86, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She spent the entire morning encoding student grades using Microsoft Excel and organizing physical folders.", "entities": [{"start": 59, "end": 74, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We arrived early at the company lobby to attend the orientation seminar with the other interns.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My partner deployed our web project to AWS and configured Jenkins for automated deployment pipelines.", "entities": [{"start": 39, "end": 42, "label": "IT_TERM"}, {"start": 58, "end": 65, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During the afternoon shift, I was tasked with Document Filing and processing incoming client inquiries.", "entities": [{"start": 46, "end": 61, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The commute was exhausting due to heavy morning traffic, but I still managed to arrive before our team briefing.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Juan wrote unit tests using Jest and tested the API endpoints with Postman.", "entities": [{"start": 28, "end": 32, "label": "IT_TERM"}, {"start": 67, "end": 74, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "After cleaning our workstations, my supervisor gathered us for a brief meeting regarding our weekly tasks.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "I updated the inventory records and handled inventory checking for the office supplies storage room.", "entities": [{"start": 44, "end": 62, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We developed a responsive user interface utilizing React and styled the components with custom CSS.", "entities": [{"start": 51, "end": 56, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Spent the entire morning doing Data Encoding for the incoming scholar applications.", "entities": [{"start": 31, "end": 44, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Integrated the AWS service to handle our cloud infrastructure needs.", "entities": [{"start": 15, "end": 18, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Maureen helped with Document Filing and sorted the old clearance papers in the cabinet.", "entities": [{"start": 20, "end": 35, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We troubleshot a difficult Network Troubleshooting issue involving the main router.", "entities": [{"start": 27, "end": 50, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived early at the office and attended the morning orientation with the new interns.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Updated several Student Records using Microsoft Excel after receiving the latest enrollment list.", "entities": [{"start": 16, "end": 31, "label": "CLERICAL_TERM"}, {"start": 38, "end": 53, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Faced heavy traffic during my morning commute, but still managed to arrive before our team meeting started.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Tested the API Routes using Postman to verify the JSON responses from the backend.", "entities": [{"start": 11, "end": 21, "label": "IT_TERM"}, {"start": 28, "end": 35, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor invited us to lunch at the nearby cafeteria to welcome everyone to the department.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Finished the Identification Card Design for the upcoming company event using Adobe Photoshop.", "entities": [{"start": 13, "end": 39, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Spent the morning updating the Attendance Records for all graduating students in the department.", "entities": [{"start": 31, "end": 49, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Maria spent her afternoon performing Database Normalization to improve query performance on the main server.", "entities": [{"start": 37, "end": 59, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We arrived early at the office to attend the orientation seminar regarding workplace policies.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My partner handled the Client Assistance desk while I sorted through the physical clearance papers.", "entities": [{"start": 23, "end": 40, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Integrated a secure Backend API into our mobile application using Flutter for cross-platform compatibility.", "entities": [{"start": 20, "end": 31, "label": "IT_TERM"}, {"start": 66, "end": 73, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During the afternoon shift, the intern assisted with Medicine Dispensing and verified various Account Balances.", "entities": [{"start": 53, "end": 72, "label": "CLERICAL_TERM"}, {"start": 94, "end": 110, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The supervisor discussed our upcoming weekly deliverables during the brief morning huddle.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Successfully resolved several conflicts in the Git Branches before merging code into the main repository.", "entities": [{"start": 47, "end": 59, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We had a long commute through heavy traffic before finally reaching the workstation for our shift.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "John conducted a detailed PC Assembly workshop and later demonstrated basic Computer Support techniques.", "entities": [{"start": 26, "end": 37, "label": "IT_TERM"}, {"start": 76, "end": 92, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Spent the entire morning doing Data Encoding for the new employee profiles.", "entities": [{"start": 31, "end": 44, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor taught me how to properly handle Document Verification before sending them to the archives.", "entities": [{"start": 47, "end": 68, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I utilized Python to automate the extraction of daily sales figures.", "entities": [{"start": 11, "end": 17, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We encountered a difficult Merge Conflict while working on the repository update today.", "entities": [{"start": 27, "end": 41, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The team tasked me with sorting and checking Beneficiary Records for the upcoming payout.", "entities": [{"start": 45, "end": 64, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "After lunch, I focused on Database Schema adjustments to improve query performance.", "entities": [{"start": 26, "end": 41, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She spent her afternoon performing Document Labeling for the incoming regulatory paperwork.", "entities": [{"start": 35, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived early at the office today to grab a cup of coffee before our team alignment meeting.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The department head gave us a brief orientation regarding the company rules and safety protocols.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We sat together in the conference room to discuss our commuting struggles and weekend plans.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the whole morning doing Database Queries to extract the missing records requested by the manager.", "entities": [{"start": 39, "end": 55, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Ma'am Sarah asked me to handle the Document Organization and Medical Inventory for the upcoming health mission.", "entities": [{"start": 35, "end": 56, "label": "CLERICAL_TERM"}, {"start": 61, "end": 78, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Juan translated our legacy backend logic into TypeScript to improve the overall maintainability of the repository.", "entities": [{"start": 46, "end": 56, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "After lunch, my supervisor assigned me to assist with Certificate Release and Information Checking at the front desk.", "entities": [{"start": 54, "end": 73, "label": "CLERICAL_TERM"}, {"start": 78, "end": 98, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The development team successfully performed System Deployment on the Google Cloud Platform before leaving the office.", "entities": [{"start": 44, "end": 61, "label": "IT_TERM"}, {"start": 69, "end": 90, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Before heading home, the interns helped with Folder Organization and Data Verification for the regional archives.", "entities": [{"start": 45, "end": 64, "label": "CLERICAL_TERM"}, {"start": 69, "end": 86, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "He troubleshot the Linux configuration and set up an Email Service for the newly hired staff members.", "entities": [{"start": 19, "end": 24, "label": "IT_TERM"}, {"start": 53, "end": 66, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I woke up very early this morning to avoid the heavy rush hour traffic along EDSA before arriving at the building.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Our department head gathered all the trainees in the conference room to discuss our weekly schedules and general responsibilities.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We spent the afternoon cleaning our work area, wiping the tables, and arranging the chairs properly before signing out.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the whole morning writing Java code for our capstone module and configuring the PostgreSQL database for better performance.", "entities": [{"start": 41, "end": 45, "label": "IT_TERM"}, {"start": 95, "end": 105, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor asked me to handle the Medical Inventory and assist with Inventory Analysis for the incoming donations.", "entities": [{"start": 37, "end": 54, "label": "CLERICAL_TERM"}, {"start": 71, "end": 89, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We deployed the web application onto the Google Cloud Platform and set up the Web Server.", "entities": [{"start": 41, "end": 62, "label": "IT_TERM"}, {"start": 78, "end": 88, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived at the workplace early this morning and sat through the safety orientation with the rest of the interns.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The team lead assigned me to do Report Preparation and handle Client Assistance at the front desk.", "entities": [{"start": 32, "end": 50, "label": "CLERICAL_TERM"}, {"start": 62, "end": 79, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I utilized Docker to containerize our application services and Kubernetes for orchestration.", "entities": [{"start": 11, "end": 17, "label": "IT_TERM"}, {"start": 63, "end": 73, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We had a brief coffee break in the pantry before discussing our weekly progress with our manager.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "For the afternoon task, my partner and I focused on Document Routing and Form Distribution for the regional branches.", "entities": [{"start": 52, "end": 68, "label": "CLERICAL_TERM"}, {"start": 73, "end": 90, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She spent the afternoon cleaning her workspace and organizing the physical filing cabinets near the entrance.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "I updated the Dashboard Interface using PHP and checked all the API Endpoints for potential bugs.", "entities": [{"start": 14, "end": 33, "label": "IT_TERM"}, {"start": 40, "end": 43, "label": "IT_TERM"}, {"start": 64, "end": 77, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "For today's task, I focused on updating the Database Schema and writing Git Commits for our repository.", "entities": [{"start": 44, "end": 59, "label": "IT_TERM"}, {"start": 72, "end": 83, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Ma'am Anna instructed me to perform Document Organization and process the incoming Financial Transactions for the department.", "entities": [{"start": 36, "end": 57, "label": "CLERICAL_TERM"}, {"start": 83, "end": 105, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During the afternoon shift, Mark deployed our React application and configured the Windows Server instance.", "entities": [{"start": 46, "end": 51, "label": "IT_TERM"}, {"start": 83, "end": 97, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I spent the entire morning doing Scanning Documents and preparing the Audit Preparation folders.", "entities": [{"start": 33, "end": 51, "label": "CLERICAL_TERM"}, {"start": 70, "end": 87, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The intern integrated SQLite into the Nutrimap System to improve local data storage.", "entities": [{"start": 22, "end": 28, "label": "IT_TERM"}, {"start": 38, "end": 53, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She assisted the administrative staff with ID Release and sorted through the pile of Incoming Documents.", "entities": [{"start": 43, "end": 53, "label": "CLERICAL_TERM"}, {"start": 85, "end": 103, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "While testing the Form Validation module, I also reviewed the Brochure Design sent by the marketing team.", "entities": [{"start": 18, "end": 33, "label": "IT_TERM"}, {"start": 62, "end": 77, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived at the office early this morning and caught up with my co-interns over a cup of coffee before our shift began.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We attended the mandatory orientation seminar in the main hall and met our new project supervisors.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My commute took longer than usual due to heavy traffic along EDSA, but I still managed to sign in on time.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the entire morning doing Data Recording for the new client accounts.", "entities": [{"start": 40, "end": 54, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The team asked me to fix a bug in our MySQL database connection before the afternoon meeting.", "entities": [{"start": 38, "end": 43, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We arrived early at the office and attended the mandatory orientation about workplace safety.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "She used Figma to create wireframes for the mobile application dashboard.", "entities": [{"start": 9, "end": 14, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "After lunch, my supervisor and I discussed my weekly tasks and future responsibilities.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "John updated the Inventory Counting log to reflect the new stock deliveries.", "entities": [{"start": 17, "end": 35, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We configured the Backend API endpoints using Express to handle user authentication.", "entities": [{"start": 18, "end": 29, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I spent an hour organizing my desk and cleaning up the workspace before leaving.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The intern handled Record Management for the archives department using traditional folders.", "entities": [{"start": 19, "end": 36, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I integrated MongoDB to store user profiles and session tokens securely.", "entities": [{"start": 13, "end": 20, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the entire morning doing Data Calculation for the quarterly financial audit before attending the afternoon meeting.", "entities": [{"start": 40, "end": 56, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The team asked me to handle Document Distribution across the different departments on the third floor.", "entities": [{"start": 28, "end": 49, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She spent hours working on the Figma Prototype to improve the user interface of our capstone project.", "entities": [{"start": 31, "end": 46, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor assigned me to do Record Management for the incoming shipment invoices this afternoon.", "entities": [{"start": 32, "end": 49, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We used MongoDB to store user profiles and implemented strict RBAC policies for security.", "entities": [{"start": 8, "end": 15, "label": "IT_TERM"}, {"start": 62, "end": 66, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Before leaving the office, I performed Report Preparation to summarize our team's daily accomplishments.", "entities": [{"start": 39, "end": 57, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Juan was tasked with doing Code Refactoring to fix bugs found during the recent System Testing phase.", "entities": [{"start": 27, "end": 43, "label": "IT_TERM"}, {"start": 80, "end": 94, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived early at the office today and attended our department's orientation briefing.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "During lunch break, my co-interns and I discussed our commute experiences and shared stories about our university life.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My manager called for a brief afternoon meeting to discuss our upcoming project milestones and team goals.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the whole morning doing Data Encoding for the incoming client applications.", "entities": [{"start": 39, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My teammate deployed our backend services to Windows Server and configured the PostgreSQL database.", "entities": [{"start": 45, "end": 59, "label": "IT_TERM"}, {"start": 79, "end": 89, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We arrived early at the office today to attend the orientation session conducted by our HR manager.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "She assisted the department by performing Inventory Checking and updating the physical ledger.", "entities": [{"start": 42, "end": 60, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I used Adobe Photoshop to create promotional banners and enhanced the UI Design for our mobile layout.", "entities": [{"start": 7, "end": 22, "label": "IT_TERM"}, {"start": 70, "end": 79, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The intern met with the project coordinator in the conference room to discuss the weekly schedule.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "For the afternoon task, Mark handled Document Handling and sorted out various bureaucratic papers.", "entities": [{"start": 37, "end": 54, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We set up Docker containers on our local machine and tested the REST API endpoints thoroughly.", "entities": [{"start": 10, "end": 16, "label": "IT_TERM"}, {"start": 64, "end": 72, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During the long commute this morning, I observed how many passengers were using their phones.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Before leaving work, Sarah finished Report Preparation and organized the meeting proceedings for tomorrow.", "entities": [{"start": 36, "end": 54, "label": "CLERICAL_TERM"}, {"start": 73, "end": 92, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the morning performing Data Verification for the new applicant records before doing scholarship Data Consolidation.", "entities": [{"start": 38, "end": 55, "label": "CLERICAL_TERM"}, {"start": 111, "end": 129, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The team asked me to fix a tricky Merge Conflict in our TypeScript codebase before deploying to the Hosting Environment.", "entities": [{"start": 34, "end": 48, "label": "IT_TERM"}, {"start": 56, "end": 66, "label": "IT_TERM"}, {"start": 100, "end": 119, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She arrived early at the office to attend the morning briefing and meet with her supervisor regarding the upcoming community outreach.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We used Figma and Canva to draft the Promotional Materials for the university's upcoming graduation program.", "entities": [{"start": 8, "end": 13, "label": "IT_TERM"}, {"start": 18, "end": 23, "label": "IT_TERM"}, {"start": 37, "end": 58, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I spent an hour commuting through heavy traffic this morning and greeted my colleagues upon reaching my workstation.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My supervisor assigned me to handle Document Routing and Information Updating for the regional department files.", "entities": [{"start": 36, "end": 52, "label": "CLERICAL_TERM"}, {"start": 57, "end": 77, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "After lunch, I tested the Gemini API integration and set up proper Database Storage for our new tracking features.", "entities": [{"start": 26, "end": 36, "label": "IT_TERM"}, {"start": 67, "end": 83, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We attended a half-day seminar about workplace ethics and listened to various industry leaders share their experiences.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "John managed the Stock Records and helped with Inventory Organization in the supply room.", "entities": [{"start": 17, "end": 30, "label": "CLERICAL_TERM"}, {"start": 47, "end": 69, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I used Git to commit our latest changes and designed a new Identification Card Design layout using our graphic software.", "entities": [{"start": 7, "end": 10, "label": "IT_TERM"}, {"start": 59, "end": 85, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the entire morning performing Schema Backup for our company records.", "entities": [{"start": 45, "end": 58, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The intern assisted with Document Verification and gathered signatures from different department heads.", "entities": [{"start": 25, "end": 46, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We deployed our new inquiry module and tested the Database Queries to ensure fast response times.", "entities": [{"start": 50, "end": 66, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My teammate used Microsoft Excel to track the weekly inventory while I focused on Document Organization.", "entities": [{"start": 17, "end": 32, "label": "CLERICAL_TERM"}, {"start": 82, "end": 103, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She designed a new Dashboard Interface using Figma and presented the prototype to our manager.", "entities": [{"start": 19, "end": 38, "label": "IT_TERM"}, {"start": 45, "end": 50, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The IT team configured a virtual server on Microsoft Azure to host our new client portal.", "entities": [{"start": 43, "end": 58, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "He handled the Financial Transactions for the morning shift before proceeding with Document Preparation.", "entities": [{"start": 15, "end": 37, "label": "CLERICAL_TERM"}, {"start": 83, "end": 103, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived at the office early this morning and grabbed a cup of coffee before the daily orientation started.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Our supervisor discussed the company's core values and gave us a brief tour of the building during the orientation.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We had a brief chat with the other interns in the pantry while waiting for our afternoon team meeting.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the entire morning doing Data Encoding for the incoming client applications.", "entities": [{"start": 40, "end": 53, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Ma'am Joy asked me to update the Attendance Records using Microsoft Excel before heading home.", "entities": [{"start": 33, "end": 51, "label": "CLERICAL_TERM"}, {"start": 58, "end": 73, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We pushed our latest codebase updates to GitHub and discussed our Sprint planning.", "entities": [{"start": 41, "end": 47, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived at the office early, grabbed a cup of coffee, and attended our daily morning briefing.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "He spent the afternoon setting up Docker containers and testing the REST API endpoints.", "entities": [{"start": 34, "end": 40, "label": "IT_TERM"}, {"start": 68, "end": 76, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I assisted my supervisor in sorting physical folders and sorting out various Financial Records for auditing.", "entities": [{"start": 77, "end": 94, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During the commute home, I reflected on the orientation seminar about workplace ethics and company policies.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "She wrote a Python script to automate the extraction of weekly reports from the database.", "entities": [{"start": 12, "end": 18, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Met with the department head in the conference room to discuss my final OJT requirements and evaluation schedule.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We used Laravel to develop the core backend features and integrated Livewire for dynamic UI components.", "entities": [{"start": 8, "end": 15, "label": "IT_TERM"}, {"start": 68, "end": 76, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Today, our team updated the Database Schema and performed Database Normalization for the main repository.", "entities": [{"start": 28, "end": 43, "label": "IT_TERM"}, {"start": 58, "end": 80, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She spent the entire morning doing Data Recording and organizing Incoming Documents in the filing cabinet.", "entities": [{"start": 35, "end": 49, "label": "CLERICAL_TERM"}, {"start": 65, "end": 83, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We integrated the Gemini API into our Flask backend to improve response generation.", "entities": [{"start": 18, "end": 28, "label": "IT_TERM"}, {"start": 38, "end": 43, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The supervisor assigned me to handle Report Preparation and process various Financial Transactions.", "entities": [{"start": 37, "end": 55, "label": "CLERICAL_TERM"}, {"start": 76, "end": 98, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My colleague worked on Computer Setup while I focused on Printer Troubleshooting in the afternoon.", "entities": [{"start": 23, "end": 37, "label": "IT_TERM"}, {"start": 57, "end": 80, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We reviewed the Client Satisfaction Survey results and assisted with Certificate Recognition for the event participants.", "entities": [{"start": 16, "end": 42, "label": "CLERICAL_TERM"}, {"start": 69, "end": 92, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The deployment on Microsoft Azure went smoothly after resolving a minor Merge Conflict.", "entities": [{"start": 18, "end": 33, "label": "IT_TERM"}, {"start": 72, "end": 86, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived at the workplace early this morning and attended the mandatory orientation session with the rest of the interns.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "During our lunch break, we discussed our weekend plans and grabbed coffee at the nearby café.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The manager called for a quick meeting in the conference room to discuss our daily schedules and general workflow.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the whole morning doing Data Encoding for the new inventory ledger.", "entities": [{"start": 39, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The team lead asked me to use Python to automate our weekly report generation.", "entities": [{"start": 30, "end": 36, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived early at the building lobby and waited for my co-interns to arrive before heading up.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We utilized Microsoft Excel to consolidate all the monthly expense reports submitted by various branches.", "entities": [{"start": 12, "end": 27, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I attended the orientation seminar this morning and listened to the HR manager discuss company policies.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My supervisor taught me how to handle Network Troubleshooting when the connection dropped.", "entities": [{"start": 38, "end": 61, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Had a quick meeting with our mentors to discuss the upcoming project timeline and deliverables.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "After lunch, I proceeded with Document Filing and organized the physical folders in the cabinet.", "entities": [{"start": 30, "end": 45, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We deployed the web application to Microsoft Azure and tested the API endpoints.", "entities": [{"start": 35, "end": 50, "label": "IT_TERM"}, {"start": 66, "end": 69, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The intern assigned to the neighboring desk helped me organize my physical station supplies.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My supervisor asked me to perform Document Arrangement for the previous quarter's financial statements.", "entities": [{"start": 34, "end": 54, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the whole morning doing Inventory Organization in the supply room.", "entities": [{"start": 39, "end": 61, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We used Adobe Photoshop to create the promotional banners for the upcoming community outreach program.", "entities": [{"start": 8, "end": 23, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Juan updated the client records in the main database using Microsoft Excel.", "entities": [{"start": 17, "end": 31, "label": "CLERICAL_TERM"}, {"start": 59, "end": 74, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She practiced UI/UX Design principles while creating wireframes for the mobile application.", "entities": [{"start": 14, "end": 26, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I assisted the team in performing Audit Preparation and Information Updating for the administrative files.", "entities": [{"start": 34, "end": 51, "label": "CLERICAL_TERM"}, {"start": 56, "end": 76, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The IT staff deployed Kubernetes clusters to manage the microservices architecture efficiently.", "entities": [{"start": 22, "end": 32, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived early at the office today and attended our morning briefing with the department manager.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We walked together to the nearest cafeteria during our lunch break and talked about our weekend plans.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The interns gathered in the conference room for a brief orientation regarding company policies and attendance guidelines.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Spent the morning updating the Patient Records and sorting out PhilHealth Eligibility forms for the clinic.", "entities": [{"start": 31, "end": 46, "label": "CLERICAL_TERM"}, {"start": 63, "end": 85, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The intern built a new Figma Prototype for the mobile app redesign project.", "entities": [{"start": 23, "end": 38, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived early at the office today, grabbed a cup of coffee, and chatted briefly with my supervisor about my schedule.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We handled several Financial Transactions and assisted staff with Document Routing this afternoon.", "entities": [{"start": 19, "end": 41, "label": "CLERICAL_TERM"}, {"start": 66, "end": 82, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She pushed the latest updates to GitHub and performed extensive System Testing before deployment.", "entities": [{"start": 33, "end": 39, "label": "IT_TERM"}, {"start": 64, "end": 78, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Attended the morning orientation session and listened to the department head talk about company policies.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Performed a Schema Backup to secure the server before modifying the Database Schema.", "entities": [{"start": 12, "end": 25, "label": "IT_TERM"}, {"start": 68, "end": 83, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Spent an hour organizing my desk, wiping down the computer monitor, and cleaning up the workstation.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Assisted the team in organizing Promotional Materials and preparing Document Checking guidelines for the upcoming event.", "entities": [{"start": 32, "end": 53, "label": "CLERICAL_TERM"}, {"start": 68, "end": 85, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "He managed the Database Connections and optimized the Database Performance for better response times.", "entities": [{"start": 15, "end": 35, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Maagang dumating ang aming grupo sa opisina para sa orientation tungkol sa aming mga bagong gawain ngayong linggo.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Nagpatuloy kami sa aming ginagawang Figma Prototype para sa bagong interface ng mobile app.", "entities": [{"start": 36, "end": 51, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Tinulungan ko ang aking kasamahan sa paggawa ng Patient Records gamit ang ibinigay na listahan ng mga pasyente.", "entities": [{"start": 48, "end": 63, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Nakipag-usap kami sa aming supervisor tungkol sa schedule ng aming mga susunod na deployment.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Ginugol ko ang buong hapon sa Code Refactoring upang mas mapabilis ang takbo ng aming Backend API.", "entities": [{"start": 30, "end": 46, "label": "IT_TERM"}, {"start": 86, "end": 97, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Masinsinan naming sinuri ang mga Payment Records para matiyak na tama ang lahat ng nakasulat bago i-file.", "entities": [{"start": 33, "end": 48, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Habang naglalakad pauwi, napag-usapan namin ang mga natutunan namin sa seminar kaninang umaga.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Gumamit kami ng Flutter at JavaScript upang mabuo ang pangunahing bahagi ng aming Interactive Map.", "entities": [{"start": 16, "end": 23, "label": "IT_TERM"}, {"start": 27, "end": 37, "label": "IT_TERM"}, {"start": 82, "end": 97, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Masusing isinagawa ng aming team ang Document Arrangement upang mas madaling mahanap ang mga lumang kasulatan.", "entities": [{"start": 37, "end": 57, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Inayos ko ang aking lamesa at pinunasan ang mga alikabok bago simulan ang paggawa ng Identification Card Design.", "entities": [{"start": 85, "end": 111, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The intern spent the entire afternoon performing Data Encoding for the quarterly liquidation reports.", "entities": [{"start": 49, "end": 62, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Mark integrated Node.js with the new API endpoints while his teammate handled Database Queries.", "entities": [{"start": 16, "end": 23, "label": "IT_TERM"}, {"start": 78, "end": 94, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She arrived early at the office today to attend the mandatory orientation seminar for all new interns.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We used Microsoft Excel to consolidate the inventory check results before submitting the file to the manager.", "entities": [{"start": 8, "end": 23, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During the morning commute, heavy traffic delayed my arrival, but I still made it just in time for our team huddle.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The IT team assigned me to resolve several Password Reset tickets and assist with Hardware Installation.", "entities": [{"start": 43, "end": 57, "label": "IT_TERM"}, {"start": 82, "end": 103, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I spent an hour organizing my workstation, wiping down the desk, and arranging my notebooks neatly.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "After sorting all incoming parcels, John proceeded with Document Filing and Records Management duties.", "entities": [{"start": 56, "end": 71, "label": "CLERICAL_TERM"}, {"start": 76, "end": 94, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Sarah learned how to manage Git Branches effectively and executed proper File Conversion procedures.", "entities": [{"start": 28, "end": 40, "label": "IT_TERM"}, {"start": 73, "end": 88, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The department head discussed our weekly goals during the briefing and reminded everyone about proper workplace etiquette.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I used Linux to configure the server and performed Network Troubleshooting on the faulty router.", "entities": [{"start": 14, "end": 19, "label": "IT_TERM"}, {"start": 58, "end": 81, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She spent the entire morning doing Data Encoding and updating the Student Records in the office archive.", "entities": [{"start": 35, "end": 48, "label": "CLERICAL_TERM"}, {"start": 66, "end": 81, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We deployed our project to Microsoft Azure and ran Deployment Testing to ensure all System Modules worked properly.", "entities": [{"start": 27, "end": 42, "label": "IT_TERM"}, {"start": 51, "end": 69, "label": "IT_TERM"}, {"start": 84, "end": 98, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My intern partner handled the Meeting Transcription while I worked on organizing the Meeting Materials.", "entities": [{"start": 30, "end": 51, "label": "CLERICAL_TERM"}, {"start": 85, "end": 102, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I applied UI/UX Design principles and ensured Responsive Design for the client's new portal.", "entities": [{"start": 10, "end": 22, "label": "IT_TERM"}, {"start": 46, "end": 63, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The team assigned me to assist with Inventory Checking and Material Distribution for the upcoming outreach program.", "entities": [{"start": 36, "end": 54, "label": "CLERICAL_TERM"}, {"start": 59, "end": 80, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "He updated the database using a Database Seeder and populated the tracking sheet in Google Sheets.", "entities": [{"start": 32, "end": 47, "label": "IT_TERM"}, {"start": 84, "end": 97, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived early at the office today and attended the orientation seminar with the other interns.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Had a brief meeting with our supervisor to discuss our weekly schedule and commute arrangements.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We spent the afternoon cleaning our desks and organizing our workstation area before heading home.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today I deployed our team project using Microsoft Azure and configured the new Hosting Environment.", "entities": [{"start": 40, "end": 55, "label": "IT_TERM"}, {"start": 79, "end": 98, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor asked me to spend the afternoon doing Data Correction and updating the Beneficiary Records.", "entities": [{"start": 52, "end": 67, "label": "CLERICAL_TERM"}, {"start": 85, "end": 104, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We started working on the backend features using Laravel and tested the Email Verification module.", "entities": [{"start": 49, "end": 56, "label": "IT_TERM"}, {"start": 72, "end": 90, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The intern spent several hours sorting through Folder Organization and updating the Inventory Records for our office supplies.", "entities": [{"start": 47, "end": 66, "label": "CLERICAL_TERM"}, {"start": 84, "end": 101, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I utilized Canva to create promotional graphics and assisted with the Tarpaulin Design for the upcoming university event.", "entities": [{"start": 11, "end": 16, "label": "IT_TERM"}, {"start": 70, "end": 86, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived early at the office today to attend the mandatory morning orientation with all the other interns.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "During the lunch break, my co-interns and I talked about our long commutes and shared snacks in the pantry.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We had a brief meeting with our manager to discuss general expectations and office etiquette before starting our tasks.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "She developed an AI Chatbot for the client portal and implemented a secure Password Reset feature in C#.", "entities": [{"start": 17, "end": 27, "label": "IT_TERM"}, {"start": 75, "end": 89, "label": "IT_TERM"}, {"start": 101, "end": 103, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The manager assigned me to handle ID Distribution and assist with Client Assistance at the front desk.", "entities": [{"start": 34, "end": 49, "label": "CLERICAL_TERM"}, {"start": 66, "end": 83, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "For today's task, I created a responsive Landing Page using HTML and CSS for our upcoming company event.", "entities": [{"start": 41, "end": 53, "label": "IT_TERM"}, {"start": 60, "end": 64, "label": "IT_TERM"}, {"start": 69, "end": 72, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor asked me to perform Document Filing and update the Financial Records in the afternoon.", "entities": [{"start": 34, "end": 49, "label": "CLERICAL_TERM"}, {"start": 65, "end": 82, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Juan deployed the latest update to the Web Server using Jenkins for continuous integration.", "entities": [{"start": 39, "end": 49, "label": "IT_TERM"}, {"start": 56, "end": 63, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She spent the whole morning doing Inventory Counting and sorting physical paperwork in the stockroom.", "entities": [{"start": 34, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I pushed our latest Git Commits to the repository before testing the new Flutter mobile features.", "entities": [{"start": 20, "end": 31, "label": "IT_TERM"}, {"start": 73, "end": 80, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Maria assisted with ID Distribution for the new employees and helped with Office Coordination.", "entities": [{"start": 20, "end": 35, "label": "CLERICAL_TERM"}, {"start": 74, "end": 93, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We designed a new Figma Prototype to showcase the updated user interface concepts to the clients.", "entities": [{"start": 18, "end": 33, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived at the office early this morning and drank coffee while waiting for our team leader to arrive.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "During the orientation session, the manager discussed the company policies and introduced us to our respective mentors.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We walked together to the nearby cafeteria during our lunch break and talked about our weekend plans.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I started my morning shift by updating our PHP codebase and testing the API endpoints using Postman.", "entities": [{"start": 50, "end": 53, "label": "IT_TERM"}, {"start": 99, "end": 106, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Ma'am Ana instructed me to sort through the incoming letters and update the financial records in Microsoft Excel.", "entities": [{"start": 76, "end": 93, "label": "CLERICAL_TERM"}, {"start": 97, "end": 112, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During the afternoon session, my teammate focused on UI/UX Design while I handled the Database Management tasks.", "entities": [{"start": 53, "end": 65, "label": "IT_TERM"}, {"start": 86, "end": 105, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I spent two hours doing data encoding for the client payments and organizing the physical archives.", "entities": [{"start": 24, "end": 37, "label": "CLERICAL_TERM"}, {"start": 46, "end": 61, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We deployed the final build to the server and ran deployment testing to verify the new dashboard interface.", "entities": [{"start": 50, "end": 68, "label": "IT_TERM"}, {"start": 87, "end": 106, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor asked me to handle inventory checking and assist with the information reviewing for the upcoming audit.", "entities": [{"start": 33, "end": 51, "label": "CLERICAL_TERM"}, {"start": 72, "end": 93, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Mark integrated Spatie into our backend repository and set up a proper GitHub Workflow for team collaboration.", "entities": [{"start": 16, "end": 22, "label": "IT_TERM"}, {"start": 71, "end": 86, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived at the office early this morning and grabbed a cup of coffee before the team briefing started.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We attended a three-hour orientation seminar in the main auditorium regarding workplace safety policies and company values.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "My commute took longer than usual because of heavy traffic along EDSA, but I still managed to log in on time.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the whole morning updating our records in Microsoft Excel and encoding new inventory items.", "entities": [{"start": 57, "end": 72, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My teammate John wrote a script in Python to automate the extraction of weekly sales metrics.", "entities": [{"start": 35, "end": 41, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We arrived early at the office to attend the orientation session with our new department head.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "She spent her afternoon sorting incoming mail, stamping official receipts, and filing clearance documents.", "entities": [{"start": 86, "end": 105, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "To improve our workflow, we decided to containerize the legacy application using Docker before cloud migration.", "entities": [{"start": 81, "end": 87, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During the lunch break, all the interns gathered in the pantry to eat and chat about our morning commute.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "I was assigned to design the new mobile interface wireframes using Figma for our upcoming project launch.", "entities": [{"start": 50, "end": 60, "label": "IT_TERM"}, {"start": 67, "end": 72, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Our supervisor conducted a brief walkthrough of the company rules and introduced us to the rest of the team.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The IT team successfully deployed the updated REST API endpoints to production after rigorous backend testing.", "entities": [{"start": 46, "end": 54, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I carefully organized the physical folders, checked health records for missing signatures, and updated our logbook.", "entities": [{"start": 52, "end": 66, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the morning writing complex Database Queries using MySQL to retrieve user statistics.", "entities": [{"start": 43, "end": 59, "label": "IT_TERM"}, {"start": 66, "end": 71, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor asked me to handle Student Enrollment encoding and update the Client Records in the afternoon.", "entities": [{"start": 33, "end": 51, "label": "CLERICAL_TERM"}, {"start": 76, "end": 90, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We had a long discussion during the morning orientation about company policies and safety protocols.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The intern collaborated with the development team on UI Design and implemented Form Validation for the registration page.", "entities": [{"start": 53, "end": 62, "label": "IT_TERM"}, {"start": 79, "end": 94, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "I arrived at the office early, grabbed a cup of coffee, and chatted with my fellow trainees before our shift started.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "She assisted in sorting Medical Inventory and verified Medicine Stocks to ensure everything was accurate.", "entities": [{"start": 24, "end": 41, "label": "CLERICAL_TERM"}, {"start": 55, "end": 70, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "After fixing the Linux environment, I proceeded with Server Configuration and deployed our Capstone Project.", "entities": [{"start": 17, "end": 22, "label": "IT_TERM"}, {"start": 53, "end": 73, "label": "IT_TERM"}, {"start": 91, "end": 107, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The daily commute was quite exhausting due to heavy traffic, but I still managed to reach the workplace on time.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Juan performed Hardware Repair on three malfunctioning workstations before attending the afternoon Scrum meeting.", "entities": [{"start": 15, "end": 30, "label": "IT_TERM"}, {"start": 99, "end": 104, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We spent hours doing Office Coordination and preparing Meeting Proceedings for the regional department heads.", "entities": [{"start": 21, "end": 40, "label": "CLERICAL_TERM"}, {"start": 55, "end": 74, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Today, I spent the entire morning doing Data Input for the newly acquired inventory records.", "entities": [{"start": 40, "end": 50, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "My supervisor asked me to handle Document Management and organize the physical archive room.", "entities": [{"start": 33, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "She designed a new user interface layout using Figma while her teammate updated the MongoDB records.", "entities": [{"start": 47, "end": 52, "label": "IT_TERM"}, {"start": 84, "end": 91, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We arrived early at the office and waited for our team leader to start the morning huddle.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "The intern was tasked with Medicine Distribution and checking the expiry dates of various supplies.", "entities": [{"start": 27, "end": 48, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "During my commute, I listened to a podcast about software engineering practices to pass the time.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "He pushed the latest commit to GitHub and then performed PDF Conversion for the final report.", "entities": [{"start": 31, "end": 37, "label": "IT_TERM"}, {"start": 57, "end": 71, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "After the long orientation seminar, everyone gathered in the cafeteria to eat lunch together.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We utilized Java to build the backend logic and integrated RBAC for user permission management.", "entities": [{"start": 12, "end": 16, "label": "IT_TERM"}, {"start": 59, "end": 63, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The staff members focused on Meeting Proceedings and Data Consolidation throughout the afternoon shift.", "entities": [{"start": 29, "end": 48, "label": "CLERICAL_TERM"}, {"start": 53, "end": 71, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Spent the morning updating the stock records in Microsoft Excel before proceeding with our project tasks.", "entities": [{"start": 31, "end": 44, "label": "CLERICAL_TERM"}, {"start": 48, "end": 63, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Our team successfully deployed the web application to an Ubuntu server after running several rounds of System Testing.", "entities": [{"start": 57, "end": 63, "label": "IT_TERM"}, {"start": 103, "end": 117, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "The intern spent hours doing Document Checking for the incoming shipment forms.", "entities": [{"start": 29, "end": 46, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "We utilized Git for Version Control while building the Interactive Map feature for the client.", "entities": [{"start": 12, "end": 15, "label": "IT_TERM"}, {"start": 20, "end": 35, "label": "IT_TERM"}, {"start": 55, "end": 70, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Assigned to handle Certificate Distribution for the participants who completed the seminar.", "entities": [{"start": 19, "end": 43, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Structured the MongoDB collections and applied Database Normalization techniques for better query performance.", "entities": [{"start": 15, "end": 22, "label": "IT_TERM"}, {"start": 47, "end": 69, "label": "IT_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Assisted the administrative staff with Data Encoding and organizing prescription records into the filing cabinet.", "entities": [{"start": 39, "end": 52, "label": "CLERICAL_TERM"}, {"start": 68, "end": 88, "label": "CLERICAL_TERM"}], "augmentation_type": "llm_generated"}
-{"text": "Arrived early at the workplace and attended the morning orientation facilitated by our immediate supervisor.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "We had a brief meeting with the team leads to discuss our weekly progress and upcoming schedule.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "Drove through heavy morning traffic before finally reaching the office just in time for the briefing.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "On the twenty-third day, I volunteered as one of the SPES examination proctors. I assisted in monitoring the examinees, maintaining order in the room, and ensuring that the examination process was conducted properly. I also helped in distributing and collecting examination materials. This task helped me develop responsibility, patience, and confidence in handling official activities.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "On the twenty-fifth day, I attended the IT Fest at NBSC to showcase our Capstone study to the first-year up to third-year IT students. We presented the features, purpose, and development process of our project to inspire and share knowledge with other students. I also answered questions regarding our study and system. This experience helped me improve my communication skills and confidence.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Conducted evaluation of vendors.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Prepared and laminated vendors’ stall numbers.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Continued preparing and laminating vendors’ stall numbers.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We posted the stall numbers on the designated areas of the market to ensure proper identification, organization, and easy location of each stall.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Distributed and evaluated vendor stalls to monitor their condition, organization, and compliance with market policies.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted in outdoor activities by coordinating with vendors and distributing important office documents and announcements.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Received instructions regarding allocation of tasks, deliveries and collections on the call of coordinators.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Submitted outputs for review, applied revisions, and completed final videos.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Task Management: Managed my time to ensure that everything was completed within four days.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Defined system scope, objectives, and user roles", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Mapped out initial system workflows and preliminary data requirements.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Coordinated logistics and set up the venue at the Manolo Fortich Gymnasium.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Conducted multiple field trials across different locations in Manolo Fortich.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Organizing Files in File Rack.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Putting Files on the File Arc", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Shredding Discarded Files on the File Shredder", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Fixed the first deployment issue of the system.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Sorted the papers, alphabetically arranged the applicants for their assessment schedule.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Updated the scholarship section by removing the Junior High category, replacing it with IP. and adding more year level options. The year levels were changed from 1st Year to 5th Year to Grade 7 up to 5th Year College.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted with printing and other administrative tasks.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Wrote down the applicants' reference numbers and photocopied them.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Arranged, sorted and stapled office paper as directed.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted in delivering documents and obtaining signatures from different offices.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Organized digital files and documents.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Worked on improving the layout and organization of the system interface.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through this activity, I understood workflow automation", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I realized the importance of process documentation.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "This experience taught me knowledge management", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I became proficient in training coordination", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through this task, I understood resource planning.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned how scheduling optimizes team efficiency.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I realized how standards ensure data quality", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through proper procedures, I understood metadata management", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through proper documentation, I understood audit trails", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through this activity, I understood data retention policies", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I also broadened my understanding of social issues and advocacy", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through this experience, I gained insights into system operations", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Digitalized survey data", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned how important coordination and information gathering were", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Identified new system features", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Collaborated on task division", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Selected background assets", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Poster and Oral Presentation Awarding", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "System Exploration and Discussion", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Poster Presentation and Paper Presentation", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I discovered that rapid coordination and effective communication are essential", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Intricate borders provide a frame of formality and should be perfectly symmetrical", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I was assigned the task of arranging files", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Vendor coordination managed supplier relationships", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Stakeholder communication managed information sharing", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Administrative support coordinated office operations", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Meeting documentation captured important discussion points", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned how to encode data correctly and calculate payments efficiently", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through this task, I learned how proper planning and organization improve efficiency", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I improved my ability to handle scanning and document preservation", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I became more proficient in using various software tools and applications", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "This experience helped me understand how office systems support daily operations", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I became more familiar with how office systems work and gained confidence", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned how to organize files and documents properly for easy access", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I improved my understanding of how office operations work and record maintenance", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned the importance of following proper procedures and documentation", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I improved my skills in social media management and content creation", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I realized the importance of clear communication when explaining technical concepts", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned the importance of proper organization in handling files", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Shelf reading required focus and attention to detail", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Developed signage layout designs.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted in creating layouts for market reminders and signages.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Continued laminating vendors stall numbers to ensure their durability and proper identification within the market.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Organized system modules and features for smoother performance.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Helped print documents and other office supplies as necessary.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Performed a testing of the system with the users to assess the functionality and usability of the system.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Changed the system color based on the LGU color palette and fonts suggested.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Fixed the student list layout to properly arrange the information.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Monday (March 23, 2026):Tuesday (March 24, 2026): I was tasked by Ma'am Kathy to create layout designs for a planner and mug for the Safe Motherhood 2026 program.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Thursday (March 26, 2026): I created layout designs for tokens for the Safe Motherhood program. I also refined the planner, mug, and tarpaulin designs to ensure consistency and alignment with the overall theme.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Monday (April 6, 2026): I improved the ABC signage that was completed last March 27. I enhanced the design to make it more realistic, visually appealing, and more effective compared to the previous layout.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Tuesday (May 5, 2026): Together with my groupmates, we presented our capstone study during the National Student Research and Innovation Conference 2026 (NaSRIC 2026) through Zoom at our school.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Monday (May 11, 2026):I was tasked by Ma'am Kathy to design and layout the program for safe Motherhood 2026. I ensured that the layout was organized, visually appealing, and aligned with the theme of the event.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Wednesday (May 13, 2026):I was tasked by Sir Tata to design a tarpaulin for the International Candlelight Memorial for AIDS with the theme \"Light the Legacy: Remember. Advance. Act. Keeping the Light Alive.\" The tarpaulin was prepared to support awareness and advocacy activities for the event.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted staff with minor technical problems.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted staff with minor technical concerns", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted and guided BFP staff on how to log in and navigate the platform.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted staff with minor technical concerns.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "June 5 (Day 51) Presenting our system and listing the requirements features", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "THURSDAY (MARCH 12, 2026) I focused on enhancing the front page to make it more visually attractive and professional. I adjusted some design elements and refined the overall look.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Day1(March 19, 2026): Conducted a quick orientation an planning session to identify the specific system requirements of the clinic.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Printing tasks taught me to manage time efficiently, especially when handling multiple requests.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Medication dispensing required accuracy and careful handling", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Laminating documents protected important office materials", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Payment confirmation required verification and documentation", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Integrated PESO Job Post", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Reviewed system requirements", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Updated system branding", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Sir Ryan asked me to encode some data because he was very busy", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned how to encode data correctly and calculate the payment of each cooperative member", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned how to coordinate data collection with all of us assigned to different office.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I understood the process of deploying updates and ensuring the system runs smoothly", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I became more confident in my ability to handle technical tasks", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through this experience, I gained confidence in my technical skills", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Through this experience, I improved my ability to communicate technical information", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We resumed sorting, arranging, and maintaining office records to ensure that all files were properly organized and easily accessible.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "GSO OFFICE installing drive Epson", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Continued designing the front page and other pages of the book", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Conducted a survey in the market.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We assist in the SPES orientation and did another market survey.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I continued editing the Jobstart video.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Attended an orientation regarding rescue operations.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Encode paper works", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Printing Documents", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Tarp Editing", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Tarp Editing/Paperwork's", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We summarized all the daily collections and made sure that the total amount matched the records at the end of the day.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We handled and encoded the information of new members, especially from iligan dealers, and organized their data in the system.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We prepared receipts for transactions and assisted in making audit reports to ensure all records are properly documented.", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "Inst. & SET-UP OF COMPUTERS in LAB 3", "entities": [{"start": 18, "end": 27, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal of this activity is to help me understand the value of teamwork and collaboration.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "This activity has helped me develop my computer troubleshooting skills.", "entities": [{"start": 39, "end": 63, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "During my OJT, I paved valuable information for the participants about MNAO", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my understanding of foreign key relationships.", "entities": [{"start": 43, "end": 68, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I learned how to accept suggestions and make design improvements .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I created new Passbooks and organized the account details properly.", "entities": [{"start": 42, "end": 57, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It is to take care of the way updates on vehicle records are managed by the personnel.", "entities": [{"start": 41, "end": 56, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my skills in social media management and content creation.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I will assist employees in managing their loan application documents .", "entities": [{"start": 55, "end": 81, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The service to assist in preparing and organizing printed documents for distribution and filing", "entities": [{"start": 50, "end": 67, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Taking care of your personal health care needs .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assisting in the development of a stewardship of the system .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A number of A-A-C a day to update and issue member passbooks, then handled the end of the day collection summary", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, we prepared receipts for transactions and assisted in the preparation of audit reports to ensure that all records are properly documented.", "entities": [{"start": 25, "end": 50, "label": "CLERICAL_TERM"}, {"start": 86, "end": 99, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "As a result, he was able to design the front page and other pages of the book .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Defeating and Disassembling", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal of the meeting was to gather information from different agencies .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is a good idea to take care of your laptop if it has trouble .", "entities": [{"start": 39, "end": 45, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then, I realized how important data validation is.", "entities": [{"start": 31, "end": 46, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A goal is to show our work to Ma'am Lorraine to get feedback.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Taking into account the fact that simplicity of the UI is a must for responsiveness in different sizes of gadgets .", "entities": [{"start": 52, "end": 54, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then arranged the papers and placed the documents where they should belong.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Synced design changes are -", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is a tarpaulin for market parking notices and signage for proper cigarette disposal.", "entities": [{"start": 37, "end": 44, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then, the system was regularly tested while adding and enhancing features.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A number of people attended the meeting, asked about assigned tasks, discussed system requirements and started the initial planning and coding of the system.", "entities": [{"start": 136, "end": 142, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I learned that the development of a system requires patience .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Monday (April 27th, 2026): Ma'am Pache's laptop could not connect to the printer, so I contigured the laptop settings to enable printing. I was also instructed by Ma’am Kathy to add the logos of the Province of Bukidnon, the Provincial Health Office and GUManolo Fortich to certificates provided by the DOH for the World Immunization Week event of '26 .", "entities": [{"start": 41, "end": 47, "label": "IT_TERM"}, {"start": 102, "end": 117, "label": "IT_TERM"}, {"start": 274, "end": 286, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition, they assisted and guided BFP staff on how to log in and navigate the platform.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, we focused on improving the visual presentation of the PESO office book by adjusting fonts, designs and page arrangements .", "entities": [{"start": 61, "end": 77, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "NBSC Guard House Installs CAT6 UTP Cable and Camera", "entities": [{"start": 26, "end": 40, "label": "IT_TERM"}, {"start": 45, "end": 51, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Assisted with data entry tasks and updated files using Microsoft Excel and other office applications .", "entities": [{"start": 14, "end": 24, "label": "CLERICAL_TERM"}, {"start": 55, "end": 70, "label": "CLERICAL_TERM"}, {"start": 81, "end": 100, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "To continue coding the system and to organize student dental consultation records by year level.", "entities": [{"start": 12, "end": 18, "label": "IT_TERM"}, {"start": 46, "end": 81, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition, we continue to finalize the PESO office book by arranging photos, editing captions and improving the design consistency of the pages .", "entities": [{"start": 41, "end": 57, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It was one of the tasks I dealt with preparing and giving certificates .", "entities": [{"start": 58, "end": 70, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The TSDC applicants who will undergo assessment were stamped with the names of the head and the registrar, making it easier and faster for them to sign the documents .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is a common occurrence to write the signature of paper .", "entities": [{"start": 39, "end": 57, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Services - Axiom is a service aimed at addressing the needs of the community.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I was reminded that everything I saw in the office must remain private .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I followed the instructions given by my supervisor throughout the day .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Wednesday (March 18, 2026) : I was tasked by Ma'am Cassy to design and lay out a custom envelope sticker that included the organization's name and program list , which was then printed on sticker paper, cut out and affixed to the envelopes . I also was called by Doc Ava to assist her with the book she is working on and helped her by making adjustments to her table of contents and reviewing chapters 1-3.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It has helped me to improve my attention while preparing promotional materials .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Set up the speaker and Assemble the panel.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Creating a Bar Graph on the Dashboard -", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I learned how to balance functionality and aesthetics in user interfaces .", "entities": [{"start": 57, "end": 72, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "There were also minor adjustments to improve the layout and alignment of elements .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axel - AXE-AxE", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, I have fixed some errors in the employer dashboard, especially the job management section.", "entities": [{"start": 53, "end": 71, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I understood the contract management through proper procedures .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then we went to the post office to pass the document.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "We are preparing the sound system for the Foundation Day at the NBSC Covered Court", "entities": [{"start": 21, "end": 33, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axiom is a member of the ICTMO team.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have been able to understand the automation of the workflow .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axiom AXII (May 7 , 2026) has participated in the workshop on emotional intelligence", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Affinity Auxiliary Axis is a service provider that will provide you with the service you need.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal was to understand the importance of network segmentation .", "entities": [{"start": 45, "end": 65, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The company gave us the opportunity to present to the members and staff of the Iligan dealers.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The second day we work on the new case I filed ensures that it will be easier to review and identify that there is an upcoming hearing .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is a good idea to take care of your skin care needs .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the twenty-fourth day, we checked the examination papers for the SPES examination and this task helped me realize the importance of being careful and accurate in handling examination records .", "entities": [{"start": 41, "end": 59, "label": "CLERICAL_TERM"}, {"start": 174, "end": 193, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Infinite is a service provider that will provide you with the highest level of service in the industry.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to provide a high level of service to our clients .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the thirty-first day, I fixed the issue where users get stuck during the registration process. I also added Save Jobs, Skill Gap and PESO Clearance functions in the jobseeker dashboard to improve user accessibility and functionality. This task helped me improve my debugging and feature development skills.", "entities": [{"start": 111, "end": 120, "label": "IT_TERM"}, {"start": 122, "end": 131, "label": "IT_TERM"}, {"start": 136, "end": 150, "label": "IT_TERM"}, {"start": 178, "end": 187, "label": "IT_TERM"}, {"start": 268, "end": 277, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A number of service providers to take care of a variety of tasks.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is the first time to record the contents of the internal and external log books in Excel.", "entities": [{"start": 51, "end": 82, "label": "CLERICAL_TERM"}, {"start": 86, "end": 91, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "To take care of the system by using sample data to ensure that updates and notifications are accurate.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel is preparing our system and listing the requirements of our customers .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A - A -- A-", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A number of A - A-A-C", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, they managed and updated records in the office database .", "entities": [{"start": 61, "end": 76, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Assisted the staff with minor technical concerns.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have discovered that rapid coordination and effective communication are essential .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The service to assist in preparing and arranging documents needed for daily office activities.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, we continued to design another page of the book.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve the coordinate accuracy and identify the pain points of data entry .", "entities": [{"start": 27, "end": 46, "label": "IT_TERM"}, {"start": 79, "end": 89, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I learned how to encode data correctly and to calculate the payment of each cooperative member .", "entities": [{"start": 17, "end": 28, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "On the forty-eighth day, we presented our Job Portal System for evaluation and checking, received feedback and suggestions regarding additional features, improvements and possible missing functions that could enhance the system. This experience helped me understand the importance of system evaluation, user feedback, and continuous improvement in software development .", "entities": [{"start": 42, "end": 59, "label": "IT_TERM"}, {"start": 284, "end": 301, "label": "IT_TERM"}, {"start": 348, "end": 368, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "So I gained confidence in my technical skills .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Taking care to ensure that all encoded data were accurately entered, complete and properly recorded in the system.", "entities": [{"start": 31, "end": 43, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel AXE is a service to work from home and to fix the system of the employee .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the thirty-fourth day, I continued to update the landing page job list for approved job posts and enhanced the Request PESO Clearance feature in the jobseeker dashboard. I reviewed the functionality and responsiveness of the pages to ensure proper performance. This task helped me understand the importance of continuous system testing and improvement.", "entities": [{"start": 52, "end": 64, "label": "IT_TERM"}, {"start": 122, "end": 144, "label": "IT_TERM"}, {"start": 152, "end": 171, "label": "IT_TERM"}, {"start": 324, "end": 338, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Vulnerability Patching has fixed security issues .", "entities": [{"start": 0, "end": 22, "label": "IT_TERM"}, {"start": 33, "end": 41, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Dedicated to the management of the vehicle records.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A goal is to continue working on the PESO office book by creating and improving the layout using Canva .", "entities": [{"start": 37, "end": 53, "label": "CLERICAL_TERM"}, {"start": 97, "end": 102, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to maintain consistency and quality in office work.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary services were provided to those who were being assessed .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I became more confident in my ability to handle technical tasks .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I became aware of the best practices in cybersecurity .", "entities": [{"start": 40, "end": 53, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Identified new system features -", "entities": [{"start": 15, "end": 30, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, we have managed the code versioning with Git .", "entities": [{"start": 41, "end": 56, "label": "IT_TERM"}, {"start": 62, "end": 65, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "So, we check the PC that we are currently using.", "entities": [{"start": 17, "end": 19, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition, I have learned how archiving systems preserve information.", "entities": [{"start": 32, "end": 49, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Taking care to take care of some pages and to change the layout based on the suggestions of our supervisor .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to make the trainee update form cleaner and easier to use.", "entities": [{"start": 24, "end": 43, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Avery Axel & AXE began to develop the jobseeker dashboard and its basic features for the job portal system.", "entities": [{"start": 38, "end": 57, "label": "IT_TERM"}, {"start": 89, "end": 106, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my understanding of regulatory compliance .", "entities": [{"start": 43, "end": 64, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "So , I performed tasks using Excel for encoding and organizing data.", "entities": [{"start": 29, "end": 34, "label": "CLERICAL_TERM"}, {"start": 39, "end": 47, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A list of the vendors’ stall numbers.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the fifty-second day, I updated and fixed the structure of the generated LRA/SRA certificates and improved the formatting, alignment and overall layout to ensure that the certificates appear professional and properly organized. This task helped me improve my attention to detail and document generation skills .", "entities": [{"start": 84, "end": 96, "label": "CLERICAL_TERM"}, {"start": 114, "end": 124, "label": "CLERICAL_TERM"}, {"start": 174, "end": 186, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I realized that small details matter when creating professional-looking documents .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So as to maintain an orderly filing system and to improve access to records within the office.", "entities": [{"start": 29, "end": 42, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Defeating the Auxiliary Axes", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "As a part of the Foundation Day celebration, I assisted the team in making sure the event ran smoothly and that everything was ready during the activity .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to make the system work smoothly.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I became aware of the information security protocols .", "entities": [{"start": 35, "end": 65, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A - A-A-B-C (Day 22) Assisted in the SC building during enrollment by measuring the height and weight of the enrollees.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my previous work on the employer dashboard.", "entities": [{"start": 47, "end": 65, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "AIM received instructions regarding the allocation of tasks, deliveries and collections on the call of the coordinators .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The Athletes have resolved the first deployment issue of the system.", "entities": [{"start": 37, "end": 53, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A high level of accuracy and careful handling was needed to maintain a high temperature .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve the quality of the service to the customer .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "MONDAY (APRIL 20) Continued to edit the PESO office book by checking the layout, fixing formatting issues and organizing the content properly. We were given the task to conduct a survey among market sellers and vendors about the crisis, how they were affected and what kind of assistance the LGU of Manolo Fortich could provide for them .", "entities": [{"start": 40, "end": 56, "label": "CLERICAL_TERM"}, {"start": 88, "end": 98, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A - A A-A-C", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I became more familiar with how office systems work and gained confidence in them.", "entities": [{"start": 39, "end": 46, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel AXE - Affinity-AxE", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A goal is to understand how service level agreements define expectations .", "entities": [{"start": 28, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A number is the same in the other week and we don't have Internet for the last 3 weeks .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assisting in the management of a number of aspects of the system .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I have learned how proper planning and organization improve efficiency.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, I understood the retention policies of data .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A number of people who are preparing to take part in this service.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my ability to work with different software applications .", "entities": [{"start": 57, "end": 78, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal of this task is to organize information systematically.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, we have scanned the office vehicle records in Excel.", "entities": [{"start": 41, "end": 63, "label": "CLERICAL_TERM"}, {"start": 67, "end": 72, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "During the week, we participated in a recognition program with the BA interns to celebrate the completion of their Intership .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I assisted in troubleshooting the internet connection . Although the Starlink connection was active, the LAN cable had no internet access. I traced the router connected to the starlink system and identified that it was not turned on.", "entities": [{"start": 14, "end": 29, "label": "IT_TERM"}, {"start": 34, "end": 53, "label": "IT_TERM"}, {"start": 69, "end": 88, "label": "IT_TERM"}, {"start": 105, "end": 114, "label": "IT_TERM"}, {"start": 152, "end": 158, "label": "IT_TERM"}, {"start": 176, "end": 191, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal was to improve my time management and to make my work more efficient.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A high level of security is required to ensure the security of the client .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Aim to find the old folder because the hearing is incoming.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Taking care of the health of those who are on the medical team .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my attention to detail while preparing promotional materials for clients .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to provide the highest level of service to our customers.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I realized that to disassemble computers and there functions is better to understand them.", "entities": [{"start": 31, "end": 40, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "This experience has taught me proper database structure design .", "entities": [{"start": 37, "end": 55, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I designed the layout and structure to make it simple and user-friendly for new users and returning users .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel Affinity Auxiliary Athletes - AXA Amphetasy A.C.A.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The design of a tarpaulin for printing and display outside the TSDC office.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A - A A-A-L A", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, TUESDSAY organized the content of the PESO office book and checked the accuracy of information and formatting .", "entities": [{"start": 44, "end": 51, "label": "CLERICAL_TERM"}, {"start": 59, "end": 75, "label": "CLERICAL_TERM"}, {"start": 104, "end": 115, "label": "CLERICAL_TERM"}, {"start": 120, "end": 130, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axiom - AXI-AXA", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have learned how important it is to show sympathy and appreciation to grieving families .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, we secured the documents by gluing them into the brown envelope .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axel AXE is a cellular telephone service provider .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal of this task is to increase the importance of clear communication during the collaborative work .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve the design and arrangement of the system interface.", "entities": [{"start": 57, "end": 73, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A list of the first system workflows and preliminary data requirements.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axiom is a software development company specializing in the design of tarpaulins .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The Continuation of EVENT DEVICE SETUP AND EQUIPMENT PREPARATION", "entities": [{"start": 26, "end": 38, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel has been helping me to improve my filing systems .", "entities": [{"start": 39, "end": 53, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "This experience has helped me understand how office systems support daily operations .", "entities": [{"start": 52, "end": 59, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I thought it would be easy, but after I finished the design, Ma'am Cecil did not like it.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It was to show the users the finished product and how it works.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have learned how to balance design elements without overwhelming them.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axis is a service to the public .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "As a service, we took care of printing documents and other office supplies .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, he told me to relax and oriented me about the tasks and the responsibilities inside their office.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve the system with the team members .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The orientation helped us understand the roles and responsibilities of each person and how the department operates. It also provided us with guidelines regarding workplace behavior, schedules and tasks that we may handle during our practicum .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assist with the printing of booklets and completed a portion of the target 250 copies, including the stapling of printed materials for proper assembly.", "entities": [{"start": 28, "end": 36, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I learned how to organize important documents for efficiency.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, I started a video for Job to document the program.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Wednesday (March 18 , 2026) edited and revised the PESO office boo based on the suggestions of the supervisor and organized the content properly.", "entities": [{"start": 51, "end": 55, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "She made some corrections and asked me to make the design more minimal .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A list of unfinished parts and polished minor details of the project .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The Organizing of Files in the File Rack", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Affecting Athletes to Attending Emotional Intelligence Day 1", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I learned how to work with different types of technical personnel .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel will continue to clean the system on May 13 (Day 34)", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Input the information of the probationers in excel", "entities": [{"start": 45, "end": 50, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "As a technical assistant during the OSH Seminar at the NBSC Library, managing the presentation materials, multimedia for prayers and other audio-visual requirements.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A list of the Master List .", "entities": [{"start": 14, "end": 25, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Assisting in the transferring of weapons data from physical documents to Excel", "entities": [{"start": 33, "end": 45, "label": "CLERICAL_TERM"}, {"start": 51, "end": 69, "label": "CLERICAL_TERM"}, {"start": 73, "end": 78, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In this day we assign some doing clearance of 1st to 3rd year college by inputting their information on excel and after that I tap it on the clearance online portal that they are now cleared instead of pending of Prefect since I already input the information , but at the same time I'm getting used to it and enjoy it like God said is There is nothing better than that all should enjoy their work for that is their lot .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I understood change control through proper procedures .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So I learned the importance of attention to detail.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxilia is to check the system for bugs.", "entities": [{"start": 35, "end": 39, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "On the thirty-eighth day, I fixed the error encountered when navigating the Recommended Job section of the system. I reviewed routing and functionality to ensure that users can access recommended jobs smoothly without issues. This task helped me improve my troubleshooting and navigation debugging skills .", "entities": [{"start": 76, "end": 91, "label": "IT_TERM"}, {"start": 126, "end": 133, "label": "IT_TERM"}, {"start": 257, "end": 272, "label": "IT_TERM"}, {"start": 288, "end": 297, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It is important to list all labels that need to be added in the system form as suggested by the IT staff .", "entities": [{"start": 64, "end": 75, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel is a company based in Manolo Fortich .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "ADVANCEMENT AGENCY DEVELOPMENT", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I learned how to encode data correctly and to calculate payments efficiently.", "entities": [{"start": 17, "end": 28, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I learned the importance of proper organization in the handling of files.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I took care of blotter entries and helped in the documentation.", "entities": [{"start": 28, "end": 43, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "At first, I felt nervous because I didn't know how to do the task.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to bring the dismissed cases to a halt .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assisting in the balancing of the system development tasks with office responsibilities.", "entities": [{"start": 34, "end": 52, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A number of services to assist in the handling of office papers and documents .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I understood how capacity planning prevents outages .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A - A A-A-C A", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I assisted the staff and observed how they dealt with their daily work.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my ability to handle scanning and document preservation", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to understand the team development .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A few days ago, I realized how patch management prevents attacks .", "entities": [{"start": 31, "end": 47, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, we created and revised another Excel file for vendor evaluation.", "entities": [{"start": 52, "end": 57, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, I made the navbar dynamic and mobile-friendly with a drawer menu.", "entities": [{"start": 32, "end": 38, "label": "IT_TERM"}, {"start": 74, "end": 85, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Aim to find the folder you want to use.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Dec. 7 (Day 30) Continue to polish the color of the dashboard and the dark mode feature", "entities": [{"start": 52, "end": 61, "label": "IT_TERM"}, {"start": 70, "end": 87, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my ability to communicate technical information .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assist in the creation of stall numbers to ensure their durability and proper identification within the market.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the twenty-fifth day, I attended the IT Fest at NBSC to showcase our Capstone study to the first-year to third year IT students We presented the features, purpose and development process of our project to inspire and share knowledge with other students I also answered questions about our study and system This experience helped me improve my communication skills and confidence .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Involved the system for any bugs and deployed it since l was the last person who made changes in the System .", "entities": [{"start": 28, "end": 32, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I became more proficient in handling different technical challenges and solutions .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Taking care of multiple office and technical support tasks while continuing the system development.", "entities": [{"start": 35, "end": 52, "label": "IT_TERM"}, {"start": 80, "end": 98, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "This week our last week of the OJT we don't have much work to do but it helps me to be more understandable in everything and they help me so much", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the twenty-third day, I volunteered as one of the SPES examination proctors and assisted in monitoring the examinees, maintaining order in the room and ensuring that the examination process was properly conducted. I also helped in distributing and collecting examination materials and this task helped me develop responsibility, patience and confidence in handling official activities .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I also added the function for the Graduate Students of their Good Moral and it can generate a good moral as well as transfer to another school after I input their data . I learned that the graduate student has three types of Purposes on their Bad Moral , the 1st is for Employment 2nd is For Masters and the last for Prof. Ed. (Professional Education) and they were legal purpose it may serve.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So as to minimize the manual checking of the files.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is the same in other weeks to find the specific folder of cases because the hearing is in this week", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I understood resource planning through this task.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "TUESDAY (10 March 2026) I started designing the other pages of the book for the whole day focusing on arranging the content properly, choosing the right fonts and applying consistent colors and elements I made sure that style and design matched the front page so that the entire book would look organized, visually appealing and consistent .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then I started designing the other pages of the book for the whole day focusing on arranging the content properly, choosing the right fonts and applying consistent colors and elements .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Affinity is a service to take care of your personal health care needs .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "This experience has taught me how database management supports organizational efficiency .", "entities": [{"start": 34, "end": 53, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary - Axioms are devoted to enhancing the health of the cellular cells .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel took care of the tasks assigned to them for the day.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axiom is a TECHNICAL DEVICE SETUP AND SOUND SYSTEM ASSISTANCE at the SC BUILDING", "entities": [{"start": 21, "end": 33, "label": "IT_TERM"}, {"start": 38, "end": 50, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I became proficient in the security assessment methods.", "entities": [{"start": 27, "end": 46, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I was tasked by Doc Ava to print her TO documents and was also assigned by Ma'am Cris to bookbind the standard operating procedures (SOPs) to ensure that the documents were properly organized and ready for office use .", "entities": [{"start": 37, "end": 49, "label": "CLERICAL_TERM"}, {"start": 102, "end": 138, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Disposing of Discarded Files on the File Shredder", "entities": [{"start": 13, "end": 28, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, it changed the system color based on the suggested LGU color palette and fonts .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the fifty-seventh day, I continued to assist in the encoding of profiling information into the PEIS system and organized records for proper documentation. This activity helped me understand the importance of accuracy and consistency when handling data .", "entities": [{"start": 55, "end": 63, "label": "CLERICAL_TERM"}, {"start": 98, "end": 109, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Creating this fitness test taught me how critical it is to match exercises with student developmental levels. Selecting more exercises like the Cardio Endurance 3-Min Step Test, Agility Test and Sit & Reach allowed not only the instructor but also me to assess core strength and flexibility safely across different fitness baselines .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I assisted in the bookkeeping by recording and organizing financial data.", "entities": [{"start": 31, "end": 42, "label": "CLERICAL_TERM"}, {"start": 71, "end": 85, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The balancing system is ongoing, along with the office work.", "entities": [{"start": 4, "end": 20, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "CRIMPING UTP CABLE -", "entities": [{"start": 0, "end": 8, "label": "IT_TERM"}, {"start": 9, "end": 18, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Avery Axel was tasked by Ma'am Flor to print patient consent forms and after completing the printing task, we continued to work on the PPMP for the whole day.", "entities": [{"start": 45, "end": 66, "label": "CLERICAL_TERM"}, {"start": 135, "end": 139, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "This activity has taught me the importance of organizing documents alphabetically in the office .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A-A-B-C-E-L-M-D-I-N-O-R-U-V-G-S-F-H-W-P-Q-T-X-Y-Z-J-K-a-li-f-e-n-g-d-y-r-t-s-h-u-v-q-o-m-c -  .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A number of services are offered to the general public by distributing vendors contracts and payment documents .", "entities": [{"start": 71, "end": 88, "label": "CLERICAL_TERM"}, {"start": 93, "end": 110, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I was assigned to edit a video for the Foundation Day celebration . My task was to gather and arrange the video clips to create the short presentation of the event. I made sure that the film looked organized and presentable for everyone who would watch it. This task allowed me to practice my creativity and improve my video editing skills.", "entities": [{"start": 319, "end": 332, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "This is a reversal of the -", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I became more aware of how important accuracy is in data entry .", "entities": [{"start": 52, "end": 62, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The first step is to pass the document in the pao", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to solve the problem and to find solutions to it.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel Auxiliary - AXE-AXA is a full-fledged Avast Available Affinity Avg.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I was tasked by Ma'am Kathy to adjust and shorten the Health Assessment form, which originally used 3 bond papers across 5 pages, to fit into 2-3 pages using only 1 bond paper if possible . I worked on this by creating the form from scratch using Excel and successfully completed the task, condensing it to 2 pages with just 1 Bond Paper", "entities": [{"start": 54, "end": 76, "label": "CLERICAL_TERM"}, {"start": 247, "end": 252, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A goal is to prevent errors from occurring .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have assigned Sir Ronnie to encode the complainant if they have experience in the Prosecutor Office .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Identified and logged location inaccuracies and coordinate drift bugs", "entities": [{"start": 48, "end": 69, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel and I presented our capstone study on May 5th, 2026 at the National Student Research and Innovation Conference (NaSRIC-2026) at our school .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A A - A-A-C", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I understood the importance of testing and debugging systems", "entities": [{"start": 56, "end": 65, "label": "IT_TERM"}, {"start": 66, "end": 73, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal was to provide a safe environment to the members of the club.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "This activity has enhanced my knowledge of the aggregation function", "entities": [{"start": 47, "end": 67, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then we have no work because it has no Internet connection, but they assign me to find the folder and I don't have any documentation as it is a very simple task.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel & Co. - AXE-A is a service to complete some parts of the PESO book by adding finishing touches to the designs and reviewing the completed pages , we also helped organize the files and prepared the book materials for printing and presentation .", "entities": [{"start": 62, "end": 71, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I was tasked by Ma'am Kathy to print the certificates for the World Immunization Week 2026 event scheduled the next day , and I also printed stickers to be attached to the prizes . In addition, I designed a Certificate of Appreciation for guest speaker Doc. Hassan Lucman and refilled the printer ink to ensure uninterrupted printing", "entities": [{"start": 41, "end": 53, "label": "CLERICAL_TERM"}, {"start": 207, "end": 234, "label": "CLERICAL_TERM"}, {"start": 311, "end": 333, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I was tasked by Ma'am Kathy to print the certificates for the World Immunization Week 2026 event scheduled the next day , and I also printed stickers to be attached to the prizes . In addition, I designed a Certificate of Appreciation for guest speaker Doc. Hassan Lucman for this event and refilled the printer ink to ensure uninterrupted printing", "entities": [{"start": 41, "end": 53, "label": "CLERICAL_TERM"}, {"start": 207, "end": 234, "label": "CLERICAL_TERM"}, {"start": 326, "end": 348, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I became proficient in training coordination .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, I realized how important proper documentation is for the maintenance of records.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A number of A A - A-", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So, I understood penetration testing through this task.", "entities": [{"start": 17, "end": 36, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to develop the system", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "We are working on systems to fix the bugs on the batchlist page as all of the list in that batch will appear even if it is not the same year .", "entities": [{"start": 18, "end": 25, "label": "IT_TERM"}, {"start": 37, "end": 41, "label": "IT_TERM"}, {"start": 49, "end": 63, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to develop the system .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "We have created a folder on GitHub to keep Supabase awake even when not in use, so that the project won't be paused.", "entities": [{"start": 28, "end": 34, "label": "IT_TERM"}, {"start": 43, "end": 51, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It is the first time that I have experienced the knowledge management .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A A-A-C involves a lot of coordination with equipment borrowing and continued logbook digitalization", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Aim to take care of the system and to finish the remaining parts.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to take care of the technology stack and system architecture", "entities": [{"start": 32, "end": 48, "label": "IT_TERM"}, {"start": 53, "end": 72, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Today we focused on improving the appearance of the PESO book, making some adjusted color combinations to make the pages more attractive and organized, brainstorming for new ideas that could improve the quality of this book and finalizing some unfinished pages During the afternoon, we were assigned again to interview vendors and sellers in the market about the crisis they experienced, how it affected their daily income and business .", "entities": [{"start": 52, "end": 61, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Affirmation of the loss of a loved one demonstrated compassion", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Added a new responsibility today to make Admin and User accounts on every laptop .", "entities": [{"start": 41, "end": 46, "label": "IT_TERM"}, {"start": 51, "end": 64, "label": "IT_TERM"}, {"start": 74, "end": 80, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have learned how to organize files and documents properly for easy access", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have learned how intrusion detection works .", "entities": [{"start": 19, "end": 38, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliared to the PAO to submit and file the case documents.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "BSBA DEPARTMENT EVENT DEVICE SETUP AND SOUND SYSTEM", "entities": [{"start": 22, "end": 34, "label": "IT_TERM"}, {"start": 39, "end": 51, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, the system was used for daily operational use by the BFP personnel.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, the writing of the cases on bond paper helped improve organization and made the records easier to locate and to manage.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A level of service to the general public is to take care of your health care needs.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Re-routing of documents after a Referral Action has been made", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A list of the tasks to take care of .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "As a result, I have improved the design of the employer dashboard and worked on making it responsive for different screen sizes .", "entities": [{"start": 47, "end": 65, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "As a result, my task was to arrange the video clips and make sure the scenes flowed smoothly, and I also checked that the film looked clear and presentable for the event .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axiom maintained the equipment inventory .", "entities": [{"start": 31, "end": 50, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It is a service that helps me to see that the system is important when putting credential .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary - Axiom is a service provider for the management of the AXI-AXA network .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I understood ACID properties through this experience.", "entities": [{"start": 13, "end": 28, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I formally signed the documents for the illegal mining cases in Libona and prepared them for submission to Malaybalay for trial .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Sockets are a common feature of the file and storage systems", "entities": [{"start": 36, "end": 60, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axiom AXA is a company based in the United States .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A list of people who have received a mailing list .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal of the day was to focus on data organization and creative editing .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to reduce the cost of the service to the customer .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Level 1 of Emotional Intelligence (EI)", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel is a service provider that will help you with your business needs .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, we have resolved the system unit and figured out that the graphics card is defective.", "entities": [{"start": 42, "end": 53, "label": "IT_TERM"}, {"start": 79, "end": 92, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then, we stamped the book the whole day.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The Athlete Club is a special event for the first time in the past week.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my organizational skills and to learn how to manage multiple tasks.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In this day, we were called out by our Head of SDO (Student Discipline Office) for adding another function of Good Moral for Transfer to another school and I just realized that getting a good moral is not only for the existing student of this school (NBSC) but also for those who want to transfer to other school .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to develop my understanding of the information management systems .", "entities": [{"start": 47, "end": 77, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition, we will distribute a fliers to MFCES students", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "- Assisted the staff with minor technical problems.", "entities": [{"start": 32, "end": 50, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Awakening Athletes continues in the Emotional Intelligence workshop .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So I understood trigger implementation through this experience .", "entities": [{"start": 16, "end": 38, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal was to assist the staff with minor technical concerns .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have learned how the office handles office procedures and how to handle important documents .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary - Axiom – AXI-AXA", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, they made and affixed stickers to units and equipment in various offices.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Taking care of a short orientation and planning session to identify the specific system requirements of the clinic", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "This required attention to detail and basic system configuration knowledge .", "entities": [{"start": 44, "end": 64, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "This activity has helped me develop better skills in UI design and responsiveness .", "entities": [{"start": 53, "end": 62, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The Athletes will be hosting a special event on Saturday night at 6:00 p.m.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "As a service provider, we are able to help you with your business needs.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "To take care of the system with the users to assess its functionality and usability.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Defining the system scope, objectives and user roles", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal was to increase the awareness of the importance of clear communication in the presentation of technical concepts .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, we continued to work on the PESO book by arranging and editing the pages to improve the overall layout and design. We also checked the content for errors and made necessary corrections to ensure the information was clear and organized .", "entities": [{"start": 41, "end": 50, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The design of a tarpaulin required visual creativity.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Sotheby's is the installation of APACHE, JAVA and the required applications", "entities": [{"start": 33, "end": 39, "label": "IT_TERM"}, {"start": 41, "end": 45, "label": "IT_TERM"}, {"start": 54, "end": 75, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then, I realized how standards ensure data quality .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I assisted Sir JJ in accommodating patients at the Animal Bite Treatment Center (ABTC) by helping them create and access their eGov PH accounts and also assisted patients in completing the liveliness check and obtaining their transaction numbers using the PhilHealth Check Utility .", "entities": [{"start": 127, "end": 143, "label": "IT_TERM"}, {"start": 189, "end": 205, "label": "IT_TERM"}, {"start": 226, "end": 245, "label": "CLERICAL_TERM"}, {"start": 256, "end": 280, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "This is the first time I have learned load balancing .", "entities": [{"start": 38, "end": 52, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axes took care of the papers and arranged the applicants alphabetically for their assessment schedule.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Involved in the development and improvement of the system based on the requested revisions and updates", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have understood the management of metadata through proper procedures .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The name of the head and the registrar on the assessment form so that they can sign it easily.", "entities": [{"start": 46, "end": 61, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel will continue to re-invigorate the system .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A Athlon Affinity Club will be hosting a weekend of fun and entertainment for the whole family .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to maintain high standards of quality and accuracy .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Aiming to ensure the correctness of the evidence .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It was commissioned by Sir Tata to design a tarpaulin for the International Candlelight Memorial for AIDS with the theme \"Light the Legacy: Remember. Advance. Act. Keeping the Light Alive\"", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then I realized how important proper coding practices are for system stability .", "entities": [{"start": 37, "end": 43, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my skills in managing and organizing digital information .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A - A A-A-C-L is formulated for the automated radius validation (Geofencing).", "entities": [{"start": 36, "end": 76, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal was to create the training page of the system that was connected to the dashboard.", "entities": [{"start": 27, "end": 40, "label": "IT_TERM"}, {"start": 81, "end": 90, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Adding a Table where the Major and Minor Offense Counts", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I became aware of the concepts of transaction processing .", "entities": [{"start": 34, "end": 56, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axis is a service provider for the use of the AXA service.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A.L.C.A. has received the official internship clearance from the BFP Manolo Fortich management", "entities": [{"start": 35, "end": 55, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The number of stalls on the designated areas of the market to ensure the proper identification, organization and easy location of each stand.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have understood the compliance requirements through proper procedures .", "entities": [{"start": 22, "end": 45, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I assisted in accommodating patients at the Animal Bite Treatment Center (ABC) by helping them register in the eGov PH application, especially elderly and senior patients who needed guidance in creating their accounts, and also assisted with the PhilHealth Check Utility System, where patients undergo a liveliness check to obtain their transaction number .", "entities": [{"start": 111, "end": 130, "label": "IT_TERM"}, {"start": 246, "end": 277, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then we will glue the paper in the brown envelope to ensure that the new cases are organized, protected and easy to locate .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the forty-fourth day, I continued to assist in encoding profiling information into the PEIS system while ensuring that the information was accurate and complete. This task helped me improve my data entry and organizational skills", "entities": [{"start": 50, "end": 58, "label": "CLERICAL_TERM"}, {"start": 90, "end": 101, "label": "IT_TERM"}, {"start": 196, "end": 206, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "On the fifty-sixth day, I assisted in the encoding of profiling information into the PEIS system and carefully entered and reviewed records to ensure that the data was accurate and complete. This task helped me improve my attention to detail and my data management skills .", "entities": [{"start": 42, "end": 50, "label": "CLERICAL_TERM"}, {"start": 85, "end": 96, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I realized the importance of the query optimization", "entities": [{"start": 33, "end": 51, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "As part of my individual task, I polished the design of the admin dashboard .", "entities": [{"start": 60, "end": 65, "label": "IT_TERM"}, {"start": 66, "end": 75, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel Affinity Auxiliary Amphetasm - AXE", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel is coding the Profiling & Inventory System with a focus on Ul development. In the afternoon, we assisted in the physical setup and preparation of the venue for the Bloodletting Program .", "entities": [{"start": 8, "end": 14, "label": "IT_TERM"}, {"start": 19, "end": 47, "label": "IT_TERM"}, {"start": 64, "end": 78, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I focused on enhancing the front page to make it more visually attractive and professional, I adjusted some design elements and refined the overall look.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is not necessary to make an IS on the received documents .", "entities": [{"start": 41, "end": 59, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I was assigned by Ma'am Kathy to assist in the field during the World Immunization Week 2026 event . I helped set up the projector, managed attendance and assisted in distributing food during this activity. After the event, I also pantea documents for the Purchase Order and Purchase Request , as instructed by Ms.", "entities": [{"start": 121, "end": 130, "label": "IT_TERM"}, {"start": 256, "end": 270, "label": "CLERICAL_TERM"}, {"start": 275, "end": 291, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition, I have updated the CIF records by reviewing member details and checking supporting documents for accuracy.", "entities": [{"start": 32, "end": 43, "label": "CLERICAL_TERM"}, {"start": 57, "end": 71, "label": "CLERICAL_TERM"}, {"start": 85, "end": 105, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Infinite Service is a service that has resolved and fixed hardware issues on the desktop computer .", "entities": [{"start": 58, "end": 73, "label": "IT_TERM"}, {"start": 81, "end": 97, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It has helped me to improve my knowledge of IT procurement .", "entities": [{"start": 44, "end": 58, "label": "CLERICALTERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to help new members join and improve their lives together.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Taking care of the staff during the seminar and following the instructions given by the supervisor.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On Thursday and Friday, we attended a seminar on emotional intelligence . During the activity we learned about understanding emotions, self-awareness and proper communication with others. The seminar helped us realize the importance of managing emotions and maintaining positive relationships in the workplace. This experience provided us with valuable lessons that can help us both personally and professionally.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my attention to detail and to understand accurate data entry.", "entities": [{"start": 73, "end": 83, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "We make some changes to the book, we carefully checked the information for any missing details or errors and made the necessary corrections.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then I created layout designs for tokens for the Safe Motherhood program and refined the planner, mug and tarpaulin designs to ensure consistency and alignment with the overall theme .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have also tested the error handling and responsiveness of the page on different devices .", "entities": [{"start": 23, "end": 28, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A steward of the process of vehicle records and tracking by the staff", "entities": [{"start": 28, "end": 43, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to keep the names in mind.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A-A-M-N-O-L-C-E-G-I-S-U-V-H-W-D-Y-P-R-Q-F-X-B-T-J-K-Z-On-Line-Up-To-All-in-One-Act-on-Desk-of-Insight -", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "- Assisted in the minor office work when needed.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have improved the ABC signage that was completed on March 27 to make it more realistic, visually appealing and more effective compared to the previous layout .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It was assigned to create the dashboard for the monitoring system.", "entities": [{"start": 30, "end": 39, "label": "IT_TERM"}, {"start": 48, "end": 65, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have learned that ensuring accuracy is critical to system functionality .", "entities": [{"start": 53, "end": 73, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel has been a proctor during the college scholarship examination and attended the TSDC Culmination Program held for our last day of OJT.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A number of services to assist in the delivery of documents and obtaining signatures from different offices.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the forty-fifth day, I continued to update and encoding records in the PEIS system and carefully checked the information before submission to avoid errors and inconsistencies .", "entities": [{"start": 50, "end": 58, "label": "CLERICAL_TERM"}, {"start": 74, "end": 85, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then, they wrote down the reference numbers of the applicants and photocopied them.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the twenty-sixth day, I started working on the employer dashboard as part of the collaborative task: I added the Post New Job page and developed its functions to allow employers to create and submit job postings; I also checked the layout and responsiveness of this page to ensure usability; this task helped me improve my skills in feature development and teamwork .", "entities": [{"start": 59, "end": 68, "label": "IT_TERM"}, {"start": 116, "end": 128, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A number of the documents to be delivered to the client to undergo the assessment.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the other hand, we go to the old building to find the Old Cases because the older building will be demolished so that if someone will go into the office and find there old Case it will find easily .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Dissolving a problem of the system unit", "entities": [{"start": 28, "end": 39, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then, they went to the police station to submit and file the important case.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have learned how confidentiality agreements protect data.", "entities": [{"start": 19, "end": 45, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have assigned Sir Ronnie to go to the attorney to get the signature of the case that will have hearing for tomorrow , and that is what I assigned in the week . I cannot take a pic because it's very confidential case", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the thirty-second day, I updated the Browse jobs function and added the Applied Jobs function in the Jobseeker dashboard ensuring that users can easily browse available jobs and monitor the jobs they have applied for within the system. This task helped me understand the importance of organizing job application features for better user experience .", "entities": [{"start": 40, "end": 51, "label": "IT_TERM"}, {"start": 75, "end": 87, "label": "IT_TERM"}, {"start": 114, "end": 123, "label": "IT_TERM"}, {"start": 335, "end": 350, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have learned how authentication systems protect data .", "entities": [{"start": 19, "end": 41, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Subsequently, we created and attached name stickers for office folders and records .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "To take care of the system functions to make sure that the messages and records work properly.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, we developed the expiration alert pop-up", "entities": [{"start": 38, "end": 61, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Intricate borders provide a framework of formality and should be perfectly symmetrical", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is not a matter of making written remarks in the logbooks .", "entities": [{"start": 37, "end": 44, "label": "CLERICAL_TERM"}, {"start": 52, "end": 60, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary services are needed to meet the needs of the client .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A - A-C-A-V-I-M-U-N-W-E-S", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have learned how referential integrity works.", "entities": [{"start": 19, "end": 40, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axiom is a TECHNICAL SET-UP for the SBO OFFICER VOTING SYSTEM", "entities": [{"start": 48, "end": 61, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Care will help you find the old folder for the hearing .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A month ago, I continued to edit the Jobstart video.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assist in preparing and laminating vendors’ stall numbers.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A goal is to give you the opportunity to learn API integration techniques .", "entities": [{"start": 47, "end": 62, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Putting files on the File Arc -", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So far, there have been no errors in the reading of data from Excel .", "entities": [{"start": 62, "end": 67, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal was to improve my understanding of nutrition program management .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Defeating and debugging systems is a criterion .", "entities": [{"start": 14, "end": 23, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I realized how important user interface design really is.", "entities": [{"start": 25, "end": 39, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I took care of the functions in the jobseeker dashboard to ensure that all the features were working properly.", "entities": [{"start": 36, "end": 55, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "During the IBM DAY , the ML team is preparing for a re-deployment .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I understood the audit trails through proper documentation .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The Athlete Affair is a week-long event that will take place on Saturday, February 8th – 12:00 A.M.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then we gathered all the daily collections and made sure that the total amount matched the records at the end of the day .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "We took care of arranging and maintaining office records to ensure that all files were properly organized and easily accessible .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal was to assist in the conduct of the JobStart program and documented the activities during the program.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assisting in the Case Folder Retrieval", "entities": [{"start": 17, "end": 38, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "On the fiftieth day, I updated the user interface of the LRA/SRA request section to make it more organized, user-friendly and responsive, reviewed the layout and adjusted design elements to improve the overall user experience. This activity helped me strengthen my skills in UI design and usability improvement .", "entities": [{"start": 35, "end": 49, "label": "IT_TERM"}, {"start": 210, "end": 225, "label": "IT_TERM"}, {"start": 275, "end": 284, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Invoking a steward and ensuring that the system runs smoothly.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A month A week I attend an emotional intelligence activity in our school.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my understanding of project management .", "entities": [{"start": 43, "end": 61, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It is not easy to design, but if you are the right IT knowledge.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The system we are working on has been checked by the IT staff and the registrar and many suggestions have been received .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I also organize the structure of the page using HTML, CSS and Laravel Blade templates", "entities": [{"start": 48, "end": 52, "label": "IT_TERM"}, {"start": 54, "end": 57, "label": "IT_TERM"}, {"start": 62, "end": 85, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Athletes - Amphetasis", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axiom", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I was assigned the task of arranging files .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to create a team of people who are able to solve their problems.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal was to ensure that all files were properly maintained and easily accessible.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I assisted in the collection, arranging and organizing of documents to maintain an efficient and well-structured filing system within the office", "entities": [{"start": 126, "end": 139, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "On the second day, I continued to work on the UI/UX design and improved the layout", "entities": [{"start": 46, "end": 58, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Taking care of the venue at the Manolo Fortich Gymnasium .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Incorporated a survey in the market.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Axes attended a meeting about the rescue operations .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Input cases are in the top tier of the list .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "SEE SUGGESTIONS/ADVISE FROM ICTMO", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Services - Axiom is a specialized service to help you with your business needs .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axel Affinity Auxiliary Athletes has participated in and provided support for the School Bloodletting Program .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then to install and deploy the final version of the system for the users.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal was to gain new knowledge about good tools needed for system development .", "entities": [{"start": 63, "end": 81, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I set up and add the Admin user in SQL Server so that i register and access it through the dashboard and other features .", "entities": [{"start": 35, "end": 45, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A - A-A-B-C-E-M-U-N-O-L-V-G-I-T-S-H-P-W-D-F-X-R-Q-Y-Z-J-K-o-n-a-l-c-e-mail-to-the-deadlines-of-use.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I became more confident in my ability to work independently following procedures .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to broaden my understanding of social issues and advocacy .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A - A-A-C-V is a service that aims to take care of your dev environment, install the necessary apps and migrated the capstone UI.", "entities": [{"start": 56, "end": 71, "label": "IT_TERM"}, {"start": 126, "end": 128, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It has helped me understand how to create engaging content .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So I help the personnel with excel problems.", "entities": [{"start": 29, "end": 34, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Taking care of the system with the GSO personnel.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Tuesday (June 2 , 2026): I was tasked by Ma'am Kathy to design and layout the program for the 4th BHW Summit with the theme, \"BHWS as Community Leaders: Building Skills for Better Health Outcomes\" I also printed the PK forms and YAKAP forms to be used for riso printing and prepared the ink and mimeo paper and assisted Sir Hans in delivering the materials .", "entities": [{"start": 216, "end": 224, "label": "CLERICAL_TERM"}, {"start": 229, "end": 240, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Helped to troubleshoot printer connection issues", "entities": [{"start": 10, "end": 22, "label": "IT_TERM"}, {"start": 23, "end": 48, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It is a good idea to put the case in Google Sheet .", "entities": [{"start": 37, "end": 49, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The cleaning of the system unit", "entities": [{"start": 20, "end": 31, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary - Axes to help with the setting up and connection of printers.", "entities": [{"start": 63, "end": 71, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I made sure to check for details when I was encoding a record .", "entities": [{"start": 44, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "So, I understood join operations through proper procedures .", "entities": [{"start": 17, "end": 32, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axiom is a service provider that manages the sharing of information .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I resolved a printer issue from Ma'am Macel where the printer model could not be detected on the laptop. I configured the PC printer settings and disabled the Windows print protection settings, which fixed the issue .", "entities": [{"start": 26, "end": 39, "label": "IT_TERM"}, {"start": 67, "end": 80, "label": "IT_TERM"}, {"start": 110, "end": 116, "label": "IT_TERM"}, {"start": 135, "end": 154, "label": "IT_TERM"}, {"start": 172, "end": 205, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Assisting in the arrangement, organization and locating of office files.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal of the event is to provide the highest level of service to the community .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The Applied Capstone Design principles are", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I have started setting up the basic functionality for user authentication.", "entities": [{"start": 67, "end": 86, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "We continued to improve the PESO book by enhancing the layout and design of the contents, were neat and properly arranged, we also presented our work to our supervisor, received suggestions for improvement and applied the necessary revisions to make the book more organized and presentable .", "entities": [{"start": 28, "end": 37, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "On Thursday, we were tasked with setting up the meeting for the instructors, preparing the necessary equipment, such as the television and other materials required for meeting and making sure that everything was properly arranged and functioning before meeting began .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, it fixed bugs and errors found in the system .", "entities": [{"start": 22, "end": 26, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition, I created the initial layout and sections of the admin dashboard that will allow the administrator to monitor job postings, manage users and supervise system activities", "entities": [{"start": 62, "end": 77, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I learned the importance of following proper procedures and documentation.", "entities": [{"start": 45, "end": 55, "label": "CLERICAL_TERM"}, {"start": 60, "end": 73, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Continuation of PC SETUP, APPLICATION INSTALLATION AND CABLE MANAGEMENT in LAB 3", "entities": [{"start": 16, "end": 24, "label": "IT_TERM"}, {"start": 55, "end": 71, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Asterisk is a protocol for transferring the names and information of employees to the system .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I understand cloud computing through this experience .", "entities": [{"start": 13, "end": 28, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have created the login and registration pages for the job portal system .", "entities": [{"start": 29, "end": 47, "label": "IT_TERM"}, {"start": 56, "end": 73, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Axel is a crimping RJ45 cable .", "entities": [{"start": 19, "end": 29, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "So I gained insights into the operation of the system .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, it was time to stamp the book.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assisting in the Development of Mental Health & Well-being - Awakenings to Mindfulness and Developing Yourself to Work, Relationships and Service", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have been able to understand the system architecture better through this activity", "entities": [{"start": 35, "end": 54, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "MOLDING INSTALLATION AND CABLE ARRANGEMENT", "entities": [{"start": 0, "end": 20, "label": "IT_TERM"}, {"start": 25, "end": 42, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I learned how to coordinate the collection of data with all of us assigned to different offices .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A goal is to complete unfinished parts and to continue to check for improvements in the project.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary is used to update the members' Passbooks .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I take care of the data entry for new Iligan dealer memberships and enjoy the streamlined process of their application system.", "entities": [{"start": 32, "end": 42, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "As part of my individual task, I polished the design of the admin dashboard and improved its functions .", "entities": [{"start": 60, "end": 75, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal was to improve the layout of the student list .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I learned how scheduling optimizes team efficiency .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Continuing to design another page of the PESO book at the opening of CHARTER DAY of Manolo Fortich .", "entities": [{"start": 41, "end": 50, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal was to ensure that the input fields, validation and user interface were properly working and easy to understand", "entities": [{"start": 32, "end": 44, "label": "IT_TERM"}, {"start": 46, "end": 56, "label": "IT_TERM"}, {"start": 61, "end": 75, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Taking care of the lawn is a great way to manage time efficiently , especially when handling multiple requests.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, the documents were to be stamped on the day of the event.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is the same in the other week to find the folder and give it to the staff because the fiscal will read it.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, it stamped the book and arranged the Jobs tart papers that needed to be book-bound.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Aiming to improve the design of the PESO office book by adjusting the pictures.", "entities": [{"start": 36, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, we have created the trainee profiling form.", "entities": [{"start": 41, "end": 63, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "And in the week 7 we do not have so much work to do but find the cases if the staff will have to ask me to find specific cases and because of that I can have a documentation because that is very simple work .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So I learned the importance of regular system maintenance.", "entities": [{"start": 39, "end": 57, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A list of the items that I need to take care of.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "As a result, I was tasked by Ma'am Kathy to design and layout the program for Safe Motherhood 2026 and ensured that the layout was organized, visually appealing and aligned with the theme of the event .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "This activity helped me develop patience and accuracy while working with systems .", "entities": [{"start": 73, "end": 80, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A list of selected background assets .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal of the meeting was to understand the importance of clear system documentation.", "entities": [{"start": 66, "end": 86, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to create a team of people who will be able to work together .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I realized through this activity how important it is to understand user needs .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "It is a good idea to make Admin and User accounts .", "entities": [{"start": 26, "end": 31, "label": "IT_TERM"}, {"start": 36, "end": 49, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I became more aware of the importance of user experience in system design .", "entities": [{"start": 41, "end": 56, "label": "IT_TERM"}, {"start": 60, "end": 73, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Aiming to improve the coding, fixed bugs and improved the system design.", "entities": [{"start": 22, "end": 28, "label": "IT_TERM"}, {"start": 36, "end": 40, "label": "IT_TERM"}, {"start": 58, "end": 71, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have realized how monitoring tools track system health .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A high level of security was provided by a high-tech security system .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assisting with the final preparation and printing of the Crisis Management Booklet of LGU Manolo Fortich.", "entities": [{"start": 57, "end": 82, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A service to assist with the printing and photocopying of documents.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my skills in handling form validation and routing in the system .", "entities": [{"start": 45, "end": 60, "label": "IT_TERM"}, {"start": 65, "end": 72, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I understand how the backend infrastructure supports operations .", "entities": [{"start": 21, "end": 43, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to understand the importance of enhancing system features for better performance and user experience .", "entities": [{"start": 54, "end": 69, "label": "IT_TERM"}, {"start": 97, "end": 112, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A goal is to fix the studentlist page for better arrangement of the update and delete button.", "entities": [{"start": 21, "end": 37, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "- Assisted in the printing of documents and other office files.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I collected relevant personal details from clients through interviews to support proper documentation and record-keeping .", "entities": [{"start": 119, "end": 133, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A number of the documents of applicants who will undergo an assessment .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "On the twenty-ninth day, I added the Privacy Policy and Terms of Service pages to the login and registration sections of the Job Portal System and ensured that users can access these pages properly before creating or logging into their accounts. This task helped me understand the importance of legal policies and user agreements in web applications .", "entities": [{"start": 37, "end": 78, "label": "IT_TERM"}, {"start": 86, "end": 117, "label": "IT_TERM"}, {"start": 125, "end": 142, "label": "IT_TERM"}, {"start": 333, "end": 349, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "L.A.L.C.V. is a licensor of the copy case document to the pao and I can not take any pic because its very confidential case", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "So as to improve the layout and organization of the system interface.", "entities": [{"start": 52, "end": 68, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A New Athlete will be the first to be announced in the coming weeks .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to prepare insights on combining images and text.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A charge to find the case for the fiscal to read and study in advance of the hearing.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The purpose of this activity is to enhance my understanding of risk assessment .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "We went to the post office to pass the document and they will mail the documents to you.", "entities": [{"start": 62, "end": 66, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A - A A-A-L", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "To take care of the daily workflow and to familiarize myself with the office environment and staff responsibilities.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Assisting with the arrangement of office furniture by decorating new chairs, tables and printers with stickers and labels.", "entities": [{"start": 88, "end": 96, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have learned proper incident response procedures .", "entities": [{"start": 22, "end": 39, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have found a number of system vulnerabilities through testing .", "entities": [{"start": 25, "end": 47, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to develop and improve the system.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve the quality of vendor stalls to monitor their condition, organization and compliance with market policies.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I performed account aging to review accounts and support timely financial decisions.", "entities": [{"start": 25, "end": 38, "label": "CLERICAL_TERM"}, {"start": 49, "end": 57, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The design and layout of the backdrop to be used during the contract signing for senior high school and college students.", "entities": [{"start": 60, "end": 68, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have learned how ticketing systems manage requests .", "entities": [{"start": 19, "end": 36, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Auxiliary Athlete helped and assisted Dr. Zeus during his oral health lecture event.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my previous work on the admin dashboard .", "entities": [{"start": 47, "end": 62, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I ensured that all encoded data were accurate, complete and properly recorded .", "entities": [{"start": 19, "end": 31, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "On the twenty-first day, I fixed some errors in the employer dashboard, particularly the job management section I reviewed the existing functions, identified issues and applied the necessary corrections to ensure smooth performance I also tested the updated features to confirm that job postings can be properly managed . This task helped me improve my debugging and problem-solving skills in system development", "entities": [{"start": 61, "end": 70, "label": "IT_TERM"}, {"start": 353, "end": 362, "label": "IT_TERM"}, {"start": 393, "end": 411, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "I have learned how referential integrity works .", "entities": [{"start": 19, "end": 40, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Then, I learned how different government systems work.", "entities": [{"start": 30, "end": 48, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to increase the understanding of the protocol of communication.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The idea of the system with the GSO staff.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The Auxiliary Service - ltd.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then I add more Functionalities of Violation Slip more like the types of violation they committed adding Drop-Down Menu of Offense Level like Minor and Major Offence .", "entities": [{"start": 35, "end": 49, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "It is able to assist in encoding data using Microsoft Excel.", "entities": [{"start": 24, "end": 37, "label": "CLERICAL_TERM"}, {"start": 44, "end": 59, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "iClinicSys has improved the service delivery of Axiom", "entities": [{"start": 0, "end": 10, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve our understanding of how different systems integrate together .", "entities": [{"start": 58, "end": 65, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "So I understood the importance of filing and record management.", "entities": [{"start": 34, "end": 40, "label": "CLERICAL_TERM"}, {"start": 45, "end": 62, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A VIDEO FOR A FESTIVAL DANCE A", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve client communication through professional interactions .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then I learned how important coordination and information gathering were .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "As a service provider, I updated the CIF records by checking and completing member information.", "entities": [{"start": 37, "end": 48, "label": "CLERICAL_TERM"}, {"start": 76, "end": 94, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal was to create a level of focus and attention to detail.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, I was tasked by Ma'am Angel to deliver the ERIG forms to Sir Clarence and, after completing the delivery, was instructed to print copies of the previous BHW Summit Program for reference in future activities and planning .", "entities": [{"start": 56, "end": 66, "label": "CLERICAL_TERM"}, {"start": 166, "end": 184, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Soap is arranged, sorted and stapled office paper as directed.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to share ideas and progress with teammates .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Axiom is giving me to go to the pao to pass the document and they will sign it because the hearing is tommorow", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal was to keep the momentum going with development and to clean up the design to make it easier for the clinic staff to navigate .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "As a service provider, we are currently working on an inventory system to be used for office file management and access .", "entities": [{"start": 54, "end": 70, "label": "IT_TERM"}, {"start": 86, "end": 108, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "Those who were not able to take care of their health were referred to a health care provider .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In addition, we issued passbooks and updated the savings and shares of the members to keep their records accurate and complete.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "This activity has helped me improve my attention to detail since several files needed proper arrangement.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Then, they gave me this task.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A service provider will provide the service to the client .", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "I have learned how subqueries enhance search capabilities .", "entities": [{"start": 19, "end": 29, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "On the twenty-seventh day, I continued to work on the employer dashboard as part of the collaborative task: I added the Manage Job page, Company Profile section and their corresponding functions to improve employer account management; I also reviewed the interface to make sure it was organized and user-friendly; this task helped me understand the importance of building complete and functional dashboard features .", "entities": [{"start": 63, "end": 72, "label": "IT_TERM"}, {"start": 120, "end": 130, "label": "IT_TERM"}, {"start": 137, "end": 152, "label": "IT_TERM"}, {"start": 396, "end": 405, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal is to continue working on the system to complete the remaining parts.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "Affinity Auxiliary Axles - AXL", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "The goal is to improve my understanding of how office operations work and record maintenance", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "A service to take care of account aging and to review member balances", "entities": [{"start": 26, "end": 39, "label": "CLERICAL_TERM"}, {"start": 54, "end": 69, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "The goal of the meeting was to capture important discussion points.", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "- Added new features based on the suggestions of the IT staff.", "entities": [{"start": 8, "end": 20, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "A - A-A-B-C", "entities": [], "augmentation_type": "paraphrase"}
+{"text": "In the first day, I improved my organization skills and made records easier to review and manage .", "entities": [], "augmentation_type": "paraphrase"}

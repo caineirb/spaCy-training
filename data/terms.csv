@@ -138,17 +138,64 @@ Production Deployment,IT_TERM
 Computer Hardware Maintenance,IT_TERM
 iClinicSys,IT_TERM
 eGOV.PH,IT_TERM
+Facebook Management,IT_TERM
+Facebook Posting,IT_TERM
+GraphQL,IT_TERM
+router,IT_TERM
+projector,IT_TERM
+CCTV,IT_TERM
+CAT6 UTP Cable,IT_TERM
+printer,IT_TERM
+printers,IT_TERM
+computer units,IT_TERM
+computers,IT_TERM
+speaker,IT_TERM
+microphone,IT_TERM
+PC,IT_TERM
+LAN,IT_TERM
+database,IT_TERM
+office database,IT_TERM
+system design,IT_TERM
+UI/UX,IT_TERM
+database design,IT_TERM
+data security,IT_TERM
+authentication system,IT_TERM
+record-keeping system,IT_TERM
+security,IT_TERM
+coding,IT_TERM
+programming,IT_TERM
+debugging,IT_TERM
+troubleshooting,IT_TERM
+internet connection troubleshooting,IT_TERM
+preventive maintenance,IT_TERM
+device setup,IT_TERM
+code versioning,IT_TERM
+load testing,IT_TERM
+unit testing,IT_TERM
+vulnerability scanning,IT_TERM
+3D printing,IT_TERM
+video editing,IT_TERM
+photo editing,IT_TERM
+Canva Editing,IT_TERM
+web deployment,IT_TERM
+system updates,IT_TERM
+software updates,IT_TERM
+security assessment,IT_TERM
+vulnerability assessment,IT_TERM
+technical support,IT_TERM
+USB drive,IT_TERM
+Profiling & Inventory System,IT_TERM
+Annual Investment Program (AIP) System,IT_TERM
+IS,IT_TERM
+PPMP system,IT_TERM
 Microsoft Excel,CLERICAL_TERM
 Excel,CLERICAL_TERM
 Microsoft Word,CLERICAL_TERM
 Google Forms,CLERICAL_TERM
 Google Sheets,CLERICAL_TERM
-Facebook Management,IT_TERM
-Facebook Posting,IT_TERM
 Digital File Management,CLERICAL_TERM
 File Management,CLERICAL_TERM
 Digital File Organization,CLERICAL_TERM
-GraphQL,IT_TERM
 Data Entry,CLERICAL_TERM
 Document Organization,CLERICAL_TERM
 Document Filing,CLERICAL_TERM
@@ -271,3 +318,27 @@ Material Distribution,CLERICAL_TERM
 Inventory Analysis,CLERICAL_TERM
 Photocopying,CLERICAL_TERM
 General Cleaning,CLERICAL_TERM
+log books,CLERICAL_TERM
+contracts,CLERICAL_TERM
+received documents,CLERICAL_TERM
+routed documents,CLERICAL_TERM
+physical documents,CLERICAL_TERM
+important documents,CLERICAL_TERM
+passbooks,CLERICAL_TERM
+PESO office book,CLERICAL_TERM
+forms,CLERICAL_TERM
+ID cards,CLERICAL_TERM
+vendor profiles,CLERICAL_TERM
+remarks,CLERICAL_TERM
+encoding,CLERICAL_TERM
+filing,CLERICAL_TERM
+bookkeeping,CLERICAL_TERM
+formatting,CLERICAL_TERM
+evaluation data,CLERICAL_TERM
+system records,CLERICAL_TERM
+incident tracking,CLERICAL_TERM
+regulatory compliance,CLERICAL_TERM
+compliance requirements,CLERICAL_TERM
+PPMP,CLERICAL_TERM
+financial/ledger accounts,CLERICAL_TERM
+document scanning,CLERICAL_TERM
