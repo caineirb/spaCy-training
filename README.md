@@ -118,11 +118,17 @@ spaCy-training/
 │   ├── build_holdout.py               # Real-world holdout scaffolding
 │   ├── deploy_inference.py            # Production streaming inference CLI
 │   └── labels.py                      # Label taxonomy & normalization
-└── docs/
-    ├── annotation_guidelines.md       # Official annotation policy & label taxonomy
-    ├── synthetic_augmentation_methodology.md # Full TRTR vs TRSTR-LLM methodology & ablation results
-    └── archive/
-        └── paraphrase_augmentation_methodology.md  # Historical record of prior paraphrase-based approach
+├── docs/
+│   ├── annotation_guidelines.md       # Official annotation policy & label taxonomy
+│   ├── synthetic_augmentation_methodology.md # Full TRTR vs TRSTR-LLM methodology & ablation results
+│   └── archive/
+│       └── paraphrase_augmentation_methodology.md  # Historical record of prior paraphrase-based approach
+└── tools/
+    ├── pipeline_gui.py                # Desktop GUI Studio for Hybrid NER inference (FastAPI counterpart)
+    ├── entity_extractor_gui.py        # Launcher alias for pipeline_gui.py
+    ├── jsonl_editor.py                # Interactive JSONL dataset viewer & annotation editor
+    ├── spacy_annotator_app.py         # Rapid manual span annotation helper
+    └── README.md                      # Guide to desktop GUI tools
 ```
 
 ---
@@ -261,6 +267,27 @@ python scripts/deploy_inference.py -i data/raw/human_written_journal_input.txt -
 - `-b, --batch-size`: Streaming batch size for GPU inference (default: `64`).
 - `-t, --threshold`: Confidence threshold for ML acceptance (default: `0.80`).
 - `-f, --format`: Output format (`csv`, `json`, `jsonl`, `text`).
+
+### 5. Interactive Desktop GUI Studio (`tools/pipeline_gui.py`)
+
+A graphical desktop environment mirroring the FastAPI entity extraction endpoint:
+
+```bash
+# Launch the extraction GUI:
+python tools/pipeline_gui.py
+
+# Or use the convenience alias:
+python tools/entity_extractor_gui.py
+```
+
+- **Live In-Text Highlighting**: Visually tags `IT_TERM` (blue) and `CLERICAL_TERM` (emerald) directly in journal narratives with hover tooltips and review flags.
+- **FastAPI Contract Parity**: Replicates `_deduplicate_entities()` frequency counting, `_normalise()` canonical keys, and `_build_summary()` category percentages.
+- **Interactive Inspection Table**: Multi-criteria filters (Search, Category, Status, Source), column sorting, and click-to-navigate synchronization.
+- **Model Switching**: Easily swap between `TRSTR-LLM`, `Production Baseline`, `TRTR`, or custom checkpoint folders.
+- **API JSON Inspector & cURL Generator**: 1-click clipboard export of FastAPI payloads and reproducible cURL commands.
+- **Batch Processing**: Process `.jsonl` or `.txt` collections with progress tracking and export.
+
+See [`tools/README.md`](tools/README.md) for full documentation of desktop tools.
 
 ---
 

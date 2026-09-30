@@ -57,7 +57,6 @@ File Conversion,IT_TERM
 Network Troubleshooting,IT_TERM
 Data Management,IT_TERM
 Data Encoding,IT_TERM
-Data Entry,IT_TERM
 Data Validation,IT_TERM
 Data Calculation,IT_TERM
 Data Input,IT_TERM
@@ -70,23 +69,11 @@ Database Storage,IT_TERM
 Database Normalization,IT_TERM
 Schema Backup,IT_TERM
 System Development,IT_TERM
-System Design,IT_TERM
-System Planning,IT_TERM
 System Testing,IT_TERM
 System Debugging,IT_TERM
 System Deployment,IT_TERM
 System Maintenance,IT_TERM
 System Encryption,IT_TERM
-System Features,IT_TERM
-System Modules,IT_TERM
-System Interface,IT_TERM
-System Performance,IT_TERM
-System Stability,IT_TERM
-Application Development,IT_TERM
-Application Management,IT_TERM
-Family Profiling Application,IT_TERM
-Nutrimap System,IT_TERM
-Inquiry System,IT_TERM
 AI Chatbot,IT_TERM
 Gemini API,IT_TERM
 Backend API,IT_TERM
@@ -137,7 +124,6 @@ Template Design,IT_TERM
 Logbook Template,IT_TERM
 Tarpaulin Design,IT_TERM
 Identification Card Design,IT_TERM
-QR Code,IT_TERM
 Interactive Map,IT_TERM
 GeoJSON,IT_TERM
 Geospatial Tracking,IT_TERM
@@ -160,10 +146,8 @@ Facebook Posting,IT_TERM
 Digital File Management,IT_TERM
 File Management,IT_TERM
 Digital File Organization,IT_TERM
-Capstone Project,IT_TERM
-Capstone Study,IT_TERM
-IT Fest,IT_TERM
-Research Summit,IT_TERM
+GraphQL,IT_TERM
+Data Entry,CLERICAL_TERM
 Document Organization,CLERICAL_TERM
 Document Filing,CLERICAL_TERM
 Document Sorting,CLERICAL_TERM
@@ -271,9 +255,6 @@ Inventory Organization,CLERICAL_TERM
 Community Outreach,CLERICAL_TERM
 Certificate Recognition,CLERICAL_TERM
 Awarding Ceremony,CLERICAL_TERM
-Charter Day,CLERICAL_TERM
-BNS Meeting,CLERICAL_TERM
-BNS Activities,CLERICAL_TERM
 OPT Plus,CLERICAL_TERM
 Nutrition Activities,CLERICAL_TERM
 Training Activities,CLERICAL_TERM
@@ -286,6 +267,5 @@ Meeting Transcription,CLERICAL_TERM
 Materials Preparation,CLERICAL_TERM
 Material Distribution,CLERICAL_TERM
 Inventory Analysis,CLERICAL_TERM
-GraphQL,IT_TERM
 Photocopying,CLERICAL_TERM
 General Cleaning,CLERICAL_TERM

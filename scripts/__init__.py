@@ -42,8 +42,17 @@ def _bootstrap_cuda_environment() -> None:
 _bootstrap_cuda_environment()
 
 
-def init_gpu() -> bool:
-    """Initializes spaCy GPU acceleration if available.
+import threading
+
+_gpu_init_threads = threading.local()
+
+
+def init_gpu(gpu_id: int = 0) -> bool:
+    """Initializes spaCy, CuPy, and PyTorch GPU acceleration for the calling thread.
+    
+    In multi-threaded environments (e.g. desktop GUI workers, FastAPI threadpools),
+    Thinc's current ops (CupyOps vs NumpyOps) and CUDA device contexts are thread-local.
+    Calling init_gpu() ensures the active thread is bound to the target CUDA device.
     
     Returns:
         bool: True if GPU is active, False otherwise.
@@ -53,13 +62,17 @@ def init_gpu() -> bool:
         import torch
 
         if torch.cuda.is_available():
-            gpu_active = spacy.require_gpu()
-            device_name = torch.cuda.get_device_name(0)
-            logger.info(f"GPU accelerated with {device_name} (spacy.require_gpu={gpu_active})")
+            gpu_active = spacy.require_gpu(gpu_id)
+            if not getattr(_gpu_init_threads, "initialized", False):
+                device_name = torch.cuda.get_device_name(gpu_id)
+                logger.info(f"GPU accelerated with {device_name} (spacy.require_gpu={gpu_active})")
+                _gpu_init_threads.initialized = True
             return bool(gpu_active)
         else:
-            logger.warning("CUDA not detected by PyTorch; falling back to CPU.")
+            if not getattr(_gpu_init_threads, "initialized", False):
+                logger.warning("CUDA not detected by PyTorch; falling back to CPU.")
+                _gpu_init_threads.initialized = True
             return False
     except Exception as e:
-        logger.warning(f"Could not activate GPU for spaCy: {e}. Falling back to CPU.")
+        logger.warning(f"Could not activate GPU for spaCy in thread: {e}. Falling back to CPU.")
         return False
