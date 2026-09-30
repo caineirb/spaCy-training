@@ -636,8 +636,28 @@ def generate_full_evaluation_report(
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    report = generate_full_evaluation_report()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Evaluate NER pipeline on test splits and unseen benchmark.")
+    parser.add_argument("--model-path", type=str, default="models/ner_trf/model-best", help="Path to trained model")
+    parser.add_argument("--terms-csv", type=str, default="data/terms.csv", help="Path to terms dictionary")
+    parser.add_argument("--test-spacy", type=str, default="data/training/test.spacy", help="Path to test DocBin")
+    parser.add_argument("--holdout-jsonl", type=str, default="data/test/holdout.jsonl", help="Path to holdout JSONL")
+    parser.add_argument("--benchmark", type=str, default="data/test/unseen_benchmark.jsonl", help="Path to unseen benchmark JSONL")
+    parser.add_argument("--output-json", type=str, default="data/evaluation_report.json", help="Path to save output JSON report")
+    parser.add_argument("--run-label", type=str, default="", help="Label for per-item eval output files")
+    args = parser.parse_args()
+
+    report = generate_full_evaluation_report(
+        model_path=args.model_path,
+        terms_csv_path=args.terms_csv,
+        test_spacy_path=args.test_spacy,
+        holdout_jsonl_path=args.holdout_jsonl,
+        benchmark_path=args.benchmark,
+        output_report_json=args.output_json,
+        run_label=args.run_label,
+    )
     print("\n" + "=" * 70)
-    print("REMEDIATION EVALUATION REPORT")
+    print(f"EVALUATION REPORT ({args.run_label or 'DEFAULT'})")
     print("=" * 70)
     print(json.dumps(report, indent=2))

@@ -96,6 +96,9 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Fine-tune transformer NER on GPU.")
+    parser.add_argument("--train-path", type=str, default="data/training/train.spacy", help="Training DocBin path")
+    parser.add_argument("--dev-path", type=str, default="data/training/dev.spacy", help="Dev DocBin path")
+    parser.add_argument("--output-dir", type=str, default="models/ner_trf", help="Output directory for checkpoints")
     parser.add_argument("--steps", type=int, default=2500, help="Maximum training steps")
     parser.add_argument("--eval-freq", type=int, default=50, help="Evaluation frequency")
     parser.add_argument("--patience", type=int, default=400, help="Early stopping patience (steps)")
@@ -103,6 +106,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     res = train_ner_trf(
+        train_path=args.train_path,
+        dev_path=args.dev_path,
+        output_dir=args.output_dir,
         max_steps=args.steps,
         eval_frequency=args.eval_freq,
         patience=args.patience,

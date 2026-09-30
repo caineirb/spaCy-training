@@ -44,7 +44,7 @@ GUIDELINES_PATH = "docs/annotation_guidelines.md"
 # ── Generation parameters ────────────────────────────────────────────────────
 DEFAULT_BATCH_SIZE = 10       # Sentences per LLM call
 DEFAULT_NUM_BATCHES = 50      # Total batches to generate
-GEMINI_MODEL = "gemini-3.5-flash"
+GEMINI_MODEL = "gemini-3.5-flash-lite"
 NEGATIVE_RATIO_TARGET = 0.30  # 25-35% target per Section 8 of guidelines
 RETRY_LIMIT = 3
 RETRY_DELAY = 5               # Seconds between retries
@@ -255,7 +255,8 @@ def locate_entity_spans(
 
     for ent in entities:
         surface = ent["text"].strip()
-        label = ent["label"]
+        raw_lbl = ent.get("label", "").strip()
+        label = "IT_TERM" if "IT" in raw_lbl.upper() else "CLERICAL_TERM"
 
         if not surface:
             return False, []
@@ -393,9 +394,6 @@ def call_gemini(
 ) -> Optional[str]:
     """Call Gemini and return the text response. Tries fallback models if needed."""
     candidate_models = [model]
-    for fallback in ["gemini-3.5-flash", "gemini-flash-latest"]:
-        if fallback not in candidate_models:
-            candidate_models.append(fallback)
 
     for m in candidate_models:
         for attempt in range(RETRY_LIMIT):
@@ -414,8 +412,11 @@ def call_gemini(
                 if response.text:
                     return response.text
             except Exception as e:
+                err_str = str(e)
                 print(f"  [WARN] Gemini API error ({m}, attempt {attempt + 1}/{RETRY_LIMIT}): {e}")
-                if attempt < RETRY_LIMIT - 1:
+                if "RESOURCE_EXHAUSTED" in err_str or "429" in err_str:
+                    time.sleep(15)
+                elif attempt < RETRY_LIMIT - 1:
                     time.sleep(RETRY_DELAY * (attempt + 1))
     return None
 
@@ -519,31 +520,54 @@ def run_generation(
     total_span_failures = 0
     seen_texts: Set[str] = set()
 
-    target_negatives = int(num_batches * batch_size * NEGATIVE_RATIO_TARGET)
+    # Resume from existing records if present
+    if os.path.exists(output_path):
+        with open(output_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    try:
+                        rec = json.loads(line)
+                        all_records.append(rec)
+                        seen_texts.add(rec["text"].strip().lower())
+                    except Exception:
+                        pass
+        print(f"Resuming with {len(all_records)} existing records from {output_path}")
+
+    target_total = num_batches * batch_size
+    target_negatives = int(target_total * NEGATIVE_RATIO_TARGET)
     neg_per_batch = max(1, target_negatives // num_batches)
 
     print(f"\n{'='*60}")
-    print(f"Generating {num_batches} batches × {batch_size} sentences")
-    print(f"Target: ~{neg_per_batch} negatives per batch ({NEGATIVE_RATIO_TARGET*100:.0f}%)")
+    print(f"Target: {target_total} total records ({num_batches} batches × {batch_size})")
+    print(f"Current: {len(all_records)} records (need {max(0, target_total - len(all_records))} more)")
+    print(f"Target negative ratio: {NEGATIVE_RATIO_TARGET*100:.0f}% (~{neg_per_batch} per batch)")
     print(f"{'='*60}\n")
 
-    for batch_idx in range(num_batches):
+    batch_idx = len(all_records) // batch_size
+    attempt_idx = 0
+    max_attempts = num_batches * 3
+
+    while len(all_records) < target_total and attempt_idx < max_attempts:
+        attempt_idx += 1
         prompt = build_generation_prompt(
             terms_by_label, real_records,
             batch_size=batch_size,
             negative_count=neg_per_batch,
         )
 
-        print(f"Batch {batch_idx + 1}/{num_batches}: ", end="", flush=True)
+        print(f"Batch {batch_idx + 1}/{num_batches} (attempt {attempt_idx}): ", end="", flush=True)
 
         raw_response = call_gemini(client, prompt, system_prompt, model=model)
         if not raw_response:
-            print("FAILED (no response)")
+            print("FAILED (no response, retrying in 5s)")
+            time.sleep(5)
             continue
 
         parsed = parse_llm_response(raw_response)
         if not parsed:
-            print("FAILED (parse error)")
+            print("FAILED (parse error, retrying in 3s)")
+            time.sleep(3)
             continue
 
         batch_accepted = 0
@@ -590,11 +614,16 @@ def run_generation(
             seen_texts.add(text_lower)
             batch_accepted += 1
 
-        print(f"accepted {batch_accepted}/{len(parsed)}")
+        print(f"accepted {batch_accepted}/{len(parsed)} (total: {len(all_records)})")
+        if batch_accepted > 0:
+            batch_idx += 1
+            os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else ".", exist_ok=True)
+            with open(output_path, "w", encoding="utf-8") as f:
+                for record in all_records:
+                    f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-        # Rate limiting
-        if batch_idx < num_batches - 1:
-            time.sleep(1)
+        # Rate limiting (15 RPM free tier limit for gemini-3.5-flash-lite)
+        time.sleep(4.5)
 
     # 6. Report statistics
     positive_records = [r for r in all_records if r["entities"]]
