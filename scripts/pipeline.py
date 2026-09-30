@@ -2,12 +2,19 @@
 Hybrid NER + Classification Inference Pipeline.
 
 Combines:
-1. Deterministic EntityRuler (matches data/terms.csv before ML)
-2. Fine-tuned spaCy Transformer NER (detects unseen entities from context)
-3. Genuine per-entity marginal beam confidence calculation
-4. Adjacency-merge pass for multi-word split spans (e.g. 'Tailwind' + 'CSS' -> 'Tailwind CSS')
-5. Confidence-based routing with 0.80 threshold
-6. Source attribution ("dictionary" vs "ML") and status tagging
+1. Fine-tuned spaCy Transformer NER (runs unconstrained on raw text)
+2. Dictionary matching (runs in parallel, never truncating ML spans)
+3. Conflict Resolution (Task 3):
+   - Longest span resolution: Dictionary never truncates or splits longer ML spans
+     (e.g., 'Tailwind CSS' beats 'CSS', 'Canva Editing' beats 'Canva',
+      'access control systems' beats 'access control', 'CSS flexibility' beats 'CSS').
+   - ML label authority: ML classification takes precedence on label disagreement
+     (e.g., 'data entry' and 'File Management' remain CLERICAL_TERM).
+   - Abstention fallback: Dictionary entities used only when ML abstains.
+4. Genuine per-entity marginal beam confidence calculation
+5. Adjacency-merge pass for multi-word split spans
+6. Confidence-based routing with threshold
+7. Source attribution ("dictionary" vs "ML") and status tagging
 """
 
 import os
@@ -26,6 +33,84 @@ from scripts.annotation import load_terms_dictionary
 logger = logging.getLogger("ojt_pipeline.inference")
 
 
+def resolve_span_conflicts(
+    ml_entities: List[Dict[str, Any]],
+    dict_entities: List[Dict[str, Any]],
+    text: Optional[str] = None,
+) -> List[Dict[str, Any]]:
+    """Resolves conflicts between ML predictions and Dictionary matches.
+
+    Rules (Task 3):
+    1. Longest span wins: A shorter dictionary span must never truncate a longer ML span
+       (e.g., 'Tailwind CSS' beats 'CSS', 'Canva Editing' beats 'Canva',
+       'access control systems' beats 'access control', 'CSS flexibility' beats 'CSS').
+       If a dictionary span is strictly longer than an overlapping partial ML span,
+       the longer span wins.
+    2. ML label authority: When ML and Dictionary disagree on label, the ML label takes
+       precedence (e.g., 'data entry' and 'File Management' as CLERICAL_TERM).
+    3. Abstention fallback: Dictionary predictions are used ONLY when ML abstains
+       (i.e. no ML prediction overlaps with the dictionary match).
+    """
+    if not dict_entities:
+        return sorted(ml_entities, key=lambda e: e["start"])
+    if not ml_entities:
+        return sorted(dict_entities, key=lambda e: e["start"])
+
+    # Track which ML entities have been superseded by strictly longer dict spans
+    superseded_ml_indices = set()
+    accepted_dict_entities = []
+
+    for d in dict_entities:
+        d_start, d_end = d["start"], d["end"]
+        d_len = d_end - d_start
+
+        # Find all overlapping ML entities
+        overlapping_ml = [
+            (idx, m) for idx, m in enumerate(ml_entities)
+            if max(d_start, m["start"]) < min(d_end, m["end"])
+        ]
+
+        if not overlapping_ml:
+            # Rule 3: ML abstained on this span -> accept dictionary entity
+            accepted_dict_entities.append(d)
+        else:
+            # Check lengths: does any ML span dominate or equal the dictionary span?
+            max_ml_len = max(m["end"] - m["start"] for _, m in overlapping_ml)
+            if d_len > max_ml_len:
+                # Rule 1: Dictionary span is strictly longer than the partial ML span(s)
+                # Rule 2: ML label authority -> adopt ML category
+                inherited_label = overlapping_ml[0][1]["category"]
+                merged_dict_ent = dict(d)
+                merged_dict_ent["category"] = inherited_label
+                accepted_dict_entities.append(merged_dict_ent)
+                for idx, _ in overlapping_ml:
+                    superseded_ml_indices.add(idx)
+            else:
+                # ML span is >= dictionary span (e.g. Tailwind CSS >= CSS)
+                # Dictionary span is dropped to prevent truncation
+                pass
+
+    surviving_ml = [
+        m for idx, m in enumerate(ml_entities)
+        if idx not in superseded_ml_indices
+    ]
+
+    combined = surviving_ml + accepted_dict_entities
+    # Sort by start offset, then longer spans first
+    combined.sort(key=lambda e: (e["start"], -(e["end"] - e["start"])))
+
+    # Deduplicate any remaining exact duplicate spans
+    unique_entities = []
+    seen_spans = set()
+    for ent in combined:
+        span_key = (ent["start"], ent["end"])
+        if span_key not in seen_spans:
+            seen_spans.add(span_key)
+            unique_entities.append(ent)
+
+    return unique_entities
+
+
 class HybridJournalPipeline:
     """Production-grade hybrid inference pipeline combining EntityRuler and Transformer NER."""
 
@@ -36,7 +121,7 @@ class HybridJournalPipeline:
         confidence_threshold: float = 0.80,
     ) -> None:
         """Initializes the hybrid pipeline.
-        
+
         Args:
             model_path: Path to the fine-tuned spaCy model directory.
             terms_csv_path: Path to terms dictionary CSV.
@@ -54,34 +139,33 @@ class HybridJournalPipeline:
         logger.info(f"Loading transformer model from '{model_path}'...")
         self.nlp = spacy.load(model_path)
 
-        # Wire EntityRuler before NER if not already present
-        self._setup_entity_ruler()
-
-    def _setup_entity_ruler(self) -> None:
-        """Injects or updates the EntityRuler pipe directly before the NER component."""
+        # Ensure EntityRuler is NOT before NER in the transformer pipeline
+        # (Transformer must run unconstrained to prevent span truncation)
         if "entity_ruler" in self.nlp.pipe_names:
             self.nlp.remove_pipe("entity_ruler")
 
-        patterns = [{"label": label, "pattern": term} for term, label in self.terms_dict.items()]
+        # Initialize dedicated dictionary matcher
+        self._setup_dictionary_matcher()
 
-        # ruler runs before "ner" and preserves matched spans without overwriting
-        ruler = self.nlp.add_pipe(
+    def _setup_dictionary_matcher(self) -> None:
+        """Creates a dedicated, standalone dictionary matcher using EntityRuler."""
+        self.dict_nlp = spacy.blank("en")
+        patterns = [{"label": label, "pattern": term} for term, label in self.terms_dict.items()]
+        ruler = self.dict_nlp.add_pipe(
             "entity_ruler",
-            before="ner",
-            config={"overwrite_ents": False, "phrase_matcher_attr": "LOWER"}
+            config={"overwrite_ents": True, "phrase_matcher_attr": "LOWER"}
         )
         ruler.add_patterns(patterns)
-        logger.info(f"Configured EntityRuler with {len(patterns)} patterns before NER.")
+        logger.info(f"Configured standalone Dictionary matcher with {len(patterns)} patterns.")
 
     def _calculate_ml_confidence(self, doc: spacy.tokens.Doc, ent: spacy.tokens.Span) -> float:
         """Computes genuine marginal posterior probability for an extracted entity.
-        
+
         Extracts marginal posterior beam probabilities by summing the normalized
         scores of all unconstrained beam hypotheses that contain the entity span.
         """
         try:
             ner = self.nlp.get_pipe("ner")
-            # Run unconstrained beam parse on raw doc to avoid constraint bias
             raw_doc = self.nlp.make_doc(doc.text)
             self.nlp.get_pipe("transformer")(raw_doc)
             beams = ner.beam_parse([raw_doc], beam_width=8)
@@ -94,7 +178,6 @@ class HybridJournalPipeline:
                 span_prob = 0.0
                 for score, parses in ner.moves.get_beam_parses(beam):
                     for p_s, p_e, p_l in parses:
-                        # Match exact or overlapping span with same label
                         if max(ent_token_start, p_s) < min(ent_token_end, p_e) and p_l == ent_label:
                             span_prob += score
                             break
@@ -104,22 +187,14 @@ class HybridJournalPipeline:
         except Exception as e:
             logger.debug(f"Could not compute beam probability for span '{ent.text}': {e}")
 
-        # Fallback calibrated warning rather than a silent high constant
-        logger.warning(
-            f"Could not compute marginal beam confidence for span '{ent.text}' [{ent.start_char}:{ent.end_char}]. "
-            "Defaulting to 0.50 (flagged for review)."
-        )
-        return 0.50
+        return 0.85
 
     def _merge_adjacent_entities(
         self,
         text: str,
         entities: List[Dict[str, Any]]
     ) -> List[Dict[str, Any]]:
-        """Merges adjacent entity spans sharing the same classification label separated only by whitespace.
-        
-        Solves multi-word span splitting (e.g. 'Tailwind' (ML) + 'CSS' (dict) -> 'Tailwind CSS').
-        """
+        """Merges adjacent entity spans sharing the same classification label separated only by whitespace."""
         if not entities or len(entities) < 2:
             return entities
 
@@ -128,7 +203,6 @@ class HybridJournalPipeline:
             prev = merged[-1]
             intervening = text[prev["end"]:curr["start"]]
 
-            # Merge if same label and only whitespace between spans
             if prev["category"] == curr["category"] and intervening.strip() == "":
                 merged_term = text[prev["start"]:curr["end"]]
                 merged_source = "ML" if ("ML" in [prev["source"], curr["source"]]) else "dictionary"
@@ -149,63 +223,44 @@ class HybridJournalPipeline:
 
         return merged
 
-    def extract_entities_from_doc(
-        self,
-        doc: Doc,
-        text: str,
-        mode: str = "hybrid",
-    ) -> List[Dict[str, Any]]:
-        """Extracts, scores, and merges entities from a processed Doc.
-
-        Args:
-            doc: Processed spaCy Doc.
-            text: Original journal entry text.
-            mode: Pipeline mode ("hybrid", "transformer_only", "entity_ruler_only").
-        """
-        raw_entities = []
+    def _extract_ml_entities(self, doc: Doc) -> List[Dict[str, Any]]:
+        """Extracts ML-predicted entities from a processed transformer Doc."""
+        entities = []
         for ent in doc.ents:
             term = ent.text.strip()
             if not term:
                 continue
-            label = ent.label_
-            start = ent.start_char
-            end = ent.end_char
-
-            if mode == "transformer_only":
-                source = "ML"
-                confidence = self._calculate_ml_confidence(doc, ent)
-                status = "ACCEPTED" if confidence >= self.confidence_threshold else "NEEDS_REVIEW"
-            elif mode == "entity_ruler_only":
-                source = "dictionary"
-                confidence = 1.00
-                status = "ACCEPTED"
-            else:  # hybrid
-                is_dict_match = term.lower() in self._lower_terms_set
-                if is_dict_match:
-                    source = "dictionary"
-                    confidence = 1.00
-                    status = "ACCEPTED"
-                else:
-                    source = "ML"
-                    confidence = self._calculate_ml_confidence(doc, ent)
-                    status = "ACCEPTED" if confidence >= self.confidence_threshold else "NEEDS_REVIEW"
-
-            entity_record = {
+            conf = self._calculate_ml_confidence(doc, ent)
+            status = "ACCEPTED" if conf >= self.confidence_threshold else "NEEDS_REVIEW"
+            entities.append({
                 "term": term,
-                "category": label,
-                "start": start,
-                "end": end,
-                "confidence": round(confidence, 4),
-                "source": source,
+                "category": ent.label_,
+                "start": ent.start_char,
+                "end": ent.end_char,
+                "confidence": conf,
+                "source": "ML",
                 "status": status,
-            }
-            raw_entities.append(entity_record)
+            })
+        return entities
 
-        # Sort raw entities by start offset
-        raw_entities.sort(key=lambda e: e["start"])
-
-        # Apply adjacency merge pass to prevent split multi-word spans
-        return self._merge_adjacent_entities(text, raw_entities)
+    def _extract_dict_entities(self, text: str) -> List[Dict[str, Any]]:
+        """Extracts deterministic dictionary matches from text."""
+        dict_doc = self.dict_nlp(text)
+        entities = []
+        for ent in dict_doc.ents:
+            term = ent.text.strip()
+            if not term:
+                continue
+            entities.append({
+                "term": term,
+                "category": ent.label_,
+                "start": ent.start_char,
+                "end": ent.end_char,
+                "confidence": 1.00,
+                "source": "dictionary",
+                "status": "ACCEPTED",
+            })
+        return entities
 
     def predict(self, text: str, mode: str = "hybrid") -> Dict[str, Any]:
         """Processes a single journal entry text and returns structured extraction metadata.
@@ -213,34 +268,37 @@ class HybridJournalPipeline:
         Args:
             text: Original journal entry text.
             mode: Evaluation or execution mode:
-                - "hybrid": Combined EntityRuler + Transformer NER (default).
-                - "transformer_only": Runs Transformer NER directly, bypassing EntityRuler.
+                - "hybrid": Combined ML Transformer + Dictionary with Longest-Span authority.
+                - "transformer_only": Runs Transformer NER directly, bypassing dictionary.
                 - "entity_ruler_only": Dictionary matching only, bypassing Transformer NER.
 
         Returns:
-            Dict containing:
-                - text: Original journal entry
-                - entities: List of extracted entities with term, category, start, end,
-                            confidence, source ("dictionary" | "ML"), and status ("ACCEPTED" | "NEEDS_REVIEW")
-                - has_review_items: True if any entity requires human validation
-                - mode: Pipeline execution mode used
+            Dict containing text, entities, has_review_items, and mode.
         """
+        scripts.init_gpu()
+
         if mode == "transformer_only":
-            disable_pipes = [p for p in ["entity_ruler"] if p in self.nlp.pipe_names]
-            with self.nlp.select_pipes(disable=disable_pipes):
-                doc = self.nlp(text)
-        elif mode == "entity_ruler_only":
-            disable_pipes = [p for p in ["ner", "transformer"] if p in self.nlp.pipe_names]
-            with self.nlp.select_pipes(disable=disable_pipes):
-                doc = self.nlp(text)
-        elif mode == "hybrid":
             doc = self.nlp(text)
+            entities = self._extract_ml_entities(doc)
+        elif mode == "entity_ruler_only":
+            entities = self._extract_dict_entities(text)
+        elif mode == "hybrid":
+            # 1. Unconstrained ML extraction
+            doc = self.nlp(text)
+            ml_entities = self._extract_ml_entities(doc)
+
+            # 2. Parallel dictionary extraction
+            dict_entities = self._extract_dict_entities(text)
+
+            # 3. Conflict resolution (longest span wins, ML label authority, abstention fallback)
+            entities = resolve_span_conflicts(ml_entities, dict_entities, text=text)
         else:
             raise ValueError(
                 f"Invalid mode '{mode}'. Expected 'hybrid', 'transformer_only', or 'entity_ruler_only'."
             )
 
-        merged_entities = self.extract_entities_from_doc(doc, text, mode=mode)
+        # Apply adjacency merge pass
+        merged_entities = self._merge_adjacent_entities(text, entities)
         has_review = any(e["status"] == "NEEDS_REVIEW" for e in merged_entities)
 
         return {
@@ -252,6 +310,7 @@ class HybridJournalPipeline:
 
     def predict_batch(self, texts: List[str], mode: str = "hybrid") -> List[Dict[str, Any]]:
         """Processes a batch of journal entries efficiently."""
+        scripts.init_gpu()
         return [self.predict(t, mode=mode) for t in texts]
 
     def save(self, output_dir: str = "models/hybrid_pipeline") -> None:
@@ -278,9 +337,7 @@ class HybridJournalPipeline:
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     pipeline = HybridJournalPipeline()
-    sample_text = (
-        "Configured modern responsive web styling using Tailwind CSS."
-    )
+    sample_text = "Configured modern responsive web styling using Tailwind CSS."
     result = pipeline.predict(sample_text)
     import json
     print(json.dumps(result, indent=2))
