@@ -1,11 +1,34 @@
+import re
 import json
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from pathlib import Path
+from typing import List, Dict, Any, Optional, Tuple, Set
 import gc
 
 
 LABELS = ["IT_TERM", "CLERICAL_TERM"]
+
+# Entity visual tag colors
+COLOR_IT_BG = "#dbeafe"          # Light soft blue
+COLOR_IT_FG = "#1e40af"          # Deep blue
+COLOR_CLERICAL_BG = "#d1fae5"    # Light emerald green
+COLOR_CLERICAL_FG = "#065f46"    # Deep forest green
+COLOR_SELECT_BG = "#fde047"      # Bright highlighter yellow
+COLOR_SELECT_FG = "#854d0e"      # Deep golden brown
+
+
+def make_entity_pattern(entity_text: str) -> re.Pattern:
+    """
+    Builds a case-insensitive regex pattern for matching entity_text as an exact term.
+    Uses negative lookbehinds/lookaheads to prevent matching subwords (e.g. 'coding' in 'encoding'
+    or 'IT' in 'with'), while safely supporting punctuation-containing terms like 'C++', '.NET', 'Node.js'.
+    """
+    text = entity_text.strip()
+    escaped = re.escape(text)
+    prefix = r"(?<!\w)" if text and (text[0].isalnum() or text[0] == "_") else ""
+    suffix = r"(?!\w)" if text and (text[-1].isalnum() or text[-1] == "_") else ""
+    return re.compile(prefix + escaped + suffix, re.IGNORECASE)
 
 
 class JSONLEntityAnnotator:
@@ -18,6 +41,7 @@ class JSONLEntityAnnotator:
         self.data = []
         self.current_index = None
         self.file_path = None
+        self.sync_consistency = tk.BooleanVar(value=True)
 
         self.create_menu()
         self.create_ui()
@@ -57,6 +81,16 @@ class JSONLEntityAnnotator:
             label="Remove Duplicates",
             command=self.remove_duplicates,
             accelerator="Ctrl+D"
+        )
+        edit_menu.add_separator()
+        edit_menu.add_checkbutton(
+            label="Auto-sync File Consistency",
+            variable=self.sync_consistency,
+            command=self._update_sync_badge
+        )
+        edit_menu.add_command(
+            label="Audit Dataset Consistency...",
+            command=self.audit_dataset_consistency
         )
         menubar.add_cascade(label="Edit", menu=edit_menu)
 
@@ -234,23 +268,82 @@ class JSONLEntityAnnotator:
             pady=(0, 8)
         )
 
+        sent_header = ttk.Frame(sentence_frame)
+        sent_header.pack(fill=tk.X, pady=(0, 3))
+
         ttk.Label(
-            sentence_frame,
-            text="Selected text:"
+            sent_header,
+            text="Selected sentence:",
+            font=("TkDefaultFont", 9, "bold")
         ).pack(
-            anchor=tk.W
+            side=tk.LEFT
         )
+
+        tk.Label(
+            sent_header,
+            text="IT_TERM",
+            background=COLOR_IT_BG,
+            foreground=COLOR_IT_FG,
+            font=("TkDefaultFont", 8, "bold"),
+            padx=5,
+            pady=1,
+            relief=tk.SOLID,
+            borderwidth=1
+        ).pack(side=tk.LEFT, padx=(12, 4))
+
+        tk.Label(
+            sent_header,
+            text="CLERICAL_TERM",
+            background=COLOR_CLERICAL_BG,
+            foreground=COLOR_CLERICAL_FG,
+            font=("TkDefaultFont", 8, "bold"),
+            padx=5,
+            pady=1,
+            relief=tk.SOLID,
+            borderwidth=1
+        ).pack(side=tk.LEFT, padx=4)
+
+        ttk.Label(
+            sent_header,
+            text="💡 Tip: Highlight text then click 'Add Entity' to auto-populate.",
+            font=("TkDefaultFont", 8, "italic"),
+            foreground="#64748b"
+        ).pack(side=tk.RIGHT)
 
         self.selected_text_box = tk.Text(
             sentence_frame,
             height=3,
-            wrap=tk.WORD
+            wrap=tk.WORD,
+            font=("DejaVu Sans", 10),
+            padx=6,
+            pady=4
         )
 
         self.selected_text_box.pack(
             fill=tk.X,
-            pady=(5, 0)
+            pady=(2, 0)
         )
+
+        self.selected_text_box.tag_configure(
+            "IT_TERM",
+            background=COLOR_IT_BG,
+            foreground=COLOR_IT_FG,
+            font=("DejaVu Sans", 10, "bold")
+        )
+        self.selected_text_box.tag_configure(
+            "CLERICAL_TERM",
+            background=COLOR_CLERICAL_BG,
+            foreground=COLOR_CLERICAL_FG,
+            font=("DejaVu Sans", 10, "bold")
+        )
+        self.selected_text_box.tag_configure(
+            "SELECTED_SPAN",
+            background=COLOR_SELECT_BG,
+            foreground=COLOR_SELECT_FG,
+            font=("DejaVu Sans", 10, "bold"),
+            underline=True
+        )
+        self.selected_text_box.bind("<Button-1>", self.on_text_box_click)
 
         self.selected_text_box.config(
             state=tk.DISABLED
@@ -284,6 +377,24 @@ class JSONLEntityAnnotator:
             text="Delete Entity",
             command=self.delete_entity
         ).pack(side=tk.LEFT, padx=5)
+
+        ttk.Separator(button_frame, orient=tk.VERTICAL).pack(side=tk.LEFT, padx=12, fill=tk.Y)
+
+        self.sync_check = ttk.Checkbutton(
+            button_frame,
+            text="Auto-sync file consistency (all records)",
+            variable=self.sync_consistency,
+            command=self._update_sync_badge
+        )
+        self.sync_check.pack(side=tk.LEFT, padx=4)
+
+        self.sync_badge_label = ttk.Label(
+            button_frame,
+            text="⚡ Global Sync Active",
+            foreground="#15803d",
+            font=("TkDefaultFont", 8, "bold")
+        )
+        self.sync_badge_label.pack(side=tk.LEFT, padx=6)
 
         # ========================================================
         # ENTITY TABLE (Expands into remaining space)
@@ -371,6 +482,15 @@ class JSONLEntityAnnotator:
 
         entity_tree_frame.rowconfigure(0, weight=1)
         entity_tree_frame.columnconfigure(0, weight=1)
+
+        self.entity_tree.bind(
+            "<<TreeviewSelect>>",
+            self.on_entity_selected
+        )
+        self.entity_tree.bind(
+            "<Delete>",
+            lambda e: self.delete_entity()
+        )
 
 
 
@@ -665,8 +785,16 @@ class JSONLEntityAnnotator:
     # ENTITY TABLE
     # ============================================================
 
+    def _update_sync_badge(self):
+        if self.sync_consistency.get():
+            self.sync_badge_label.config(text="⚡ Global Sync Active", foreground="#15803d")
+        else:
+            self.sync_badge_label.config(text="○ Sync Disabled", foreground="#94a3b8")
+
     def clear_selected_text(self):
         self.selected_text_box.config(state=tk.NORMAL)
+        for tag in ["IT_TERM", "CLERICAL_TERM", "SELECTED_SPAN"]:
+            self.selected_text_box.tag_remove(tag, "1.0", tk.END)
         self.selected_text_box.delete(
             "1.0",
             tk.END
@@ -679,10 +807,79 @@ class JSONLEntityAnnotator:
         if children:
             self.entity_tree.delete(*children)
 
+    def highlight_entities_in_text(self):
+        """Highlights entities in the selected text box using colored tags."""
+        if self.current_index is None or not (0 <= self.current_index < len(self.data)):
+            return
+
+        record = self.data[self.current_index]
+        text = record.get("text", "")
+
+        # Clear existing highlight tags
+        for tag in ["IT_TERM", "CLERICAL_TERM", "SELECTED_SPAN"]:
+            self.selected_text_box.tag_remove(tag, "1.0", tk.END)
+
+        for entity in record.get("entities", []):
+            start = entity.get("start")
+            end = entity.get("end")
+            label = entity.get("label", "")
+
+            if (
+                isinstance(start, int)
+                and isinstance(end, int)
+                and 0 <= start <= end <= len(text)
+            ):
+                idx_start = f"1.0+{start}c"
+                idx_end = f"1.0+{end}c"
+                if label in LABELS:
+                    self.selected_text_box.tag_add(label, idx_start, idx_end)
+
+    def on_entity_selected(self, event=None):
+        """Highlights the selected entity span in the sentence text box."""
+        if self.current_index is None or not (0 <= self.current_index < len(self.data)):
+            return
+
+        selection = self.entity_tree.selection()
+        if not selection:
+            self.selected_text_box.tag_remove("SELECTED_SPAN", "1.0", tk.END)
+            return
+
+        item_vals = self.entity_tree.item(selection[0], "values")
+        if len(item_vals) >= 3:
+            try:
+                start = int(item_vals[1])
+                end = int(item_vals[2])
+                self.selected_text_box.tag_remove("SELECTED_SPAN", "1.0", tk.END)
+                idx_start = f"1.0+{start}c"
+                idx_end = f"1.0+{end}c"
+                self.selected_text_box.tag_add("SELECTED_SPAN", idx_start, idx_end)
+                self.selected_text_box.see(idx_start)
+            except (ValueError, TypeError):
+                pass
+
+    def on_text_box_click(self, event=None):
+        """When clicking an entity in the text box, select that entity in the entity table."""
+        if self.current_index is None or not (0 <= self.current_index < len(self.data)):
+            return
+
+        idx = self.selected_text_box.index(f"@{event.x},{event.y}")
+        text_before = self.selected_text_box.get("1.0", idx)
+        offset = len(text_before)
+
+        record = self.data[self.current_index]
+        for ent_idx, ent in enumerate(record.get("entities", [])):
+            if ent.get("start", -1) <= offset <= ent.get("end", -1):
+                iid = str(ent_idx)
+                if self.entity_tree.exists(iid):
+                    self.entity_tree.selection_set(iid)
+                    self.entity_tree.see(iid)
+                    self.on_entity_selected()
+                break
+
     def populate_entity_table(self):
         self.clear_entity_table()
 
-        if self.current_index is None:
+        if self.current_index is None or not (0 <= self.current_index < len(self.data)):
             return
 
         record = self.data[self.current_index]
@@ -722,6 +919,289 @@ class JSONLEntityAnnotator:
                 )
             )
 
+        # Highlight tags in sentence text box
+        self.highlight_entities_in_text()
+
+    # ============================================================
+    # GLOBAL CONSISTENCY SYNCHRONIZATION ENGINE
+    # ============================================================
+
+    def sync_add_entity(
+        self,
+        entity_text: str,
+        label: str
+    ) -> Tuple[int, int, int]:
+        """
+        Scans all records in self.data for occurrences of entity_text (case-insensitive substring)
+        and adds or updates them with the specified label for dataset consistency.
+
+        Returns: (added_count, relabeled_count, affected_records_count)
+        """
+        if not self.data or not entity_text.strip():
+            return (0, 0, 0)
+
+        pat = make_entity_pattern(entity_text)
+        added_count = 0
+        relabeled_count = 0
+        affected_records = set()
+
+        for rec_idx, record in enumerate(self.data):
+            rec_text = record.get("text", "")
+            if not rec_text:
+                continue
+
+            record_modified = False
+            existing_entities = record.setdefault("entities", [])
+
+            for m in pat.finditer(rec_text):
+                m_start, m_end = m.start(), m.end()
+
+                overlap = False
+                exact_match = None
+
+                for e in existing_entities:
+                    e_start = e.get("start")
+                    e_end = e.get("end")
+                    if e_start == m_start and e_end == m_end:
+                        exact_match = e
+                        break
+                    elif m_start < e_end and m_end > e_start:
+                        # Partial overlap with another entity span
+                        overlap = True
+                        break
+
+                if exact_match is not None:
+                    if exact_match.get("label") != label:
+                        exact_match["label"] = label
+                        relabeled_count += 1
+                        record_modified = True
+                elif not overlap:
+                    existing_entities.append({
+                        "start": m_start,
+                        "end": m_end,
+                        "label": label
+                    })
+                    added_count += 1
+                    record_modified = True
+
+            if record_modified:
+                existing_entities.sort(key=lambda x: x.get("start", 0))
+                affected_records.add(rec_idx)
+
+        return (added_count, relabeled_count, len(affected_records))
+
+    def sync_edit_entity(
+        self,
+        old_text: str,
+        old_label: str,
+        new_text: str,
+        new_label: str
+    ) -> Tuple[int, int, int]:
+        """
+        Propagates entity edits across all records in self.data for dataset consistency.
+        If term text is identical (label change or casing only), updates all matching entities.
+        If term text changed, removes old entities and tags new term occurrences.
+
+        Returns: (relabeled_or_removed_count, added_count, affected_records_count)
+        """
+        if not self.data:
+            return (0, 0, 0)
+
+        old_norm = old_text.strip().lower()
+        new_norm = new_text.strip().lower()
+        relabeled_count = 0
+        added_count = 0
+        affected_records = set()
+
+        if old_norm == new_norm:
+            # Case 1: Label change only (or case change)
+            for rec_idx, record in enumerate(self.data):
+                rec_text = record.get("text", "")
+                record_modified = False
+                for e in record.get("entities", []):
+                    s, end = e.get("start", 0), e.get("end", 0)
+                    if 0 <= s <= end <= len(rec_text):
+                        if rec_text[s:end].lower() == old_norm:
+                            if e.get("label") != new_label:
+                                e["label"] = new_label
+                                relabeled_count += 1
+                                record_modified = True
+                if record_modified:
+                    affected_records.add(rec_idx)
+        else:
+            # Case 2: Entity term changed
+            new_pat = make_entity_pattern(new_text)
+            for rec_idx, record in enumerate(self.data):
+                rec_text = record.get("text", "")
+                record_modified = False
+                kept_entities = []
+
+                # Remove old matching entities
+                for e in record.get("entities", []):
+                    s, end = e.get("start", 0), e.get("end", 0)
+                    if 0 <= s <= end <= len(rec_text) and rec_text[s:end].lower() == old_norm:
+                        relabeled_count += 1
+                        record_modified = True
+                    else:
+                        kept_entities.append(e)
+
+                record["entities"] = kept_entities
+
+                # Add new term occurrences where valid
+                for m in new_pat.finditer(rec_text):
+                    m_start, m_end = m.start(), m.end()
+                    overlap = False
+                    exact_match = None
+
+                    for e in kept_entities:
+                        e_start = e.get("start")
+                        e_end = e.get("end")
+                        if e_start == m_start and e_end == m_end:
+                            exact_match = e
+                            break
+                        elif m_start < e_end and m_end > e_start:
+                            overlap = True
+                            break
+
+                    if exact_match is not None:
+                        if exact_match.get("label") != new_label:
+                            exact_match["label"] = new_label
+                            record_modified = True
+                    elif not overlap:
+                        kept_entities.append({
+                            "start": m_start,
+                            "end": m_end,
+                            "label": new_label
+                        })
+                        added_count += 1
+                        record_modified = True
+
+                if record_modified:
+                    record["entities"].sort(key=lambda x: x.get("start", 0))
+                    affected_records.add(rec_idx)
+
+        return (relabeled_count, added_count, len(affected_records))
+
+    def sync_delete_entity(
+        self,
+        entity_text: str
+    ) -> Tuple[int, int]:
+        """
+        Removes all occurrences of entity_text (case-insensitive) across all records in self.data.
+
+        Returns: (deleted_count, affected_records_count)
+        """
+        if not self.data or not entity_text.strip():
+            return (0, 0)
+
+        norm = entity_text.strip().lower()
+        deleted_count = 0
+        affected_records = set()
+
+        for rec_idx, record in enumerate(self.data):
+            rec_text = record.get("text", "")
+            kept_entities = []
+            record_modified = False
+
+            for e in record.get("entities", []):
+                s, end = e.get("start", 0), e.get("end", 0)
+                if 0 <= s <= end <= len(rec_text) and rec_text[s:end].lower() == norm:
+                    deleted_count += 1
+                    record_modified = True
+                else:
+                    kept_entities.append(e)
+
+            if record_modified:
+                record["entities"] = kept_entities
+                affected_records.add(rec_idx)
+
+        return (deleted_count, len(affected_records))
+
+    def audit_dataset_consistency(self):
+        """Scans the entire dataset for inconsistent entity annotations and displays a report."""
+        if not self.data:
+            messagebox.showinfo("Dataset Audit", "No JSONL records loaded.")
+            return
+
+        term_labels: Dict[str, Dict[str, int]] = {}
+        for record in self.data:
+            rec_text = record.get("text", "")
+            for e in record.get("entities", []):
+                s, end = e.get("start", 0), e.get("end", 0)
+                label = e.get("label", "")
+                if 0 <= s <= end <= len(rec_text) and label:
+                    t = rec_text[s:end].lower()
+                    if t not in term_labels:
+                        term_labels[t] = {}
+                    term_labels[t][label] = term_labels[t].get(label, 0) + 1
+
+        conflicts = {t: counts for t, counts in term_labels.items() if len(counts) > 1}
+
+        audit_win = tk.Toplevel(self.root)
+        audit_win.title("Dataset Consistency Audit Report")
+        audit_win.geometry("750x450")
+        audit_win.transient(self.root)
+
+        frame = ttk.Frame(audit_win, padding=12)
+        frame.pack(fill=tk.BOTH, expand=True)
+
+        if not conflicts:
+            ttk.Label(
+                frame,
+                text="🎉 No label conflicts detected across all records!",
+                font=("TkDefaultFont", 11, "bold"),
+                foreground="#15803d"
+            ).pack(pady=20)
+            ttk.Label(
+                frame,
+                text=f"Analyzed {len(self.data):,} records with {len(term_labels):,} unique entity terms.",
+                foreground="#64748b"
+            ).pack()
+            ttk.Button(frame, text="Close", command=audit_win.destroy).pack(pady=15)
+            return
+
+        ttk.Label(
+            frame,
+            text=f"⚠️ Found {len(conflicts)} term(s) with conflicting labels:",
+            font=("TkDefaultFont", 10, "bold"),
+            foreground="#b91c1c"
+        ).pack(anchor="w", pady=(0, 8))
+
+        cols = ("term", "breakdown", "suggested")
+        tree = ttk.Treeview(frame, columns=cols, show="headings", height=12)
+        tree.heading("term", text="Entity Term")
+        tree.heading("breakdown", text="Label Counts")
+        tree.heading("suggested", text="Majority Label")
+        tree.column("term", width=220)
+        tree.column("breakdown", width=300)
+        tree.column("suggested", width=160, anchor="center")
+
+        for term, counts in sorted(conflicts.items(), key=lambda x: -sum(x[1].values())):
+            breakdown_str = ", ".join(f"{lbl}: {cnt}" for lbl, cnt in counts.items())
+            maj_lbl = max(counts.items(), key=lambda x: x[1])[0]
+            tree.insert("", "end", values=(term, breakdown_str, f"{maj_lbl} (auto)"))
+
+        tree.pack(fill=tk.BOTH, expand=True)
+
+        def _resolve_all_majority():
+            resolved = 0
+            for term, counts in conflicts.items():
+                maj_lbl = max(counts.items(), key=lambda x: x[1])[0]
+                self.sync_add_entity(term, maj_lbl)
+                resolved += 1
+            self.populate_entity_table()
+            messagebox.showinfo(
+                "Resolved",
+                f"Synchronized {resolved} conflicting terms to their majority labels across the dataset.",
+                parent=audit_win
+            )
+            audit_win.destroy()
+
+        btn_bar = ttk.Frame(frame)
+        btn_bar.pack(fill=tk.X, pady=(10, 0))
+        ttk.Button(btn_bar, text="Resolve All to Majority Label", command=_resolve_all_majority).pack(side=tk.LEFT)
+        ttk.Button(btn_bar, text="Close", command=audit_win.destroy).pack(side=tk.RIGHT)
+
     # ============================================================
     # ADD ENTITY
     # ============================================================
@@ -734,14 +1214,22 @@ class JSONLEntityAnnotator:
             )
             return
 
-        text = self.data[
-            self.current_index
-        ]["text"]
+        text = self.data[self.current_index]["text"]
+
+        # Pre-fill with highlighted selection if present
+        selected_text = ""
+        try:
+            if self.selected_text_box.tag_ranges(tk.SEL):
+                selected_text = self.selected_text_box.get(tk.SEL_FIRST, tk.SEL_LAST).strip()
+        except Exception:
+            pass
 
         dialog = EntityDialog(
             self.root,
             title="Add Entity",
-            sentence=text
+            sentence=text,
+            entity_text=selected_text,
+            sync_default=self.sync_consistency.get()
         )
 
         self.root.wait_window(dialog)
@@ -749,70 +1237,64 @@ class JSONLEntityAnnotator:
         if not dialog.result:
             return
 
-        entity_text = dialog.entity_text
+        entity_text = dialog.entity_text.strip()
         label = dialog.label
+        sync_all = dialog.sync_all
 
-        positions = self.find_all_occurrences(
-            text,
-            entity_text
-        )
-
+        positions = self.find_all_occurrences(text, entity_text)
         if not positions:
             messagebox.showerror(
                 "Text Not Found",
-                "The entity text was not found in the selected "
-                "sentence.\n\n"
-                "Please paste the exact text as it appears."
+                f"The entity text '{entity_text}' was not found in the selected sentence.\n\n"
+                "Please paste the exact text as it appears in this sentence."
             )
             return
 
-        # If there are multiple matches, let the user choose.
-        if len(positions) > 1:
-            occurrence = OccurrenceDialog(
-                self.root,
-                sentence=text,
-                entity_text=entity_text,
-                positions=positions
+        if sync_all:
+            # Sync across entire dataset (including current record)
+            added_count, relabeled_count, affected_records = self.sync_add_entity(
+                entity_text, label
             )
-
-            self.root.wait_window(occurrence)
-
-            if occurrence.selected_position is None:
-                return
-
-            start = occurrence.selected_position
-
+            self.populate_entity_table()
+            self.status_var.set(
+                f"Added '{entity_text}' [{label}] — Synced consistency: {added_count} added, "
+                f"{relabeled_count} relabeled across {affected_records} records."
+            )
         else:
-            start = positions[0]
+            # Single-record addition
+            if len(positions) > 1:
+                occurrence = OccurrenceDialog(
+                    self.root,
+                    sentence=text,
+                    entity_text=entity_text,
+                    positions=positions
+                )
+                self.root.wait_window(occurrence)
 
-        end = start + len(entity_text)
+                if occurrence.selected_position is None:
+                    return
 
-        # Check overlap
-        if self.has_overlap(
-            start,
-            end
-        ):
-            messagebox.showerror(
-                "Overlapping Entity",
-                "This entity overlaps with an existing entity."
-            )
-            return
+                if occurrence.selected_position == "ALL":
+                    target_positions = positions
+                else:
+                    target_positions = [occurrence.selected_position]
+            else:
+                target_positions = [positions[0]]
 
-        self.data[
-            self.current_index
-        ]["entities"].append(
-            {
-                "start": start,
-                "end": end,
-                "label": label
-            }
-        )
+            added_here = 0
+            for start in target_positions:
+                end = start + len(entity_text)
+                if not self.has_overlap(start, end):
+                    self.data[self.current_index]["entities"].append({
+                        "start": start,
+                        "end": end,
+                        "label": label
+                    })
+                    added_here += 1
 
-        self.populate_entity_table()
-
-        self.status_var.set(
-            f"Added entity: '{entity_text}'"
-        )
+            self.data[self.current_index]["entities"].sort(key=lambda x: x.get("start", 0))
+            self.populate_entity_table()
+            self.status_var.set(f"Added entity: '{entity_text}' ({added_here} instance(s) in current record)")
 
     # ============================================================
     # EDIT ENTITY
@@ -827,7 +1309,6 @@ class JSONLEntityAnnotator:
             return
 
         selection = self.entity_tree.selection()
-
         if not selection:
             messagebox.showwarning(
                 "No Entity Selected",
@@ -836,28 +1317,22 @@ class JSONLEntityAnnotator:
             return
 
         entity_index = int(selection[0])
-
-        record = self.data[
-            self.current_index
-        ]
-
+        record = self.data[self.current_index]
         entity = record["entities"][entity_index]
-
         text = record["text"]
 
         old_start = entity["start"]
         old_end = entity["end"]
-
-        old_text = text[
-            old_start:old_end
-        ]
+        old_text = text[old_start:old_end]
+        old_label = entity.get("label", LABELS[0])
 
         dialog = EntityDialog(
             self.root,
             title="Edit Entity",
             sentence=text,
             entity_text=old_text,
-            label=entity.get("label", LABELS[0])
+            label=old_label,
+            sync_default=self.sync_consistency.get()
         )
 
         self.root.wait_window(dialog)
@@ -865,70 +1340,76 @@ class JSONLEntityAnnotator:
         if not dialog.result:
             return
 
-        new_entity_text = dialog.entity_text
+        new_text = dialog.entity_text.strip()
         new_label = dialog.label
+        sync_all = dialog.sync_all
 
-        positions = self.find_all_occurrences(
-            text,
-            new_entity_text
-        )
-
-        if not positions:
-            messagebox.showerror(
-                "Text Not Found",
-                "The new entity text was not found in the "
-                "selected sentence.\n\n"
-                "Please paste the exact text as it appears."
-            )
+        if new_text == old_text and new_label == old_label:
             return
 
-        # If the new text is the same as the old text,
-        # prefer keeping the existing position.
-        if new_entity_text == old_text:
-            start = old_start
-
-        elif len(positions) == 1:
-            start = positions[0]
-
-        else:
-            occurrence = OccurrenceDialog(
-                self.root,
-                sentence=text,
-                entity_text=new_entity_text,
-                positions=positions,
-                exclude_range=(old_start, old_end)
+        if sync_all:
+            relabeled_or_removed, added_count, affected_records = self.sync_edit_entity(
+                old_text, old_label, new_text, new_label
             )
-
-            self.root.wait_window(occurrence)
-
-            if occurrence.selected_position is None:
+            self.populate_entity_table()
+            if old_text.lower() == new_text.lower():
+                self.status_var.set(
+                    f"Relabeled '{old_text}' -> [{new_label}] — Synced across {affected_records} records "
+                    f"({relabeled_or_removed} entities updated)."
+                )
+            else:
+                self.status_var.set(
+                    f"Edited '{old_text}' -> '{new_text}' [{new_label}] — Synced across {affected_records} records "
+                    f"({relabeled_or_removed} old removed, {added_count} new added)."
+                )
+        else:
+            positions = self.find_all_occurrences(text, new_text)
+            if not positions:
+                messagebox.showerror(
+                    "Text Not Found",
+                    f"The new entity text '{new_text}' was not found in the selected sentence.\n\n"
+                    "Please paste the exact text as it appears in this sentence."
+                )
                 return
 
-            start = occurrence.selected_position
+            if new_text == old_text:
+                start = old_start
+            elif len(positions) == 1:
+                start = positions[0]
+            else:
+                occurrence = OccurrenceDialog(
+                    self.root,
+                    sentence=text,
+                    entity_text=new_text,
+                    positions=positions,
+                    exclude_range=(old_start, old_end)
+                )
+                self.root.wait_window(occurrence)
 
-        end = start + len(new_entity_text)
+                if occurrence.selected_position is None:
+                    return
 
-        # Temporarily exclude the entity being edited
-        if self.has_overlap(
-            start,
-            end,
-            exclude_index=entity_index
-        ):
-            messagebox.showerror(
-                "Overlapping Entity",
-                "The edited entity overlaps with another entity."
-            )
-            return
+                if occurrence.selected_position == "ALL":
+                    start = positions[0]
+                else:
+                    start = occurrence.selected_position
 
-        entity["start"] = start
-        entity["end"] = end
-        entity["label"] = new_label
+            end = start + len(new_text)
 
-        self.populate_entity_table()
+            if self.has_overlap(start, end, exclude_index=entity_index):
+                messagebox.showerror(
+                    "Overlapping Entity",
+                    "The edited entity overlaps with another entity."
+                )
+                return
 
-        self.status_var.set(
-            f"Edited entity: '{new_entity_text}'"
-        )
+            entity["start"] = start
+            entity["end"] = end
+            entity["label"] = new_label
+
+            self.data[self.current_index]["entities"].sort(key=lambda x: x.get("start", 0))
+            self.populate_entity_table()
+            self.status_var.set(f"Edited entity: '{new_text}' [{new_label}] (current record only)")
 
     # ============================================================
     # DELETE ENTITY
@@ -943,7 +1424,6 @@ class JSONLEntityAnnotator:
             return
 
         selection = self.entity_tree.selection()
-
         if not selection:
             messagebox.showwarning(
                 "No Entity Selected",
@@ -952,44 +1432,68 @@ class JSONLEntityAnnotator:
             return
 
         entity_index = int(selection[0])
-
-        record = self.data[
-            self.current_index
-        ]
-
+        record = self.data[self.current_index]
         entity = record["entities"][entity_index]
 
         start = entity["start"]
         end = entity["end"]
+        entity_text = record["text"][start:end]
+        label = entity.get("label", "")
 
-        entity_text = record["text"][
-            start:end
-        ]
-
-        label = entity.get(
-            "label",
-            ""
+        norm_text = entity_text.strip().lower()
+        other_matches = sum(
+            1
+            for r in self.data
+            for e in r.get("entities", [])
+            if r["text"][e["start"]:e["end"]].lower() == norm_text
+        )
+        records_with_match = sum(
+            1
+            for r in self.data
+            if any(r["text"][e["start"]:e["end"]].lower() == norm_text for e in r.get("entities", []))
         )
 
-        confirm = messagebox.askyesno(
-            "Confirm Delete",
-            f"Are you sure you want to delete this entity?\n\n"
-            f"Text: {entity_text}\n"
-            f"Start: {start}\n"
-            f"End: {end}\n"
-            f"Label: {label}"
-        )
+        if self.sync_consistency.get() and other_matches > 1:
+            res = messagebox.askyesnocancel(
+                "Confirm Delete & Consistency Sync",
+                f"Delete entity: '{entity_text}' [{label}]?\n\n"
+                f"Found {other_matches} total occurrence(s) across {records_with_match} record(s).\n\n"
+                f"• Click [Yes] to delete '{entity_text}' from ALL records in the file (Global Consistency Sync).\n"
+                f"• Click [No] to delete from this current record ONLY.\n"
+                f"• Click [Cancel] to abort."
+            )
+            if res is None:
+                return
+            elif res is True:
+                deleted_count, affected_records = self.sync_delete_entity(entity_text)
+                self.populate_entity_table()
+                self.status_var.set(
+                    f"Deleted entity '{entity_text}' — Synced: removed {deleted_count} occurrences across {affected_records} records."
+                )
+            else:
+                del record["entities"][entity_index]
+                self.populate_entity_table()
+                self.status_var.set(f"Deleted entity '{entity_text}' from current record only.")
+        else:
+            confirm = messagebox.askyesno(
+                "Confirm Delete",
+                f"Are you sure you want to delete this entity?\n\n"
+                f"Text: {entity_text}\n"
+                f"Start: {start}\n"
+                f"End: {end}\n"
+                f"Label: {label}"
+            )
+            if not confirm:
+                return
 
-        if not confirm:
-            return
-
-        del record["entities"][entity_index]
-
-        self.populate_entity_table()
-
-        self.status_var.set(
-            f"Deleted entity: '{entity_text}'"
-        )
+            if self.sync_consistency.get():
+                deleted_count, affected_records = self.sync_delete_entity(entity_text)
+                self.populate_entity_table()
+                self.status_var.set(f"Deleted entity '{entity_text}' ({deleted_count} removed).")
+            else:
+                del record["entities"][entity_index]
+                self.populate_entity_table()
+                self.status_var.set(f"Deleted entity '{entity_text}' from current record.")
 
     # ============================================================
     # ENTITY VALIDATION
@@ -1001,31 +1505,13 @@ class JSONLEntityAnnotator:
         substring
     ):
         """
-        Return every start position where substring occurs.
+        Return every start position where substring occurs (case-insensitive exact entity match).
         """
+        if not text or not substring:
+            return []
 
-        positions = []
-
-        if not substring:
-            return positions
-
-        start = 0
-
-        while True:
-            position = text.find(
-                substring,
-                start
-            )
-
-            if position == -1:
-                break
-
-            positions.append(position)
-
-            # +1 allows overlapping textual occurrences
-            start = position + 1
-
-        return positions
+        pat = make_entity_pattern(substring)
+        return [m.start() for m in pat.finditer(text)]
 
     def has_overlap(
         self,
@@ -1034,31 +1520,25 @@ class JSONLEntityAnnotator:
         exclude_index=None
     ):
         """
-        Checks whether [start, end) overlaps an existing entity.
+        Checks whether [start, end) overlaps an existing entity in the current record.
         """
-
         if self.current_index is None:
             return False
 
         entities = self.data[
             self.current_index
-        ]["entities"]
+        ].get("entities", [])
 
         for index, entity in enumerate(entities):
+            if exclude_index is not None and index == exclude_index:
+                continue
 
-            if exclude_index is not None:
-                if index == exclude_index:
-                    continue
+            existing_start = entity.get("start")
+            existing_end = entity.get("end")
 
-            existing_start = entity["start"]
-            existing_end = entity["end"]
-
-            # Standard interval-overlap test
-            if (
-                start < existing_end
-                and end > existing_start
-            ):
-                return True
+            if existing_start is not None and existing_end is not None:
+                if start < existing_end and end > existing_start:
+                    return True
 
         return False
 
@@ -1263,17 +1743,19 @@ class EntityDialog(tk.Toplevel):
         title,
         sentence,
         entity_text="",
-        label=LABELS[0]
+        label=LABELS[0],
+        sync_default=True
     ):
         super().__init__(parent)
 
         self.title(title)
-        self.geometry("600x260")
+        self.geometry("640x310")
         self.resizable(False, False)
 
         self.result = False
         self.entity_text = ""
         self.label = LABELS[0]
+        self.sync_all = sync_default
 
         self.transient(parent)
         self.grab_set()
@@ -1285,7 +1767,7 @@ class EntityDialog(tk.Toplevel):
         ).pack(
             anchor=tk.W,
             padx=15,
-            pady=(15, 5)
+            pady=(12, 4)
         )
 
         sentence_frame = ttk.Frame(self)
@@ -1296,8 +1778,9 @@ class EntityDialog(tk.Toplevel):
 
         sentence_box = tk.Text(
             sentence_frame,
-            height=4,
-            wrap=tk.WORD
+            height=3,
+            wrap=tk.WORD,
+            font=("DejaVu Sans", 9)
         )
 
         sentence_box.pack(
@@ -1320,7 +1803,7 @@ class EntityDialog(tk.Toplevel):
         ).pack(
             anchor=tk.W,
             padx=15,
-            pady=(12, 5)
+            pady=(10, 4)
         )
 
         self.entity_var = tk.StringVar(
@@ -1337,16 +1820,16 @@ class EntityDialog(tk.Toplevel):
             padx=15
         )
 
-        # Label
-        label_frame = ttk.Frame(self)
-        label_frame.pack(
+        # Label & Sync frame
+        opts_frame = ttk.Frame(self)
+        opts_frame.pack(
             fill=tk.X,
             padx=15,
-            pady=12
+            pady=10
         )
 
         ttk.Label(
-            label_frame,
+            opts_frame,
             text="Label:"
         ).pack(
             side=tk.LEFT
@@ -1357,16 +1840,26 @@ class EntityDialog(tk.Toplevel):
         )
 
         label_dropdown = ttk.Combobox(
-            label_frame,
+            opts_frame,
             textvariable=self.label_var,
             values=LABELS,
             state="readonly",
-            width=20
+            width=18
         )
 
         label_dropdown.pack(
             side=tk.LEFT,
-            padx=(10, 0)
+            padx=(8, 20)
+        )
+
+        self.sync_var = tk.BooleanVar(value=sync_default)
+        sync_check = ttk.Checkbutton(
+            opts_frame,
+            text="Sync across entire file (case-insensitive consistency)",
+            variable=self.sync_var
+        )
+        sync_check.pack(
+            side=tk.LEFT
         )
 
         # Buttons
@@ -1375,7 +1868,7 @@ class EntityDialog(tk.Toplevel):
             side=tk.BOTTOM,
             fill=tk.X,
             padx=15,
-            pady=15
+            pady=12
         )
 
         ttk.Button(
@@ -1408,10 +1901,10 @@ class EntityDialog(tk.Toplevel):
         )
 
     def accept(self):
-        entity_text = self.entity_var.get()
+        entity_text = self.entity_var.get().strip()
         label = self.label_var.get()
 
-        if not entity_text.strip():
+        if not entity_text:
             messagebox.showwarning(
                 "Invalid Entity",
                 "Entity text cannot be empty.",
@@ -1429,6 +1922,7 @@ class EntityDialog(tk.Toplevel):
 
         self.entity_text = entity_text
         self.label = label
+        self.sync_all = self.sync_var.get()
         self.result = True
 
         self.destroy()
@@ -1468,7 +1962,7 @@ class OccurrenceDialog(tk.Toplevel):
             text=(
                 f'The text "{entity_text}" occurs '
                 f"{len(positions)} times.\n"
-                "Select which occurrence should be annotated:"
+                "Select which occurrence should be annotated, or annotate all occurrences:"
             ),
             wraplength=650
         ).pack(
@@ -1586,6 +2080,15 @@ class OccurrenceDialog(tk.Toplevel):
 
         ttk.Button(
             button_frame,
+            text="Annotate All Occurrences",
+            command=self.accept_all
+        ).pack(
+            side=tk.LEFT,
+            padx=(0, 5)
+        )
+
+        ttk.Button(
+            button_frame,
             text="Cancel",
             command=self.cancel
         ).pack(
@@ -1605,6 +2108,10 @@ class OccurrenceDialog(tk.Toplevel):
             "<Double-1>",
             lambda event: self.accept()
         )
+
+    def accept_all(self):
+        self.selected_position = "ALL"
+        self.destroy()
 
     def accept(self):
         selection = self.tree.selection()
