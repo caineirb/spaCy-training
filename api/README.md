@@ -142,10 +142,16 @@ Returns one `Microsoft Excel` entity with `"frequency": 2`.
 ### CPU-Only by Design
 The API service explicitly runs in **CPU-only mode** (`use_gpu=False`).
 - **Rationale**: Keeps the service lightweight for web server deployment, avoids competition with GPU training/retraining tasks, and guarantees zero CUDA/GPU library dependencies on production hosts without dedicated GPUs.
-- **Latency Benchmark**:
-  - Typical OJT journal paragraph (~150–200 characters): **~120–190 ms** on CPU.
-  - Previous GPU latency: **~40–70 ms**.
-  - While CPU inference is ~2–3× slower than GPU, sub-200ms latency is well within interactive web UI tolerances for asynchronous HTTP requests.
+- **Latency Benchmark (Empirically Measured: 5 warm-up runs, 30 timed iterations)**:
+  - **CPU Mode (`use_gpu=False`)**:
+    - Request 1 (Mixed IT/Clerical, 78 chars): **p50 = 92.13 ms** (p95 = 100.96 ms, mean = 93.10 ms)
+    - Request 2 (Duplicate Entity, 88 chars): **p50 = 138.39 ms** (p95 = 172.99 ms, mean = 143.57 ms)
+    - Request 3 (Typical Journal Log, 218 chars): **p50 = 165.80 ms** (p95 = 209.61 ms, mean = 171.11 ms)
+  - **GPU Reference (`RTX 3060 Laptop GPU`)**:
+    - Request 1 (Mixed IT/Clerical, 78 chars): **p50 = 18.35 ms** (p95 = 19.15 ms, mean = 18.47 ms)
+    - Request 2 (Duplicate Entity, 88 chars): **p50 = 29.00 ms** (p95 = 36.21 ms, mean = 30.29 ms)
+    - Request 3 (Typical Journal Log, 218 chars): **p50 = 34.65 ms** (p95 = 35.98 ms, mean = 34.87 ms)
+  - **Summary**: CPU inference runs ~4.8×–5.0× slower than dedicated GPU (~90–165 ms vs ~18–35 ms p50), which comfortably satisfies interactive web UI tolerances (<200 ms) while completely avoiding GPU driver / CUDA library requirements on production hosts.
 
 ## Configuration
 

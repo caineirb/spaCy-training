@@ -15,15 +15,16 @@ import math
 import logging
 from datetime import datetime
 from typing import Dict, Any, List, Tuple, Optional
+# Ensure project root is in sys.path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+import scripts
+scripts.init_gpu()
+
 import pandas as pd
 import spacy
 from spacy.tokens import DocBin
 from spacy.scorer import Scorer
 from spacy.training import Example
-
-# Ensure project root is in sys.path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-import scripts
 from scripts.pipeline import HybridJournalPipeline
 
 logger = logging.getLogger("ojt_pipeline.eval")
