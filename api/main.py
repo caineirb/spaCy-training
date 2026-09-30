@@ -60,8 +60,8 @@ _pipeline: Optional[HybridJournalPipeline] = None
 async def lifespan(app: FastAPI):
     """Load the heavy pipeline once when the server starts."""
     global _pipeline
-    logger.info("Loading HybridJournalPipeline at startup …")
-    _pipeline = HybridJournalPipeline()
+    logger.info("Loading HybridJournalPipeline (CPU-only mode) at startup …")
+    _pipeline = HybridJournalPipeline(use_gpu=False)
     logger.info("Pipeline ready.")
     yield
     logger.info("Shutting down — releasing pipeline resources.")

@@ -119,6 +119,7 @@ class HybridJournalPipeline:
         model_path: str = "models/ner_trf/model-best",
         terms_csv_path: str = "data/terms.csv",
         confidence_threshold: float = 0.80,
+        use_gpu: bool = True,
     ) -> None:
         """Initializes the hybrid pipeline.
 
@@ -126,8 +127,11 @@ class HybridJournalPipeline:
             model_path: Path to the fine-tuned spaCy model directory.
             terms_csv_path: Path to terms dictionary CSV.
             confidence_threshold: Minimum confidence score to auto-accept ML predictions.
+            use_gpu: If True, attempts GPU initialization via scripts.init_gpu(). If False, runs strictly on CPU.
         """
-        scripts.init_gpu()
+        self.use_gpu = use_gpu
+        if self.use_gpu:
+            scripts.init_gpu()
         self.confidence_threshold = confidence_threshold
         self.terms_csv_path = terms_csv_path
         self.model_path = model_path
@@ -275,7 +279,8 @@ class HybridJournalPipeline:
         Returns:
             Dict containing text, entities, has_review_items, and mode.
         """
-        scripts.init_gpu()
+        if self.use_gpu:
+            scripts.init_gpu()
 
         if mode == "transformer_only":
             doc = self.nlp(text)
@@ -310,7 +315,8 @@ class HybridJournalPipeline:
 
     def predict_batch(self, texts: List[str], mode: str = "hybrid") -> List[Dict[str, Any]]:
         """Processes a batch of journal entries efficiently."""
-        scripts.init_gpu()
+        if self.use_gpu:
+            scripts.init_gpu()
         return [self.predict(t, mode=mode) for t in texts]
 
     def save(self, output_dir: str = "models/hybrid_pipeline") -> None:
@@ -325,12 +331,14 @@ class HybridJournalPipeline:
         pipeline_dir: str = "models/hybrid_pipeline",
         terms_csv_path: str = "data/terms.csv",
         confidence_threshold: float = 0.80,
+        use_gpu: bool = True,
     ) -> "HybridJournalPipeline":
         """Loads an existing packaged hybrid pipeline."""
         return cls(
             model_path=pipeline_dir,
             terms_csv_path=terms_csv_path,
-            confidence_threshold=confidence_threshold
+            confidence_threshold=confidence_threshold,
+            use_gpu=use_gpu,
         )
 
 

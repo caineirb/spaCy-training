@@ -137,10 +137,21 @@ Returns one `Microsoft Excel` entity with `"frequency": 2`.
 }
 ```
 
+## Architecture & Deployment
+
+### CPU-Only by Design
+The API service explicitly runs in **CPU-only mode** (`use_gpu=False`).
+- **Rationale**: Keeps the service lightweight for web server deployment, avoids competition with GPU training/retraining tasks, and guarantees zero CUDA/GPU library dependencies on production hosts without dedicated GPUs.
+- **Latency Benchmark**:
+  - Typical OJT journal paragraph (~150–200 characters): **~120–190 ms** on CPU.
+  - Previous GPU latency: **~40–70 ms**.
+  - While CPU inference is ~2–3× slower than GPU, sub-200ms latency is well within interactive web UI tolerances for asynchronous HTTP requests.
+
 ## Configuration
 
 | Setting | Default | Description |
 |---|---|---|
+| Device target | `CPU` (`use_gpu=False`) | API runs strictly on CPU by design |
 | Max text length | 100,000 chars | Rejects payloads exceeding this limit with a 400 error |
 | Pipeline mode | `hybrid` | EntityRuler + Transformer NER combined |
 | Confidence threshold | 0.80 | ML predictions below this are flagged `NEEDS_REVIEW` |

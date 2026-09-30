@@ -22,12 +22,15 @@ def _bootstrap_cuda_environment() -> None:
         os.path.join(sys.prefix, "lib", f"python{sys.version_info.major}.{sys.version_info.minor}", "site-packages")
     ]
     nvidia_lib_dirs = set()
+    # Avoid loading libnvblas globally, which hijacks CPU BLAS routines
     for sp in search_dirs:
         nvidia_dir = os.path.join(sp, "nvidia")
         if os.path.isdir(nvidia_dir):
             for lib_dir in glob.glob(os.path.join(nvidia_dir, "*", "lib")):
                 nvidia_lib_dirs.add(lib_dir)
                 for so_path in sorted(glob.glob(os.path.join(lib_dir, "*.so*"))):
+                    if "nvblas" in os.path.basename(so_path).lower():
+                        continue
                     try:
                         ctypes.CDLL(so_path, mode=ctypes.RTLD_GLOBAL)
                     except Exception:
@@ -39,8 +42,7 @@ def _bootstrap_cuda_environment() -> None:
         os.environ["LD_LIBRARY_PATH"] = f"{new_ld}:{curr_ld}" if curr_ld else new_ld
 
 
-_bootstrap_cuda_environment()
-
+_cuda_bootstrapped = False
 
 import threading
 
@@ -57,6 +59,10 @@ def init_gpu(gpu_id: int = 0) -> bool:
     Returns:
         bool: True if GPU is active, False otherwise.
     """
+    global _cuda_bootstrapped
+    if not _cuda_bootstrapped:
+        _bootstrap_cuda_environment()
+        _cuda_bootstrapped = True
     try:
         import spacy
         import torch
