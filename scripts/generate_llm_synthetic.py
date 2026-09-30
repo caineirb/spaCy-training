@@ -49,20 +49,31 @@ NEGATIVE_RATIO_TARGET = 0.30  # 25-35% target per Section 8 of guidelines
 RETRY_LIMIT = 3
 RETRY_DELAY = 5               # Seconds between retries
 
-# ── Generic noun blocklist ───────────────────────────────────────────────────
-# Inherited from the old augmentation pipeline's quality audits.
-# These are borderline annotations that exist in real data but should NOT
-# propagate into synthetic data to avoid amplifying annotation noise.
+# ── Data-Driven Generic Noun Blocklist (Task 2) ─────────────────────────────
+# Based on authentic train+dev entity rates (docs/term_rates.md):
+# Terms with >=50% entity rate (coding, debugging, formatting, technical, etc.)
+# are RESTORED because real human annotators consistently tag them.
+# Terms with <50% entity rate are BLOCKED to avoid noise propagation.
 GENERIC_NOUN_BLOCKLIST = {
-    "coding", "system design", "system development", "encode",
-    "accounts", "formatting", "notices", "requirements", "network",
-    "copies", "coordination", "policies", "orientation", "survey",
-    "stalls", "proctoring", "deployment", "front page", "drivers",
-    "office systems", "data organization", "field trials",
-    "reference numbers", "data quality", "system workflows",
-    "data requirements", "system exploration",
-    "office documents", "program", "issued", "encoded", "technical",
-    "layouts", "debugging",
+    # Low-rate generic narrative terms (< 50% entity rate in real data)
+    "program",            # 47.6% (10/21) - overwhelmingly general narrative prose
+    "encode",             # 44.4% (4/9) - narrative action verb
+    "encoded",            # 23.1% (3/13) - narrative action verb
+    "office documents",   # 25.0% (3/12) - generic narrative prose
+    "coordination",       # 12.5% (1/8) - general soft skill
+    "orientation",        # 14.3% (1/7) - general activity
+    "deployment",         # 33.3% (2/6) - ambiguous event/milestone
+    "front page",         # 28.6% (2/7) - document layout location
+    "copies",             # 33.3% (1/3) - generic noun
+    "issued",             # 0.0% (0/1) - past verb
+    "stalls",             # 0.0% - physical market stalls
+    "proctoring",         # 0.0% - exam monitoring
+    "reference numbers",  # 0.0% - generic clerical artifact
+    "field trials",       # 0.0% - non-software field trial
+    "data quality",       # 0.0% - abstract concept
+    "system workflows",   # 0.0% - abstract concept
+    "data requirements",  # 0.0% - abstract concept
+    "system exploration", # 0.0% - abstract concept
 }
 
 

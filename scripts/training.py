@@ -42,8 +42,8 @@ def train_ner_trf(
     train_path: str = "data/training/train.spacy",
     dev_path: str = "data/training/dev.spacy",
     max_steps: int = 2500,
-    eval_frequency: int = 50,
-    patience: int = 400,
+    eval_frequency: int = 100,
+    patience: int = 800,
     use_gpu: int = 0,
 ) -> Dict[str, Any]:
     """Trains/fine-tunes the transformer NER pipeline on GPU with patience-based early stopping.
@@ -54,8 +54,8 @@ def train_ner_trf(
         train_path: Path to training DocBin (.spacy).
         dev_path: Path to evaluation DocBin (.spacy).
         max_steps: Maximum training steps (default: 2500).
-        eval_frequency: Frequency of evaluation on dev set (default: 50).
-        patience: Steps without improvement on dev set before early stopping (default: 400).
+        eval_frequency: Frequency of evaluation on dev set (default: 100).
+        patience: Steps without improvement on dev set before early stopping (default: 800, 8 evals).
         use_gpu: GPU device ID (0 for RTX 3060).
         
     Returns:
@@ -70,8 +70,10 @@ def train_ner_trf(
         "paths.train": train_path,
         "paths.dev": dev_path,
         "training.max_steps": max_steps,
+        "training.optimizer.learn_rate.total_steps": max_steps,
         "training.eval_frequency": eval_frequency,
         "training.patience": patience,
+        "components.transformer.model.mixed_precision": True,
     }
 
     logger.info(
