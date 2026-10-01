@@ -114,6 +114,7 @@ def _write_eval_results(
     per_item_records: List[Dict[str, Any]],
     eval_name: str,
     run_label: str = "",
+    output_dir: Optional[str] = None,
 ) -> Tuple[str, str]:
     """Writes per-item evaluation results to JSONL files.
     
@@ -123,11 +124,20 @@ def _write_eval_results(
     
     Returns (all_path, errors_path).
     """
-    os.makedirs(EVAL_RESULTS_DIR, exist_ok=True)
+    if output_dir:
+        target_dir = output_dir
+    elif run_label in ("trtr", "trstr_paraphrase", "trstr_llm"):
+        target_dir = os.path.join(EVAL_RESULTS_DIR, "comparison", run_label)
+    elif run_label:
+        target_dir = os.path.join(EVAL_RESULTS_DIR, "comparison", run_label)
+    else:
+        target_dir = os.path.join(EVAL_RESULTS_DIR, "comparison")
+
+    os.makedirs(target_dir, exist_ok=True)
     
     suffix = f"_{run_label}" if run_label else f"_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    all_path = os.path.join(EVAL_RESULTS_DIR, f"{eval_name}{suffix}.jsonl")
-    errors_path = os.path.join(EVAL_RESULTS_DIR, f"{eval_name}{suffix}_errors_only.jsonl")
+    all_path = os.path.join(target_dir, f"{eval_name}{suffix}.jsonl")
+    errors_path = os.path.join(target_dir, f"{eval_name}{suffix}_errors_only.jsonl")
     
     error_count = 0
     with open(all_path, "w", encoding="utf-8") as f_all, \
@@ -175,6 +185,7 @@ def evaluate_test_docbin(
     pipeline: HybridJournalPipeline,
     test_spacy_path: str = "data/training/test.spacy",
     run_label: str = "",
+    output_dir: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Evaluates the hybrid pipeline on the held-out test.spacy DocBin dataset."""
     if not os.path.exists(test_spacy_path):
@@ -209,7 +220,7 @@ def evaluate_test_docbin(
         })
 
     # Write per-item results
-    _write_eval_results(per_item_records, "held_out_test", run_label)
+    _write_eval_results(per_item_records, "held_out_test", run_label, output_dir=output_dir)
 
     scores = scorer.score(scored_examples)
 
@@ -241,6 +252,7 @@ def evaluate_unseen_mode(
     benchmark_samples: List[Dict[str, Any]],
     mode: str = "hybrid",
     run_label: str = "",
+    output_dir: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Evaluates a single execution mode on the unseen-term benchmark."""
     tp = 0
@@ -310,7 +322,7 @@ def evaluate_unseen_mode(
 
     # Write per-item results
     if per_item_records:
-        _write_eval_results(per_item_records, f"unseen_benchmark_{mode}", run_label)
+        _write_eval_results(per_item_records, f"unseen_benchmark_{mode}", run_label, output_dir=output_dir)
 
     prec = (tp / (tp + fp)) if (tp + fp) > 0 else 0.0
     rec = (tp / (tp + fn)) if (tp + fn) > 0 else 0.0
@@ -344,6 +356,7 @@ def evaluate_unseen_generalization(
     benchmark_samples: Optional[List[Dict[str, Any]]] = None,
     benchmark_path: str = "data/test/unseen_benchmark.jsonl",
     run_label: str = "",
+    output_dir: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Evaluates pipeline performance on the unseen-term benchmark across 3 explicit modes:
     1. Transformer-only: EntityRuler disabled/bypassed entirely.
@@ -362,13 +375,13 @@ def evaluate_unseen_generalization(
         return {"status": "SKIPPED", "message": "No benchmark samples found."}
 
     logger.info("Evaluating unseen benchmark: Mode 1/3 (Transformer-only)...")
-    trf_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="transformer_only", run_label=run_label)
+    trf_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="transformer_only", run_label=run_label, output_dir=output_dir)
 
     logger.info("Evaluating unseen benchmark: Mode 2/3 (EntityRuler-only)...")
-    ruler_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="entity_ruler_only", run_label=run_label)
+    ruler_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="entity_ruler_only", run_label=run_label, output_dir=output_dir)
 
     logger.info("Evaluating unseen benchmark: Mode 3/3 (Hybrid)...")
-    hybrid_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="hybrid", run_label=run_label)
+    hybrid_metrics = evaluate_unseen_mode(pipeline, benchmark_samples, mode="hybrid", run_label=run_label, output_dir=output_dir)
 
     return {
         "benchmark_sample_size": len(benchmark_samples),
@@ -412,6 +425,7 @@ def evaluate_real_holdout(
     terms_csv_path: str = "data/terms.csv",
     annotations_jsonl_path: str = "data/data.jsonl",
     run_label: str = "",
+    output_dir: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Evaluates the hybrid pipeline against the permanent real-world holdout dataset.
     
@@ -541,7 +555,7 @@ def evaluate_real_holdout(
 
     # Write per-item results
     if per_item_records:
-        _write_eval_results(per_item_records, "real_holdout", run_label)
+        _write_eval_results(per_item_records, "real_holdout", run_label, output_dir=output_dir)
 
     def calc_metrics(tp: int, fp: int, fn: int) -> Dict[str, float]:
         p = round((tp / (tp + fp)) * 100, 2) if (tp + fp) > 0 else 0.0
@@ -596,8 +610,9 @@ def generate_full_evaluation_report(
     test_spacy_path: str = "data/training/test.spacy",
     holdout_jsonl_path: str = "data/test/holdout.jsonl",
     benchmark_path: str = "data/test/unseen_benchmark.jsonl",
-    output_report_json: str = "data/evaluation_report.json",
+    output_report_json: Optional[str] = None,
     run_label: str = "",
+    output_dir: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Generates comprehensive evaluation and exports a thesis-ready summary report.
     
@@ -606,19 +621,38 @@ def generate_full_evaluation_report(
     2. Unseen-term generalization benchmark (controlled synthetic probe)
     3. Real-world holdout evaluation (data/test/holdout.jsonl)
     
-    Each section also produces per-item JSONL result files under data/eval_results/.
+    Each section also produces per-item JSONL result files under data/eval_results/comparison/<condition> (or custom output_dir).
     """
-    pipeline = HybridJournalPipeline(model_path=model_path, terms_csv_path=terms_csv_path)
+    if output_dir is None:
+        if run_label:
+            output_dir = os.path.join(EVAL_RESULTS_DIR, "comparison", run_label)
+        else:
+            output_dir = os.path.join(EVAL_RESULTS_DIR, "comparison")
+    os.makedirs(output_dir, exist_ok=True)
 
-    test_metrics = evaluate_test_docbin(pipeline, test_spacy_path=test_spacy_path, run_label=run_label)
+    if output_report_json is None:
+        report_name = f"report_{run_label}.json" if run_label else "evaluation_report.json"
+        output_report_json = os.path.join(output_dir, report_name)
+
+    overrides_log = os.path.join(output_dir, "dictionary_overrides.jsonl")
+    pipeline = HybridJournalPipeline(
+        model_path=model_path,
+        terms_csv_path=terms_csv_path,
+        overrides_log_path=overrides_log,
+    )
+
+    test_metrics = evaluate_test_docbin(
+        pipeline, test_spacy_path=test_spacy_path, run_label=run_label, output_dir=output_dir
+    )
     unseen_metrics = evaluate_unseen_generalization(
-        pipeline, benchmark_path=benchmark_path, run_label=run_label
+        pipeline, benchmark_path=benchmark_path, run_label=run_label, output_dir=output_dir
     )
     real_holdout_metrics = evaluate_real_holdout(
         pipeline,
         holdout_jsonl_path=holdout_jsonl_path,
         terms_csv_path=terms_csv_path,
         run_label=run_label,
+        output_dir=output_dir,
     )
 
     full_report = {
@@ -645,8 +679,9 @@ if __name__ == "__main__":
     parser.add_argument("--test-spacy", type=str, default="data/training/test.spacy", help="Path to test DocBin")
     parser.add_argument("--holdout-jsonl", type=str, default="data/test/holdout.jsonl", help="Path to holdout JSONL")
     parser.add_argument("--benchmark", type=str, default="data/test/unseen_benchmark.jsonl", help="Path to unseen benchmark JSONL")
-    parser.add_argument("--output-json", type=str, default="data/evaluation_report.json", help="Path to save output JSON report")
-    parser.add_argument("--run-label", type=str, default="", help="Label for per-item eval output files")
+    parser.add_argument("--output-json", type=str, default=None, help="Path to save output JSON report")
+    parser.add_argument("--run-label", type=str, default="", help="Label for per-item eval output files (e.g. trtr, trstr_paraphrase, trstr_llm)")
+    parser.add_argument("--output-dir", type=str, default=None, help="Custom directory to store evaluation results")
     args = parser.parse_args()
 
     report = generate_full_evaluation_report(
@@ -657,6 +692,7 @@ if __name__ == "__main__":
         benchmark_path=args.benchmark,
         output_report_json=args.output_json,
         run_label=args.run_label,
+        output_dir=args.output_dir,
     )
     print("\n" + "=" * 70)
     print(f"EVALUATION REPORT ({args.run_label or 'DEFAULT'})")

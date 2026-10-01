@@ -94,15 +94,14 @@ The scripts manage the complete machine learning lifecycle: data ingestion, synt
      - `hybrid`: Full two-layer system with conflict resolution.
   3. **Permanent Real Holdout** (`data/test/holdout.jsonl`).
 - **Artifacts Saved**:
-  - Per-item prediction logs and error-only files in `data/eval_results/`.
-  - Comprehensive comparison report in `data/evaluation_report_3way_comparison.json`.
+  - Per-item prediction logs and error-only files in `data/eval_results/comparison/<condition>/` (e.g. `trtr`, `trstr_paraphrase`, `trstr_llm`).
+  - Cross-validation per-fold logs in `data/eval_results/cv/<condition>/`.
+  - Canonical dictionary conflict overrides in `data/eval_results/dictionary_overrides.jsonl`.
 - **CLI Usage**:
   ```bash
   python scripts/eval.py \
     --model-path models/ner_trf/model-best \
-    --test-spacy data/training/test.spacy \
-    --benchmark data/test/unseen_benchmark.jsonl \
-    --output-json data/evaluation_report.json
+    --run-label trtr
   ```
 
 ---

@@ -284,6 +284,7 @@ class HybridJournalPipeline:
         terms_csv_path: str = "data/terms.csv",
         confidence_threshold: float = 0.80,
         use_gpu: bool = True,
+        overrides_log_path: Optional[str] = None,
     ) -> None:
         """Initializes the hybrid pipeline.
 
@@ -292,6 +293,7 @@ class HybridJournalPipeline:
             terms_csv_path: Path to terms dictionary CSV.
             confidence_threshold: Minimum confidence score to auto-accept ML predictions.
             use_gpu: If True, attempts GPU initialization via scripts.init_gpu(). If False, runs strictly on CPU.
+            overrides_log_path: Optional custom path to write dictionary conflict override events.
         """
         self.use_gpu = use_gpu
         if self.use_gpu:
@@ -304,10 +306,12 @@ class HybridJournalPipeline:
         self.terms_dict = load_terms_dictionary(terms_csv_path)
         self._lower_terms_set = {t.lower(): (t, lbl) for t, lbl in self.terms_dict.items()}
 
-        self.overrides_log_path = os.environ.get(
-            "DICTIONARY_OVERRIDES_LOG",
-            f"data/eval_results/dictionary_overrides_{datetime.now().strftime('%Y%m%d_%H%M%S')}.jsonl"
-        )
+        if overrides_log_path:
+            self.overrides_log_path = overrides_log_path
+        elif "DICTIONARY_OVERRIDES_LOG" in os.environ:
+            self.overrides_log_path = os.environ["DICTIONARY_OVERRIDES_LOG"]
+        else:
+            self.overrides_log_path = DICTIONARY_OVERRIDES_LOG
 
         logger.info(f"Loading transformer model from '{model_path}'...")
         self.nlp = spacy.load(model_path)

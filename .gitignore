@@ -3,5 +3,7 @@ __pycache__/
 models/
 scratch/
 archive/
-#data/eval_results/
-#data/cv/
+# Temporary / ad-hoc timestamped evaluation runs
+data/eval_results/*_*_*.jsonl
+data/eval_results/**/*_*_*.jsonl
+data/eval_results/**/dictionary_overrides_*_*.jsonl

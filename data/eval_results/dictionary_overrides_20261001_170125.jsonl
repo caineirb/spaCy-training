@@ -1,2 +1,0 @@
-{"timestamp": "2026-10-01T17:01:33.827588", "term": "Document scanning", "sentence": "Document scanning required careful handling and organization", "ml_label": "IT_TERM", "dict_label": "CLERICAL_TERM", "winning_label": "CLERICAL_TERM", "start": 0, "end": 17}
-{"timestamp": "2026-10-01T17:01:42.839254", "term": "Notarial Registry Encoding", "sentence": "Cataloged deed logs and public oaths in Notarial Registry Encoding.", "ml_label": "IT_TERM", "dict_label": "CLERICAL_TERM", "winning_label": "CLERICAL_TERM", "start": 40, "end": 66}

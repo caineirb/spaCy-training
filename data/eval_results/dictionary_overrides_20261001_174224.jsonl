@@ -1,2 +1,0 @@
-{"timestamp": "2026-10-01T17:42:38.110729", "term": "PNP Database", "sentence": "Encode Excel PNP Database", "ml_label": "CLERICAL_TERM", "dict_label": "IT_TERM", "winning_label": "IT_TERM", "start": 13, "end": 25}
-{"timestamp": "2026-10-01T17:42:46.503935", "term": "Notarial Registry Encoding", "sentence": "Cataloged deed logs and public oaths in Notarial Registry Encoding.", "ml_label": "IT_TERM", "dict_label": "CLERICAL_TERM", "winning_label": "CLERICAL_TERM", "start": 40, "end": 66}

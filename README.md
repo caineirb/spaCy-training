@@ -99,7 +99,16 @@ spaCy-training/
 │   │   └── raw/                       # Raw unannotated journal text files
 │   ├── cv/
 │   │   └── cv_3way_results.json       # 5-fold cross-validation results across all 3 conditions
-│   ├── eval_results/                  # Detailed JSONL evaluation output and error breakdowns
+│   ├── eval_results/                  # Evaluation outputs partitioned by evaluation type
+│   │   ├── cv/                        # 5-fold cross-validation logs and metrics per condition
+│   │   │   ├── trtr/                  # Real-only CV fold predictions, overrides & metrics
+│   │   │   ├── trstr_paraphrase/      # Paraphrase CV fold predictions, overrides & metrics
+│   │   │   └── trstr_llm/             # LLM CV fold predictions, overrides & metrics
+│   │   ├── comparison/                # Test split and benchmark comparison outputs
+│   │   │   ├── trtr/                  # TRTR test partition reports & unseen benchmark outputs
+│   │   │   ├── trstr_paraphrase/      # TRSTR-Paraphrase reports & unseen benchmark outputs
+│   │   │   └── trstr_llm/             # TRSTR-LLM reports & unseen benchmark outputs
+│   │   └── dictionary_overrides.jsonl # Canonical cumulative log of dictionary conflict overrides
 │   ├── evaluation_report_3way_comparison.json # Side-by-side test partition evaluation report
 │   └── review/
 │       └── mined_hard_negatives.jsonl # High-confidence false positives mined for abstention training
@@ -207,22 +216,24 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 
 ### 4.2 5-Fold Stratified Cross-Validation Summary
 
-To verify statistical significance across all 1,241 authentic documents, 5-fold cross-validation was conducted (`data/cv/cv_3way_results.json`):
+*(Note: These figures supersede previous evaluation numbers following the resolution of all audit integrity gaps, complete re-serialization of clean folds with zero phantom labels, and dictionary-label-authority conflict resolution.)*
+
+To verify statistical significance across all 1,240 deduplicated authentic documents, 5-fold cross-validation was conducted (`data/cv/cv_3way_results.json`):
 
 | Metric | TRTR (Real Baseline) | TRSTR-Paraphrase | TRSTR-LLM |
 | :--- | :---: | :---: | :---: |
-| **Held-Out Validation Overall F1** | 70.00 ± 3.72% | **74.97 ± 2.91%** | 69.05 ± 3.24% |
-| Held-Out Validation Overall Precision | 66.41 ± 3.70% | **72.26 ± 2.67%** | 65.81 ± 3.60% |
-| Held-Out Validation Overall Recall | 74.08 ± 4.36% | **77.94 ± 3.53%** | 72.65 ± 3.20% |
-| ├── `IT_TERM` F1 | 70.73 ± 3.50% | **74.84 ± 2.35%** | 70.75 ± 3.10% |
-| └── `CLERICAL_TERM` F1 | 68.51 ± 5.14% | **75.21 ± 4.61%** | 65.69 ± 4.03% |
-| **Unseen Benchmark TRF Recall** | 76.00 ± 3.59% | 73.94 ± 5.33% | **76.11 ± 1.80%** |
-| **Unseen Benchmark TRF F1** | 49.41 ± 1.93% | 58.45 ± 9.51% | **74.66 ± 0.71%** |
+| **Held-Out Validation Overall F1** | 71.22 ± 2.77% | **75.01 ± 0.96%** | 70.55 ± 2.36% |
+| Held-Out Validation Overall Precision | 68.60 ± 2.49% | **73.44 ± 1.76%** | 69.39 ± 3.61% |
+| Held-Out Validation Overall Recall | 74.10 ± 3.59% | **76.70 ± 1.52%** | 71.85 ± 2.32% |
+| ├── `IT_TERM` F1 | 72.41 ± 2.88% | **75.81 ± 2.43%** | 71.27 ± 2.91% |
+| └── `CLERICAL_TERM` F1 | 68.88 ± 3.14% | **73.50 ± 4.23%** | 69.20 ± 2.15% |
+| **Unseen Benchmark TRF Recall** | 72.00 ± 10.77% | 71.69 ± 7.39% | **88.62 ± 6.20%** |
+| **Unseen Benchmark TRF F1** | 48.12 ± 5.63% | 49.01 ± 3.71% | **66.24 ± 3.03%** |
 
 ### Key Findings & Thesis Insights:
-1. **TRSTR-Paraphrase Leads In-Domain Extraction**: T5 paraphrasing directly addresses in-domain syntactic scarcity by varying the grammatical patterns around real authentic phrases. It achieved the highest authentic validation F1 (**74.97% ± 2.91%**, a **+4.97%** lift over TRTR) and peak held-out test F1 (**70.06%**).
-2. **TRSTR-LLM Delivers Exceptional OOV Precision & Boundary Discipline**: Direct LLM generation combined with hard negative mining trained the model to recognize novel concepts while learning when to abstain. On the unseen benchmark across 5 folds, TRSTR-LLM drove F1 from **49.41% $\rightarrow$ 74.66% (+25.25%)** with exceptional stability (**±0.71%** std dev) and achieved **78.00% precision** on novel enterprise tools.
-3. **Data Isolation Guaranteed**: All synthetic data was strictly confined to the training side. All evaluation sets (`dev.spacy`, `test.spacy`, `unseen_benchmark.jsonl`) consist 100% of authentic records.
+1. **TRSTR-Paraphrase Leads In-Domain Extraction**: T5 paraphrasing directly addresses in-domain syntactic scarcity by varying the grammatical patterns around real authentic phrases. It achieved the highest authentic validation F1 (**75.01% ± 0.96%**, a **+3.79%** lift over TRTR with remarkably low variance) and peak held-out test F1 (**74.66%**, a **+9.39%** lift over TRTR).
+2. **TRSTR-LLM Delivers Exceptional OOV Generalization & Recall**: Direct LLM generation combined with hard negative mining trained the model to recognize novel concepts while learning when to abstain. On the canonical 65-term unseen benchmark across 5 folds, TRSTR-LLM drove out-of-domain recall to **88.62% ± 6.20%** (vs. 72.00% for TRTR) and F1 to **66.24% ± 3.03%** (+18.12% F1 over baseline).
+3. **Data Isolation Guaranteed**: All synthetic data was strictly confined to the training side. All evaluation sets (`dev.spacy`, `test.spacy`, `unseen_benchmark.jsonl`) consist 100% of authentic records with zero leakage across all 7 checks.
 
 ---
 
@@ -266,8 +277,9 @@ python scripts/cross_validation.py --folds 5 --conditions trtr,trstr_paraphrase,
 ```bash
 python scripts/eval.py \
   --model-path models/ner_trf/model-best \
-  --output-json data/evaluation_report.json
+  --run-label trtr
 ```
+*(Automatically routes per-item JSONL logs and reports into `data/eval_results/comparison/trtr/`)*
 
 #### Run Hybrid Pipeline Regression Unit Tests:
 ```bash

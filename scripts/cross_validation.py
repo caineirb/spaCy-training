@@ -433,17 +433,34 @@ def run_3way_cross_validation(
                     force_train=force_train,
                 )
 
+                cv_eval_dir = os.path.join("data/eval_results/cv", cond)
+                os.makedirs(cv_eval_dir, exist_ok=True)
+                overrides_path = os.path.join(cv_eval_dir, f"dictionary_overrides_f{fold_idx}.jsonl")
+
                 pipeline = HybridJournalPipeline(
                     model_path=model_path,
                     terms_csv_path=terms_csv_path,
                     use_gpu=True,
+                    overrides_log_path=overrides_path,
                 )
                 run_metrics = evaluate_cv_fold(pipeline, val_path)
 
                 # Secondary probe on isolated unseen benchmark
                 if unseen_benchmark:
-                    unseen_trf = evaluate_unseen_mode(pipeline, unseen_benchmark, mode="transformer_only")
-                    unseen_hyb = evaluate_unseen_mode(pipeline, unseen_benchmark, mode="hybrid")
+                    unseen_trf = evaluate_unseen_mode(
+                        pipeline,
+                        unseen_benchmark,
+                        mode="transformer_only",
+                        run_label=f"f{fold_idx}",
+                        output_dir=cv_eval_dir,
+                    )
+                    unseen_hyb = evaluate_unseen_mode(
+                        pipeline,
+                        unseen_benchmark,
+                        mode="hybrid",
+                        run_label=f"f{fold_idx}",
+                        output_dir=cv_eval_dir,
+                    )
                     run_metrics["unseen_benchmark"] = {
                         "transformer_recall": unseen_trf["recall_pct"],
                         "transformer_f1": unseen_trf["f1_pct"],
@@ -455,6 +472,10 @@ def run_3way_cross_validation(
                 run_metrics["fold"] = fold_idx
 
                 with open(res_path, "w", encoding="utf-8") as f:
+                    json.dump(run_metrics, f, indent=2)
+
+                cv_eval_res_path = os.path.join(cv_eval_dir, f"{cond}_f{fold_idx}.json")
+                with open(cv_eval_res_path, "w", encoding="utf-8") as f:
                     json.dump(run_metrics, f, indent=2)
 
                 # Unload pipeline and clear GPU cache
