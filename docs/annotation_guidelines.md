@@ -33,7 +33,7 @@ The project operates on a single, unified canonical label taxonomy across all st
 Earlier iterations of the project (Phase 1–2) maintained a distinction between dictionary-level categories (`IT_TASK`, `CLERICAL`) and NER span labels (`IT_TERM`, `CLERICAL_TERM`). This two-tier separation has been formally retired:
 - `data/terms.csv` has been directly normalized so all entries carry either `IT_TERM` or `CLERICAL_TERM`.
 - `data/data.jsonl`, binary DocBins (`train.spacy`, `dev.spacy`, `test.spacy`), and model checkpoints exclusively use `IT_TERM` and `CLERICAL_TERM`.
-- [`scripts/labels.py`](file:///home/caineirb/Documents/PauPau/spaCy-training/scripts/labels.py) is retained strictly as a backward-compatibility normalization shim (mapping legacy `IT_TASK` $\rightarrow$ `IT_TERM` and `CLERICAL` $\rightarrow$ `CLERICAL_TERM`) to ensure that external seed datasets or historical CSVs can still be ingested safely without code changes.
+- [`scripts/labels.py`](../scripts/labels.py) is retained strictly as a backward-compatibility normalization shim (mapping legacy `IT_TASK` $\rightarrow$ `IT_TERM` and `CLERICAL` $\rightarrow$ `CLERICAL_TERM`) to ensure that external seed datasets or historical CSVs can still be ingested safely without code changes.
 
 ---
 

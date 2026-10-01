@@ -3,5 +3,5 @@ __pycache__/
 models/
 scratch/
 archive/
-data/eval_results/
-data/cv/
+#data/eval_results/
+#data/cv/

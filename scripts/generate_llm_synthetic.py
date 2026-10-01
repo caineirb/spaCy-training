@@ -50,7 +50,7 @@ RETRY_LIMIT = 3
 RETRY_DELAY = 5               # Seconds between retries
 
 # ── Data-Driven Generic Noun Blocklist (Task 2) ─────────────────────────────
-# Based on authentic train+dev entity rates (docs/term_rates.md):
+# Based on authentic train+dev entity rates:
 # Terms with >=50% entity rate (coding, debugging, formatting, technical, etc.)
 # are RESTORED because real human annotators consistently tag them.
 # Terms with <50% entity rate are BLOCKED to avoid noise propagation.
