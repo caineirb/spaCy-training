@@ -13,7 +13,7 @@ The pipeline integrates deterministic institutional vocabulary matching with a c
 
 ## 1. Architectural Design
 
-Rather than relying on a naive dictionary lookup or an ungrounded flat NER model, this system implements a **two-layer hybrid architecture** with parallel extraction and explicit ML-authority conflict resolution:
+Rather than relying on a naive dictionary lookup or an ungrounded flat NER model, this system implements a **two-layer hybrid architecture** with parallel extraction and explicit **Dictionary-label-authority** conflict resolution:
 
 ```
                             [ Raw OJT Journal Entry ]

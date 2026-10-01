@@ -76,6 +76,29 @@ GENERIC_NOUN_BLOCKLIST = {
     "system exploration", # 0.0% - abstract concept
 }
 
+# ── Bare Generic Noun Blocklist (Task 3) ─────────────────────────────────────
+# Canonical plural-morphology expansion. Mirrors the set in main.ipynb so that
+# paraphrase/LLM generation logic is not notebook-only (follow-up risk noted in
+# audit_gaps_closure_report.md Task 3). Any bare generic noun — singular or
+# plural — tagged as an entity is rejected.
+BARE_GENERICS = {
+    # IT infrastructure & software bare generics (singular & plural)
+    "system", "systems", "database", "databases", "software", "softwares",
+    "code", "codes", "computer", "computers", "website", "websites",
+    "application", "applications", "server", "servers", "backend", "backends",
+    "frontend", "frontends", "network", "networks", "printer", "printers",
+    "scanner", "scanners", "monitor", "monitors", "keyboard", "keyboards",
+    "program", "programs", "data", "table", "tables",
+    # Clerical & administrative bare generics (singular & plural)
+    "document", "documents", "file", "files", "record", "records",
+    "form", "forms", "paper", "papers", "folder", "folders",
+    "desk", "desks", "office", "offices", "university", "universities",
+    "campus", "campuses", "department", "departments",
+    "laboratory", "laboratories", "supervisor", "supervisors",
+    "intern", "interns", "meeting", "meetings", "discussion", "discussions",
+    "conversation", "conversations",
+}
+
 
 # ── Data loading ─────────────────────────────────────────────────────────────
 
@@ -350,26 +373,9 @@ def passes_quality_checks(
             return False, f"Blocked generic noun: '{term}'"
 
     # 3. Check for bare generic nouns tagged as entities
-    bare_generics = {
-        # IT infrastructure & software bare generics (singular & plural)
-        "system", "systems", "database", "databases", "software", "softwares",
-        "code", "codes", "computer", "computers", "website", "websites",
-        "application", "applications", "server", "servers", "backend", "backends",
-        "frontend", "frontends", "network", "networks", "printer", "printers",
-        "scanner", "scanners", "monitor", "monitors", "keyboard", "keyboards",
-        "program", "programs", "data", "table", "tables",
-        # Clerical & administrative bare generics (singular & plural)
-        "document", "documents", "file", "files", "record", "records",
-        "form", "forms", "paper", "papers", "folder", "folders",
-        "desk", "desks", "office", "offices", "university", "universities",
-        "campus", "campuses", "department", "departments",
-        "laboratory", "laboratories", "supervisor", "supervisors",
-        "intern", "interns", "meeting", "meetings", "discussion", "discussions",
-        "conversation", "conversations",
-    }
     for ent in entities:
         term = text[ent["start"]:ent["end"]].strip().lower()
-        if term in bare_generics:
+        if term in BARE_GENERICS:
             return False, f"Bare generic noun tagged: '{term}'"
 
     # 4. Check for trailing generic words on entities (e.g. 'Python script', 'Excel software')
