@@ -659,8 +659,166 @@ def run_all_leakage_checks() -> bool:
         return False
 
 
+
+CANONICAL_65_UNSEEN_TERMS: Set[str] = {
+    "accreditation auditing", "affidavit processing", "airflow", "appwrite", "argocd",
+    "astro", "barangay certification", "biometric clearance", "budget allocation tabulation",
+    "bun", "cassandra", "celery", "clickhouse", "commencement program drafting",
+    "curriculum verification", "cypress", "deno", "diploma archiving", "directus",
+    "faculty docketing", "fastapi", "grade completion verification", "graduation clearance",
+    "grafana", "helm", "honorarium reconciliation", "kafka", "leave application encoding",
+    "meilisearch", "nestjs", "next.js", "notarial registry encoding", "nuxt",
+    "opentelemetry", "petty cash voucher", "playwright", "pocketbase", "polars",
+    "prisma", "procurement requisition", "prometheus", "pydantic", "rabbitmq",
+    "redis", "salary differential auditing", "scholarship stipend distribution",
+    "service record archiving", "solidity", "storybook", "strapi", "subpoena tracking",
+    "supplies inventory balancing", "surrealdb", "svelte", "tailwind css",
+    "tax withholding verification", "terraform", "thesis defense scheduling",
+    "transcript notarization", "trpc", "turbopack", "visitor escorting", "vite",
+    "web3.js", "zod"
+}
+
+
+def check_cv_folds_leakage(
+    cv_data_dir: str = "data/cv",
+    n_splits: int = 5,
+    benchmark_path: str = "data/test/unseen_benchmark.jsonl",
+    terms_csv_path: str = "data/terms.csv",
+    fixed_test_path: str = "data/training/test.spacy",
+) -> Tuple[bool, Dict[str, Any]]:
+    """Per-fold verification of cross-validation integrity and benchmark isolation."""
+    print_section("CROSS-VALIDATION FOLD INTEGRITY AUDIT")
+    if not os.path.exists(cv_data_dir):
+        print(f"[ERROR] Cross-validation directory not found: {cv_data_dir}")
+        return False, {"error": "cv_dir_not_found"}
+
+    nlp = spacy.blank("en")
+    terms_dict = load_terms_dictionary(terms_csv_path)
+    terms_lower = {t.strip().lower() for t in terms_dict.keys()}
+
+    # Check terms.csv against canonical 65 terms
+    dict_leaks = CANONICAL_65_UNSEEN_TERMS & terms_lower
+    if dict_leaks:
+        print(f"[FAIL] Dictionary data/terms.csv contains {len(dict_leaks)} canonical benchmark terms: {dict_leaks}")
+    else:
+        print(f"[PASS] Zero of {len(CANONICAL_65_UNSEEN_TERMS)} canonical benchmark terms appear in data/terms.csv.")
+
+    # Load fixed test if present
+    fixed_test_docs = set()
+    if os.path.exists(fixed_test_path):
+        db_test = DocBin().from_disk(fixed_test_path)
+        fixed_test_docs = {d.text.strip().lower() for d in db_test.get_docs(nlp.vocab)}
+
+    # Load unseen benchmark docs
+    bench_docs = set()
+    bench_file_terms = set()
+    if os.path.exists(benchmark_path):
+        samples = load_unseen_benchmark(benchmark_path)
+        for s in samples:
+            bench_docs.add(s["text"].strip().lower())
+            for e in s.get("entities", []):
+                t = s["text"][e["start"]:e["end"]].strip().lower()
+                if t:
+                    bench_file_terms.add(t)
+
+    all_cv_passed = (len(dict_leaks) == 0)
+    fold_reports = []
+
+    for fold_idx in range(n_splits):
+        fold_dir = os.path.join(cv_data_dir, f"fold_{fold_idx}")
+        val_path = os.path.join(fold_dir, "val_real.spacy")
+        if not os.path.exists(val_path):
+            print(f"[WARN] Fold {fold_idx} val_real.spacy not found, skipping.")
+            continue
+
+        val_db = DocBin().from_disk(val_path)
+        val_docs_list = [d.text.strip().lower() for d in val_db.get_docs(nlp.vocab)]
+        val_docs_set = set(val_docs_list)
+
+        # Check fold validation vs unseen benchmark
+        val_bench_overlap = val_docs_set & bench_docs
+        val_test_overlap = val_docs_set & fixed_test_docs
+
+        fold_info = {
+            "fold": fold_idx,
+            "val_docs_count": len(val_docs_list),
+            "val_bench_overlap": len(val_bench_overlap),
+            "val_test_overlap": len(val_test_overlap),
+            "conditions": {}
+        }
+
+        print(f"\n--- Fold {fold_idx} Audit (Val Docs: {len(val_docs_list)}) ---")
+        if len(val_bench_overlap) == 0:
+            print(f"  [PASS] Validation vs Unseen Benchmark: 0 overlapping docs.")
+        else:
+            print(f"  [FAIL] Validation overlaps with Unseen Benchmark: {len(val_bench_overlap)} docs!")
+            all_cv_passed = False
+
+        print(f"  [INFO] Validation partition covers {len(val_test_overlap)} of {len(fixed_test_docs)} docs from fixed test.spacy.")
+
+        for cond in ["trtr", "trstr_paraphrase", "trstr_llm"]:
+            train_path = os.path.join(fold_dir, f"train_{cond}.spacy")
+            if not os.path.exists(train_path):
+                continue
+
+            train_db = DocBin().from_disk(train_path)
+            train_docs = list(train_db.get_docs(nlp.vocab))
+            train_texts_set = {d.text.strip().lower() for d in train_docs}
+
+            # Intra-fold train-val leakage
+            train_val_overlap = val_docs_set & train_texts_set
+
+            # Benchmark term isolation
+            train_ents = set(e.text.strip().lower() for d in train_docs for e in d.ents)
+            term_leaks_65 = CANONICAL_65_UNSEEN_TERMS & train_ents
+
+            passed_cond = (len(train_val_overlap) == 0 and len(term_leaks_65) == 0)
+            if not passed_cond:
+                all_cv_passed = False
+
+            fold_info["conditions"][cond] = {
+                "train_docs_count": len(train_docs),
+                "train_val_overlap_count": len(train_val_overlap),
+                "train_val_overlap_samples": list(train_val_overlap)[:3],
+                "term_leaks_65_count": len(term_leaks_65),
+                "term_leaks_65": list(term_leaks_65),
+                "passed": passed_cond,
+            }
+
+            status_tv = "PASS" if len(train_val_overlap) == 0 else f"FAIL ({len(train_val_overlap)} docs)"
+            status_terms = "PASS" if len(term_leaks_65) == 0 else f"FAIL ({len(term_leaks_65)} terms: {term_leaks_65})"
+            print(f"  [{cond:<16}] Train Docs: {len(train_docs):<5} | Train-Val Overlap: [{status_tv:<8}] | 65-Term Leaks: [{status_terms}]")
+            if train_val_overlap:
+                for ov in list(train_val_overlap)[:2]:
+                    print(f"     -> Leaked doc: {repr(ov)}")
+
+        fold_reports.append(fold_info)
+
+    print("\n" + "=" * 75)
+    if all_cv_passed:
+        print(">>> CV AUDIT RESULT: ALL FOLDS PASSED ISOLATION AUDIT.")
+    else:
+        print(">>> CV AUDIT RESULT: LEAKAGE DETECTED IN ONE OR MORE CV FOLDS.")
+    print("=" * 75)
+    return all_cv_passed, {"folds": fold_reports, "dict_leaks": list(dict_leaks)}
+
+
 if __name__ == "__main__":
-    success = run_all_leakage_checks()
-    if not success:
-        sys.exit(1)
-    sys.exit(0)
+    import argparse
+    parser = argparse.ArgumentParser(description="Data Leakage & Benchmark Isolation Audit")
+    parser.add_argument("--check-cv", action="store_true", help="Also audit cross-validation folds in data/cv")
+    parser.add_argument("--cv-only", action="store_true", help="Run only cross-validation fold audit")
+    args = parser.parse_args()
+
+    overall_ok = True
+    if not args.cv_only:
+        success = run_all_leakage_checks()
+        if not success:
+            overall_ok = False
+
+    if args.check_cv or args.cv_only or os.path.exists("data/cv/fold_0/val_real.spacy"):
+        cv_success, _ = check_cv_folds_leakage()
+        if not cv_success:
+            overall_ok = False
+
+    sys.exit(0 if overall_ok else 1)
