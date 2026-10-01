@@ -62,7 +62,8 @@ Rather than relying on a naive dictionary lookup or an ungrounded flat NER model
                   [ Output & JSON Export ]   [ Feedback into Retrain]
 ```
 
-### Core Pipeline Invariants:
+### Core Pipeline Invariants
+
 1. **Longest Span Wins**: Shorter dictionary terms never truncate or split a longer contextual ML extraction. For example, `Tailwind CSS` takes precedence over dictionary `CSS`, and `access control systems` beats `access control`.
 2. **ML Label Authority**: When the contextual Transformer and the seed dictionary disagree on the task category of an overlapping span, the ML prediction takes precedence (e.g., preserving `data entry` and `File Management` as `CLERICAL_TERM` based on context).
 3. **Abstention Fallback**: Dictionary entries are accepted *only* when the Transformer makes no overlapping prediction (abstains), ensuring zero-shot recovery of known terms while preventing false-positive overrides.
@@ -136,8 +137,8 @@ spaCy-training/
 │   ├── deployment.md                  # Minimal production standalone deployment guide
 │   ├── hard_negative_mining.md        # Hard negative mining methodology & leakage isolation
 │   ├── synthetic_augmentation_methodology.md # Full 3-way evaluation methodology & ablation analysis
-│   └── archive/
-│       └── paraphrase_augmentation_methodology.md # Historical documentation of T5 paraphrasing
+│   └── paraphrase_augmentation_methodology.md # Documentation of T5 paraphrasing
+|
 └── tools/
     ├── README.md                      # Guide to desktop GUI tools
     ├── pipeline_gui.py                # Desktop GUI Studio for interactive inference & batch processing
@@ -150,12 +151,15 @@ spaCy-training/
 
 ## 3. Data Specification & Unified Taxonomy
 
-### Label Taxonomy:
+### Label Taxonomy
+
 The system strictly enforces a unified two-class taxonomy:
+
 - **`IT_TERM`**: Technologies, programming languages, software libraries, databases, IT infrastructure, hardware, and concrete technical workflows (e.g., `Python`, `PostgreSQL`, `Docker`, `Git`, `Cable Crimping`, `Database Administration`).
 - **`CLERICAL_TERM`**: Office productivity tools, document handling, filing, record-keeping, and administrative workflows (e.g., `Microsoft Excel`, `Police Clearance`, `log books`, `data encoding`, `filing`, `PESO office book`).
 
-### Exact Span Schema (`data/data.jsonl`):
+### Exact Span Schema (`data/data.jsonl`)
+
 All training data consists of authentic, manually annotated OJT student journal entries with character-exact offsets:
 
 ```json
@@ -169,7 +173,8 @@ All training data consists of authentic, manually annotated OJT student journal 
 }
 ```
 
-### Negative (Non-Entity) Examples:
+### Negative (Non-Entity) Examples
+
 To prevent false-positive over-prediction in conversational narratives, non-task sentences are explicitly included with an empty entity list:
 
 ```json
@@ -187,6 +192,7 @@ To prevent false-positive over-prediction in conversational narratives, non-task
 ## 4. Empirical Evaluation Results
 
 To rigorously assess performance and generalization, three experimental conditions were evaluated under identical training hyperparameters (`max_steps=2500`, `eval_frequency=50`, `patience=400`, GPU device 0):
+
 1. **TRTR (Train Real, Test Real)**: Baseline trained exclusively on 868 authentic journal entries.
 2. **TRSTR-Paraphrase**: Trained on 868 real records + 556 accepted T5 seq2seq paraphrases (1,424 total).
 3. **TRSTR-LLM**: Trained on 868 real records + 300 Gemini LLM synthetic records + mined hard negatives (1,274 total).
@@ -230,7 +236,8 @@ To verify statistical significance across all 1,240 deduplicated authentic docum
 | **Unseen Benchmark TRF Recall** | 72.00 ± 10.77% | 71.69 ± 7.39% | **88.62 ± 6.20%** |
 | **Unseen Benchmark TRF F1** | 48.12 ± 5.63% | 49.01 ± 3.71% | **66.24 ± 3.03%** |
 
-### Key Findings & Thesis Insights:
+### Key Findings & Thesis Insights
+
 1. **TRSTR-Paraphrase Leads In-Domain Extraction**: T5 paraphrasing directly addresses in-domain syntactic scarcity by varying the grammatical patterns around real authentic phrases. It achieved the highest authentic validation F1 (**75.01% ± 0.96%**, a **+3.79%** lift over TRTR with remarkably low variance) and peak held-out test F1 (**74.66%**, a **+9.39%** lift over TRTR).
 2. **TRSTR-LLM Delivers Exceptional OOV Generalization & Recall**: Direct LLM generation combined with hard negative mining trained the model to recognize novel concepts while learning when to abstain. On the canonical 65-term unseen benchmark across 5 folds, TRSTR-LLM drove out-of-domain recall to **88.62% ± 6.20%** (vs. 72.00% for TRTR) and F1 to **66.24% ± 3.03%** (+18.12% F1 over baseline).
 3. **Data Isolation Guaranteed**: All synthetic data was strictly confined to the training side. All evaluation sets (`dev.spacy`, `test.spacy`, `unseen_benchmark.jsonl`) consist 100% of authentic records with zero leakage across all 7 checks.
@@ -240,53 +247,65 @@ To verify statistical significance across all 1,240 deduplicated authentic docum
 ## 5. Quick Start & Usage
 
 ### Environment Setup
+
 Activate the Python virtual environment:
+
 ```bash
 source .venv/bin/activate
 ```
 
 ### 1. Run the Narrative Walkthrough Notebook
+
 Open `main.ipynb` in Jupyter Lab or VS Code to step through data ingestion, leakage checks, training, evaluation, and cross-validation:
+
 ```bash
 jupyter lab main.ipynb
 ```
 
 ### 2. Run Pipeline Steps via CLI
 
-#### Prepare Data & Build Binary DocBins:
+#### Prepare Data & Build Binary DocBins
+
 ```bash
 python scripts/annotation.py
 ```
 
-#### Run 7-Check Data Leakage Audit:
+#### Run 7-Check Data Leakage Audit
+
 ```bash
 python scripts/check_data_leakage.py
 ```
 
-#### Train the Transformer on GPU:
+#### Train the Transformer on GPU
+
 ```bash
 python scripts/training.py --steps 2500 --eval-freq 50 --patience 400 --gpu-id 0
 ```
 
-#### Run 5-Fold Cross-Validation:
+#### Run 5-Fold Cross-Validation
+
 ```bash
 python scripts/cross_validation.py --folds 5 --conditions trtr,trstr_paraphrase,trstr_llm
 ```
 
-#### Run Full Evaluation & Save Comparison Reports:
+#### Run Full Evaluation & Save Comparison Reports
+
 ```bash
 python scripts/eval.py \
   --model-path models/ner_trf/model-best \
   --run-label trtr
 ```
+
 *(Automatically routes per-item JSONL logs and reports into `data/eval_results/comparison/trtr/`)*
 
-#### Run Hybrid Pipeline Regression Unit Tests:
+#### Run Hybrid Pipeline Regression Unit Tests
+
 ```bash
 python -m unittest scripts/test_pipeline_regressions.py
 ```
 
-#### Test Hybrid Inference in Python:
+#### Test Hybrid Inference in Python
+
 ```python
 from scripts.pipeline import HybridJournalPipeline
 
@@ -301,20 +320,26 @@ for ent in res["entities"]:
 ## 6. Applications & Services
 
 ### 1. FastAPI Entity Extraction Service (`api/`)
+
 Provides a production HTTP API for real-time entity extraction:
+
 ```bash
 uvicorn api.main:app --host 0.0.0.0 --port 8000
 ```
+
 - Endpoint: `POST /extract`
 - Health check: `GET /health`
 - See [`api/README.md`](api/README.md) for request/response contracts and PHP integration code.
 - See [`docs/deployment.md`](docs/deployment.md) for packaging the API onto a standalone server.
 
 ### 2. Desktop GUI Studio (`tools/pipeline_gui.py`)
+
 An interactive desktop suite featuring live visual entity tagging, instant KPI analytics, model switching, filtering, and JSON/cURL generators:
+
 ```bash
 python tools/pipeline_gui.py
 ```
+
 - Launcher alias: `python tools/entity_extractor_gui.py`
 - Dataset curation: `python tools/jsonl_editor.py`
 - See [`tools/README.md`](tools/README.md) for full desktop utility documentation.
