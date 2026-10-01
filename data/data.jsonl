@@ -229,7 +229,6 @@
 {"text": "Processes Police Clearance", "entities": [{"start": 10, "end": 26, "label": "CLERICAL_TERM"}]}
 {"text": "Fixing Pnp Zelo App", "entities": [{"start": 7, "end": 19, "label": "IT_TERM"}]}
 {"text": "Pc Troubleshooting", "entities": [{"start": 0, "end": 18, "label": "IT_TERM"}]}
-{"text": "Planning System for Pnp Operation Office", "entities": [{"start": 0, "end": 15, "label": "IT_TERM"}]}
 {"text": "Day 1 - Ui/Ux Designing for Pnp Operation Office", "entities": [{"start": 8, "end": 13, "label": "IT_TERM"}]}
 {"text": "Day 2 - Ui/Ux Designing for Pnp Operation Office", "entities": [{"start": 8, "end": 13, "label": "IT_TERM"}]}
 {"text": "Pc Assembling", "entities": [{"start": 0, "end": 13, "label": "IT_TERM"}]}
@@ -382,7 +381,7 @@
 {"text": "I realized how standards ensure data quality", "entities": []}
 {"text": "Through proper procedures, I understood metadata management", "entities": []}
 {"text": "I learned how indexing improves data retrieval", "entities": [{"start": 14, "end": 22, "label": "IT_TERM"}]}
-{"text": "This task improved my knowledge of IT procurement", "entities": [{"start": 35, "end": 49, "label": "CLERICALTERM"}]}
+{"text": "This task improved my knowledge of IT procurement", "entities": [{"start": 35, "end": 49, "label": "CLERICAL_TERM"}]}
 {"text": "I became aware of vendor management practices", "entities": []}
 {"text": "Through proper procedures, I understood contract management", "entities": []}
 {"text": "I realized how service level agreements define expectations", "entities": [{"start": 15, "end": 39, "label": "CLERICAL_TERM"}]}

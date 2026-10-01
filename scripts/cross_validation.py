@@ -48,15 +48,26 @@ CV_MODELS_DIR = "models/cv"
 
 
 def extract_all_real_records(data_path: str = "data/data.jsonl") -> List[Dict[str, Any]]:
-    """Loads all authentic real records from data/data.jsonl."""
+    """Loads all authentic real records from data/data.jsonl with normalized deduplication."""
     if not os.path.exists(data_path):
         raise FileNotFoundError(f"Source data file not found: {data_path}")
     records = []
+    seen_texts: Set[str] = set()
+    dedup_count = 0
     with open(data_path, "r", encoding="utf-8") as f:
         for line in f:
             if line.strip():
-                records.append(json.loads(line))
-    logger.info(f"Loaded {len(records)} authentic documents from {data_path}.")
+                rec = json.loads(line)
+                norm_text = " ".join(rec.get("text", "").strip().lower().split())
+                if norm_text in seen_texts:
+                    dedup_count += 1
+                    logger.warning(f"Deduplicated near-duplicate record: {rec.get('text', '')}")
+                    continue
+                seen_texts.add(norm_text)
+                records.append(rec)
+    if dedup_count > 0:
+        logger.info(f"Filtered out {dedup_count} duplicate/near-duplicate records from {data_path}.")
+    logger.info(f"Loaded {len(records)} unique authentic documents from {data_path}.")
     return records
 
 
@@ -221,12 +232,13 @@ def train_cv_model(
     eval_frequency: int = 50,
     patience: int = 250,
     seed: int = 42,
+    force_train: bool = False,
 ) -> str:
     """Trains a transformer model for a specific fold and condition with GPU memory safety."""
     output_dir = os.path.join(CV_MODELS_DIR, f"{condition}_f{fold_idx}")
     best_model_path = os.path.join(output_dir, "model-best")
 
-    if os.path.exists(os.path.join(best_model_path, "meta.json")):
+    if not force_train and os.path.exists(os.path.join(best_model_path, "meta.json")):
         logger.info(f"Found existing trained checkpoint at {best_model_path}. Skipping training.")
         return best_model_path
 
@@ -238,6 +250,10 @@ def train_cv_model(
             torch.cuda.empty_cache()
     except Exception:
         pass
+
+    if force_train and os.path.exists(output_dir):
+        import shutil
+        shutil.rmtree(output_dir)
 
     os.makedirs(output_dir, exist_ok=True)
 
@@ -414,6 +430,7 @@ def run_3way_cross_validation(
                     max_steps=max_steps,
                     eval_frequency=eval_frequency,
                     patience=patience,
+                    force_train=force_train,
                 )
 
                 pipeline = HybridJournalPipeline(

@@ -112,7 +112,6 @@
 {"text": "The goal is to improve the quality of the service to the customer .", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "MONDAY (APRIL 20) Continued to edit the PESO office book by checking the layout, fixing formatting issues and organizing the content properly. We were given the task to conduct a survey among market sellers and vendors about the crisis, how they were affected and what kind of assistance the LGU of Manolo Fortich could provide for them .", "entities": [{"start": 40, "end": 56, "label": "CLERICAL_TERM"}, {"start": 88, "end": 98, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "A - A A-A-C", "entities": [], "augmentation_type": "paraphrase"}
-{"text": "I became more familiar with how office systems work and gained confidence in them.", "entities": [{"start": 39, "end": 46, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "Axel AXE - Affinity-AxE", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "A goal is to understand how service level agreements define expectations .", "entities": [{"start": 28, "end": 52, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "A number is the same in the other week and we don't have Internet for the last 3 weeks .", "entities": [], "augmentation_type": "paraphrase"}
@@ -148,7 +147,6 @@
 {"text": "Axiom is a software development company specializing in the design of tarpaulins .", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "The Continuation of EVENT DEVICE SETUP AND EQUIPMENT PREPARATION", "entities": [{"start": 26, "end": 38, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "Axel has been helping me to improve my filing systems .", "entities": [{"start": 39, "end": 53, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
-{"text": "This experience has helped me understand how office systems support daily operations .", "entities": [{"start": 52, "end": 59, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "I thought it would be easy, but after I finished the design, Ma'am Cecil did not like it.", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "It was to show the users the finished product and how it works.", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "I have learned how to balance design elements without overwhelming them.", "entities": [], "augmentation_type": "paraphrase"}
@@ -240,7 +238,6 @@
 {"text": "Identified and logged location inaccuracies and coordinate drift bugs", "entities": [{"start": 48, "end": 69, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "Axel and I presented our capstone study on May 5th, 2026 at the National Student Research and Innovation Conference (NaSRIC-2026) at our school .", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "A A - A-A-C", "entities": [], "augmentation_type": "paraphrase"}
-{"text": "In addition, I understood the importance of testing and debugging systems", "entities": [{"start": 56, "end": 65, "label": "IT_TERM"}, {"start": 66, "end": 73, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "The goal was to provide a safe environment to the members of the club.", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "This activity has enhanced my knowledge of the aggregation function", "entities": [{"start": 47, "end": 67, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "Then we have no work because it has no Internet connection, but they assign me to find the folder and I don't have any documentation as it is a very simple task.", "entities": [], "augmentation_type": "paraphrase"}
@@ -252,7 +249,6 @@
 {"text": "A number of A A - A-", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "So, I understood penetration testing through this task.", "entities": [{"start": 17, "end": 36, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "The goal is to develop the system", "entities": [], "augmentation_type": "paraphrase"}
-{"text": "We are working on systems to fix the bugs on the batchlist page as all of the list in that batch will appear even if it is not the same year .", "entities": [{"start": 18, "end": 25, "label": "IT_TERM"}, {"start": 37, "end": 41, "label": "IT_TERM"}, {"start": 49, "end": 63, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "The goal is to develop the system .", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "We have created a folder on GitHub to keep Supabase awake even when not in use, so that the project won't be paused.", "entities": [{"start": 28, "end": 34, "label": "IT_TERM"}, {"start": 43, "end": 51, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "It is the first time that I have experienced the knowledge management .", "entities": [], "augmentation_type": "paraphrase"}
@@ -345,7 +341,7 @@
 {"text": "I was assigned by Ma'am Kathy to assist in the field during the World Immunization Week 2026 event . I helped set up the projector, managed attendance and assisted in distributing food during this activity. After the event, I also pantea documents for the Purchase Order and Purchase Request , as instructed by Ms.", "entities": [{"start": 121, "end": 130, "label": "IT_TERM"}, {"start": 256, "end": 270, "label": "CLERICAL_TERM"}, {"start": 275, "end": 291, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "In addition, I have updated the CIF records by reviewing member details and checking supporting documents for accuracy.", "entities": [{"start": 32, "end": 43, "label": "CLERICAL_TERM"}, {"start": 57, "end": 71, "label": "CLERICAL_TERM"}, {"start": 85, "end": 105, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "Infinite Service is a service that has resolved and fixed hardware issues on the desktop computer .", "entities": [{"start": 58, "end": 73, "label": "IT_TERM"}, {"start": 81, "end": 97, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
-{"text": "It has helped me to improve my knowledge of IT procurement .", "entities": [{"start": 44, "end": 58, "label": "CLERICALTERM"}], "augmentation_type": "paraphrase"}
+{"text": "It has helped me to improve my knowledge of IT procurement .", "entities": [{"start": 44, "end": 58, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "The goal is to help new members join and improve their lives together.", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "Taking care of the staff during the seminar and following the instructions given by the supervisor.", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "On Thursday and Friday, we attended a seminar on emotional intelligence . During the activity we learned about understanding emotions, self-awareness and proper communication with others. The seminar helped us realize the importance of managing emotions and maintaining positive relationships in the workplace. This experience provided us with valuable lessons that can help us both personally and professionally.", "entities": [], "augmentation_type": "paraphrase"}
@@ -477,7 +473,6 @@
 {"text": "So I learned the importance of regular system maintenance.", "entities": [{"start": 39, "end": 57, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "A list of the items that I need to take care of.", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "As a result, I was tasked by Ma'am Kathy to design and layout the program for Safe Motherhood 2026 and ensured that the layout was organized, visually appealing and aligned with the theme of the event .", "entities": [], "augmentation_type": "paraphrase"}
-{"text": "This activity helped me develop patience and accuracy while working with systems .", "entities": [{"start": 73, "end": 80, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "A list of selected background assets .", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "The goal of the meeting was to understand the importance of clear system documentation.", "entities": [{"start": 66, "end": 86, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "The goal is to create a team of people who will be able to work together .", "entities": [], "augmentation_type": "paraphrase"}
@@ -526,7 +521,6 @@
 {"text": "Then I add more Functionalities of Violation Slip more like the types of violation they committed adding Drop-Down Menu of Offense Level like Minor and Major Offence .", "entities": [{"start": 35, "end": 49, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "It is able to assist in encoding data using Microsoft Excel.", "entities": [{"start": 24, "end": 37, "label": "CLERICAL_TERM"}, {"start": 44, "end": 59, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "iClinicSys has improved the service delivery of Axiom", "entities": [{"start": 0, "end": 10, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
-{"text": "The goal is to improve our understanding of how different systems integrate together .", "entities": [{"start": 58, "end": 65, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "So I understood the importance of filing and record management.", "entities": [{"start": 34, "end": 40, "label": "CLERICAL_TERM"}, {"start": 45, "end": 62, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "A VIDEO FOR A FESTIVAL DANCE A", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "The goal is to improve client communication through professional interactions .", "entities": [], "augmentation_type": "paraphrase"}

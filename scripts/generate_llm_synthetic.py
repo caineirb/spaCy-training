@@ -351,12 +351,21 @@ def passes_quality_checks(
 
     # 3. Check for bare generic nouns tagged as entities
     bare_generics = {
-        "system", "database", "software", "code", "computer", "website",
-        "application", "server", "backend", "frontend", "data", "documents",
-        "files", "records", "forms", "program", "network", "printer",
-        "scanner", "monitor", "keyboard", "desk", "office", "university",
-        "campus", "department", "laboratory", "supervisor", "intern",
-        "meeting", "discussion", "conversation",
+        # IT infrastructure & software bare generics (singular & plural)
+        "system", "systems", "database", "databases", "software", "softwares",
+        "code", "codes", "computer", "computers", "website", "websites",
+        "application", "applications", "server", "servers", "backend", "backends",
+        "frontend", "frontends", "network", "networks", "printer", "printers",
+        "scanner", "scanners", "monitor", "monitors", "keyboard", "keyboards",
+        "program", "programs", "data", "table", "tables",
+        # Clerical & administrative bare generics (singular & plural)
+        "document", "documents", "file", "files", "record", "records",
+        "form", "forms", "paper", "papers", "folder", "folders",
+        "desk", "desks", "office", "offices", "university", "universities",
+        "campus", "campuses", "department", "departments",
+        "laboratory", "laboratories", "supervisor", "supervisors",
+        "intern", "interns", "meeting", "meetings", "discussion", "discussions",
+        "conversation", "conversations",
     }
     for ent in entities:
         term = text[ent["start"]:ent["end"]].strip().lower()

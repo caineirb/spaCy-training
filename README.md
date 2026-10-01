@@ -184,24 +184,26 @@ To rigorously assess performance and generalization, three experimental conditio
 
 ### 4.1 Side-by-Side Test Partition Evaluation
 
-Evaluated against the identical authentic held-out test split (`data/training/test.spacy`, 187 docs, 174 entities) and controlled out-of-vocabulary benchmark (`data/test/unseen_benchmark.jsonl`, 85 docs, 108 gold entities):
+*(Note: These figures supersede previous evaluation numbers following the resolution of all audit integrity gaps, including canonicalization of near-duplicates, restoration of the canonical 65-term unseen benchmark free of in-domain leakage, purging of contaminated generic-noun paraphrases, and enforcement of a strict two-label schema without typo variants.)*
+
+Evaluated against the identical authentic held-out test split (`data/training/test.spacy`, 186 docs) and controlled out-of-vocabulary benchmark (`data/test/unseen_benchmark.jsonl`, 85 docs, 65 gold entities):
 
 | Evaluation Metric | TRTR (Real Baseline) | TRSTR-Paraphrase (T5) | TRSTR-LLM (Gemini) | Delta (Para vs TRTR) | Delta (LLM vs TRTR) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Held-Out Test Overall F1** | **67.63%** | **70.06%** | **64.25%** | **+2.43%** | -3.38% |
-| Held-Out Test Overall Precision | 68.02% | **68.89%** | 62.50% | **+0.87%** | -5.52% |
-| Held-Out Test Overall Recall | 67.24% | **71.26%** | 66.09% | **+4.02%** | -1.15% |
-| ├── `IT_TERM` F1 | 67.80% | **70.78%** | 66.95% | **+2.98%** | -0.85% |
-| ├── `IT_TERM` Precision | 69.57% | **70.49%** | 67.80% | **+0.92%** | -1.77% |
-| ├── `IT_TERM` Recall | 66.12% | **71.07%** | 66.12% | **+4.95%** | 0.00% |
-| ├── `CLERICAL_TERM` F1 | 67.27% | **68.47%** | 58.82% | **+1.20%** | -8.45% |
-| ├── `CLERICAL_TERM` Precision | 64.91% | **65.52%** | 53.03% | **+0.61%** | -11.88% |
-| └── `CLERICAL_TERM` Recall | 69.81% | **71.70%** | 66.04% | **+1.89%** | -3.77% |
-| **Unseen Benchmark TRF Precision** | 64.52% | 65.35% | **78.00%** | +0.83% | **+13.48%** |
-| **Unseen Benchmark TRF Recall** | 74.07% | **76.85%** | 72.22% | **+2.78%** | -1.85% |
-| **Unseen Benchmark TRF F1** | 68.97% | 70.64% | **75.00%** | +1.67% | **+6.03%** |
-| **Unseen Benchmark Hybrid F1** | 68.97% | 70.64% | **75.60%** | +1.67% | **+6.63%** |
-| **Generalization Lift** | +66.66% | **+69.44%** | +65.74% | **+2.78%** | -0.92% |
+| **Held-Out Test Overall F1** | 65.27% | **74.66%** | 63.98% | **+9.39%** | -1.29% |
+| Held-Out Test Overall Precision | 63.78% | **76.11%** | 64.32% | **+12.33%** | +0.54% |
+| Held-Out Test Overall Recall | 66.84% | **73.26%** | 63.64% | **+6.42%** | -3.20% |
+| ├── `IT_TERM` F1 | 70.90% | **77.86%** | 67.16% | **+6.96%** | -3.74% |
+| ├── `IT_TERM` Precision | 71.43% | **80.31%** | 67.67% | **+8.88%** | -3.76% |
+| ├── `IT_TERM` Recall | 70.37% | **75.56%** | 66.67% | **+5.19%** | -3.70% |
+| ├── `CLERICAL_TERM` F1 | 52.17% | **66.67%** | 55.77% | **+14.50%** | +3.60% |
+| ├── `CLERICAL_TERM` Precision | 47.62% | **66.04%** | 55.77% | **+18.42%** | +8.15% |
+| └── `CLERICAL_TERM` Recall | 57.69% | **67.31%** | 55.77% | **+9.62%** | -1.92% |
+| **Unseen Benchmark TRF Precision** | 40.00% | 39.50% | **52.73%** | -0.50% | **+12.73%** |
+| **Unseen Benchmark TRF Recall** | 83.08% | 72.31% | **89.23%** | -10.77% | **+6.15%** |
+| **Unseen Benchmark TRF F1** | 54.00% | 51.09% | **66.29%** | -2.91% | **+12.29%** |
+| **Unseen Benchmark Hybrid F1** | 55.00% | 53.26% | **66.29%** | -1.74% | **+11.29%** |
+| **Generalization Lift (vs Dict Recall 4.62%)** | +80.00% | +70.76% | **+84.61%** | -9.24% | **+4.61%** |
 
 ### 4.2 5-Fold Stratified Cross-Validation Summary
 
