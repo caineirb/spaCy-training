@@ -1,9 +1,9 @@
 """
-Hard Negative Mining and Stylistic Overlap Analysis Module (Task 5).
+Hard Negative Mining and Stylistic Overlap Analysis Module.
 
 Guarantees:
-1. Zero Data Leakage: Mined strictly from authentic training data (data/training/train.spacy).
-   Dev and test splits are strictly excluded.
+1. Zero Data Leakage: Mined strictly from authentic training data.
+   Held-out test split, dev split, and unseen benchmark are strictly excluded.
 2. High-Confidence Negative Mining: Identifies negative sentences where the ML model
    falsely predicts an entity with high confidence (>=0.85).
 3. Stylistic Overlap Analysis: Computes n-gram overlap and vocabulary Jaccard similarity
@@ -14,6 +14,7 @@ import os
 import sys
 import json
 import logging
+import argparse
 from typing import List, Dict, Any, Set, Tuple
 from collections import Counter
 import spacy
@@ -28,78 +29,117 @@ logger = logging.getLogger("ojt_pipeline.mine_negatives")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 
+def resolve_default_model_path() -> str:
+    """Finds the best available model checkpoint for mining."""
+    candidates = [
+        "models/ner_trf/model-best",
+        "models/ner_trf_trtr/model-best",
+        "models/ner_trf_trstr_llm/model-best",
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return "models/ner_trf_trtr/model-best"
+
+
 def mine_training_hard_negatives(
     data_jsonl_path: str = "data/data.jsonl",
-    holdout_jsonl_path: str = "data/test/holdout.jsonl",
-    model_path: str = "models/ner_trf/model-best",
+    test_spacy_path: str = "data/training/test.spacy",
+    dev_spacy_path: str = "data/training/dev.spacy",
+    unseen_benchmark_path: str = "data/test/unseen_benchmark.jsonl",
+    model_path: str = None,
     output_path: str = "data/review/mined_hard_negatives.jsonl",
     confidence_threshold: float = 0.85,
 ) -> Dict[str, Any]:
     """Mines hard negative candidates from authentic negative sentences without test leakage.
     
     Identifies non-test real sentences where gold annotates 0 entities, but ML produces
-    a high-confidence false positive (>=0.85).
+    a high-confidence false positive (>= confidence_threshold).
     """
     scripts.init_gpu()
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    if model_path is None:
+        model_path = resolve_default_model_path()
 
     if not os.path.exists(data_jsonl_path):
         raise FileNotFoundError(f"Data file not found at: {data_jsonl_path}")
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model checkpoint not found at: {model_path}")
 
-    # Build strict set of holdout texts to guarantee ZERO leakage
-    holdout_texts = set()
-    if os.path.exists(holdout_jsonl_path):
-        with open(holdout_jsonl_path, "r", encoding="utf-8") as f:
+    nlp_blank = spacy.blank("en")
+
+    # 1. Build strict set of excluded evaluation texts to guarantee ZERO leakage
+    excluded_texts: Set[str] = set()
+
+    if os.path.exists(test_spacy_path):
+        test_db = DocBin().from_disk(test_spacy_path)
+        for doc in test_db.get_docs(nlp_blank.vocab):
+            excluded_texts.add(doc.text.strip().lower())
+        logger.info(f"Loaded {len(test_db)} held-out test texts to exclude.")
+
+    if os.path.exists(dev_spacy_path):
+        dev_db = DocBin().from_disk(dev_spacy_path)
+        for doc in dev_db.get_docs(nlp_blank.vocab):
+            excluded_texts.add(doc.text.strip().lower())
+        logger.info(f"Loaded {len(dev_db)} dev texts to exclude.")
+
+    if os.path.exists(unseen_benchmark_path):
+        with open(unseen_benchmark_path, "r", encoding="utf-8") as f:
             for line in f:
                 if line.strip():
-                    holdout_texts.add(json.loads(line).get("text", "").strip())
+                    try:
+                        rec = json.loads(line)
+                        excluded_texts.add(rec["text"].strip().lower())
+                    except Exception:
+                        pass
+        logger.info(f"Excluded unseen benchmark texts. Total excluded: {len(excluded_texts)}")
 
+    # 2. Load authentic records from data.jsonl
     records = []
     with open(data_jsonl_path, "r", encoding="utf-8") as f:
         for line in f:
             if line.strip():
                 records.append(json.loads(line))
 
-    # Select authentic negative records strictly excluding holdout
+    # 3. Filter authentic negative records (0 gold entities and strictly non-evaluation)
     negatives = [
         r for r in records
-        if len(r.get("entities", [])) == 0 and r.get("text", "").strip() not in holdout_texts
+        if len(r.get("entities", [])) == 0 and r.get("text", "").strip().lower() not in excluded_texts
     ]
 
+    logger.info(f"Using model checkpoint: {model_path}")
     pipeline = HybridJournalPipeline(model_path=model_path)
     hard_negatives = []
     fp_term_counts = Counter()
 
-    logger.info(f"Scanning {len(negatives)} authentic non-test negative records for hard negative candidates...")
+    logger.info(f"Scanning {len(negatives)} authentic training negative sentences (threshold={confidence_threshold})...")
 
+    seen_fp_keys = set()
     for r in negatives:
-        text = r["text"]
+        text = r["text"].strip()
         pred_res = pipeline.predict(text, mode="transformer_only")
         pred_ents = pred_res.get("entities", [])
 
-        gold_spans = [(ent["start"], ent["end"]) for ent in r.get("entities", [])]
-
-        # Check for predictions on negative sentences or non-annotated spans
+        # Check for predictions on negative sentences
         for p in pred_ents:
-            p_start, p_end = p["start"], p["end"]
             conf = p["confidence"]
+            term = p["term"].strip()
+            cat = p["category"]
 
-            overlaps_gold = any(
-                max(p_start, g_s) < min(p_end, g_e)
-                for g_s, g_e in gold_spans
-            )
+            if conf >= confidence_threshold and term:
+                fp_key = (text, term.lower())
+                if fp_key in seen_fp_keys:
+                    continue
+                seen_fp_keys.add(fp_key)
 
-            # High confidence false positive on non-entity span
-            if not overlaps_gold and conf >= confidence_threshold:
-                fp_term_counts[p["term"].lower()] += 1
+                fp_term_counts[term.lower()] += 1
                 hard_negatives.append({
                     "text": text,
-                    "false_positive_term": p["term"],
-                    "false_positive_category": p["category"],
-                    "confidence": conf,
-                    "gold_entity_count": len(gold_spans),
+                    "false_positive_term": term,
+                    "false_positive_category": cat,
+                    "confidence": round(conf, 4),
+                    "gold_entity_count": 0,
                 })
 
     # Save mined candidates
@@ -120,6 +160,7 @@ def mine_training_hard_negatives(
         "unique_fp_terms": len(fp_term_counts),
         "top_fp_terms": top_fp_terms,
         "output_path": output_path,
+        "model_used": model_path,
     }
 
 
@@ -134,9 +175,11 @@ def compute_stylistic_overlap(
 ) -> Dict[str, Any]:
     """Computes stylistic and n-gram overlap between synthetic templates and unseen benchmark."""
     if not os.path.exists(synthetic_path):
-        raise FileNotFoundError(f"Synthetic file not found: {synthetic_path}")
+        logger.warning(f"Synthetic file not found at: {synthetic_path}. Skipping stylistic overlap.")
+        return {}
     if not os.path.exists(benchmark_path):
-        raise FileNotFoundError(f"Benchmark file not found: {benchmark_path}")
+        logger.warning(f"Benchmark file not found at: {benchmark_path}. Skipping stylistic overlap.")
+        return {}
 
     nlp = spacy.blank("en")
 
@@ -194,11 +237,29 @@ def compute_stylistic_overlap(
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Mine hard negatives from authentic training data without test leakage.")
+    parser.add_argument("--data-path", type=str, default="data/data.jsonl", help="Path to data.jsonl")
+    parser.add_argument("--test-spacy", type=str, default="data/training/test.spacy", help="Path to test.spacy")
+    parser.add_argument("--dev-spacy", type=str, default="data/training/dev.spacy", help="Path to dev.spacy")
+    parser.add_argument("--unseen-benchmark", type=str, default="data/test/unseen_benchmark.jsonl", help="Path to unseen_benchmark.jsonl")
+    parser.add_argument("--model-path", type=str, default=None, help="Model checkpoint path to evaluate for false positives")
+    parser.add_argument("--output-path", type=str, default="data/review/mined_hard_negatives.jsonl", help="Output JSONL path")
+    parser.add_argument("--confidence-threshold", type=float, default=0.85, help="Confidence threshold for false positive extraction")
+    args = parser.parse_args()
+
     logger.info("Starting hard negative mining and stylistic overlap evaluation...")
-    mining_res = mine_training_hard_negatives()
+    mining_res = mine_training_hard_negatives(
+        data_jsonl_path=args.data_path,
+        test_spacy_path=args.test_spacy,
+        dev_spacy_path=args.dev_spacy,
+        unseen_benchmark_path=args.unseen_benchmark,
+        model_path=args.model_path,
+        output_path=args.output_path,
+        confidence_threshold=args.confidence_threshold,
+    )
     overlap_res = compute_stylistic_overlap()
     print("\n" + "=" * 80)
-    print("TASK 5 MINING & STYLISTIC OVERLAP COMPLETE")
+    print("MINING & STYLISTIC OVERLAP COMPLETE")
     print("=" * 80)
     print("Mining summary:", json.dumps(mining_res, indent=2))
     print("Stylistic overlap:", json.dumps(overlap_res, indent=2))

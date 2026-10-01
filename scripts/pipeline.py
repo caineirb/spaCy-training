@@ -82,6 +82,12 @@ def resolve_span_conflicts(
                 inherited_label = overlapping_ml[0][1]["category"]
                 merged_dict_ent = dict(d)
                 merged_dict_ent["category"] = inherited_label
+                # Fix source attribution: if ML changed the label, the
+                # classification came from ML, not the dictionary.
+                if inherited_label != d["category"]:
+                    merged_dict_ent["source"] = "ML"
+                    merged_dict_ent["confidence"] = overlapping_ml[0][1]["confidence"]
+                    merged_dict_ent["status"] = overlapping_ml[0][1]["status"]
                 accepted_dict_entities.append(merged_dict_ent)
                 for idx, _ in overlapping_ml:
                     superseded_ml_indices.add(idx)

@@ -1166,14 +1166,11 @@
 {"text": "Arrived early at the workplace and attended the morning orientation facilitated by our immediate supervisor.", "entities": [], "augmentation_type": "llm_generated"}
 {"text": "We had a brief meeting with the team leads to discuss our weekly progress and upcoming schedule.", "entities": [], "augmentation_type": "llm_generated"}
 {"text": "Drove through heavy morning traffic before finally reaching the office just in time for the briefing.", "entities": [], "augmentation_type": "llm_generated"}
-{"text": "On the twenty-third day, I volunteered as one of the SPES examination proctors. I assisted in monitoring the examinees, maintaining order in the room, and ensuring that the examination process was conducted properly. I also helped in distributing and collecting examination materials. This task helped me develop responsibility, patience, and confidence in handling official activities.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "On the twenty-fifth day, I attended the IT Fest at NBSC to showcase our Capstone study to the first-year up to third-year IT students. We presented the features, purpose, and development process of our project to inspire and share knowledge with other students. I also answered questions regarding our study and system. This experience helped me improve my communication skills and confidence.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Conducted evaluation of vendors.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Prepared and laminated vendors’ stall numbers.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Continued preparing and laminating vendors’ stall numbers.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "We posted the stall numbers on the designated areas of the market to ensure proper identification, organization, and easy location of each stall.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Distributed and evaluated vendor stalls to monitor their condition, organization, and compliance with market policies.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted in outdoor activities by coordinating with vendors and distributing important office documents and announcements.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Received instructions regarding allocation of tasks, deliveries and collections on the call of coordinators.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Submitted outputs for review, applied revisions, and completed final videos.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Task Management: Managed my time to ensure that everything was completed within four days.", "entities": [], "augmentation_type": "mined_negative"}
@@ -1183,16 +1180,12 @@
 {"text": "Conducted multiple field trials across different locations in Manolo Fortich.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Organizing Files in File Rack.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Putting Files on the File Arc", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Shredding Discarded Files on the File Shredder", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Fixed the first deployment issue of the system.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Sorted the papers, alphabetically arranged the applicants for their assessment schedule.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Updated the scholarship section by removing the Junior High category, replacing it with IP. and adding more year level options. The year levels were changed from 1st Year to 5th Year to Grade 7 up to 5th Year College.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Assisted with printing and other administrative tasks.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Wrote down the applicants' reference numbers and photocopied them.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Arranged, sorted and stapled office paper as directed.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Assisted in delivering documents and obtaining signatures from different offices.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Organized digital files and documents.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Worked on improving the layout and organization of the system interface.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Through this activity, I understood workflow automation", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I realized the importance of process documentation.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "This experience taught me knowledge management", "entities": [], "augmentation_type": "mined_negative"}
@@ -1201,13 +1194,13 @@
 {"text": "I learned how scheduling optimizes team efficiency.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I realized how standards ensure data quality", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Through proper procedures, I understood metadata management", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "Through proper procedures, I understood contract management", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Through proper documentation, I understood audit trails", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Through this activity, I understood data retention policies", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I also broadened my understanding of social issues and advocacy", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Through this experience, I gained insights into system operations", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Digitalized survey data", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I learned how important coordination and information gathering were", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Identified new system features", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Collaborated on task division", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Selected background assets", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Poster and Oral Presentation Awarding", "entities": [], "augmentation_type": "mined_negative"}
@@ -1220,19 +1213,17 @@
 {"text": "Stakeholder communication managed information sharing", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Administrative support coordinated office operations", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Meeting documentation captured important discussion points", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned how to encode data correctly and calculate payments efficiently", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Through this task, I learned how proper planning and organization improve efficiency", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I improved my ability to handle scanning and document preservation", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I became more proficient in using various software tools and applications", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "This experience helped me understand how office systems support daily operations", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I became more familiar with how office systems work and gained confidence", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I learned how to organize files and documents properly for easy access", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I improved my understanding of how office operations work and record maintenance", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned the importance of following proper procedures and documentation", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I improved my skills in social media management and content creation", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I realized the importance of clear communication when explaining technical concepts", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I learned the importance of proper organization in handling files", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Shelf reading required focus and attention to detail", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "Today involved a lot of coordination with equipment borrowing and continued logbook digitalization", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "On the twenty-third day, I volunteered as one of the SPES examination proctors. I assisted in monitoring the examinees, maintaining order in the room, and ensuring that the examination process was conducted properly. I also helped in distributing and collecting examination materials. This task helped me develop responsibility, patience, and confidence in handling official activities.", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "On the twenty-fifth day, I attended the IT Fest at NBSC to showcase our Capstone study to the first-year up to third-year IT students. We presented the features, purpose, and development process of our project to inspire and share knowledge with other students. I also answered questions regarding our study and system. This experience helped me improve my communication skills and confidence.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Developed signage layout designs.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Assisted in creating layouts for market reminders and signages.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Continued laminating vendors stall numbers to ensure their durability and proper identification within the market.", "entities": [], "augmentation_type": "mined_negative"}
@@ -1247,7 +1238,6 @@
 {"text": "Tuesday (May 5, 2026): Together with my groupmates, we presented our capstone study during the National Student Research and Innovation Conference 2026 (NaSRIC 2026) through Zoom at our school.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Monday (May 11, 2026):I was tasked by Ma'am Kathy to design and layout the program for safe Motherhood 2026. I ensured that the layout was organized, visually appealing, and aligned with the theme of the event.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Wednesday (May 13, 2026):I was tasked by Sir Tata to design a tarpaulin for the International Candlelight Memorial for AIDS with the theme \"Light the Legacy: Remember. Advance. Act. Keeping the Light Alive.\" The tarpaulin was prepared to support awareness and advocacy activities for the event.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Assisted staff with minor technical problems.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Assisted staff with minor technical concerns", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Assisted and guided BFP staff on how to log in and navigate the platform.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Assisted staff with minor technical concerns.", "entities": [], "augmentation_type": "mined_negative"}
@@ -1258,27 +1248,27 @@
 {"text": "Medication dispensing required accuracy and careful handling", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Laminating documents protected important office materials", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Payment confirmation required verification and documentation", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Integrated PESO Job Post", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Reviewed system requirements", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Updated system branding", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Sir Ryan asked me to encode some data because he was very busy", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "I learned how to encode data correctly and calculate the payment of each cooperative member", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I learned how to coordinate data collection with all of us assigned to different office.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I understood the process of deploying updates and ensuring the system runs smoothly", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I became more confident in my ability to handle technical tasks", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Through this experience, I gained confidence in my technical skills", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Through this experience, I improved my ability to communicate technical information", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "We resumed sorting, arranging, and maintaining office records to ensure that all files were properly organized and easily accessible.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "GSO OFFICE installing drive Epson", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Continued designing the front page and other pages of the book", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Conducted a survey in the market.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We assist in the SPES orientation and did another market survey.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "I continued editing the Jobstart video.", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Attended an orientation regarding rescue operations.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Encode paper works", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "Printing Documents", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Tarp Editing", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "Tarp Editing/Paperwork's", "entities": [], "augmentation_type": "mined_negative"}
 {"text": "We summarized all the daily collections and made sure that the total amount matched the records at the end of the day.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We handled and encoded the information of new members, especially from iligan dealers, and organized their data in the system.", "entities": [], "augmentation_type": "mined_negative"}
-{"text": "We prepared receipts for transactions and assisted in making audit reports to ensure all records are properly documented.", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "Forwarding new case data to the Department of Justice (DOJ) Manila", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "Went to the PAO to submit and file the case documents.", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "I submit the copy case document to the pao and I cannot take a pic because its very confidential case", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "I assigned by the staff to find the case for the fiscal to read and study for the hearing", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "Writing the cases on bond paper helped improve organization and made the records easier to locate and manage. This activity was important in ensuring that case information remains accessible and properly documented, especially as preparations are made for the transition due to Sir Nick's retirement", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "Input cases monitoring", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "The orientation helped us understand the roles and responsibilities of each personnel and how the department operates. It also provided us with guidelines regarding workplace behavior, schedules, and tasks that we may handle during our practicum. This activity served as our first step in becoming familiar with the professional environment of the office.", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "I assisted during the Mr. and Ms. NBSC event as part of the Foundation Day celebration. My role was to help with the preparation and coordination of the program. I supported the team in making sure the event ran smoothly and that everything was ready during the activity.", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "DEMO & PRESENTATIOON", "entities": [], "augmentation_type": "mined_negative"}
+{"text": "Creating a Bar Graph on Dashboard", "entities": [], "augmentation_type": "mined_negative"}

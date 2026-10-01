@@ -59,6 +59,7 @@ _pipeline: Optional[HybridJournalPipeline] = None
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Load the heavy pipeline once when the server starts."""
+    global _pipeline
     model_path = os.environ.get("MODEL_PATH", "models/ner_trf/model-best")
     logger.info(f"Loading HybridJournalPipeline from '{model_path}' (CPU-only mode) at startup …")
     _pipeline = HybridJournalPipeline(model_path=model_path, use_gpu=False)
