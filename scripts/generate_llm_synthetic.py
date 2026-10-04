@@ -269,12 +269,77 @@ Generate exactly {batch_size} sentences. Return ONLY the JSON array, no other te
 
 # ── Span location (post-LLM offset computation) ─────────────────────────────
 
+def normalize_entity_item(ent: Any) -> Optional[Dict[str, str]]:
+    """Normalize a raw entity item from LLM output into {'text': str, 'label': str}."""
+    if not ent:
+        return None
+
+    if isinstance(ent, str):
+        ent_str = ent.strip()
+        if not ent_str or ent_str.lower() in {"none", "null", "[]", "{}", "no entities"}:
+            return None
+        # Try JSON parsing if it looks like a JSON object
+        if ent_str.startswith("{") and ent_str.endswith("}"):
+            try:
+                parsed = json.loads(ent_str)
+                if isinstance(parsed, dict):
+                    ent = parsed
+            except Exception:
+                pass
+
+    if isinstance(ent, dict):
+        surface = (
+            ent.get("text")
+            or ent.get("entity")
+            or ent.get("term")
+            or ent.get("name")
+            or ent.get("surface")
+            or ent.get("value")
+            or ent.get("word")
+            or ""
+        )
+        raw_lbl = (
+            ent.get("label")
+            or ent.get("type")
+            or ent.get("category")
+            or ent.get("entity_type")
+            or ""
+        )
+        surface = str(surface).strip() if surface is not None else ""
+        raw_lbl = str(raw_lbl).strip() if raw_lbl is not None else ""
+        if not surface:
+            return None
+        return {"text": surface, "label": raw_lbl}
+
+    if isinstance(ent, str):
+        ent_str = ent.strip()
+        # Check patterns like "IT_TERM: Python" or "CLERICAL_TERM - Excel" or "Python: IT_TERM"
+        pattern = r"^(IT_TERM|CLERICAL_TERM|IT|CLERICAL)[\s:\-]+(.*)$"
+        m = re.match(pattern, ent_str, re.IGNORECASE)
+        if m:
+            raw_lbl, surface = m.group(1), m.group(2).strip()
+        else:
+            pattern2 = r"^(.*?)[\s:\-]+(IT_TERM|CLERICAL_TERM|IT|CLERICAL)$"
+            m2 = re.match(pattern2, ent_str, re.IGNORECASE)
+            if m2:
+                surface, raw_lbl = m2.group(1).strip(), m2.group(2)
+            else:
+                surface = ent_str
+                raw_lbl = ""
+        surface = surface.strip().strip("'\"`")
+        if not surface:
+            return None
+        return {"text": surface, "label": raw_lbl}
+
+    return None
+
+
 def locate_entity_spans(
     text: str,
-    entities: List[Dict[str, str]],
+    entities: Any,
 ) -> Tuple[bool, List[Dict[str, Any]]]:
     """Locate entity text spans in the sentence via exact string search with
-    word-boundary validation.
+    word-boundary validation and case-insensitive fallback.
 
     Adapted from the prior pipeline's relocate_entities() function.
     The LLM returns entity text + label only; this function computes the
@@ -284,13 +349,63 @@ def locate_entity_spans(
         (success, located_entities) where located_entities have start/end/label fields.
         Returns (False, []) if any entity text cannot be found or has boundary issues.
     """
+    if not entities:
+        return True, []
+
+    # Handle if raw_entities was passed as a single dict or string
+    if isinstance(entities, dict):
+        entities = [entities]
+    elif isinstance(entities, str):
+        ent_str = entities.strip()
+        if ent_str.lower() in {"", "none", "null", "[]", "no entities", "none."}:
+            return True, []
+        if ent_str.startswith("[") or ent_str.startswith("{"):
+            try:
+                parsed_ent = json.loads(ent_str)
+                if isinstance(parsed_ent, list):
+                    entities = parsed_ent
+                elif isinstance(parsed_ent, dict):
+                    entities = [parsed_ent]
+                else:
+                    return False, []
+            except Exception:
+                return False, []
+        else:
+            entities = [ent_str]
+    elif not isinstance(entities, (list, tuple)):
+        return False, []
+
+    # Normalize each entity item
+    norm_entities = []
+    for raw_ent in entities:
+        norm = normalize_entity_item(raw_ent)
+        if norm:
+            norm_entities.append(norm)
+
+    if not norm_entities:
+        # If entities was non-empty originally, but had no valid entities, fail span location
+        raw_non_empty = [e for e in entities if e and str(e).lower().strip() not in {"none", "null", "[]"}]
+        if raw_non_empty:
+            return False, []
+        return True, []
+
     located: List[Dict[str, Any]] = []
     used_ranges: List[Tuple[int, int]] = []
 
-    for ent in entities:
+    for ent in norm_entities:
         surface = ent["text"].strip()
-        raw_lbl = ent.get("label", "").strip()
-        label = "IT_TERM" if "IT" in raw_lbl.upper() else "CLERICAL_TERM"
+        raw_lbl = ent.get("label", "").strip().upper()
+        if "IT" in raw_lbl:
+            label = "IT_TERM"
+        elif "CLERICAL" in raw_lbl:
+            label = "CLERICAL_TERM"
+        else:
+            clerical_keywords = {
+                "file", "filing", "excel", "document", "sheet", "record",
+                "encode", "encoding", "inventory", "photocopy", "photocopying",
+                "clerical", "office", "data entry",
+            }
+            label = "CLERICAL_TERM" if any(w in surface.lower() for w in clerical_keywords) else "IT_TERM"
 
         if not surface:
             return False, []
@@ -299,9 +414,12 @@ def locate_entity_spans(
         search_start = 0
         found = False
         while search_start < len(text):
+            # Case-sensitive first, then case-insensitive fallback
             pos = text.find(surface, search_start)
             if pos == -1:
-                break
+                pos = text.lower().find(surface.lower(), search_start)
+                if pos == -1:
+                    break
 
             start_idx = pos
             end_idx = pos + len(surface)
@@ -447,20 +565,51 @@ def call_gemini(
     return None
 
 
+def _extract_records_list(parsed: Any) -> Optional[List[Dict[str, Any]]]:
+    if isinstance(parsed, list):
+        return parsed
+    if isinstance(parsed, dict):
+        for key in ["sentences", "records", "data", "entries", "items", "results", "journal_entries"]:
+            if key in parsed and isinstance(parsed[key], list):
+                return parsed[key]
+        if "text" in parsed:
+            return [parsed]
+    return None
+
+
 def parse_llm_response(raw: str) -> List[Dict[str, Any]]:
     """Parse the LLM's JSON response into a list of records."""
-    # Strip markdown code fences if present
     cleaned = raw.strip()
-    if cleaned.startswith("```"):
-        cleaned = re.sub(r"^```(?:json)?\s*\n?", "", cleaned)
-        cleaned = re.sub(r"\n?```\s*$", "", cleaned)
 
+    # 1. Try markdown code block extraction
+    fence_match = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", cleaned)
+    if fence_match:
+        try:
+            parsed = json.loads(fence_match.group(1).strip())
+            extracted = _extract_records_list(parsed)
+            if extracted is not None:
+                return extracted
+        except json.JSONDecodeError:
+            pass
+
+    # 2. Try direct JSON parsing
     try:
         parsed = json.loads(cleaned)
-        if isinstance(parsed, list):
-            return parsed
+        extracted = _extract_records_list(parsed)
+        if extracted is not None:
+            return extracted
     except json.JSONDecodeError:
         pass
+
+    # 3. Try to locate JSON array [ ... ] via regex
+    array_match = re.search(r"\[\s*\{[\s\S]*\}\s*\]", cleaned)
+    if array_match:
+        try:
+            parsed = json.loads(array_match.group(0))
+            if isinstance(parsed, list):
+                return parsed
+        except json.JSONDecodeError:
+            pass
 
     return []
 
@@ -598,47 +747,58 @@ def run_generation(
 
         batch_accepted = 0
         for item in parsed:
-            text = item.get("text", "").strip()
-            raw_entities = item.get("entities", [])
-
-            if not text:
-                total_rejected += 1
-                continue
-
-            # Dedup within this run
-            text_lower = text.lower()
-            if text_lower in seen_texts:
-                total_rejected += 1
-                continue
-
-            # Locate spans
-            if raw_entities:
-                success, located = locate_entity_spans(text, raw_entities)
-                if not success:
-                    total_span_failures += 1
+            try:
+                if not isinstance(item, dict):
+                    total_rejected += 1
                     continue
-            else:
-                located = []
+                text = item.get("text", "")
+                if not isinstance(text, str):
+                    total_rejected += 1
+                    continue
+                text = text.strip()
+                raw_entities = item.get("entities", [])
 
-            # Quality check
-            passes, reason = passes_quality_checks(
-                text, located,
-                eval_sentences=eval_sentences,
-                unseen_benchmark_terms=unseen_benchmark_terms,
-            )
-            if not passes:
+                if not text:
+                    total_rejected += 1
+                    continue
+
+                # Dedup within this run
+                text_lower = text.lower()
+                if text_lower in seen_texts:
+                    total_rejected += 1
+                    continue
+
+                # Locate spans
+                if raw_entities:
+                    success, located = locate_entity_spans(text, raw_entities)
+                    if not success:
+                        total_span_failures += 1
+                        continue
+                else:
+                    located = []
+
+                # Quality check
+                passes, reason = passes_quality_checks(
+                    text, located,
+                    eval_sentences=eval_sentences,
+                    unseen_benchmark_terms=unseen_benchmark_terms,
+                )
+                if not passes:
+                    total_rejected += 1
+                    continue
+
+                # Accept
+                record = {
+                    "text": text,
+                    "entities": [{"start": e["start"], "end": e["end"], "label": e["label"]} for e in located],
+                    "augmentation_type": "llm_generated",
+                }
+                all_records.append(record)
+                seen_texts.add(text_lower)
+                batch_accepted += 1
+            except Exception:
                 total_rejected += 1
                 continue
-
-            # Accept
-            record = {
-                "text": text,
-                "entities": [{"start": e["start"], "end": e["end"], "label": e["label"]} for e in located],
-                "augmentation_type": "llm_generated",
-            }
-            all_records.append(record)
-            seen_texts.add(text_lower)
-            batch_accepted += 1
 
         print(f"accepted {batch_accepted}/{len(parsed)} (total: {len(all_records)})")
         if batch_accepted > 0:

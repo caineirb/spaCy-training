@@ -85,3 +85,46 @@ A lightweight scratchpad utility for rapidly annotating single sentences and cop
 ```bash
 python tools/spacy_annotator_app.py
 ```
+
+---
+
+## 4. spaCy NER Evaluation Scanner & Browser Tool (`eval_viewer.py`)
+
+An interactive inspection tool and web interface for scanning, filtering, and comparing model evaluation files across `data/eval_results/`.
+
+```bash
+# Launch interactive browser tool (starts local server & auto-opens browser)
+python tools/eval_viewer.py
+
+# Launch on custom port without opening browser
+python tools/eval_viewer.py --port 8765 --no-browser
+
+# Re-compile standalone offline single-file HTML viewer
+python tools/eval_viewer.py --build-static
+```
+
+Alternatively, open the compiled single-file offline bundle directly in any web browser without running a server:
+```bash
+xdg-open data/eval_results/viewer.html
+```
+
+### Core Features
+- **File Type Primary Tabs**:
+  - `Held-Out Test Set` (199 authentic documents)
+  - `Unseen Benchmark (Hybrid Pipeline)` (85 modern tech stack sentences)
+  - `Unseen Benchmark (Transformer Only)` (85 sentences ML-only)
+  - `Unseen Benchmark (Entity Ruler Only)` (85 sentences dictionary-only)
+  - `Dictionary Overrides` (18 runtime precedence audit events)
+  - `3-Way Benchmark Matrix` (Comparative P/R/F1 summary)
+- **Model Separation**:
+  - Sub-navigation pills to switch instantly between `TRTR Baseline`, `TRSTR-Paraphrase`, and `TRSTR-LLM (High Recall)`.
+- **Side-by-Side (3-Way Comparison)**:
+  - Sentence-by-sentence 3-column alignment comparing TRTR, Paraphrase, and LLM predictions side-by-side with automated consensus tags (`🟢 LLM Fixed Error`, `🟡 Disagreements`, `🔴 All Failed`).
+- **Scope & Error Filtering**:
+  - Toggle between `All Records` and `⚠️ Errors Only`.
+  - Filter chips with live counts: `All`, `✅ Correct`, `⚠️ Boundary`, `🚫 Spurious (FP)`, `❌ Missed (FN)`, `🏷️ Label Error`.
+  - Filter by entity category (`IT_TERM`, `CLERICAL_TERM`) and prediction source (`ML`, `dictionary`).
+- **Interactive Highlighting & Inspection**:
+  - Sentences render with color-coded entity spans and hover popover tooltips (term, confidence %, source, offsets).
+  - Entity breakdown comparison table for each document.
+  - Expandable raw JSON inspector with 1-click clipboard copy.

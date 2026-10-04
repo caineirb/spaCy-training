@@ -1238,3 +1238,83 @@
 {"text": "Today I improved the function of Module so that I am able to upload some module files. The student can only view the current modules if the instructor clicks the mark as current module to prevent student jump or view in advance on the future modules. I learn that the more Ma'am grace ask me to add and modify this system function the more I improve making system I get to make it efficient in order to make responsive and user-friendly", "entities": [{"start": 315, "end": 321, "label": "IT_TERM"}, {"start": 357, "end": 363, "label": "IT_TERM"}]}
 {"text": "Add Section Rating Distribution of fitness on dashboard", "entities": []}
 {"text": "This Section Rating Distribution of fitness taught me to track the physical outcomes to a specific section of students and the demographics help me to reveal if my current fitness strategies work for a specific section of students.", "entities": []}
+{"text": "The supervisor assigned me to data entry of the employee information into the existing system.", "entities": [{"start": 30, "end": 40, "label": "CLERICAL_TERM"}, {"start": 48, "end": 68, "label": "CLERICAL_TERM"}, {"start": 78, "end": 93, "label": "CLERICAL_TERM"}]}
+{"text": "I was tasked to encode the submitted forms in the computer system for the office records.", "entities": [{"start": 27, "end": 42, "label": "CLERICAL_TERM"}, {"start": 50, "end": 65, "label": "CLERICAL_TERM"}, {"start": 74, "end": 88, "label": "CLERICAL_TERM"}]}
+{"text": "Assisted in updating the records using the database provided by the department.", "entities": [{"start": 25, "end": 32, "label": "CLERICAL_TERM"}, {"start": 43, "end": 51, "label": "CLERICAL_TERM"}]}
+{"text": "I was assigned to check and organize documents stored in the office computer.", "entities": [{"start": 37, "end": 46, "label": "CLERICAL_TERM"}, {"start": 61, "end": 76, "label": "CLERICAL_TERM"}]}
+{"text": "I helped in entering the client information into the system and checking if the details are complete.", "entities": [{"start": 25, "end": 43, "label": "CLERICAL_TERM"}, {"start": 53, "end": 59, "label": "CLERICAL_TERM"}]}
+{"text": "The supervisor asked me to update the records in the existing application after receiving the forms.", "entities": [{"start": 38, "end": 45, "label": "CLERICAL_TERM"}, {"start": 53, "end": 73, "label": "CLERICAL_TERM"}]}
+{"text": "I did some data encoding in the system based on the documents submitted by the clients.", "entities": [{"start": 11, "end": 24, "label": "CLERICAL_TERM"}, {"start": 32, "end": 38, "label": "CLERICAL_TERM"}, {"start": 52, "end": 61, "label": "CLERICAL_TERM"}]}
+{"text": "Helped to check the information entered in the computer system and corrected some missing details.", "entities": [{"start": 20, "end": 39, "label": "CLERICAL_TERM"}, {"start": 47, "end": 62, "label": "CLERICAL_TERM"}]}
+{"text": "I was assigned to arrange the digital files in the office computer according to their respective records.", "entities": [{"start": 30, "end": 43, "label": "CLERICAL_TERM"}, {"start": 51, "end": 66, "label": "CLERICAL_TERM"}]}
+{"text": "Assisted in recording the transaction details into the existing database for documentation.", "entities": [{"start": 26, "end": 45, "label": "CLERICAL_TERM"}, {"start": 55, "end": 72, "label": "CLERICAL_TERM"}]}
+{"text": "The staff instructed me to enter the data from the forms into the system before filing the documents.", "entities": [{"start": 51, "end": 56, "label": "CLERICAL_TERM"}, {"start": 66, "end": 72, "label": "CLERICAL_TERM"}]}
+{"text": "I helped in checking the records stored in the database and compare them with the submitted documents.", "entities": [{"start": 25, "end": 32, "label": "CLERICAL_TERM"}, {"start": 47, "end": 55, "label": "CLERICAL_TERM"}]}
+{"text": "Assigned to organize client records in the system and prepare the documents needed for filing.", "entities": [{"start": 21, "end": 35, "label": "CLERICAL_TERM"}, {"start": 43, "end": 49, "label": "CLERICAL_TERM"}]}
+{"text": "I assisted in updating employee records using the application used by the office.", "entities": [{"start": 23, "end": 39, "label": "CLERICAL_TERM"}, {"start": 50, "end": 61, "label": "CLERICAL_TERM"}]}
+{"text": "Helped encode the attendance information into the system for the department's records.", "entities": [{"start": 18, "end": 40, "label": "CLERICAL_TERM"}, {"start": 50, "end": 56, "label": "CLERICAL_TERM"}]}
+{"text": "The supervisor gave me task to organize the documents and place the files in their proper folders in the computer.", "entities": [{"start": 44, "end": 53, "label": "CLERICAL_TERM"}, {"start": 105, "end": 113, "label": "CLERICAL_TERM"}]}
+{"text": "I was assigned to record the payment information into the office system and check the corresponding documents.", "entities": [{"start": 29, "end": 48, "label": "CLERICAL_TERM"}, {"start": 58, "end": 71, "label": "CLERICAL_TERM"}, {"start": 86, "end": 109, "label": "CLERICAL_TERM"}]}
+{"text": "Assisted in entering scholarship data into the existing system and checking the submitted requirements.", "entities": [{"start": 21, "end": 37, "label": "CLERICAL_TERM"}, {"start": 47, "end": 62, "label": "CLERICAL_TERM"}]}
+{"text": "I helped prepare and organize the records in the computer before the staff processed the documents.", "entities": [{"start": 34, "end": 41, "label": "CLERICAL_TERM"}, {"start": 49, "end": 57, "label": "CLERICAL_TERM"}]}
+{"text": "I was asked to update some records in the database after the staff finished checking the documents.", "entities": [{"start": 27, "end": 34, "label": "CLERICAL_TERM"}, {"start": 42, "end": 50, "label": "CLERICAL_TERM"}]}
+{"text": "Encoded vendor information into the office database.", "entities": [{"start": 8, "end": 26, "label": "CLERICAL_TERM"}, {"start": 36, "end": 51, "label": "CLERICAL_TERM"}]}
+{"text": "Updated student records in the school system.", "entities": [{"start": 8, "end": 23, "label": "CLERICAL_TERM"}, {"start": 31, "end": 44, "label": "CLERICAL_TERM"}]}
+{"text": "Organized documents using the office filing system.\n", "entities": [{"start": 10, "end": 19, "label": "CLERICAL_TERM"}, {"start": 30, "end": 50, "label": "CLERICAL_TERM"}]}
+{"text": "Reviewed and arranged records in the record-keeping system.", "entities": [{"start": 22, "end": 29, "label": "CLERICAL_TERM"}, {"start": 37, "end": 58, "label": "CLERICAL_TERM"}]}
+{"text": "Created vendor profiles and entered their information into the existing system database.", "entities": [{"start": 8, "end": 23, "label": "CLERICAL_TERM"}, {"start": 63, "end": 87, "label": "CLERICAL_TERM"}]}
+{"text": "Entered client information into the computer system.", "entities": [{"start": 8, "end": 26, "label": "CLERICAL_TERM"}, {"start": 36, "end": 51, "label": "CLERICAL_TERM"}]}
+{"text": "Updated employee records using Microsoft Excel", "entities": [{"start": 8, "end": 24, "label": "CLERICAL_TERM"}, {"start": 31, "end": 46, "label": "CLERICAL_TERM"}]}
+{"text": "Recorded financial transactions in an Excel spreadsheet.", "entities": [{"start": 9, "end": 31, "label": "CLERICAL_TERM"}, {"start": 38, "end": 55, "label": "CLERICAL_TERM"}]}
+{"text": "Prepared reports using Microsoft Word for office documentation", "entities": [{"start": 9, "end": 16, "label": "CLERICAL_TERM"}, {"start": 23, "end": 37, "label": "CLERICAL_TERM"}, {"start": 42, "end": 62, "label": "CLERICAL_TERM"}]}
+{"text": "Organized attendance records using Google Sheets", "entities": [{"start": 10, "end": 28, "label": "CLERICAL_TERM"}, {"start": 35, "end": 48, "label": "CLERICAL_TERM"}]}
+{"text": "Encoded scholarship information into the database.", "entities": [{"start": 8, "end": 31, "label": "CLERICAL_TERM"}, {"start": 41, "end": 49, "label": "CLERICAL_TERM"}]}
+{"text": "Checked patient records stored in the office system.", "entities": [{"start": 8, "end": 23, "label": "CLERICAL_TERM"}, {"start": 38, "end": 51, "label": "CLERICAL_TERM"}]}
+{"text": "Updated inventory records in the computerized inventory system.", "entities": [{"start": 8, "end": 25, "label": "CLERICAL_TERM"}, {"start": 33, "end": 62, "label": "CLERICAL_TERM"}]}
+{"text": "Filed documents and organized folders on the office computer.", "entities": [{"start": 6, "end": 15, "label": "CLERICAL_TERM"}, {"start": 30, "end": 37, "label": "CLERICAL_TERM"}, {"start": 45, "end": 60, "label": "CLERICAL_TERM"}]}
+{"text": "Reviewed and verified information stored in the database.", "entities": [{"start": 48, "end": 56, "label": "CLERICAL_TERM"}]}
+{"text": "Prepared clearance forms and updated their status in the system.", "entities": [{"start": 9, "end": 24, "label": "CLERICAL_TERM"}]}
+{"text": "Entered payment records into the office database.", "entities": [{"start": 8, "end": 23, "label": "CLERICAL_TERM"}, {"start": 33, "end": 48, "label": "CLERICAL_TERM"}]}
+{"text": "Organized vendor profiles and maintained their records in the system.", "entities": [{"start": 10, "end": 25, "label": "CLERICAL_TERM"}, {"start": 47, "end": 54, "label": "CLERICAL_TERM"}]}
+{"text": "Checked and corrected encoded information in the computer system.", "entities": [{"start": 49, "end": 64, "label": "CLERICAL_TERM"}]}
+{"text": "Prepared documents and uploaded them to the office system.", "entities": [{"start": 9, "end": 18, "label": "CLERICAL_TERM"}, {"start": 44, "end": 57, "label": "CLERICAL_TERM"}]}
+{"text": "Distributed forms to employees through the office system.", "entities": [{"start": 12, "end": 17, "label": "CLERICAL_TERM"}, {"start": 43, "end": 56, "label": "CLERICAL_TERM"}]}
+{"text": "Updated the list of beneficiaries in the database.", "entities": [{"start": 20, "end": 33, "label": "CLERICAL_TERM"}, {"start": 41, "end": 49, "label": "CLERICAL_TERM"}]}
+{"text": "Reviewed financial records stored in Microsoft Excel.", "entities": [{"start": 9, "end": 26, "label": "CLERICAL_TERM"}, {"start": 37, "end": 52, "label": "CLERICAL_TERM"}]}
+{"text": "Encoded evaluation data into the existing system.", "entities": [{"start": 8, "end": 23, "label": "CLERICAL_TERM"}, {"start": 33, "end": 48, "label": "CLERICAL_TERM"}]}
+{"text": "Organized incoming documents using the office's digital file system.", "entities": [{"start": 10, "end": 28, "label": "CLERICAL_TERM"}, {"start": 39, "end": 67, "label": "CLERICAL_TERM"}]}
+{"text": "Checked records and corrected incomplete information in the database.", "entities": [{"start": 8, "end": 15, "label": "CLERICAL_TERM"}, {"start": 60, "end": 68, "label": "CLERICAL_TERM"}]}
+{"text": "Prepared reports and encoded the required information into the system.", "entities": [{"start": 9, "end": 16, "label": "CLERICAL_TERM"}]}
+{"text": "Updated client information using the office computer.", "entities": [{"start": 8, "end": 26, "label": "CLERICAL_TERM"}, {"start": 37, "end": 52, "label": "CLERICAL_TERM"}]}
+{"text": "Organized digital files and renamed documents on the computer.", "entities": [{"start": 10, "end": 23, "label": "CLERICAL_TERM"}, {"start": 36, "end": 45, "label": "CLERICAL_TERM"}, {"start": 53, "end": 61, "label": "CLERICAL_TERM"}]}
+{"text": "Recorded inventory information in the office database", "entities": [{"start": 9, "end": 30, "label": "CLERICAL_TERM"}, {"start": 38, "end": 53, "label": "CLERICAL_TERM"}]}
+{"text": "Developed a database system for managing vendor profiles.", "entities": [{"start": 12, "end": 27, "label": "IT_TERM"}, {"start": 41, "end": 56, "label": "IT_TERM"}]}
+{"text": "Designed the database structure for the student record system.", "entities": [{"start": 13, "end": 31, "label": "IT_TERM"}, {"start": 40, "end": 61, "label": "IT_TERM"}]}
+{"text": "Developed an automated system for processing student records.", "entities": [{"start": 13, "end": 29, "label": "IT_TERM"}, {"start": 45, "end": 60, "label": "IT_TERM"}]}
+{"text": "Configured the database used by the office system.", "entities": [{"start": 15, "end": 23, "label": "IT_TERM"}, {"start": 36, "end": 49, "label": "IT_TERM"}]}
+{"text": "Created database queries to retrieve vendor information.", "entities": [{"start": 8, "end": 24, "label": "IT_TERM"}, {"start": 37, "end": 55, "label": "IT_TERM"}]}
+{"text": "Developed a web-based system for managing employee records.", "entities": [{"start": 12, "end": 28, "label": "IT_TERM"}, {"start": 42, "end": 58, "label": "IT_TERM"}]}
+{"text": "Programmed an automated Excel tool for generating reports.", "entities": [{"start": 14, "end": 29, "label": "IT_TERM"}, {"start": 50, "end": 57, "label": "IT_TERM"}]}
+{"text": "Developed a VBA script to automate data processing in Excel.", "entities": [{"start": 12, "end": 22, "label": "IT_TERM"}, {"start": 54, "end": 59, "label": "IT_TERM"}]}
+{"text": "Created a Google Sheets automation using scripts.", "entities": [{"start": 10, "end": 34, "label": "IT_TERM"}, {"start": 41, "end": 48, "label": "IT_TERM"}]}
+{"text": "Designed and developed a database-driven inventory system.", "entities": [{"start": 25, "end": 57, "label": "IT_TERM"}]}
+{"text": "Debugged the system used to manage student records", "entities": [{"start": 13, "end": 19, "label": "IT_TERM"}, {"start": 35, "end": 50, "label": "IT_TERM"}]}
+{"text": "Tested the authentication feature of the record management system.", "entities": [{"start": 11, "end": 33, "label": "IT_TERM"}, {"start": 41, "end": 65, "label": "IT_TERM"}]}
+{"text": "Configured user access for the office database.", "entities": [{"start": 11, "end": 22, "label": "IT_TERM"}, {"start": 31, "end": 46, "label": "IT_TERM"}]}
+{"text": "Developed API endpoints for the client information system.", "entities": [{"start": 10, "end": 23, "label": "IT_TERM"}, {"start": 32, "end": 57, "label": "IT_TERM"}]}
+{"text": "Fixed database connection errors in the application.", "entities": [{"start": 6, "end": 32, "label": "IT_TERM"}, {"start": 40, "end": 51, "label": "IT_TERM"}]}
+{"text": "Designed the user interface of the vendor profiling system.", "entities": [{"start": 13, "end": 27, "label": "IT_TERM"}, {"start": 35, "end": 58, "label": "IT_TERM"}]}
+{"text": "Developed a web application for managing clearance records.", "entities": [{"start": 12, "end": 27, "label": "IT_TERM"}, {"start": 41, "end": 58, "label": "IT_TERM"}]}
+{"text": "Implemented search functionality for the student database.", "entities": [{"start": 12, "end": 32, "label": "IT_TERM"}, {"start": 41, "end": 57, "label": "IT_TERM"}]}
+{"text": "Created database tables for storing employee information.", "entities": [{"start": 8, "end": 23, "label": "IT_TERM"}, {"start": 36, "end": 56, "label": "IT_TERM"}]}
+{"text": "Optimized database queries used by the information system.", "entities": [{"start": 10, "end": 26, "label": "IT_TERM"}, {"start": 39, "end": 57, "label": "IT_TERM"}]}
+{"text": "Configured the server hosting the office database.", "entities": [{"start": 15, "end": 29, "label": "IT_TERM"}, {"start": 34, "end": 49, "label": "IT_TERM"}]}
+{"text": "Deployed the record management system to the production server.", "entities": [{"start": 13, "end": 37, "label": "IT_TERM"}, {"start": 45, "end": 62, "label": "IT_TERM"}]}
+{"text": "Developed a dashboard for monitoring inventory records.", "entities": [{"start": 12, "end": 21, "label": "IT_TERM"}, {"start": 26, "end": 54, "label": "IT_TERM"}]}
+{"text": "Implemented data validation in the student information system.", "entities": [{"start": 12, "end": 27, "label": "IT_TERM"}, {"start": 35, "end": 61, "label": "IT_TERM"}]}
+{"text": "Created an automated system for generating financial reports.", "entities": [{"start": 11, "end": 27, "label": "IT_TERM"}, {"start": 43, "end": 60, "label": "IT_TERM"}]}
+{"text": "Integrated the database with the web application.", "entities": [{"start": 15, "end": 23, "label": "IT_TERM"}, {"start": 33, "end": 48, "label": "IT_TERM"}]}
+{"text": "Developed a login system for authorized database users.", "entities": [{"start": 12, "end": 24, "label": "IT_TERM"}, {"start": 40, "end": 54, "label": "IT_TERM"}]}
+{"text": "Tested the database backup and recovery process.", "entities": [{"start": 11, "end": 26, "label": "IT_TERM"}, {"start": 31, "end": 47, "label": "IT_TERM"}]}
+{"text": "Configured the network connection of the server hosting the system.", "entities": [{"start": 15, "end": 33, "label": "IT_TERM"}, {"start": 41, "end": 55, "label": "IT_TERM"}, {"start": 60, "end": 66, "label": "IT_TERM"}]}
+{"text": "Developed a system for automatically organizing digital records.", "entities": [{"start": 12, "end": 18, "label": "IT_TERM"}, {"start": 48, "end": 63, "label": "IT_TERM"}]}
