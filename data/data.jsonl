@@ -1,4 +1,4 @@
-{"text": "Encoded and organized vendor evaluation data using Microsoft Excel.", "entities": [{"start": 0, "end": 7, "label": "CLERICAL_TERM"}, {"start": 29, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 66, "label": "CLERICAL_TERM"}]}
+{"text": "Encoded and organized vendor evaluation data using Microsoft Excel.", "entities": [{"start": 0, "end": 7, "label": "CLERICAL_TERM"}, {"start": 22, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 66, "label": "CLERICAL_TERM"}]}
 {"text": "Organized and digitized vendor-related documents.", "entities": [{"start": 24, "end": 48, "label": "CLERICAL_TERM"}]}
 {"text": "Created vendor profiles in the system/database.", "entities": [{"start": 8, "end": 23, "label": "CLERICAL_TERM"}, {"start": 38, "end": 46, "label": "IT_TERM"}]}
 {"text": "Designed identification (ID) cards for vendors/staff.", "entities": [{"start": 9, "end": 34, "label": "CLERICAL_TERM"}]}
@@ -10,11 +10,11 @@
 {"text": "Added and updated vendor details in the database.", "entities": [{"start": 40, "end": 48, "label": "IT_TERM"}]}
 {"text": "Maintained and updated records in the office database.", "entities": [{"start": 38, "end": 53, "label": "IT_TERM"}]}
 {"text": "Performed outdoor tasks such as file distribution.", "entities": []}
-{"text": "Encoded and organized vendor evaluation data using Excel.", "entities": [{"start": 0, "end": 7, "label": "CLERICAL_TERM"}, {"start": 29, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 56, "label": "CLERICAL_TERM"}]}
-{"text": "Conducted vendor evaluation.", "entities": []}
+{"text": "Encoded and organized vendor evaluation data using Excel.", "entities": [{"start": 0, "end": 7, "label": "CLERICAL_TERM"}, {"start": 22, "end": 44, "label": "CLERICAL_TERM"}, {"start": 51, "end": 56, "label": "CLERICAL_TERM"}]}
+{"text": "Conducted vendor evaluation.", "entities": [{"start": 10, "end": 27, "label": "CLERICAL_TERM"}]}
 {"text": "Transformed physical documents into digital copies.", "entities": [{"start": 12, "end": 30, "label": "CLERICAL_TERM"}]}
 {"text": "Participated and assisted in the LGU 109th Charter Day celebration.", "entities": []}
-{"text": "Created and revised another Excel file for vendor evaluation.", "entities": [{"start": 28, "end": 33, "label": "CLERICAL_TERM"}]}
+{"text": "Created and revised another Excel file for vendor evaluation.", "entities": [{"start": 28, "end": 33, "label": "CLERICAL_TERM"}, {"start": 43, "end": 60, "label": "CLERICAL_TERM"}]}
 {"text": "Prepared and laminated vendors’ stall numbers.", "entities": []}
 {"text": "Organized, reviewed, and encoded important vendor records using the office database and Microsoft Excel.", "entities": [{"start": 25, "end": 32, "label": "CLERICAL_TERM"}, {"start": 68, "end": 83, "label": "IT_TERM"}, {"start": 88, "end": 103, "label": "CLERICAL_TERM"}]}
 {"text": "Performed outdoor tasks such as distributing important documents and conducting weekly market evaluations.", "entities": [{"start": 45, "end": 64, "label": "CLERICAL_TERM"}]}
@@ -543,8 +543,8 @@
 {"text": "User authentication system protected data security", "entities": [{"start": 0, "end": 26, "label": "IT_TERM"}, {"start": 37, "end": 50, "label": "IT_TERM"}]}
 {"text": "Software update installation maintained system functionality", "entities": [{"start": 0, "end": 15, "label": "IT_TERM"}]}
 {"text": "System testing identified and resolved bugs", "entities": [{"start": 0, "end": 14, "label": "IT_TERM"}, {"start": 39, "end": 43, "label": "IT_TERM"}]}
-{"text": "Email configuration established communication systems", "entities": [{"start": 32, "end": 53, "label": "IT_TERM"}, {"start": 32, "end": 53, "label": "IT_TERM"}]}
-{"text": "Medical chart documentation recorded patient information", "entities": []}
+{"text": "Email configuration established communication systems", "entities": [{"start": 0, "end": 19, "label": "IT_TERM"}, {"start": 32, "end": 53, "label": "IT_TERM"}]}
+{"text": "Medical chart documentation recorded patient information", "entities": [{"start": 0, "end": 27, "label": "CLERICAL_TERM"}]}
 {"text": "Website deployment launched online platforms", "entities": [{"start": 0, "end": 18, "label": "IT_TERM"}]}
 {"text": "Form verification ensured data accurac", "entities": [{"start": 0, "end": 17, "label": "CLERICAL_TERM"}]}
 {"text": "Certificate creation followed specific formatting requirements", "entities": [{"start": 0, "end": 20, "label": "CLERICAL_TERM"}]}
@@ -1211,7 +1211,7 @@
 {"text": "In this day sir Adonis Head of Student Discipline Office wants us to make Multimedia Named Ugtong Daw Bahandi which is Indigenous Music Video but first they film a 3rd year female student who wearing something tribe and we filming at indigenous culture and innovation Hub before I start to video editing and it took me long to finish doing music video but it is worth of time. after that I show it to Sir Adonis about the Music Video I made and also the rest is also watching including the rest of the SAS office and Ma'am Rowena they like my music video I edited. I learned that it may have taken me long to make music video but I still have that achievement that to make people happy and I will keep going until I become a professional.", "entities": [{"start": 74, "end": 84, "label": "IT_TERM"}, {"start": 290, "end": 303, "label": "IT_TERM"}]}
 {"text": "Keep enhancing the our System", "entities": [{"start": 23, "end": 29, "label": "IT_TERM"}]}
 {"text": "In this day, I Keep enhancing our System until making it efficient and easy to use for our Head like adding some another functionalities like once you have a 2nd or 3rd attempt of committing violation it will automatically pop out the field of 2nd offense and 3rd offense without typing it manually.", "entities": [{"start": 34, "end": 40, "label": "IT_TERM"}]}
-{"text": "Doing online prefect clearance portal", "entities": []}
+{"text": "Doing online prefect clearance portal", "entities": [{"start": 13, "end": 37, "label": "CLERICAL_TERM"}]}
 {"text": "In this day we assign some doing clearance of 1st to 3rd year college by inputting their information on excel and after that I tap it on the clearance online portal that they are now cleared instead of pending of Prefect since I already input their information. seeing this so many students doing clearance that I need to input their information and clear it after is a bit tiring but at the same time I'm getting use to it and and enjoy it like God said is There is nothing better than that all should enjoy their work, for that is their lot.", "entities": []}
 {"text": "Keep Assisting of students those wants Clear their Pending E-Clearance at SDO", "entities": [{"start": 59, "end": 70, "label": "IT_TERM"}]}
 {"text": "In this day from day 1 to day 3 in this week We are calling those students to those who haven't got to clear their E-Clearance as much as we could at SDO (Student Discipline Office) so no one left behind and keep inputting their information before they are cleared their E-Clearance. We didn't get a chance to consult our System we Develop to Our head sir Adonis Onahon Because He was Busy Preparing an Exam for His Student's and Other Administrative Works. I experience that Doing some Administrative tasks has be many things you can do especially only two of them Handling some E-Clearance/Clearance the Head of SDO and his Aid but Since we are here, I am willingly to help them to lighten their other task to handling Clearing Student's E-Clearance for instance.", "entities": [{"start": 115, "end": 126, "label": "IT_TERM"}, {"start": 271, "end": 282, "label": "IT_TERM"}, {"start": 322, "end": 328, "label": "IT_TERM"}, {"start": 580, "end": 591, "label": "IT_TERM"}, {"start": 740, "end": 751, "label": "IT_TERM"}]}

@@ -1,41 +1,41 @@
 {
   "conditions": {
     "TRTR": {
-      "description": "Train Real, Test Real \u2014 baseline with authentic data only",
+      "description": "Train Real, Test Real — baseline with authentic data only",
       "training_records": 923,
       "held_out_test": {
-        "overall_precision": 65.96,
-        "overall_recall": 67.69,
-        "overall_f1": 66.81,
+        "overall_precision": 72.46,
+        "overall_recall": 73.39,
+        "overall_f1": 72.92,
         "total_test_documents": 199,
         "labels": {
           "IT_TERM": {
-            "precision": 67.08,
-            "recall": 67.5,
-            "f1": 67.29
+            "precision": 72.89,
+            "recall": 75.16,
+            "f1": 74.01
           },
           "CLERICAL_TERM": {
-            "precision": 63.51,
-            "recall": 68.12,
-            "f1": 65.73
+            "precision": 71.43,
+            "recall": 69.44,
+            "f1": 70.42
           }
         }
       },
       "unseen_benchmark": {
         "transformer_only": {
           "mode": "transformer_only",
-          "true_positives": 40,
-          "false_positives": 91,
-          "false_negatives": 25,
+          "true_positives": 50,
+          "false_positives": 81,
+          "false_negatives": 15,
           "total_gold_entities": 65,
-          "precision_pct": 30.53,
-          "recall_pct": 61.54,
-          "f1_pct": 40.82,
-          "correctly_identified_raw": "40/65",
+          "precision_pct": 38.17,
+          "recall_pct": 76.92,
+          "f1_pct": 51.02,
+          "correctly_identified_raw": "50/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9275,
-            "mean_confidence_spurious_entities": 0.9706,
-            "confidence_discrimination_delta": -0.0431
+            "mean_confidence_correct_entities": 0.9735,
+            "mean_confidence_spurious_entities": 0.952,
+            "confidence_discrimination_delta": 0.0215
           },
           "sample_preview": [
             {
@@ -44,11 +44,13 @@
                 "FastAPI"
               ],
               "pred": [
-                "scalable microservice using FastAPI",
+                "scalable microservice",
+                "FastAPI",
                 "database"
               ],
               "conf": [
-                0.9955,
+                0.9999,
+                0.9923,
                 0.9999
               ]
             },
@@ -58,7 +60,7 @@
                 "Bun"
               ],
               "pred": [
-                "legacy serverless functions",
+                "serverless functions",
                 "runtime execution"
               ],
               "conf": [
@@ -72,12 +74,12 @@
                 "Svelte"
               ],
               "pred": [
-                "interactive reactive dashboard component",
-                "Svelte."
+                "interactive reactive dashboard",
+                "Svelte"
               ],
               "conf": [
                 0.9999,
-                0.988
+                0.9749
               ]
             },
             {
@@ -86,7 +88,7 @@
                 "Tailwind CSS"
               ],
               "pred": [
-                "web styling",
+                "responsive web",
                 "Tailwind CSS"
               ],
               "conf": [
@@ -105,9 +107,9 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9991,
+                0.9998,
                 0.9999,
-                0.9956
+                0.9994
               ]
             },
             {
@@ -121,7 +123,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9943
+                0.9399
               ]
             },
             {
@@ -137,7 +139,7 @@
               "conf": [
                 0.9999,
                 0.9999,
-                0.9995
+                0.9996
               ]
             },
             {
@@ -151,25 +153,25 @@
               ],
               "conf": [
                 0.9999,
-                0.9982
+                0.999
               ]
             }
           ]
         },
         "hybrid": {
           "mode": "hybrid",
-          "true_positives": 41,
-          "false_positives": 90,
-          "false_negatives": 24,
+          "true_positives": 50,
+          "false_positives": 82,
+          "false_negatives": 15,
           "total_gold_entities": 65,
-          "precision_pct": 31.3,
-          "recall_pct": 63.08,
-          "f1_pct": 41.84,
-          "correctly_identified_raw": "41/65",
+          "precision_pct": 37.88,
+          "recall_pct": 76.92,
+          "f1_pct": 50.76,
+          "correctly_identified_raw": "50/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9293,
-            "mean_confidence_spurious_entities": 0.9702,
-            "confidence_discrimination_delta": -0.0409
+            "mean_confidence_correct_entities": 0.9735,
+            "mean_confidence_spurious_entities": 0.9526,
+            "confidence_discrimination_delta": 0.0209
           },
           "sample_preview": [
             {
@@ -178,11 +180,13 @@
                 "FastAPI"
               ],
               "pred": [
-                "scalable microservice using FastAPI",
+                "scalable microservice",
+                "FastAPI",
                 "database"
               ],
               "conf": [
-                0.9955,
+                0.9999,
+                0.9923,
                 0.9999
               ]
             },
@@ -192,7 +196,7 @@
                 "Bun"
               ],
               "pred": [
-                "legacy serverless functions",
+                "serverless functions",
                 "runtime execution"
               ],
               "conf": [
@@ -206,12 +210,12 @@
                 "Svelte"
               ],
               "pred": [
-                "interactive reactive dashboard component",
-                "Svelte."
+                "interactive reactive dashboard",
+                "Svelte"
               ],
               "conf": [
                 0.9999,
-                0.988
+                0.9749
               ]
             },
             {
@@ -220,7 +224,7 @@
                 "Tailwind CSS"
               ],
               "pred": [
-                "web styling",
+                "responsive web",
                 "Tailwind CSS"
               ],
               "conf": [
@@ -239,9 +243,9 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9991,
+                0.9998,
                 0.9999,
-                0.9956
+                0.9994
               ]
             },
             {
@@ -255,7 +259,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9943
+                0.9399
               ]
             },
             {
@@ -271,7 +275,7 @@
               "conf": [
                 0.9999,
                 0.9999,
-                0.9995
+                0.9996
               ]
             },
             {
@@ -285,12 +289,12 @@
               ],
               "conf": [
                 0.9999,
-                0.9982
+                0.999
               ]
             }
           ]
         },
-        "generalization_lift": "+58.46%"
+        "generalization_lift": "+72.3%"
       }
     },
     "TRSTR_Paraphrase": {
@@ -299,20 +303,20 @@
       "real_records": 923,
       "synthetic_records": 565,
       "held_out_test": {
-        "overall_precision": 67.77,
-        "overall_recall": 71.62,
-        "overall_f1": 69.64,
+        "overall_precision": 67.66,
+        "overall_recall": 68.24,
+        "overall_f1": 67.95,
         "total_test_documents": 199,
         "labels": {
           "IT_TERM": {
-            "precision": 68.55,
-            "recall": 68.12,
-            "f1": 68.34
+            "precision": 69.23,
+            "recall": 67.08,
+            "f1": 68.14
           },
           "CLERICAL_TERM": {
-            "precision": 66.27,
-            "recall": 79.71,
-            "f1": 72.37
+            "precision": 64.56,
+            "recall": 70.83,
+            "f1": 67.55
           }
         }
       },
@@ -320,17 +324,17 @@
         "transformer_only": {
           "mode": "transformer_only",
           "true_positives": 47,
-          "false_positives": 87,
+          "false_positives": 89,
           "false_negatives": 18,
           "total_gold_entities": 65,
-          "precision_pct": 35.07,
+          "precision_pct": 34.56,
           "recall_pct": 72.31,
-          "f1_pct": 47.24,
+          "f1_pct": 46.77,
           "correctly_identified_raw": "47/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9002,
-            "mean_confidence_spurious_entities": 0.9606,
-            "confidence_discrimination_delta": -0.0604
+            "mean_confidence_correct_entities": 0.9073,
+            "mean_confidence_spurious_entities": 0.9281,
+            "confidence_discrimination_delta": -0.0208
           },
           "sample_preview": [
             {
@@ -344,9 +348,9 @@
                 "database"
               ],
               "conf": [
-                0.9864,
-                0.997,
-                0.9998
+                0.9471,
+                0.9934,
+                0.9999
               ]
             },
             {
@@ -360,7 +364,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9999
+                0.9895
               ]
             },
             {
@@ -369,12 +373,12 @@
                 "Svelte"
               ],
               "pred": [
-                "interactive reactive dashboard component",
+                "interactive reactive dashboard",
                 "Svelte"
               ],
               "conf": [
                 0.9999,
-                0.9992
+                0.9446
               ]
             },
             {
@@ -383,12 +387,12 @@
                 "Tailwind CSS"
               ],
               "pred": [
-                "web styling",
+                "responsive web styling",
                 "Tailwind CSS"
               ],
               "conf": [
                 0.9999,
-                0.9937
+                0.9999
               ]
             },
             {
@@ -402,9 +406,9 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9983,
+                0.9993,
                 0.9999,
-                0.9956
+                0.8317
               ]
             },
             {
@@ -418,7 +422,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9974
+                0.9797
               ]
             },
             {
@@ -434,7 +438,7 @@
               "conf": [
                 0.9999,
                 0.9999,
-                0.9998
+                0.9976
               ]
             },
             {
@@ -448,7 +452,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9978
+                0.994
               ]
             }
           ]
@@ -456,17 +460,17 @@
         "hybrid": {
           "mode": "hybrid",
           "true_positives": 47,
-          "false_positives": 87,
+          "false_positives": 90,
           "false_negatives": 18,
           "total_gold_entities": 65,
-          "precision_pct": 35.07,
+          "precision_pct": 34.31,
           "recall_pct": 72.31,
-          "f1_pct": 47.24,
+          "f1_pct": 46.53,
           "correctly_identified_raw": "47/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9002,
-            "mean_confidence_spurious_entities": 0.9606,
-            "confidence_discrimination_delta": -0.0604
+            "mean_confidence_correct_entities": 0.9073,
+            "mean_confidence_spurious_entities": 0.9289,
+            "confidence_discrimination_delta": -0.0216
           },
           "sample_preview": [
             {
@@ -480,9 +484,9 @@
                 "database"
               ],
               "conf": [
-                0.9864,
-                0.997,
-                0.9998
+                0.9471,
+                0.9934,
+                0.9999
               ]
             },
             {
@@ -496,7 +500,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9999
+                0.9895
               ]
             },
             {
@@ -505,12 +509,12 @@
                 "Svelte"
               ],
               "pred": [
-                "interactive reactive dashboard component",
+                "interactive reactive dashboard",
                 "Svelte"
               ],
               "conf": [
                 0.9999,
-                0.9992
+                0.9446
               ]
             },
             {
@@ -519,12 +523,12 @@
                 "Tailwind CSS"
               ],
               "pred": [
-                "web styling",
+                "responsive web styling",
                 "Tailwind CSS"
               ],
               "conf": [
                 0.9999,
-                0.9937
+                0.9999
               ]
             },
             {
@@ -538,9 +542,9 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9983,
+                0.9993,
                 0.9999,
-                0.9956
+                0.8317
               ]
             },
             {
@@ -554,7 +558,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9974
+                0.9797
               ]
             },
             {
@@ -570,7 +574,7 @@
               "conf": [
                 0.9999,
                 0.9999,
-                0.9998
+                0.9976
               ]
             },
             {
@@ -584,7 +588,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9978
+                0.994
               ]
             }
           ]
@@ -599,38 +603,38 @@
       "synthetic_records": 571,
       "mined_negatives": 94,
       "held_out_test": {
-        "overall_precision": 76.81,
-        "overall_recall": 69.43,
-        "overall_f1": 72.94,
+        "overall_precision": 73.52,
+        "overall_recall": 69.1,
+        "overall_f1": 71.24,
         "total_test_documents": 199,
         "labels": {
           "IT_TERM": {
-            "precision": 78.99,
-            "recall": 68.12,
-            "f1": 73.15
+            "precision": 73.47,
+            "recall": 67.08,
+            "f1": 70.13
           },
           "CLERICAL_TERM": {
-            "precision": 72.46,
-            "recall": 72.46,
-            "f1": 72.46
+            "precision": 73.61,
+            "recall": 73.61,
+            "f1": 73.61
           }
         }
       },
       "unseen_benchmark": {
         "transformer_only": {
           "mode": "transformer_only",
-          "true_positives": 62,
-          "false_positives": 36,
-          "false_negatives": 3,
+          "true_positives": 61,
+          "false_positives": 33,
+          "false_negatives": 4,
           "total_gold_entities": 65,
-          "precision_pct": 63.27,
-          "recall_pct": 95.38,
-          "f1_pct": 76.07,
-          "correctly_identified_raw": "62/65",
+          "precision_pct": 64.89,
+          "recall_pct": 93.85,
+          "f1_pct": 76.73,
+          "correctly_identified_raw": "61/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9491,
-            "mean_confidence_spurious_entities": 0.9475,
-            "confidence_discrimination_delta": 0.0016
+            "mean_confidence_correct_entities": 0.9901,
+            "mean_confidence_spurious_entities": 0.9153,
+            "confidence_discrimination_delta": 0.0748
           },
           "sample_preview": [
             {
@@ -642,7 +646,7 @@
                 "FastAPI"
               ],
               "conf": [
-                0.9093
+                0.9949
               ]
             },
             {
@@ -651,10 +655,12 @@
                 "Bun"
               ],
               "pred": [
+                "serverless functions",
                 "Bun"
               ],
               "conf": [
-                0.9995
+                0.9923,
+                0.9999
               ]
             },
             {
@@ -663,12 +669,10 @@
                 "Svelte"
               ],
               "pred": [
-                "dashboard",
                 "Svelte"
               ],
               "conf": [
-                0.9997,
-                0.9998
+                0.9999
               ]
             },
             {
@@ -681,7 +685,7 @@
                 "Tailwind CSS"
               ],
               "conf": [
-                0.8986,
+                0.9248,
                 0.9999
               ]
             },
@@ -696,7 +700,7 @@
               ],
               "conf": [
                 0.9968,
-                0.9925
+                0.9999
               ]
             },
             {
@@ -705,12 +709,12 @@
                 "Prisma"
               ],
               "pred": [
-                "database schema models",
+                "database schema",
                 "Prisma"
               ],
               "conf": [
                 0.9999,
-                0.9998
+                0.9999
               ]
             },
             {
@@ -720,7 +724,7 @@
               ],
               "pred": [
                 "caching layers",
-                "message queuing",
+                "message queuing services",
                 "Redis"
               ],
               "conf": [
@@ -738,25 +742,25 @@
                 "NestJS"
               ],
               "conf": [
-                0.9643
+                0.9971
               ]
             }
           ]
         },
         "hybrid": {
           "mode": "hybrid",
-          "true_positives": 62,
+          "true_positives": 61,
           "false_positives": 40,
-          "false_negatives": 3,
+          "false_negatives": 4,
           "total_gold_entities": 65,
-          "precision_pct": 60.78,
-          "recall_pct": 95.38,
-          "f1_pct": 74.25,
-          "correctly_identified_raw": "62/65",
+          "precision_pct": 60.4,
+          "recall_pct": 93.85,
+          "f1_pct": 73.49,
+          "correctly_identified_raw": "61/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9491,
-            "mean_confidence_spurious_entities": 0.9528,
-            "confidence_discrimination_delta": -0.0037
+            "mean_confidence_correct_entities": 0.9901,
+            "mean_confidence_spurious_entities": 0.9338,
+            "confidence_discrimination_delta": 0.0563
           },
           "sample_preview": [
             {
@@ -769,7 +773,7 @@
                 "database"
               ],
               "conf": [
-                0.9093,
+                0.9949,
                 1.0
               ]
             },
@@ -783,8 +787,8 @@
                 "Bun"
               ],
               "conf": [
-                1.0,
-                0.9995
+                0.9923,
+                0.9999
               ]
             },
             {
@@ -798,7 +802,7 @@
               ],
               "conf": [
                 1.0,
-                0.9998
+                0.9999
               ]
             },
             {
@@ -811,7 +815,7 @@
                 "Tailwind CSS"
               ],
               "conf": [
-                0.8986,
+                0.9248,
                 0.9999
               ]
             },
@@ -826,7 +830,7 @@
               ],
               "conf": [
                 0.9968,
-                0.9925
+                0.9999
               ]
             },
             {
@@ -839,8 +843,8 @@
                 "Prisma"
               ],
               "conf": [
-                0.9999,
-                0.9998
+                1.0,
+                0.9999
               ]
             },
             {
@@ -850,7 +854,7 @@
               ],
               "pred": [
                 "caching layers",
-                "message queuing",
+                "message queuing services",
                 "Redis"
               ],
               "conf": [
@@ -868,12 +872,12 @@
                 "NestJS"
               ],
               "conf": [
-                0.9643
+                0.9971
               ]
             }
           ]
         },
-        "generalization_lift": "+90.76%"
+        "generalization_lift": "+89.23%"
       }
     }
   },

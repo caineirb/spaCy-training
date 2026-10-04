@@ -236,7 +236,7 @@
 {"text": "To take care of the daily workflow and to familiarize myself with the office environment and staff responsibilities.", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "I have learned how ticketing systems manage requests .", "entities": [{"start": 19, "end": 36, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "Defeating the value of accuracy in police clearance records", "entities": [{"start": 35, "end": 51, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
-{"text": "In addition to this, we created and revised another Excel file for vendor evaluation.", "entities": [{"start": 52, "end": 57, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
+{"text": "In addition to this, we created and revised another Excel file for vendor evaluation.", "entities": [{"start": 52, "end": 57, "label": "CLERICAL_TERM"}, {"start": 67, "end": 84, "label": "CLERICAL_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "In addition to this, we have created a Google Sheets automation using scripts.", "entities": [{"start": 39, "end": 63, "label": "IT_TERM"}, {"start": 70, "end": 77, "label": "IT_TERM"}], "augmentation_type": "paraphrase"}
 {"text": "Synced design changes are -", "entities": [], "augmentation_type": "paraphrase"}
 {"text": "A New Athlete will be the first to be announced in the coming weeks .", "entities": [], "augmentation_type": "paraphrase"}

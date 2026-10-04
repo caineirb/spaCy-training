@@ -88,24 +88,13 @@ python tools/spacy_annotator_app.py
 
 ---
 
-## 4. spaCy NER Evaluation Scanner & Browser Tool (`eval_viewer.py`)
+## 4. spaCy NER Evaluation Results Studio (`eval_results_gui.py`)
 
-An interactive inspection tool and web interface for scanning, filtering, and comparing model evaluation files across `data/eval_results/`.
+A native Python desktop graphical user interface (Tkinter) to scan, inspect, filter, and compare model evaluation files across `data/eval_results/` in a human-readable layout.
 
 ```bash
-# Launch interactive browser tool (starts local server & auto-opens browser)
-python tools/eval_viewer.py
-
-# Launch on custom port without opening browser
-python tools/eval_viewer.py --port 8765 --no-browser
-
-# Re-compile standalone offline single-file HTML viewer
-python tools/eval_viewer.py --build-static
-```
-
-Alternatively, open the compiled single-file offline bundle directly in any web browser without running a server:
-```bash
-xdg-open data/eval_results/viewer.html
+# Launch native desktop GUI application
+python tools/eval_results_gui.py
 ```
 
 ### Core Features
