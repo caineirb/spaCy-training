@@ -24,7 +24,7 @@ Rather than relying on a naive dictionary lookup or an ungrounded flat NER model
 +-----------------------------------+        +-----------------------------------+
 |   Layer 1: Deterministic Layer    |        |     Layer 2: Contextual ML        |
 |  spaCy EntityRuler (terms.csv)    |        |   Transformer NER (RoBERTa-base)  |
-|      343 Curated Seed Terms       |        |    Trained on In-Context Docs     |
+|      371 Curated Seed Terms       |        |    Trained on In-Context Docs     |
 +-----------------------------------+        +-----------------------------------+
                  |                                             |
   [dict_entities: start, end, label]          [ml_entities: start, end, label, conf]
@@ -91,11 +91,11 @@ spaCy-training/
 │   ├── training_trstr_paraphrase.jsonl # Combined real + paraphrase training pool (1,488 records)
 │   ├── training_trstr_llm.jsonl       # Combined real + LLM + mined negatives pool (1,588 records)
 │   ├── training/
-│   │   ├── train.spacy                # Real training partition (923 docs, 1,031 entities)
+│   │   ├── train.spacy                # Real training partition (923 docs, 1,032 entities)
 │   │   ├── dev.spacy                  # Real validation partition (198 docs, 208 entities)
-│   │   ├── test.spacy                 # Real held-out test partition (199 docs, 229 entities)
-│   │   ├── train_trstr_paraphrase.spacy # Paraphrase-augmented DocBin (1,488 docs, 1,414 entities)
-│   │   └── train_trstr_llm.spacy      # LLM-augmented DocBin (1,588 docs, 1,586 entities)
+│   │   ├── test.spacy                 # Real held-out test partition (199 docs, 233 entities)
+│   │   ├── train_trstr_paraphrase.spacy # Paraphrase-augmented DocBin (1,488 docs, 1,416 entities)
+│   │   └── train_trstr_llm.spacy      # LLM-augmented DocBin (1,588 docs, 1,587 entities)
 │   ├── test/
 │   │   ├── unseen_benchmark.jsonl     # Out-of-vocabulary benchmark (85 docs, 65 gold entities)
 │   │   ├── holdout.jsonl              # Permanent real-world holdout evaluation set
@@ -161,7 +161,7 @@ The system strictly enforces a unified two-class taxonomy:
 - **`IT_TERM`**: Technologies, programming languages, software libraries, databases, IT infrastructure, hardware, and concrete technical workflows (e.g., `Python`, `PostgreSQL`, `Docker`, `Git`, `Cable Crimping`, `Database Administration`).
 - **`CLERICAL_TERM`**: Office productivity tools, document handling, filing, record-keeping, and administrative workflows (e.g., `Microsoft Excel`, `Police Clearance`, `log books`, `data encoding`, `filing`, `PESO office book`).
 
-Across the complete authentic dataset (`data/data.jsonl`, 1,320 records), annotations contain **1,470 total entities** (**933** `IT_TERM` and **537** `CLERICAL_TERM`, a balanced 1.74:1 ratio).
+Across the complete authentic dataset (`data/data.jsonl`, 1,320 records), annotations contain **1,474 total entities** (**933** `IT_TERM` and **541** `CLERICAL_TERM`, a balanced 1.72:1 ratio).
 
 ### Exact Span Schema (`data/data.jsonl`)
 
@@ -189,10 +189,10 @@ To prevent false-positive over-prediction in conversational narratives, non-task
 }
 ```
 
-- **Target Negative Ratio**: Maintained between **25%–35%** across all real splits (34.5% overall in `data/data.jsonl`).
-- **Real Training Split (`data/training/train.spacy`)**: 923 records (606 positive, 317 negative / 34.3% neg; 636 `IT_TERM`, 396 `CLERICAL_TERM`).
-- **Validation Split (`data/training/dev.spacy`)**: 198 records (128 positive, 70 negative / 35.4% neg; 136 `IT_TERM`, 72 `CLERICAL_TERM`).
-- **Held-Out Test Split (`data/training/test.spacy`)**: 199 records (131 positive, 68 negative / 34.2% neg; 161 `IT_TERM`, 69 `CLERICAL_TERM`).
+- **Target Negative Ratio**: Maintained between **25%–35%** across all real splits (**34.2%** overall in `data/data.jsonl`, 452 negative records).
+- **Real Training Split (`data/training/train.spacy`)**: 923 records (606 positive, 317 negative / 34.3% neg; 636 `IT_TERM`, 397 `CLERICAL_TERM`, 1,032 valid entities saved).
+- **Validation Split (`data/training/dev.spacy`)**: 198 records (128 positive, 70 negative / 35.4% neg; 136 `IT_TERM`, 72 `CLERICAL_TERM`, 208 valid entities).
+- **Held-Out Test Split (`data/training/test.spacy`)**: 199 records (134 positive, 65 negative / 32.7% neg; 161 `IT_TERM`, 72 `CLERICAL_TERM`, 233 valid entities).
 
 ---
 
@@ -206,24 +206,26 @@ To rigorously assess performance and generalization, three experimental conditio
 
 ### 4.1 Side-by-Side Test Partition Evaluation
 
-Evaluated against the identical authentic held-out test split (`data/training/test.spacy`, 199 docs, 229 entities) and controlled out-of-vocabulary benchmark (`data/test/unseen_benchmark.jsonl`, 85 docs, 65 gold entities) from `main.ipynb`:
+Evaluated against the identical authentic held-out test split (`data/training/test.spacy`, 199 docs, 233 entities) and controlled out-of-vocabulary benchmark (`data/test/unseen_benchmark.jsonl`, 85 docs, 65 gold entities) from `main.ipynb`:
 
 | Evaluation Metric | TRTR (Real Baseline) | TRSTR-Paraphrase (T5) | TRSTR-LLM (Gemini) | Delta (Para vs TRTR) | Delta (LLM vs TRTR) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Held-Out Test Overall F1** | 66.81% | 69.64% | **72.94%** | +2.83% | **+6.13%** |
-| Held-Out Test Overall Precision | 65.96% | 67.77% | **76.81%** | +1.81% | **+10.85%** |
-| Held-Out Test Overall Recall | 67.69% | **71.62%** | 69.43% | **+3.93%** | +1.74% |
-| ├── `IT_TERM` F1 | 67.29% | 68.34% | **73.15%** | +1.05% | **+5.86%** |
-| ├── `IT_TERM` Precision | 67.08% | 68.55% | **78.99%** | +1.47% | **+11.91%** |
-| ├── `IT_TERM` Recall | 67.50% | **68.12%** | **68.12%** | **+0.62%** | **+0.62%** |
-| ├── `CLERICAL_TERM` F1 | 65.73% | 72.37% | **72.46%** | +6.64% | **+6.73%** |
-| ├── `CLERICAL_TERM` Precision | 63.51% | 66.27% | **72.46%** | +2.76% | **+8.95%** |
-| └── `CLERICAL_TERM` Recall | 68.12% | **79.71%** | 72.46% | **+11.59%** | +4.34% |
-| **Unseen Benchmark TRF Precision** | 30.53% | 35.07% | **63.27%** | +4.54% | **+32.74%** |
-| **Unseen Benchmark TRF Recall** | 61.54% | 72.31% | **95.38%** | +10.77% | **+33.84%** |
-| **Unseen Benchmark TRF F1** | 40.82% | 47.24% | **76.07%** | +6.42% | **+35.25%** |
-| **Unseen Benchmark Hybrid F1** | 41.84% | 47.24% | **74.25%** | +5.40% | **+32.41%** |
-| **Generalization Lift (vs Dict Recall 4.62%)** | +58.46% | +67.69% | **+90.76%** | +9.23% | **+32.30%** |
+| **Held-Out Test Overall F1** | **72.92%** | 67.95% | 71.24% | -4.97% | -1.68% |
+| Held-Out Test Overall Precision | 72.46% | 67.66% | **73.52%** | -4.80% | **+1.06%** |
+| Held-Out Test Overall Recall | **73.39%** | 68.24% | 69.10% | -5.15% | -4.29% |
+| ├── `IT_TERM` F1 | **74.01%** | 68.14% | 70.13% | -5.87% | -3.88% |
+| ├── `IT_TERM` Precision | 72.89% | 69.23% | **73.47%** | -3.66% | **+0.58%** |
+| ├── `IT_TERM` Recall | **75.16%** | 67.08% | 67.08% | -8.08% | -8.08% |
+| ├── `CLERICAL_TERM` F1 | 70.42% | 67.55% | **73.61%** | -2.87% | **+3.19%** |
+| ├── `CLERICAL_TERM` Precision | 71.43% | 64.56% | **73.61%** | -6.87% | **+2.18%** |
+| └── `CLERICAL_TERM` Recall | 69.44% | 70.83% | **73.61%** | +1.39% | **+4.17%** |
+| **Unseen Benchmark TRF Precision** | 38.17% | 34.56% | **64.89%** | -3.61% | **+26.72%** |
+| **Unseen Benchmark TRF Recall** | 76.92% | 72.31% | **93.85%** | -4.61% | **+16.93%** |
+| **Unseen Benchmark TRF F1** | 51.02% | 46.77% | **76.73%** | -4.25% | **+25.71%** |
+| **Unseen Benchmark Hybrid Precision** | 37.88% | 34.31% | **60.40%** | -3.57% | **+22.52%** |
+| **Unseen Benchmark Hybrid Recall** | 76.92% | 72.31% | **93.85%** | -4.61% | **+16.93%** |
+| **Unseen Benchmark Hybrid F1** | 50.76% | 46.53% | **73.49%** | -4.23% | **+22.73%** |
+| **Generalization Lift (vs Dict Recall 4.62%)** | +72.30% | +67.69% | **+89.23%** | -4.61% | **+16.93%** |
 
 ### 4.2 5-Fold Stratified Cross-Validation Summary
 
@@ -242,11 +244,12 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 
 ### Key Findings & Thesis Insights
 
-1. **TRSTR-LLM Delivers Peak Overall F1 & Precision**: Direct LLM augmentation combined with mined hard negatives achieves the highest Held-Out Test F1 (**72.94%**, a **+6.13%** absolute lift over baseline TRTR 66.81%) and highest test precision (**76.81%**, **+10.85%** over TRTR), leading both `IT_TERM` F1 (**73.15%**) and `CLERICAL_TERM` F1 (**72.46%**).
-2. **Exceptional Out-of-Vocabulary (OOV) Generalization**: On the canonical 65-term unseen benchmark, TRSTR-LLM correctly recognized **62 out of 65** completely unseen technical concepts, driving TRF Recall to **95.38%** (vs. 61.54% for TRTR, a **+33.84%** lift) and F1 to **76.07%** (+35.25%), delivering an outstanding **+90.76%** generalization lift over the dictionary baseline.
-3. **TRSTR-Paraphrase Enhances In-Domain Recall & Syntactic Variety**: T5 paraphrasing directly addresses in-domain grammatical and phrasing variety without hallucinating out-of-domain vocabulary, yielding the highest overall test recall (**71.62%**, **+3.93%** over TRTR) and peak `CLERICAL_TERM` Recall (**79.71%**, **+11.59%** over TRTR), lifting overall test F1 to **69.64%** (+2.83% over TRTR).
-4. **Mined Negative Curation Prevents Spurious Over-Prediction**: Filtering mined negatives down to 94 clean non-entity negatives with zero dev/test leakage effectively penalized over-prediction on conversational narratives and generic terms, boosting precision by **+10.85%** on test data (up to **76.81%**) and **+32.74%** on the unseen benchmark (up to **63.27%**).
-5. **Strict Evaluation Isolation Maintained**: All 7 checks of the automated leakage audit passed with zero leakage. Synthetic data remains strictly isolated to the training split. Evaluation partitions (`dev.spacy`, `test.spacy`, `unseen_benchmark.jsonl`) remain 100% authentic real data.
+1. **TRSTR-LLM Excels in Precision & Clerical Domain Mastery**: Direct LLM augmentation combined with mined hard negatives achieves the highest overall test precision (**73.52%**, **+1.06%** over TRTR baseline) and dominates across every `CLERICAL_TERM` metric: **73.61% F1** (**+3.19%** over TRTR), **73.61% Precision** (**+2.18%**), and **73.61% Recall** (**+4.17%**). The synthetic generation effectively populated technical-administrative contexts that are scarce in raw OJT entries.
+2. **Tremendous Out-of-Vocabulary (OOV) Generalization (+25.71% F1)**: On the canonical 65-term unseen benchmark (`data/test/unseen_benchmark.jsonl`), TRSTR-LLM successfully recognized **61 out of 65** completely unseen technical concepts. TRSTR-LLM drove Transformer Recall to **93.85%** (vs. 76.92% [50/65] for TRTR, **+16.93%** lift), Precision to **64.89%** (vs. 38.17% for TRTR, a massive **+26.72%** jump), and Transformer F1 to **76.73%** (vs. 51.02% for TRTR, an astounding **+25.71%** improvement). In hybrid resolution mode, TRSTR-LLM maintained **73.49% F1** (vs. 50.76% for TRTR, **+22.73%** lift), achieving an overall **+89.23% generalization lift** over the seed dictionary baseline.
+3. **TRTR Strong In-Domain Baseline Anchor**: The authentic real-data baseline (TRTR) performs strongly on in-domain distributions with **72.92% Held-Out Test F1**, **73.39% Recall**, and **74.01% `IT_TERM` F1** on familiar journal distributions, demonstrating the high baseline quality and label consistency of the curated authentic annotations.
+4. **Mined Negative Curation & Superior Confidence Discrimination**: Filtering 164 raw candidates down to 94 clean hard negatives (blocking 19 test and 15 dev leaks) effectively suppressed spurious over-prediction on conversational text, boosting unseen benchmark precision from 38.17% (TRTR) to **64.89%** (TRSTR-LLM). Furthermore, TRSTR-LLM exhibited strong confidence discrimination on unseen evaluations: correct entities averaged **0.9901** confidence while spurious predictions averaged **0.9153** (a **+0.0748** discrimination margin, compared to +0.0215 for TRTR and -0.0208 for TRSTR-Para).
+5. **TRSTR-Paraphrase Syntactic Augmentation**: T5 seq2seq paraphrasing enriched grammatical variety, yielding **70.83% Recall** on `CLERICAL_TERM` (+1.39% over TRTR 69.44%) and identifying 47/65 unseen terms (72.31% recall, +67.69% generalization lift). However, subtle semantic and stylistic shifts introduced by automated paraphrasing led to lower precision (67.66%) and an overall test F1 of **67.95%**.
+6. **Strict Evaluation Isolation Maintained**: All 7 checks of the automated leakage audit passed with zero leakage. Synthetic data remains strictly isolated to the training split. Evaluation partitions (`dev.spacy`, `test.spacy`, `unseen_benchmark.jsonl`) remain 100% authentic real data.
 
 ---
 
