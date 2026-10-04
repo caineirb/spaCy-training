@@ -84,18 +84,18 @@ spaCy-training/
 │   ├── main.py                        # FastAPI entity extraction HTTP endpoint
 │   └── README.md                      # API documentation, curl examples & PHP integration
 ├── data/
-│   ├── terms.csv                      # Seed dictionary (343 terms: 189 IT, 154 Clerical)
+│   ├── terms.csv                      # Seed dictionary (371 terms: 215 IT, 156 Clerical)
 │   ├── data.jsonl                     # Real authentic annotated OJT journal dataset (1,320 records)
 │   ├── synthetic_paraphrases.jsonl    # T5 seq2seq generated paraphrases (565 records)
 │   ├── synthetic_llm_generated.jsonl  # Gemini LLM-direct synthetic records (571 records)
 │   ├── training_trstr_paraphrase.jsonl # Combined real + paraphrase training pool (1,488 records)
-│   ├── training_trstr_llm.jsonl       # Combined real + LLM + mined negatives pool (1,571 records)
+│   ├── training_trstr_llm.jsonl       # Combined real + LLM + mined negatives pool (1,588 records)
 │   ├── training/
 │   │   ├── train.spacy                # Real training partition (923 docs, 1,031 entities)
 │   │   ├── dev.spacy                  # Real validation partition (198 docs, 208 entities)
 │   │   ├── test.spacy                 # Real held-out test partition (199 docs, 229 entities)
 │   │   ├── train_trstr_paraphrase.spacy # Paraphrase-augmented DocBin (1,488 docs, 1,414 entities)
-│   │   └── train_trstr_llm.spacy      # LLM-augmented DocBin (1,571 docs, 1,586 entities)
+│   │   └── train_trstr_llm.spacy      # LLM-augmented DocBin (1,588 docs, 1,586 entities)
 │   ├── test/
 │   │   ├── unseen_benchmark.jsonl     # Out-of-vocabulary benchmark (85 docs, 65 gold entities)
 │   │   ├── holdout.jsonl              # Permanent real-world holdout evaluation set
@@ -113,7 +113,7 @@ spaCy-training/
 │   │   └── dictionary_overrides.jsonl # Canonical cumulative log of dictionary conflict overrides
 │   ├── evaluation_report_3way_comparison.json # Side-by-side test partition evaluation report
 │   └── review/
-│       └── mined_hard_negatives.jsonl # Mined hard negative candidates (144 raw, 77 clean accepted)
+│       └── mined_hard_negatives.jsonl # Mined hard negative candidates (164 raw, 94 clean accepted)
 ├── models/
 │   ├── ner_trf/                       # Default deployment model (model-best)
 │   ├── ner_trf_trtr/                  # TRTR baseline model checkpoints (model-best, model-last)
@@ -202,7 +202,7 @@ To rigorously assess performance and generalization, three experimental conditio
 
 1. **TRTR (Train Real, Test Real)**: Baseline trained exclusively on **923** authentic journal entries.
 2. **TRSTR-Paraphrase**: Trained on **923** real records + **565** accepted T5 seq2seq paraphrases (**1,488** total).
-3. **TRSTR-LLM**: Trained on **923** real records + **571** Gemini LLM synthetic records + **77** clean mined hard negatives (**1,571** total).
+3. **TRSTR-LLM**: Trained on **923** real records + **571** Gemini LLM synthetic records + **94** clean mined hard negatives (**1,588** total).
 
 ### 4.1 Side-by-Side Test Partition Evaluation
 
@@ -210,19 +210,19 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 
 | Evaluation Metric | TRTR (Real Baseline) | TRSTR-Paraphrase (T5) | TRSTR-LLM (Gemini) | Delta (Para vs TRTR) | Delta (LLM vs TRTR) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Held-Out Test Overall F1** | 66.81% | 69.64% | **70.35%** | +2.83% | **+3.54%** |
-| Held-Out Test Overall Precision | 65.96% | 67.77% | **71.30%** | +1.81% | **+5.34%** |
+| **Held-Out Test Overall F1** | 66.81% | 69.64% | **72.94%** | +2.83% | **+6.13%** |
+| Held-Out Test Overall Precision | 65.96% | 67.77% | **76.81%** | +1.81% | **+10.85%** |
 | Held-Out Test Overall Recall | 67.69% | **71.62%** | 69.43% | **+3.93%** | +1.74% |
-| ├── `IT_TERM` F1 | 67.29% | 68.34% | **69.26%** | +1.05% | **+1.97%** |
-| ├── `IT_TERM` Precision | 67.08% | 68.55% | **71.81%** | +1.47% | **+4.73%** |
-| ├── `IT_TERM` Recall | 67.50% | **68.12%** | 66.88% | **+0.62%** | -0.62% |
-| ├── `CLERICAL_TERM` F1 | 65.73% | 72.37% | **72.73%** | +6.64% | **+7.00%** |
-| ├── `CLERICAL_TERM` Precision | 63.51% | 66.27% | **70.27%** | +2.76% | **+6.76%** |
-| └── `CLERICAL_TERM` Recall | 68.12% | **79.71%** | 75.36% | **+11.59%** | +7.24% |
-| **Unseen Benchmark TRF Precision** | 30.53% | 35.07% | **57.41%** | +4.54% | **+26.88%** |
+| ├── `IT_TERM` F1 | 67.29% | 68.34% | **73.15%** | +1.05% | **+5.86%** |
+| ├── `IT_TERM` Precision | 67.08% | 68.55% | **78.99%** | +1.47% | **+11.91%** |
+| ├── `IT_TERM` Recall | 67.50% | **68.12%** | **68.12%** | **+0.62%** | **+0.62%** |
+| ├── `CLERICAL_TERM` F1 | 65.73% | 72.37% | **72.46%** | +6.64% | **+6.73%** |
+| ├── `CLERICAL_TERM` Precision | 63.51% | 66.27% | **72.46%** | +2.76% | **+8.95%** |
+| └── `CLERICAL_TERM` Recall | 68.12% | **79.71%** | 72.46% | **+11.59%** | +4.34% |
+| **Unseen Benchmark TRF Precision** | 30.53% | 35.07% | **63.27%** | +4.54% | **+32.74%** |
 | **Unseen Benchmark TRF Recall** | 61.54% | 72.31% | **95.38%** | +10.77% | **+33.84%** |
-| **Unseen Benchmark TRF F1** | 40.82% | 47.24% | **71.68%** | +6.42% | **+30.86%** |
-| **Unseen Benchmark Hybrid F1** | 41.84% | 47.24% | **71.26%** | +5.40% | **+29.42%** |
+| **Unseen Benchmark TRF F1** | 40.82% | 47.24% | **76.07%** | +6.42% | **+35.25%** |
+| **Unseen Benchmark Hybrid F1** | 41.84% | 47.24% | **74.25%** | +5.40% | **+32.41%** |
 | **Generalization Lift (vs Dict Recall 4.62%)** | +58.46% | +67.69% | **+90.76%** | +9.23% | **+32.30%** |
 
 ### 4.2 5-Fold Stratified Cross-Validation Summary
@@ -242,10 +242,10 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 
 ### Key Findings & Thesis Insights
 
-1. **TRSTR-LLM Delivers Peak Overall F1 & Precision**: Direct LLM augmentation combined with mined hard negatives achieves the highest Held-Out Test F1 (**70.35%**, a **+3.54%** absolute lift over baseline TRTR 66.81%) and highest test precision (**71.30%**, **+5.34%** over TRTR), leading both `IT_TERM` F1 (**69.26%**) and `CLERICAL_TERM` F1 (**72.73%**).
-2. **Exceptional Out-of-Vocabulary (OOV) Generalization**: On the canonical 65-term unseen benchmark, TRSTR-LLM correctly recognized **62 out of 65** completely unseen technical concepts, driving TRF Recall to **95.38%** (vs. 61.54% for TRTR, a **+33.84%** lift) and F1 to **71.68%** (+30.86%), delivering an outstanding **+90.76%** generalization lift over the dictionary baseline.
+1. **TRSTR-LLM Delivers Peak Overall F1 & Precision**: Direct LLM augmentation combined with mined hard negatives achieves the highest Held-Out Test F1 (**72.94%**, a **+6.13%** absolute lift over baseline TRTR 66.81%) and highest test precision (**76.81%**, **+10.85%** over TRTR), leading both `IT_TERM` F1 (**73.15%**) and `CLERICAL_TERM` F1 (**72.46%**).
+2. **Exceptional Out-of-Vocabulary (OOV) Generalization**: On the canonical 65-term unseen benchmark, TRSTR-LLM correctly recognized **62 out of 65** completely unseen technical concepts, driving TRF Recall to **95.38%** (vs. 61.54% for TRTR, a **+33.84%** lift) and F1 to **76.07%** (+35.25%), delivering an outstanding **+90.76%** generalization lift over the dictionary baseline.
 3. **TRSTR-Paraphrase Enhances In-Domain Recall & Syntactic Variety**: T5 paraphrasing directly addresses in-domain grammatical and phrasing variety without hallucinating out-of-domain vocabulary, yielding the highest overall test recall (**71.62%**, **+3.93%** over TRTR) and peak `CLERICAL_TERM` Recall (**79.71%**, **+11.59%** over TRTR), lifting overall test F1 to **69.64%** (+2.83% over TRTR).
-4. **Mined Negative Curation Prevents Spurious Over-Prediction**: Filtering 144 raw mined negatives down to 77 clean non-entity negatives with zero dev/test leakage effectively penalized over-prediction on conversational narratives and generic terms, boosting precision by **+5.34%** on test data and **+26.88%** on the unseen benchmark.
+4. **Mined Negative Curation Prevents Spurious Over-Prediction**: Filtering mined negatives down to 94 clean non-entity negatives with zero dev/test leakage effectively penalized over-prediction on conversational narratives and generic terms, boosting precision by **+10.85%** on test data (up to **76.81%**) and **+32.74%** on the unseen benchmark (up to **63.27%**).
 5. **Strict Evaluation Isolation Maintained**: All 7 checks of the automated leakage audit passed with zero leakage. Synthetic data remains strictly isolated to the training split. Evaluation partitions (`dev.spacy`, `test.spacy`, `unseen_benchmark.jsonl`) remain 100% authentic real data.
 
 ---

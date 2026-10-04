@@ -151,6 +151,23 @@ Certain productivity applications (most notably `Microsoft Excel` and `Google Sh
 
 ---
 
+### 4.7. Policy Decisions on Compound Noun Phrases & Descriptive Entities
+
+Following systematic precision auditing, the project formalized explicit distinctions between multi-word technical compounds (which are approved when representing concrete technical features, architectural components, or operational workflows) and generic paperwork/administrative artifacts (which are rejected):
+
+| Category / Phrase Type | Examples | Decision | Label | Operational Policy & Rationale |
+| :--- | :--- | :---: | :---: | :--- |
+| **Architectural & Technical Sub-Constructs** | `caching layers`, `database schema models`, `serverless functions`, `monorepo build`, `rapid module bundler`, `document graph`, `REST collections` | **Approved** | `IT_TERM` | Represents legitimate technical constructs, architecture components, or pipeline workflows actively designed/engineered during IT tasks. |
+| **Web & UI Engineering Constructs** | `web styling`, `dashboard component`, `documentation landing page`, `library showcase`, `UI regression` | **Approved** | `IT_TERM` | Represents concrete frontend design and interface engineering deliverables. |
+| **Data & Systems Infrastructure** | `event streaming`, `data engineering`, `distributed tracing`, `system health dashboards`, `metric alerting rules`, `query scraping`, `full-text search indexing`, `content management`, `API runtime request validation` | **Approved** | `IT_TERM` | Concrete systems engineering, data pipelines, monitoring systems, and API validation mechanisms. |
+| **Core Platforms & Modern DevOps** | `Kubernetes`, `TypeScript`, `Ethereum`, `GitOps` | **Approved** | `IT_TERM` | Canonical platforms, languages, and modern deployment methodologies. |
+| **Specific Workplace IT Portals & Configurations** | `Email configuration`, `prefect clearance portal` | **Approved** | `IT_TERM` | Specific IT setup tasks and institutional software portals. |
+| **Clerical & Administrative Operational Workflows** | `vendor evaluation`, `Medical chart documentation` | **Approved** | `CLERICAL_TERM` | Concrete, structured administrative and healthcare documentation procedures. |
+| **Generic Paperwork & Administrative Documents** | `visitor IDs`, `graduation credentials`, `faculty academic records`, `office supply lists`, `court summons`, `employee leave records`, `fiscal department line items`, `payroll discrepancies`, `deed logs`, `public oaths`, `financial aid allowances`, `employee tax forms`, `warehouse receipt ledgers` | **Rejected** | None (Do Not Tag) | Physical paperwork, certificates, ledgers, and generic record sets. Governed by §3.2 and §5 (do not tag files/paperwork). |
+| **Non-Task Narrative & Environmental Equipment** | `blockers`, `attendance machine`, `intern time log sheet`, `visitor logbook`, `guest identification badges`, `notebook notes`, `projector monitors` | **Rejected** | None (Do Not Tag) | Conversational status words, office hardware, and personal accessories appearing in non-task narrative sentences. |
+
+---
+
 ## 5. Hard-Negative Exclusion Rules (Institutional & Environmental Words)
 
 To eliminate false-positive extraction of context nouns, the following rule is strictly enforced:

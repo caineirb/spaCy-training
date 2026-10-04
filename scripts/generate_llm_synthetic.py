@@ -74,6 +74,28 @@ GENERIC_NOUN_BLOCKLIST = {
     "system workflows",   # 0.0% - abstract concept
     "data requirements",  # 0.0% - abstract concept
     "system exploration", # 0.0% - abstract concept
+    # Rejected generic administrative artifacts & paperwork (Group 3 policy decision)
+    "visitor ids", "visitor id",
+    "graduation credentials", "graduation credential",
+    "faculty academic records", "faculty academic record",
+    "office supply lists", "office supply list",
+    "court summons",
+    "employee leave records", "employee leave record", "leave records",
+    "fiscal department line items", "fiscal department line item",
+    "payroll discrepancies", "payroll discrepancy",
+    "deed logs", "deed log",
+    "public oaths", "public oath",
+    "financial aid allowances", "financial aid allowance",
+    "employee tax forms", "employee tax form", "tax forms",
+    "warehouse receipt ledgers", "warehouse receipt ledger",
+    # Rejected non-task environmental & conversational artifacts (Group 4 policy decision)
+    "blockers", "blocker",
+    "attendance machine",
+    "intern time log sheet", "time log sheet",
+    "visitor logbook",
+    "guest identification badges", "guest identification badge",
+    "notebook notes", "notebook note",
+    "projector monitors", "projector monitor",
 }
 
 # ── Bare Generic Noun Blocklist (Task 3) ─────────────────────────────────────

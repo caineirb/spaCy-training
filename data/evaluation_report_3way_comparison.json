@@ -1,7 +1,7 @@
 {
   "conditions": {
     "TRTR": {
-      "description": "Train Real, Test Real — baseline with authentic data only",
+      "description": "Train Real, Test Real \u2014 baseline with authentic data only",
       "training_records": 923,
       "held_out_test": {
         "overall_precision": 65.96,
@@ -594,25 +594,25 @@
     },
     "TRSTR_LLM": {
       "description": "Train Real + LLM-Direct Gemini Generation, Test Real",
-      "training_records": 1571,
+      "training_records": 1588,
       "real_records": 923,
       "synthetic_records": 571,
-      "mined_negatives": 77,
+      "mined_negatives": 94,
       "held_out_test": {
-        "overall_precision": 71.3,
+        "overall_precision": 76.81,
         "overall_recall": 69.43,
-        "overall_f1": 70.35,
+        "overall_f1": 72.94,
         "total_test_documents": 199,
         "labels": {
           "IT_TERM": {
-            "precision": 71.81,
-            "recall": 66.88,
-            "f1": 69.26
+            "precision": 78.99,
+            "recall": 68.12,
+            "f1": 73.15
           },
           "CLERICAL_TERM": {
-            "precision": 70.27,
-            "recall": 75.36,
-            "f1": 72.73
+            "precision": 72.46,
+            "recall": 72.46,
+            "f1": 72.46
           }
         }
       },
@@ -620,17 +620,17 @@
         "transformer_only": {
           "mode": "transformer_only",
           "true_positives": 62,
-          "false_positives": 46,
+          "false_positives": 36,
           "false_negatives": 3,
           "total_gold_entities": 65,
-          "precision_pct": 57.41,
+          "precision_pct": 63.27,
           "recall_pct": 95.38,
-          "f1_pct": 71.68,
+          "f1_pct": 76.07,
           "correctly_identified_raw": "62/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9728,
-            "mean_confidence_spurious_entities": 0.9841,
-            "confidence_discrimination_delta": -0.0113
+            "mean_confidence_correct_entities": 0.9491,
+            "mean_confidence_spurious_entities": 0.9475,
+            "confidence_discrimination_delta": 0.0016
           },
           "sample_preview": [
             {
@@ -642,7 +642,7 @@
                 "FastAPI"
               ],
               "conf": [
-                0.9869
+                0.9093
               ]
             },
             {
@@ -651,12 +651,10 @@
                 "Bun"
               ],
               "pred": [
-                "serverless functions",
                 "Bun"
               ],
               "conf": [
-                0.7073,
-                0.9998
+                0.9995
               ]
             },
             {
@@ -665,11 +663,11 @@
                 "Svelte"
               ],
               "pred": [
-                "dashboard component",
+                "dashboard",
                 "Svelte"
               ],
               "conf": [
-                0.983,
+                0.9997,
                 0.9998
               ]
             },
@@ -683,7 +681,7 @@
                 "Tailwind CSS"
               ],
               "conf": [
-                0.9999,
+                0.8986,
                 0.9999
               ]
             },
@@ -693,10 +691,12 @@
                 "Appwrite"
               ],
               "pred": [
+                "authentication",
                 "Appwrite"
               ],
               "conf": [
-                0.9996
+                0.9968,
+                0.9925
               ]
             },
             {
@@ -738,7 +738,7 @@
                 "NestJS"
               ],
               "conf": [
-                0.9997
+                0.9643
               ]
             }
           ]
@@ -746,17 +746,17 @@
         "hybrid": {
           "mode": "hybrid",
           "true_positives": 62,
-          "false_positives": 47,
+          "false_positives": 40,
           "false_negatives": 3,
           "total_gold_entities": 65,
-          "precision_pct": 56.88,
+          "precision_pct": 60.78,
           "recall_pct": 95.38,
-          "f1_pct": 71.26,
+          "f1_pct": 74.25,
           "correctly_identified_raw": "62/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9728,
-            "mean_confidence_spurious_entities": 0.9844,
-            "confidence_discrimination_delta": -0.0116
+            "mean_confidence_correct_entities": 0.9491,
+            "mean_confidence_spurious_entities": 0.9528,
+            "confidence_discrimination_delta": -0.0037
           },
           "sample_preview": [
             {
@@ -769,7 +769,7 @@
                 "database"
               ],
               "conf": [
-                0.9869,
+                0.9093,
                 1.0
               ]
             },
@@ -783,8 +783,8 @@
                 "Bun"
               ],
               "conf": [
-                0.7073,
-                0.9998
+                1.0,
+                0.9995
               ]
             },
             {
@@ -797,7 +797,7 @@
                 "Svelte"
               ],
               "conf": [
-                0.983,
+                1.0,
                 0.9998
               ]
             },
@@ -811,7 +811,7 @@
                 "Tailwind CSS"
               ],
               "conf": [
-                0.9999,
+                0.8986,
                 0.9999
               ]
             },
@@ -821,10 +821,12 @@
                 "Appwrite"
               ],
               "pred": [
+                "authentication",
                 "Appwrite"
               ],
               "conf": [
-                0.9996
+                0.9968,
+                0.9925
               ]
             },
             {
@@ -866,7 +868,7 @@
                 "NestJS"
               ],
               "conf": [
-                0.9997
+                0.9643
               ]
             }
           ]

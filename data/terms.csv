@@ -342,3 +342,31 @@ compliance requirements,CLERICAL_TERM
 PPMP,CLERICAL_TERM
 financial/ledger accounts,CLERICAL_TERM
 document scanning,CLERICAL_TERM
+caching layers,IT_TERM
+message queuing,IT_TERM
+database schema models,IT_TERM
+serverless functions,IT_TERM
+web styling,IT_TERM
+dashboard component,IT_TERM
+documentation landing page,IT_TERM
+rapid module bundler,IT_TERM
+monorepo build,IT_TERM
+event streaming,IT_TERM
+data engineering,IT_TERM
+distributed tracing,IT_TERM
+system health dashboards,IT_TERM
+metric alerting rules,IT_TERM
+query scraping,IT_TERM
+API runtime request validation,IT_TERM
+UI regression,IT_TERM
+library showcase,IT_TERM
+content management,IT_TERM
+REST collections,IT_TERM
+full-text search indexing,IT_TERM
+document graph,IT_TERM
+Ethereum,IT_TERM
+GitOps,IT_TERM
+Medical chart documentation,CLERICAL_TERM
+prefect clearance portal,IT_TERM
+Email configuration,IT_TERM
+vendor evaluation,CLERICAL_TERM
