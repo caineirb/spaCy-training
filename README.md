@@ -15,65 +15,52 @@ The pipeline integrates deterministic institutional vocabulary matching with a c
 
 Rather than relying on a naive dictionary lookup or an ungrounded flat NER model, this system implements a **two-layer hybrid architecture** with parallel extraction and explicit **Dictionary-label-authority** conflict resolution:
 
-```
-                            [ Raw OJT Journal Entry ]
-                                        |
-                 +----------------------+----------------------+
-                 |                                             |
-                 v                                             v
-+-----------------------------------+        +-----------------------------------+
-|   Layer 1: Deterministic Layer    |        |     Layer 2: Contextual ML        |
-|  spaCy EntityRuler (terms.csv)    |        |   Transformer NER (RoBERTa-base)  |
-|      371 Curated Seed Terms       |        |    Trained on In-Context Docs     |
-+-----------------------------------+        +-----------------------------------+
-                 |                                             |
-  [dict_entities: start, end, label]          [ml_entities: start, end, label, conf]
-                 |                                             |
-                 +----------------------+----------------------+
-                                        |
-                                        v
-                      +-----------------------------------+
-                      |    Conflict Resolution Engine     |
-                      |   (scripts/pipeline.py Rules)     |
-                      +-----------------------------------+
-                      | 1. Longest Span Wins (no truncate)|
-                      | 2. ML Label Authority             |
-                      | 3. Abstention Fallback to Dict    |
-                      +-----------------------------------+
-                                        |
-                                        v
-                      +-----------------------------------+
-                      |    Confidence-Based Routing       |
-                      |        Threshold = 0.80           |
-                      +-----------------------------------+
-                                /                 \
-                               /                   \
-                   >= 0.80    /                     \   < 0.80
-                             v                       v
-                      [ Auto-Accepted ]     [ Flagged for Review ]
-                             |                       |
-                             |                       v
-                             |        +----------------------------+
-                             |        |    Hard Negative Mining    |
-                             |        | (scripts/mine_negatives.py)|
-                             |        +----------------------------+
-                             v                       |
-                  [ Structured API / GUI ]           v
-                  [ Output & JSON Export ]   [ Feedback into Retrain]
+```mermaid
+flowchart TB
+  Text["Extracted OJT Journal Entry"]
+
+  subgraph spaCyProcess["Parallel spaCy Process"]
+    direction LR
+    Layer1["Deterministic Layer<br/>spaCy EntityRuler<br/>(terms.csv)"]
+    Layer2["Contextual ML Transformer<br/>NER (RoBERTa-base)"]
+    Layer1 ~~~ Layer2
+  end
+
+  subgraph ConflictEngine["Conflict Resolution Engine"]
+    direction LR
+    id1["Longest Span Wins"]
+    id2["Dictionary Label Authority"]
+    id3["Abstention Fallback to Dictionary"]
+    id1 --> id2 --> id3
+  end
+
+  Routing["`Confidence-Based Routing (*Threshold = 0.80*)`"]
+  Accept["Auto-Accepted"]
+  Review["Flagged for Review"]
+  Output["Structured API / Output"]
+  Retrain["Feedback into Retrain"]
+
+  Text --> spaCyProcess
+  spaCyProcess -->|"[*start*, *end*, *label*, *conf*]"| ConflictEngine
+  ConflictEngine --> Routing
+  Routing -->|"`*>=0.80*`"| Accept
+  Routing -->|"`*<0.80*`"| Review
+  Accept --> Output
+  Review --> Retrain
 ```
 
 ### Core Pipeline Invariants
 
 1. **Longest Span Wins**: Shorter dictionary terms never truncate or split a longer contextual ML extraction. For example, `Tailwind CSS` takes precedence over dictionary `CSS`, and `access control systems` beats `access control`.
-2. **ML Label Authority**: When the contextual Transformer and the seed dictionary disagree on the task category of an overlapping span, the ML prediction takes precedence (e.g., preserving `data entry` and `File Management` as `CLERICAL_TERM` based on context).
-3. **Abstention Fallback**: Dictionary entries are accepted *only* when the Transformer makes no overlapping prediction (abstains), ensuring zero-shot recovery of known terms while preventing false-positive overrides.
+2. **Dictionary Label Authority**: When the contextual Transformer and the seed dictionary fire on overlapping spans and disagree on the task category, the curated seed Dictionary takes precedence as institutional ground truth. The ML prediction's category is overridden by the dictionary label (e.g., overriding ML `IT_TERM` to `CLERICAL_TERM` for `student records` and `Record management systems`, or overriding ML `CLERICAL_TERM` to `IT_TERM` for `office database` and `database`). All override events are logged to `data/eval_results/dictionary_overrides.jsonl` for auditability.
+3. **Abstention Fallback**: When the Transformer makes no prediction (abstains) on a span matching a seed dictionary term, the dictionary entry is accepted as a standalone extraction, ensuring zero-shot recovery of institutional vocabulary without false-positive boundary splits.
 4. **Confidence-Based Routing**: Entities with confidence scores $\ge 0.80$ are marked `ACCEPTED`. Low-confidence extractions ($< 0.80$) are flagged as `NEEDS_REVIEW` for human audit.
 
 ---
 
 ## 2. Project Directory Structure
 
-```
+```text
 spaCy-training/
 ├── README.md                          # Repository overview & research findings
 ├── main.ipynb                         # Narrative end-to-end training & evaluation pipeline
@@ -84,6 +71,7 @@ spaCy-training/
 │   ├── main.py                        # FastAPI entity extraction HTTP endpoint
 │   └── README.md                      # API documentation, curl examples & PHP integration
 ├── data/
+│   ├── README.md                      # Comprehensive data guide, schemas, partitions & leakage audit
 │   ├── terms.csv                      # Seed dictionary (371 terms: 215 IT, 156 Clerical)
 │   ├── data.jsonl                     # Real authentic annotated OJT journal dataset (1,320 records)
 │   ├── synthetic_paraphrases.jsonl    # T5 seq2seq generated paraphrases (565 records)
@@ -152,47 +140,7 @@ spaCy-training/
 
 ---
 
-## 3. Data Specification & Unified Taxonomy
-
-### Label Taxonomy
-
-The system strictly enforces a unified two-class taxonomy:
-
-- **`IT_TERM`**: Technologies, programming languages, software libraries, databases, IT infrastructure, hardware, and concrete technical workflows (e.g., `Python`, `PostgreSQL`, `Docker`, `Git`, `Cable Crimping`, `Database Administration`).
-- **`CLERICAL_TERM`**: Office productivity tools, document handling, filing, record-keeping, and administrative workflows (e.g., `Microsoft Excel`, `Police Clearance`, `log books`, `data encoding`, `filing`, `PESO office book`).
-
-Across the complete authentic dataset (`data/data.jsonl`, 1,320 records), annotations contain **1,474 total entities** (**933** `IT_TERM` and **541** `CLERICAL_TERM`, a balanced 1.72:1 ratio).
-
-### Exact Span Schema (`data/data.jsonl`)
-
-All training data consists of authentic, manually annotated OJT student journal entries with character-exact offsets:
-
-```json
-{
-  "text": "Perform data encoding and data validation using spreadsheet tools",
-  "entities": [
-    {"start": 8, "end": 21, "label": "CLERICAL_TERM"},
-    {"start": 26, "end": 41, "label": "CLERICAL_TERM"},
-    {"start": 48, "end": 59, "label": "CLERICAL_TERM"}
-  ]
-}
-```
-
-### Negative (Non-Entity) Examples & Partition Splits
-
-To prevent false-positive over-prediction in conversational narratives, non-task sentences are explicitly included with an empty entity list:
-
-```json
-{
-  "text": "Attended the morning flag ceremony and had a quick orientation briefing.",
-  "entities": []
-}
-```
-
-- **Target Negative Ratio**: Maintained between **25%–35%** across all real splits (**34.2%** overall in `data/data.jsonl`, 452 negative records).
-- **Real Training Split (`data/training/train.spacy`)**: 923 records (606 positive, 317 negative / 34.3% neg; 636 `IT_TERM`, 397 `CLERICAL_TERM`, 1,032 valid entities saved).
-- **Validation Split (`data/training/dev.spacy`)**: 198 records (128 positive, 70 negative / 35.4% neg; 136 `IT_TERM`, 72 `CLERICAL_TERM`, 208 valid entities).
-- **Held-Out Test Split (`data/training/test.spacy`)**: 199 records (134 positive, 65 negative / 32.7% neg; 161 `IT_TERM`, 72 `CLERICAL_TERM`, 233 valid entities).
+*For full dataset specification, taxonomy, and partition details, see the dedicated [data/README.md](data/README.md).*
 
 ---
 
@@ -229,18 +177,17 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 
 ### 4.2 5-Fold Stratified Cross-Validation Summary
 
-> [!NOTE]
-> **Cross-Validation In-Progress Note**: The 5-fold cross-validation metrics displayed below reflect the prior baseline evaluation benchmark (conducted across 1,240 documents). The updated 5-fold cross-validation run on the expanded 1,320-record dataset (`cv_metadata_5fold.json`, with 1,056 train / 264 val per fold across all three conditions) is currently in progress. The table below is retained for reference and will be updated once the full 5-fold execution concludes.
+> **Cross‑Validation Results**: The 5‑fold cross‑validation on the expanded 1,320‑record dataset has completed. The aggregated metrics (mean ± standard deviation) for each experimental condition are shown below.
 
-| Metric | TRTR (Real Baseline) | TRSTR-Paraphrase | TRSTR-LLM |
+| Metric | TRTR (Real Baseline) | TRSTR‑Paraphrase | TRSTR‑LLM |
 | :--- | :---: | :---: | :---: |
-| **Held-Out Validation Overall F1** | 71.22 ± 2.77% | **75.01 ± 0.96%** | 70.55 ± 2.36% |
-| Held-Out Validation Overall Precision | 68.60 ± 2.49% | **73.44 ± 1.76%** | 69.39 ± 3.61% |
-| Held-Out Validation Overall Recall | 74.10 ± 3.59% | **76.70 ± 1.52%** | 71.85 ± 2.32% |
-| ├── `IT_TERM` F1 | 72.41 ± 2.88% | **75.81 ± 2.43%** | 71.27 ± 2.91% |
-| └── `CLERICAL_TERM` F1 | 68.88 ± 3.14% | **73.50 ± 4.23%** | 69.20 ± 2.15% |
-| **Unseen Benchmark TRF Recall** | 72.00 ± 10.77% | 71.69 ± 7.39% | **88.62 ± 6.20%** |
-| **Unseen Benchmark TRF F1** | 48.12 ± 5.63% | 49.01 ± 3.71% | **66.24 ± 3.03%** |
+| **Overall F1** | 71.01 ± 2.81% | **75.44 ± 2.94%** | 67.75 ± 2.98% |
+| Overall Precision | 68.57 ± 2.24% | **74.28 ± 1.89%** | 66.87 ± 2.38% |
+| Overall Recall | 73.67 ± 3.72% | **76.69 ± 4.20%** | 68.70 ± 3.97% |
+| IT‑Term F1 | 71.64 ± 3.62% | **75.88 ± 3.76%** | 68.01 ± 3.66% |
+| Clerical‑Term F1 | 69.89 ± 1.92% | **74.81 ± 2.30%** | 67.29 ± 2.19% |
+| Unseen Benchmark Recall (Transformer) | 85.54 ± 3.17% | 72.00 ± 4.50% | **89.54 ± 3.56%** |
+| Unseen Benchmark F1 (Transformer) | 54.50 ± 1.04% | 48.78 ± 2.65% | **67.06 ± 4.85%** |
 
 ### Key Findings & Thesis Insights
 

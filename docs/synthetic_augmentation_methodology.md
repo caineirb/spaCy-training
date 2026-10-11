@@ -133,4 +133,4 @@ To verify that findings are statistically robust and not artifacts of a single r
 3. **Methodological Takeaway**:
    - For **maximizing in-domain performance on authentic student logs**, T5-based paraphrase augmentation (`TRSTR-Paraphrase`) is the superior strategy.
    - For **robust out-of-vocabulary entity extraction in unconstrained environments**, direct LLM augmentation with hard negative mining (`TRSTR-LLM`) offers unmatched precision and calibration.
-   - The hybrid pipeline's deterministic EntityRuler layer and ML-authority conflict resolution ensure that dictionary-known entities maintain 100% precision regardless of the ML model selected.
+   - The hybrid pipeline's deterministic EntityRuler layer and Dictionary-authority conflict resolution ensure that dictionary-known entities maintain 100% precision regardless of the ML model selected.

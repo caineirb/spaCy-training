@@ -4,20 +4,20 @@
       "description": "Train Real, Test Real — baseline with authentic data only",
       "training_records": 923,
       "held_out_test": {
-        "overall_precision": 72.46,
-        "overall_recall": 73.39,
-        "overall_f1": 72.92,
+        "overall_precision": 73.85,
+        "overall_recall": 69.1,
+        "overall_f1": 71.4,
         "total_test_documents": 199,
         "labels": {
           "IT_TERM": {
-            "precision": 72.89,
-            "recall": 75.16,
-            "f1": 74.01
+            "precision": 74.32,
+            "recall": 68.32,
+            "f1": 71.2
           },
           "CLERICAL_TERM": {
-            "precision": 71.43,
-            "recall": 69.44,
-            "f1": 70.42
+            "precision": 72.86,
+            "recall": 70.83,
+            "f1": 71.83
           }
         }
       },
@@ -25,17 +25,17 @@
         "transformer_only": {
           "mode": "transformer_only",
           "true_positives": 50,
-          "false_positives": 81,
+          "false_positives": 79,
           "false_negatives": 15,
           "total_gold_entities": 65,
-          "precision_pct": 38.17,
+          "precision_pct": 38.76,
           "recall_pct": 76.92,
-          "f1_pct": 51.02,
+          "f1_pct": 51.55,
           "correctly_identified_raw": "50/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9735,
-            "mean_confidence_spurious_entities": 0.952,
-            "confidence_discrimination_delta": 0.0215
+            "mean_confidence_correct_entities": 0.8986,
+            "mean_confidence_spurious_entities": 0.9567,
+            "confidence_discrimination_delta": -0.0581
           },
           "sample_preview": [
             {
@@ -49,8 +49,8 @@
                 "database"
               ],
               "conf": [
-                0.9999,
-                0.9923,
+                0.9977,
+                0.9372,
                 0.9999
               ]
             },
@@ -60,7 +60,7 @@
                 "Bun"
               ],
               "pred": [
-                "serverless functions",
+                "legacy serverless functions",
                 "runtime execution"
               ],
               "conf": [
@@ -74,12 +74,12 @@
                 "Svelte"
               ],
               "pred": [
-                "interactive reactive dashboard",
+                "interactive reactive dashboard component",
                 "Svelte"
               ],
               "conf": [
                 0.9999,
-                0.9749
+                0.9144
               ]
             },
             {
@@ -88,7 +88,7 @@
                 "Tailwind CSS"
               ],
               "pred": [
-                "responsive web",
+                "responsive web styling",
                 "Tailwind CSS"
               ],
               "conf": [
@@ -107,9 +107,9 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9998,
+                0.9992,
                 0.9999,
-                0.9994
+                0.9781
               ]
             },
             {
@@ -123,7 +123,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9399
+                0.9243
               ]
             },
             {
@@ -139,7 +139,7 @@
               "conf": [
                 0.9999,
                 0.9999,
-                0.9996
+                0.9934
               ]
             },
             {
@@ -153,7 +153,7 @@
               ],
               "conf": [
                 0.9999,
-                0.999
+                0.929
               ]
             }
           ]
@@ -161,17 +161,17 @@
         "hybrid": {
           "mode": "hybrid",
           "true_positives": 50,
-          "false_positives": 82,
+          "false_positives": 80,
           "false_negatives": 15,
           "total_gold_entities": 65,
-          "precision_pct": 37.88,
+          "precision_pct": 38.46,
           "recall_pct": 76.92,
-          "f1_pct": 50.76,
+          "f1_pct": 51.28,
           "correctly_identified_raw": "50/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9735,
-            "mean_confidence_spurious_entities": 0.9526,
-            "confidence_discrimination_delta": 0.0209
+            "mean_confidence_correct_entities": 0.8986,
+            "mean_confidence_spurious_entities": 0.9572,
+            "confidence_discrimination_delta": -0.0586
           },
           "sample_preview": [
             {
@@ -185,8 +185,8 @@
                 "database"
               ],
               "conf": [
-                0.9999,
-                0.9923,
+                0.9977,
+                0.9372,
                 0.9999
               ]
             },
@@ -196,7 +196,7 @@
                 "Bun"
               ],
               "pred": [
-                "serverless functions",
+                "legacy serverless functions",
                 "runtime execution"
               ],
               "conf": [
@@ -210,12 +210,12 @@
                 "Svelte"
               ],
               "pred": [
-                "interactive reactive dashboard",
+                "interactive reactive dashboard component",
                 "Svelte"
               ],
               "conf": [
                 0.9999,
-                0.9749
+                0.9144
               ]
             },
             {
@@ -224,7 +224,7 @@
                 "Tailwind CSS"
               ],
               "pred": [
-                "responsive web",
+                "responsive web styling",
                 "Tailwind CSS"
               ],
               "conf": [
@@ -243,9 +243,9 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9998,
+                0.9992,
                 0.9999,
-                0.9994
+                0.9781
               ]
             },
             {
@@ -259,7 +259,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9399
+                0.9243
               ]
             },
             {
@@ -275,7 +275,7 @@
               "conf": [
                 0.9999,
                 0.9999,
-                0.9996
+                0.9934
               ]
             },
             {
@@ -289,7 +289,7 @@
               ],
               "conf": [
                 0.9999,
-                0.999
+                0.929
               ]
             }
           ]
@@ -303,38 +303,38 @@
       "real_records": 923,
       "synthetic_records": 565,
       "held_out_test": {
-        "overall_precision": 67.66,
-        "overall_recall": 68.24,
-        "overall_f1": 67.95,
+        "overall_precision": 70.37,
+        "overall_recall": 73.39,
+        "overall_f1": 71.85,
         "total_test_documents": 199,
         "labels": {
           "IT_TERM": {
-            "precision": 69.23,
-            "recall": 67.08,
-            "f1": 68.14
+            "precision": 73.12,
+            "recall": 72.67,
+            "f1": 72.9
           },
           "CLERICAL_TERM": {
-            "precision": 64.56,
-            "recall": 70.83,
-            "f1": 67.55
+            "precision": 65.06,
+            "recall": 75.0,
+            "f1": 69.68
           }
         }
       },
       "unseen_benchmark": {
         "transformer_only": {
           "mode": "transformer_only",
-          "true_positives": 47,
-          "false_positives": 89,
-          "false_negatives": 18,
+          "true_positives": 59,
+          "false_positives": 83,
+          "false_negatives": 6,
           "total_gold_entities": 65,
-          "precision_pct": 34.56,
-          "recall_pct": 72.31,
-          "f1_pct": 46.77,
-          "correctly_identified_raw": "47/65",
+          "precision_pct": 41.55,
+          "recall_pct": 90.77,
+          "f1_pct": 57.0,
+          "correctly_identified_raw": "59/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9073,
-            "mean_confidence_spurious_entities": 0.9281,
-            "confidence_discrimination_delta": -0.0208
+            "mean_confidence_correct_entities": 0.9692,
+            "mean_confidence_spurious_entities": 0.9628,
+            "confidence_discrimination_delta": 0.0064
           },
           "sample_preview": [
             {
@@ -348,9 +348,9 @@
                 "database"
               ],
               "conf": [
-                0.9471,
-                0.9934,
-                0.9999
+                0.9468,
+                0.9928,
+                0.9996
               ]
             },
             {
@@ -359,12 +359,14 @@
                 "Bun"
               ],
               "pred": [
-                "legacy serverless functions",
+                "serverless functions",
+                "Bun",
                 "runtime execution"
               ],
               "conf": [
                 0.9999,
-                0.9895
+                0.9949,
+                0.9975
               ]
             },
             {
@@ -373,12 +375,12 @@
                 "Svelte"
               ],
               "pred": [
-                "interactive reactive dashboard",
+                "interactive reactive dashboard component",
                 "Svelte"
               ],
               "conf": [
                 0.9999,
-                0.9446
+                0.9966
               ]
             },
             {
@@ -387,7 +389,7 @@
                 "Tailwind CSS"
               ],
               "pred": [
-                "responsive web styling",
+                "web styling",
                 "Tailwind CSS"
               ],
               "conf": [
@@ -406,9 +408,9 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9993,
+                0.9987,
                 0.9999,
-                0.8317
+                0.9894
               ]
             },
             {
@@ -422,7 +424,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9797
+                0.9974
               ]
             },
             {
@@ -438,7 +440,7 @@
               "conf": [
                 0.9999,
                 0.9999,
-                0.9976
+                0.9996
               ]
             },
             {
@@ -452,25 +454,25 @@
               ],
               "conf": [
                 0.9999,
-                0.994
+                0.9905
               ]
             }
           ]
         },
         "hybrid": {
           "mode": "hybrid",
-          "true_positives": 47,
-          "false_positives": 90,
-          "false_negatives": 18,
+          "true_positives": 59,
+          "false_positives": 84,
+          "false_negatives": 6,
           "total_gold_entities": 65,
-          "precision_pct": 34.31,
-          "recall_pct": 72.31,
-          "f1_pct": 46.53,
-          "correctly_identified_raw": "47/65",
+          "precision_pct": 41.26,
+          "recall_pct": 90.77,
+          "f1_pct": 56.73,
+          "correctly_identified_raw": "59/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9073,
-            "mean_confidence_spurious_entities": 0.9289,
-            "confidence_discrimination_delta": -0.0216
+            "mean_confidence_correct_entities": 0.9692,
+            "mean_confidence_spurious_entities": 0.9632,
+            "confidence_discrimination_delta": 0.006
           },
           "sample_preview": [
             {
@@ -484,9 +486,9 @@
                 "database"
               ],
               "conf": [
-                0.9471,
-                0.9934,
-                0.9999
+                0.9468,
+                0.9928,
+                0.9996
               ]
             },
             {
@@ -495,12 +497,14 @@
                 "Bun"
               ],
               "pred": [
-                "legacy serverless functions",
+                "serverless functions",
+                "Bun",
                 "runtime execution"
               ],
               "conf": [
                 0.9999,
-                0.9895
+                0.9949,
+                0.9975
               ]
             },
             {
@@ -509,12 +513,12 @@
                 "Svelte"
               ],
               "pred": [
-                "interactive reactive dashboard",
+                "interactive reactive dashboard component",
                 "Svelte"
               ],
               "conf": [
                 0.9999,
-                0.9446
+                0.9966
               ]
             },
             {
@@ -523,7 +527,7 @@
                 "Tailwind CSS"
               ],
               "pred": [
-                "responsive web styling",
+                "web styling",
                 "Tailwind CSS"
               ],
               "conf": [
@@ -542,9 +546,9 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9993,
+                0.9987,
                 0.9999,
-                0.8317
+                0.9894
               ]
             },
             {
@@ -558,7 +562,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9797
+                0.9974
               ]
             },
             {
@@ -574,7 +578,7 @@
               "conf": [
                 0.9999,
                 0.9999,
-                0.9976
+                0.9996
               ]
             },
             {
@@ -588,12 +592,12 @@
               ],
               "conf": [
                 0.9999,
-                0.994
+                0.9905
               ]
             }
           ]
         },
-        "generalization_lift": "+67.69%"
+        "generalization_lift": "+86.15%"
       }
     },
     "TRSTR_LLM": {
@@ -603,38 +607,38 @@
       "synthetic_records": 571,
       "mined_negatives": 94,
       "held_out_test": {
-        "overall_precision": 73.52,
-        "overall_recall": 69.1,
-        "overall_f1": 71.24,
+        "overall_precision": 66.53,
+        "overall_recall": 68.24,
+        "overall_f1": 67.37,
         "total_test_documents": 199,
         "labels": {
           "IT_TERM": {
-            "precision": 73.47,
-            "recall": 67.08,
-            "f1": 70.13
+            "precision": 69.38,
+            "recall": 68.94,
+            "f1": 69.16
           },
           "CLERICAL_TERM": {
-            "precision": 73.61,
-            "recall": 73.61,
-            "f1": 73.61
+            "precision": 60.76,
+            "recall": 66.67,
+            "f1": 63.58
           }
         }
       },
       "unseen_benchmark": {
         "transformer_only": {
           "mode": "transformer_only",
-          "true_positives": 61,
-          "false_positives": 33,
-          "false_negatives": 4,
+          "true_positives": 62,
+          "false_positives": 54,
+          "false_negatives": 3,
           "total_gold_entities": 65,
-          "precision_pct": 64.89,
-          "recall_pct": 93.85,
-          "f1_pct": 76.73,
-          "correctly_identified_raw": "61/65",
+          "precision_pct": 53.45,
+          "recall_pct": 95.38,
+          "f1_pct": 68.51,
+          "correctly_identified_raw": "62/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9901,
-            "mean_confidence_spurious_entities": 0.9153,
-            "confidence_discrimination_delta": 0.0748
+            "mean_confidence_correct_entities": 0.9778,
+            "mean_confidence_spurious_entities": 0.8701,
+            "confidence_discrimination_delta": 0.1077
           },
           "sample_preview": [
             {
@@ -646,7 +650,7 @@
                 "FastAPI"
               ],
               "conf": [
-                0.9949
+                0.9698
               ]
             },
             {
@@ -659,8 +663,8 @@
                 "Bun"
               ],
               "conf": [
-                0.9923,
-                0.9999
+                0.9985,
+                0.9997
               ]
             },
             {
@@ -669,9 +673,11 @@
                 "Svelte"
               ],
               "pred": [
+                "dashboard",
                 "Svelte"
               ],
               "conf": [
+                0.9437,
                 0.9999
               ]
             },
@@ -685,7 +691,7 @@
                 "Tailwind CSS"
               ],
               "conf": [
-                0.9248,
+                0.9882,
                 0.9999
               ]
             },
@@ -699,8 +705,8 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9968,
-                0.9999
+                0.9915,
+                0.9641
               ]
             },
             {
@@ -714,7 +720,7 @@
               ],
               "conf": [
                 0.9999,
-                0.9999
+                0.9996
               ]
             },
             {
@@ -724,7 +730,7 @@
               ],
               "pred": [
                 "caching layers",
-                "message queuing services",
+                "message queuing",
                 "Redis"
               ],
               "conf": [
@@ -739,28 +745,30 @@
                 "NestJS"
               ],
               "pred": [
+                "enterprise backend",
                 "NestJS"
               ],
               "conf": [
-                0.9971
+                0.0183,
+                0.9839
               ]
             }
           ]
         },
         "hybrid": {
           "mode": "hybrid",
-          "true_positives": 61,
-          "false_positives": 40,
-          "false_negatives": 4,
+          "true_positives": 62,
+          "false_positives": 55,
+          "false_negatives": 3,
           "total_gold_entities": 65,
-          "precision_pct": 60.4,
-          "recall_pct": 93.85,
-          "f1_pct": 73.49,
-          "correctly_identified_raw": "61/65",
+          "precision_pct": 52.99,
+          "recall_pct": 95.38,
+          "f1_pct": 68.13,
+          "correctly_identified_raw": "62/65",
           "confidence_calibration": {
-            "mean_confidence_correct_entities": 0.9901,
-            "mean_confidence_spurious_entities": 0.9338,
-            "confidence_discrimination_delta": 0.0563
+            "mean_confidence_correct_entities": 0.9778,
+            "mean_confidence_spurious_entities": 0.8735,
+            "confidence_discrimination_delta": 0.1043
           },
           "sample_preview": [
             {
@@ -773,7 +781,7 @@
                 "database"
               ],
               "conf": [
-                0.9949,
+                0.9698,
                 1.0
               ]
             },
@@ -787,8 +795,8 @@
                 "Bun"
               ],
               "conf": [
-                0.9923,
-                0.9999
+                0.9985,
+                0.9997
               ]
             },
             {
@@ -815,7 +823,7 @@
                 "Tailwind CSS"
               ],
               "conf": [
-                0.9248,
+                0.9882,
                 0.9999
               ]
             },
@@ -829,8 +837,8 @@
                 "Appwrite"
               ],
               "conf": [
-                0.9968,
-                0.9999
+                0.9915,
+                0.9641
               ]
             },
             {
@@ -844,7 +852,7 @@
               ],
               "conf": [
                 1.0,
-                0.9999
+                0.9996
               ]
             },
             {
@@ -854,7 +862,7 @@
               ],
               "pred": [
                 "caching layers",
-                "message queuing services",
+                "message queuing",
                 "Redis"
               ],
               "conf": [
@@ -869,15 +877,17 @@
                 "NestJS"
               ],
               "pred": [
+                "enterprise backend",
                 "NestJS"
               ],
               "conf": [
-                0.9971
+                0.0183,
+                0.9839
               ]
             }
           ]
         },
-        "generalization_lift": "+89.23%"
+        "generalization_lift": "+90.76%"
       }
     }
   },

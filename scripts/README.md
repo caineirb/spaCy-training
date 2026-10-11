@@ -18,9 +18,9 @@ The scripts manage the complete machine learning lifecycle: data ingestion, synt
 | [`generate_llm_synthetic.py`](generate_llm_synthetic.py) | LLM-direct synthetic dataset generator using Google Gemini Flash Lite | ✅ | `google-genai` |
 | [`labels.py`](labels.py) | Unified label taxonomy (`IT_TERM`, `CLERICAL_TERM`) & backward-compatibility normalizer | ❌ | Core Python |
 | [`mine_negatives.py`](mine_negatives.py) | Hard negative mining & stylistic n-gram overlap analysis against benchmark | ✅ | `spacy` |
-| [`pipeline.py`](pipeline.py) | `HybridJournalPipeline` inference engine with ML-authority conflict resolution | ✅ | `spacy`, `spacy-transformers` |
+| [`pipeline.py`](pipeline.py) | `HybridJournalPipeline` inference engine with Dictionary-authority conflict resolution | ✅ | `spacy`, `spacy-transformers` |
 | [`prepare_trstr_llm.py`](prepare_trstr_llm.py) | TRSTR-LLM dataset builder merging real data, Gemini synthetic logs & mined negatives | ✅ | `spacy` |
-| [`test_pipeline_regressions.py`](test_pipeline_regressions.py) | Unittest suite verifying span resolution, ML label authority & abstention fallback | ✅ | `unittest` |
+| [`test_pipeline_regressions.py`](test_pipeline_regressions.py) | Unittest suite verifying span resolution, Dictionary label authority & abstention fallback | ✅ | `unittest` |
 | [`training.py`](training.py) | GPU transformer fine-tuning wrapper with early stopping, patience & config generation | ✅ | `spacy` |
 
 ---
@@ -149,8 +149,8 @@ The scripts manage the complete machine learning lifecycle: data ingestion, synt
 - **Purpose**: Production inference engine implementing the `HybridJournalPipeline` class with advanced conflict resolution.
 - **Conflict Resolution Rules**:
   1. **Longest Span Wins**: A shorter dictionary span never truncates or splits a longer ML span (e.g., `Tailwind CSS` over `CSS`, `access control systems` over `access control`).
-  2. **ML Label Authority**: On label disagreements, the ML classification takes precedence (e.g., keeping `data entry` as `CLERICAL_TERM`).
-  3. **Abstention Fallback**: Dictionary predictions are accepted *only* when the ML component makes no prediction overlapping that span.
+  2. **Dictionary Label Authority**: On label disagreements between overlapping spans, the seed Dictionary classification takes precedence as institutional ground truth (with all overrides logged to `data/eval_results/dictionary_overrides.jsonl`).
+  3. **Abstention Fallback**: Dictionary predictions are accepted when the ML component makes no prediction overlapping that span (abstains).
 - **Confidence Routing**:
   - Confidence $\ge 0.80$: Marked `ACCEPTED`.
   - Confidence $< 0.80$: Marked `NEEDS_REVIEW`.
@@ -181,9 +181,9 @@ The scripts manage the complete machine learning lifecycle: data ingestion, synt
 - **Purpose**: Automated regression unit tests validating the hybrid pipeline's conflict resolution logic.
 - **Test Invariants**:
   - `test_longest_span_ml_over_dict`: ML longer span takes priority over shorter dictionary sub-span.
-  - `test_ml_label_authority_on_disagreement`: ML label takes priority over dictionary label on disagreement.
-  - `test_dictionary_used_only_when_ml_abstains`: Dictionary matches accepted only on ML abstention.
-  - `test_dict_longer_than_partial_ml_span`: When dictionary span is longer than a partial ML span, longer span wins with ML label authority.
+  - `test_dictionary_label_authority_on_disagreement`: Dictionary label takes priority over ML label on disagreement.
+  - `test_dictionary_used_only_when_ml_abstains`: Dictionary matches accepted on ML abstention.
+  - `test_dict_longer_than_partial_ml_span`: When dictionary span is longer than a partial ML span, longer span wins both boundary and label authority.
 - **CLI Usage**:
   ```bash
   python -m unittest scripts/test_pipeline_regressions.py

@@ -1,0 +1,581 @@
+{
+  "trtr": {
+    "n_folds": 5,
+    "overall_f1": {
+      "mean": 71.01,
+      "std": 2.81
+    },
+    "overall_precision": {
+      "mean": 68.57,
+      "std": 2.24
+    },
+    "overall_recall": {
+      "mean": 73.67,
+      "std": 3.72
+    },
+    "it_term_f1": {
+      "mean": 71.64,
+      "std": 3.62
+    },
+    "clerical_term_f1": {
+      "mean": 69.89,
+      "std": 1.92
+    },
+    "unseen_trf_recall": {
+      "mean": 85.54,
+      "std": 3.17
+    },
+    "unseen_trf_f1": {
+      "mean": 54.5,
+      "std": 1.04
+    },
+    "runs": [
+      {
+        "overall": {
+          "precision": 70.66,
+          "recall": 76.19,
+          "f1": 73.32
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 71.79,
+            "recall": 74.34,
+            "f1": 73.04
+          },
+          "IT_TERM": {
+            "precision": 70.0,
+            "recall": 77.35,
+            "f1": 73.49
+          }
+        },
+        "counts": {
+          "tp": 224,
+          "fp": 93,
+          "fn": 70
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 80.0,
+          "transformer_f1": 53.06,
+          "hybrid_recall": 80.0,
+          "hybrid_f1": 52.79
+        },
+        "condition": "trtr",
+        "fold": 0
+      },
+      {
+        "overall": {
+          "precision": 67.51,
+          "recall": 73.04,
+          "f1": 70.16
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 69.03,
+            "recall": 70.91,
+            "f1": 69.96
+          },
+          "IT_TERM": {
+            "precision": 66.67,
+            "recall": 74.32,
+            "f1": 70.28
+          }
+        },
+        "counts": {
+          "tp": 214,
+          "fp": 103,
+          "fn": 79
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 87.69,
+          "transformer_f1": 53.77,
+          "hybrid_recall": 87.69,
+          "hybrid_f1": 53.77
+        },
+        "condition": "trtr",
+        "fold": 1
+      },
+      {
+        "overall": {
+          "precision": 66.32,
+          "recall": 67.02,
+          "f1": 66.67
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 66.67,
+            "recall": 67.92,
+            "f1": 67.29
+          },
+          "IT_TERM": {
+            "precision": 66.11,
+            "recall": 66.48,
+            "f1": 66.3
+          }
+        },
+        "counts": {
+          "tp": 191,
+          "fp": 97,
+          "fn": 94
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 89.23,
+          "transformer_f1": 56.04,
+          "hybrid_recall": 89.23,
+          "hybrid_f1": 55.77
+        },
+        "condition": "trtr",
+        "fold": 2
+      },
+      {
+        "overall": {
+          "precision": 71.8,
+          "recall": 77.92,
+          "f1": 74.74
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 66.15,
+            "recall": 75.44,
+            "f1": 70.49
+          },
+          "IT_TERM": {
+            "precision": 75.23,
+            "recall": 79.31,
+            "f1": 77.22
+          }
+        },
+        "counts": {
+          "tp": 247,
+          "fp": 97,
+          "fn": 70
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 84.62,
+          "transformer_f1": 54.46,
+          "hybrid_recall": 84.62,
+          "hybrid_f1": 54.19
+        },
+        "condition": "trtr",
+        "fold": 3
+      },
+      {
+        "overall": {
+          "precision": 66.56,
+          "recall": 74.19,
+          "f1": 70.17
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 65.38,
+            "recall": 72.34,
+            "f1": 68.69
+          },
+          "IT_TERM": {
+            "precision": 67.15,
+            "recall": 75.14,
+            "f1": 70.92
+          }
+        },
+        "counts": {
+          "tp": 207,
+          "fp": 104,
+          "fn": 72
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 86.15,
+          "transformer_f1": 55.17,
+          "hybrid_recall": 86.15,
+          "hybrid_f1": 54.9
+        },
+        "condition": "trtr",
+        "fold": 4
+      }
+    ]
+  },
+  "trstr_paraphrase": {
+    "n_folds": 5,
+    "overall_f1": {
+      "mean": 75.44,
+      "std": 2.94
+    },
+    "overall_precision": {
+      "mean": 74.28,
+      "std": 1.89
+    },
+    "overall_recall": {
+      "mean": 76.69,
+      "std": 4.2
+    },
+    "it_term_f1": {
+      "mean": 75.88,
+      "std": 3.76
+    },
+    "clerical_term_f1": {
+      "mean": 74.81,
+      "std": 2.3
+    },
+    "unseen_trf_recall": {
+      "mean": 72.0,
+      "std": 4.5
+    },
+    "unseen_trf_f1": {
+      "mean": 48.78,
+      "std": 2.65
+    },
+    "runs": [
+      {
+        "overall": {
+          "precision": 75.97,
+          "recall": 79.59,
+          "f1": 77.74
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 72.36,
+            "recall": 78.76,
+            "f1": 75.42
+          },
+          "IT_TERM": {
+            "precision": 78.38,
+            "recall": 80.11,
+            "f1": 79.23
+          }
+        },
+        "counts": {
+          "tp": 234,
+          "fp": 74,
+          "fn": 60
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 73.85,
+          "transformer_f1": 51.06,
+          "hybrid_recall": 73.85,
+          "hybrid_f1": 50.79
+        },
+        "condition": "trstr_paraphrase",
+        "fold": 0
+      },
+      {
+        "overall": {
+          "precision": 74.35,
+          "recall": 78.16,
+          "f1": 76.21
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 72.73,
+            "recall": 80.0,
+            "f1": 76.19
+          },
+          "IT_TERM": {
+            "precision": 75.4,
+            "recall": 77.05,
+            "f1": 76.22
+          }
+        },
+        "counts": {
+          "tp": 229,
+          "fp": 79,
+          "fn": 64
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 78.46,
+          "transformer_f1": 52.04,
+          "hybrid_recall": 78.46,
+          "hybrid_f1": 51.78
+        },
+        "condition": "trstr_paraphrase",
+        "fold": 1
+      },
+      {
+        "overall": {
+          "precision": 71.43,
+          "recall": 68.42,
+          "f1": 69.89
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 71.15,
+            "recall": 69.81,
+            "f1": 70.48
+          },
+          "IT_TERM": {
+            "precision": 71.6,
+            "recall": 67.6,
+            "f1": 69.54
+          }
+        },
+        "counts": {
+          "tp": 195,
+          "fp": 78,
+          "fn": 90
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 72.31,
+          "transformer_f1": 48.96,
+          "hybrid_recall": 72.31,
+          "hybrid_f1": 48.7
+        },
+        "condition": "trstr_paraphrase",
+        "fold": 2
+      },
+      {
+        "overall": {
+          "precision": 76.6,
+          "recall": 79.5,
+          "f1": 78.02
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 69.7,
+            "recall": 80.7,
+            "f1": 74.8
+          },
+          "IT_TERM": {
+            "precision": 81.22,
+            "recall": 78.82,
+            "f1": 80.0
+          }
+        },
+        "counts": {
+          "tp": 252,
+          "fp": 77,
+          "fn": 65
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 70.77,
+          "transformer_f1": 47.18,
+          "hybrid_recall": 70.77,
+          "hybrid_f1": 46.94
+        },
+        "condition": "trstr_paraphrase",
+        "fold": 3
+      },
+      {
+        "overall": {
+          "precision": 73.06,
+          "recall": 77.78,
+          "f1": 75.35
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 73.79,
+            "recall": 80.85,
+            "f1": 77.16
+          },
+          "IT_TERM": {
+            "precision": 72.68,
+            "recall": 76.22,
+            "f1": 74.41
+          }
+        },
+        "counts": {
+          "tp": 217,
+          "fp": 80,
+          "fn": 62
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 64.62,
+          "transformer_f1": 44.68,
+          "hybrid_recall": 64.62,
+          "hybrid_f1": 44.44
+        },
+        "condition": "trstr_paraphrase",
+        "fold": 4
+      }
+    ]
+  },
+  "trstr_llm": {
+    "n_folds": 5,
+    "overall_f1": {
+      "mean": 67.75,
+      "std": 2.98
+    },
+    "overall_precision": {
+      "mean": 66.87,
+      "std": 2.38
+    },
+    "overall_recall": {
+      "mean": 68.7,
+      "std": 3.97
+    },
+    "it_term_f1": {
+      "mean": 68.01,
+      "std": 3.66
+    },
+    "clerical_term_f1": {
+      "mean": 67.29,
+      "std": 2.19
+    },
+    "unseen_trf_recall": {
+      "mean": 89.54,
+      "std": 3.56
+    },
+    "unseen_trf_f1": {
+      "mean": 67.06,
+      "std": 4.85
+    },
+    "runs": [
+      {
+        "overall": {
+          "precision": 69.7,
+          "recall": 70.41,
+          "f1": 70.05
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 70.18,
+            "recall": 70.8,
+            "f1": 70.48
+          },
+          "IT_TERM": {
+            "precision": 69.4,
+            "recall": 70.17,
+            "f1": 69.78
+          }
+        },
+        "counts": {
+          "tp": 207,
+          "fp": 90,
+          "fn": 87
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 84.62,
+          "transformer_f1": 63.58,
+          "hybrid_recall": 84.62,
+          "hybrid_f1": 61.8
+        },
+        "condition": "trstr_llm",
+        "fold": 0
+      },
+      {
+        "overall": {
+          "precision": 63.9,
+          "recall": 68.26,
+          "f1": 66.01
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 61.11,
+            "recall": 70.0,
+            "f1": 65.25
+          },
+          "IT_TERM": {
+            "precision": 65.78,
+            "recall": 67.21,
+            "f1": 66.49
+          }
+        },
+        "counts": {
+          "tp": 200,
+          "fp": 113,
+          "fn": 93
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 93.85,
+          "transformer_f1": 67.78,
+          "hybrid_recall": 93.85,
+          "hybrid_f1": 65.24
+        },
+        "condition": "trstr_llm",
+        "fold": 1
+      },
+      {
+        "overall": {
+          "precision": 64.34,
+          "recall": 61.4,
+          "f1": 62.84
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 63.89,
+            "recall": 65.09,
+            "f1": 64.49
+          },
+          "IT_TERM": {
+            "precision": 64.63,
+            "recall": 59.22,
+            "f1": 61.81
+          }
+        },
+        "counts": {
+          "tp": 175,
+          "fp": 97,
+          "fn": 110
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 92.31,
+          "transformer_f1": 75.95,
+          "hybrid_recall": 92.31,
+          "hybrid_f1": 69.77
+        },
+        "condition": "trstr_llm",
+        "fold": 2
+      },
+      {
+        "overall": {
+          "precision": 69.05,
+          "recall": 73.19,
+          "f1": 71.06
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 62.77,
+            "recall": 75.44,
+            "f1": 68.53
+          },
+          "IT_TERM": {
+            "precision": 73.37,
+            "recall": 71.92,
+            "f1": 72.64
+          }
+        },
+        "counts": {
+          "tp": 232,
+          "fp": 104,
+          "fn": 85
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 90.77,
+          "transformer_f1": 62.11,
+          "hybrid_recall": 90.77,
+          "hybrid_f1": 61.46
+        },
+        "condition": "trstr_llm",
+        "fold": 3
+      },
+      {
+        "overall": {
+          "precision": 67.35,
+          "recall": 70.25,
+          "f1": 68.77
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 66.33,
+            "recall": 69.15,
+            "f1": 67.71
+          },
+          "IT_TERM": {
+            "precision": 67.88,
+            "recall": 70.81,
+            "f1": 69.31
+          }
+        },
+        "counts": {
+          "tp": 196,
+          "fp": 95,
+          "fn": 83
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 86.15,
+          "transformer_f1": 65.88,
+          "hybrid_recall": 86.15,
+          "hybrid_f1": 63.28
+        },
+        "condition": "trstr_llm",
+        "fold": 4
+      }
+    ]
+  }
+}

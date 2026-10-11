@@ -8,9 +8,9 @@ Combines:
    - Longest span resolution: Dictionary never truncates or splits longer ML spans
      (e.g., 'Tailwind CSS' beats 'CSS', 'Canva Editing' beats 'Canva',
       'access control systems' beats 'access control', 'CSS flexibility' beats 'CSS').
-   - ML label authority: ML classification takes precedence on label disagreement
-     (e.g., 'data entry' and 'File Management' remain CLERICAL_TERM).
-   - Abstention fallback: Dictionary entities used only when ML abstains.
+   - Dictionary label authority: Dictionary classification takes precedence on label disagreement
+     (with audit logging to dictionary_overrides.jsonl).
+   - Abstention fallback: Dictionary entities used when ML abstains.
 4. Genuine per-entity marginal beam confidence calculation
 5. Adjacency-merge pass for multi-word split spans
 6. Confidence-based routing with threshold
