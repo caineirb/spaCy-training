@@ -165,10 +165,52 @@ def prepare_3way_cv_folds(
         random.shuffle(pool_trtr)
 
         # 2. Condition TRSTR-Paraphrase: train_real + leak-free paraphrases
-        clean_paraphrases = [
-            r for r in paraphrase_records
-            if r.get("text", "").strip().lower() not in val_texts
-        ]
+        #    — filter out paraphrases whose source text leaked into the validation fold,
+        #      and as a second guard, drop paraphrases near-duplicate (>=0.7 SeqSim) to
+        #      any validation document. Whole-doc comparison matches the leakage
+        #      detector's semantics (which compares DocBin document texts, not sentences).
+        import difflib as _difflib
+
+        # Normalized validation document texts
+        norm_val_docs = { " ".join(v.strip().lower().split()) for v in val_texts }
+
+        # Rule 1: drop paraphrases whose source_text (normalized) appears in val_texts
+        #   (i.e. the paraphrase's origin sentence was in the validation fold)
+        paraphrase_source_ids_in_val = set()
+        for r in paraphrase_records:
+            src_norm = " ".join(r.get("source_text", "").strip().lower().split())
+            if src_norm in val_texts:
+                paraphrase_source_ids_in_val.add(r["source_id"])
+
+        # Rule 2: also drop paraphrases with SeqSim >= 0.7 to any validation document.
+        # Use the same fast pre-check (real_quick_ratio/quick_ratio) as the leakage
+        # detector to avoid O(n*m) full-ratio computation.
+        _matcher = _difflib.SequenceMatcher(None, "", "")
+        paraphrase_ids_by_similarity = set()
+        for r in paraphrase_records:
+            para_norm = " ".join(r["text"].strip().lower().split())
+            _matcher.set_seq1(para_norm)
+            for vs in norm_val_docs:
+                _matcher.set_seq2(vs)
+                if _matcher.real_quick_ratio() >= 0.7 and _matcher.quick_ratio() >= 0.7:
+                    if _matcher.ratio() >= 0.7:
+                        paraphrase_ids_by_similarity.add(r["source_id"])
+                        break  # count each paraphrase at most once
+
+        # Remove paraphrases that fail either rule
+        removed_by_source = 0
+        removed_by_sim = 0
+        clean_paraphrases = []
+        for r in paraphrase_records:
+            sid = r.get("source_id", "")
+            if sid in paraphrase_source_ids_in_val:
+                removed_by_source += 1
+                continue
+            if sid in paraphrase_ids_by_similarity:
+                removed_by_sim += 1
+                continue
+            clean_paraphrases.append(r)
+
         pool_trstr_para = list(train_real) + clean_paraphrases
         random.shuffle(pool_trstr_para)
 
@@ -209,6 +251,9 @@ def prepare_3way_cv_folds(
             "val_real_count": len(val_real),
             "train_real_count": len(train_real),
             "trstr_para_count": len(pool_trstr_para),
+            "trstr_para_removed_by_source": removed_by_source,
+            "trstr_para_removed_by_similarity": removed_by_sim,
+            "trstr_para_kept": len(clean_paraphrases),
             "trstr_llm_count": len(pool_trstr_llm),
             "val_path": val_path,
             "trtr_path": trtr_path,

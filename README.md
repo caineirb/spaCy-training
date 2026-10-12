@@ -41,7 +41,7 @@ flowchart TB
   Retrain["Feedback into Retrain"]
 
   Text --> spaCyProcess
-  spaCyProcess -->|"[*start*, *end*, *label*, *conf*]"| ConflictEngine
+  spaCyProcess -->|"`[*start*, *end*, *label*, *conf*]`"| ConflictEngine
   ConflictEngine --> Routing
   Routing -->|"`*>=0.80*`"| Accept
   Routing -->|"`*<0.80*`"| Review
@@ -177,17 +177,17 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 
 ### 4.2 5-Fold Stratified Cross-Validation Summary
 
-> **Cross‑Validation Results**: The 5‑fold cross‑validation on the expanded 1,320‑record dataset has completed. The aggregated metrics (mean ± standard deviation) for each experimental condition are shown below.
+> **Cross‑Validation Results**: The 5‑fold cross‑validation on the expanded 1,320‑record dataset has completed. The aggregated metrics (mean ± standard deviation) for each experimental condition are shown below.
 
 | Metric | TRTR (Real Baseline) | TRSTR‑Paraphrase | TRSTR‑LLM |
 | :--- | :---: | :---: | :---: |
-| **Overall F1** | 71.01 ± 2.81% | **75.44 ± 2.94%** | 67.75 ± 2.98% |
-| Overall Precision | 68.57 ± 2.24% | **74.28 ± 1.89%** | 66.87 ± 2.38% |
-| Overall Recall | 73.67 ± 3.72% | **76.69 ± 4.20%** | 68.70 ± 3.97% |
-| IT‑Term F1 | 71.64 ± 3.62% | **75.88 ± 3.76%** | 68.01 ± 3.66% |
-| Clerical‑Term F1 | 69.89 ± 1.92% | **74.81 ± 2.30%** | 67.29 ± 2.19% |
-| Unseen Benchmark Recall (Transformer) | 85.54 ± 3.17% | 72.00 ± 4.50% | **89.54 ± 3.56%** |
-| Unseen Benchmark F1 (Transformer) | 54.50 ± 1.04% | 48.78 ± 2.65% | **67.06 ± 4.85%** |
+| **Overall F1** | 79.02 ± 5.36% | **80.39 ± 4.17%** | 75.43 ± 2.11% |
+| Overall Precision | 76.82 ± 6.02% | **78.53 ± 5.48%** | 74.75 ± 2.92% |
+| Overall Recall | 81.38 ± 4.64% | **82.42 ± 2.78%** | 76.16 ± 1.55% |
+| IT‑Term F1 | 81.07 ± 5.91% | **81.33 ± 4.97%** | 75.74 ± 2.15% |
+| Clerical‑Term F1 | 75.29 ± 5.10% | **78.58 ± 3.23%** | 74.79 ± 3.06% |
+| Unseen Benchmark Recall (Transformer) | 85.23 ± 3.72% | 72.62 ± 4.90% | **89.54 ± 3.56%** |
+| Unseen Benchmark F1 (Transformer) | 53.56 ± 2.71% | 48.19 ± 2.40% | **67.06 ± 4.85%** |
 
 ### Key Findings & Thesis Insights
 

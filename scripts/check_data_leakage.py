@@ -803,6 +803,177 @@ def check_cv_folds_leakage(
     return all_cv_passed, {"folds": fold_reports, "dict_leaks": list(dict_leaks)}
 
 
+def check_cv_near_duplicate_leakage(
+    cv_data_dir: str = "data/cv",
+    n_splits: int = 5,
+    similarity_threshold: float = 0.70,
+) -> Tuple[bool, Dict[str, Any]]:
+    """Per-fold near-duplicate check: synthetic training docs vs real validation docs.
+
+    For each fold and condition, identifies synthetic (non-real) training documents
+    that are near-duplicates (SequenceMatcher ratio >= threshold) of validation documents.
+    Near-duplicates of this kind indicate paraphrase leakage: a paraphrase derived from
+    a source sentence that ended up in the validation fold.
+
+    Also reports (informational, not a failure) the real-train-vs-real-val near-duplicate
+    rate as a property of corpus repetition.
+
+    Exits with non-zero status if any synthetic doc is a near-duplicate of a validation doc.
+    """
+    print_section("CV NEAR-DUPLICATE LEAKAGE CHECK (Synthetic Train vs Real Validation)")
+
+    if not os.path.exists(cv_data_dir):
+        print(f"[ERROR] CV directory not found: {cv_data_dir}")
+        return False, {"error": "cv_dir_not_found"}
+
+    nlp = spacy.blank("en")
+
+    def normalize(text: str) -> str:
+        """Lowercase and collapse whitespace for comparison."""
+        return " ".join(text.strip().lower().split())
+
+    def find_near_duplicates(
+        source_texts: List[str],
+        target_texts: List[str],
+        threshold: float,
+        max_examples: int = 3,
+    ) -> Tuple[int, List[Dict[str, Any]]]:
+        """Count source texts that have a near-duplicate (>= threshold) in target texts."""
+        count = 0
+        examples: List[Dict[str, Any]] = []
+        matcher = difflib.SequenceMatcher(None, "", "")
+
+        for st in source_texts:
+            matcher.set_seq1(st)
+            for vt in target_texts:
+                matcher.set_seq2(vt)
+                if matcher.real_quick_ratio() >= threshold and matcher.quick_ratio() >= threshold:
+                    sim = matcher.ratio()
+                    if sim >= threshold:
+                        count += 1
+                        if len(examples) < max_examples:
+                            examples.append({
+                                "source": st,
+                                "target": vt,
+                                "similarity": round(sim, 3),
+                            })
+                        break  # Count each source doc at most once
+        return count, examples
+
+    all_passed = True
+    fold_reports = []
+
+    for fold_idx in range(n_splits):
+        fold_dir = os.path.join(cv_data_dir, f"fold_{fold_idx}")
+        val_path = os.path.join(fold_dir, "val_real.spacy")
+        trtr_path = os.path.join(fold_dir, "train_trtr.spacy")
+
+        if not os.path.exists(val_path) or not os.path.exists(trtr_path):
+            print(f"[WARN] Fold {fold_idx}: missing val_real.spacy or train_trtr.spacy, skipping.")
+            continue
+
+        # Load and normalize all texts
+        val_db = DocBin().from_disk(val_path)
+        val_texts = [normalize(d.text) for d in val_db.get_docs(nlp.vocab)]
+
+        trtr_db = DocBin().from_disk(trtr_path)
+        trtr_texts_list = [normalize(d.text) for d in trtr_db.get_docs(nlp.vocab)]
+        trtr_texts_set = set(trtr_texts_list)
+
+        print(f"\n--- Fold {fold_idx} Near-Duplicate Analysis ---")
+        print(f"  Validation docs: {len(val_texts)}")
+        print(f"  Real training docs (TRTR): {len(trtr_texts_list)}")
+
+        fold_info: Dict[str, Any] = {
+            "fold": fold_idx,
+            "val_count": len(val_texts),
+            "real_train_count": len(trtr_texts_list),
+            "conditions": {},
+        }
+
+        # Informational: real-train vs real-val near-duplicate rate (corpus baseline)
+        real_nd_count, real_nd_examples = find_near_duplicates(
+            trtr_texts_list, val_texts, similarity_threshold
+        )
+        real_rate = real_nd_count / len(trtr_texts_list) * 100 if trtr_texts_list else 0
+        print(f"  [INFO] Real-train near-dupes of validation: "
+              f"{real_nd_count}/{len(trtr_texts_list)} ({real_rate:.1f}%) "
+              f"— corpus baseline, not a failure")
+        fold_info["real_near_dup_count"] = real_nd_count
+        fold_info["real_near_dup_rate_pct"] = round(real_rate, 1)
+
+        # Check each augmentation condition
+        for cond, train_filename in [
+            ("trtr", "train_trtr.spacy"),
+            ("trstr_paraphrase", "train_trstr_paraphrase.spacy"),
+            ("trstr_llm", "train_trstr_llm.spacy"),
+        ]:
+            train_path = os.path.join(fold_dir, train_filename)
+            if not os.path.exists(train_path):
+                continue
+
+            if cond == "trtr":
+                # TRTR has zero synthetic docs — trivially clean
+                print(f"  [{cond:<20}] Synthetic docs: 0       | "
+                      f"Near-dupes of validation: [PASS] (0.0%)")
+                fold_info["conditions"][cond] = {
+                    "synthetic_count": 0,
+                    "near_dup_count": 0,
+                    "near_dup_rate_pct": 0.0,
+                    "examples": [],
+                    "passed": True,
+                }
+                continue
+
+            train_db = DocBin().from_disk(train_path)
+            all_train_texts = [normalize(d.text) for d in train_db.get_docs(nlp.vocab)]
+
+            # Synthetic = docs present in augmented training but absent from TRTR
+            synthetic_texts = [t for t in all_train_texts if t not in trtr_texts_set]
+
+            nd_count, nd_examples = find_near_duplicates(
+                synthetic_texts, val_texts, similarity_threshold
+            )
+
+            dup_rate = nd_count / len(synthetic_texts) * 100 if synthetic_texts else 0
+            cond_passed = nd_count == 0
+            if not cond_passed:
+                all_passed = False
+
+            status = "PASS" if cond_passed else f"FAIL ({nd_count} near-dupes)"
+            print(f"  [{cond:<20}] Synthetic docs: {len(synthetic_texts):<5} | "
+                  f"Near-dupes of validation: [{status}] ({dup_rate:.1f}%)")
+
+            if nd_examples:
+                for ex in nd_examples:
+                    print(f"     -> Sim {ex['similarity']}:")
+                    print(f"        Synth: {repr(ex['source'][:120])}")
+                    print(f"        Val  : {repr(ex['target'][:120])}")
+
+            fold_info["conditions"][cond] = {
+                "synthetic_count": len(synthetic_texts),
+                "near_dup_count": nd_count,
+                "near_dup_rate_pct": round(dup_rate, 1),
+                "examples": nd_examples,
+                "passed": cond_passed,
+            }
+
+        fold_reports.append(fold_info)
+
+    # Summary
+    print("\n" + "=" * 75)
+    if all_passed:
+        print(">>> CV NEAR-DUPLICATE CHECK: PASSED. Zero synthetic near-duplicates of "
+              "validation docs across all folds and conditions.")
+    else:
+        print(">>> CV NEAR-DUPLICATE CHECK: FAILED. Synthetic training docs are "
+              "near-duplicates of validation docs.")
+        print("    This indicates paraphrase/synthetic leakage into CV validation folds.")
+    print("=" * 75)
+
+    return all_passed, {"folds": fold_reports}
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Data Leakage & Benchmark Isolation Audit")
@@ -820,5 +991,10 @@ if __name__ == "__main__":
         cv_success, _ = check_cv_folds_leakage()
         if not cv_success:
             overall_ok = False
+
+        nd_success, _ = check_cv_near_duplicate_leakage()
+        if not nd_success:
+            overall_ok = False
+
 
     sys.exit(0 if overall_ok else 1)

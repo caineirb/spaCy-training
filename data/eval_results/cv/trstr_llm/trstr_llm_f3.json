@@ -1,25 +1,25 @@
 {
   "overall": {
-    "precision": 69.05,
-    "recall": 73.19,
-    "f1": 71.06
+    "precision": 75.24,
+    "recall": 78.31,
+    "f1": 76.74
   },
   "labels": {
     "CLERICAL_TERM": {
-      "precision": 62.77,
-      "recall": 75.44,
-      "f1": 68.53
+      "precision": 70.94,
+      "recall": 82.18,
+      "f1": 76.15
     },
     "IT_TERM": {
-      "precision": 73.37,
-      "recall": 71.92,
-      "f1": 72.64
+      "precision": 77.89,
+      "recall": 76.29,
+      "f1": 77.08
     }
   },
   "counts": {
-    "tp": 232,
-    "fp": 104,
-    "fn": 85
+    "tp": 231,
+    "fp": 76,
+    "fn": 64
   },
   "unseen_benchmark": {
     "transformer_recall": 90.77,
