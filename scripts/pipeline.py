@@ -29,8 +29,7 @@ from typing import List, Dict, Any, Optional, Tuple, Set
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import scripts
 import spacy
-from spacy.language import Language
-from spacy.tokens import Doc, Span
+from spacy.tokens import Doc
 from scripts.annotation import load_terms_dictionary
 
 logger = logging.getLogger("ojt_pipeline.inference")
@@ -314,7 +313,10 @@ class HybridJournalPipeline:
             self.overrides_log_path = DICTIONARY_OVERRIDES_LOG
 
         logger.info(f"Loading transformer model from '{model_path}'...")
-        self.nlp = spacy.load(model_path)
+        self.nlp = spacy.load(
+            model_path,
+            exclude=["parser", "tagger", "lemmatizer", "attribute_ruler"],
+        )
 
         # Ensure EntityRuler is NOT before NER in the transformer pipeline
         # (Transformer must run unconstrained to prevent span truncation)

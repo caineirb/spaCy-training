@@ -9,7 +9,7 @@ and `models/ner_trf/model-last`.
 import os
 import sys
 import logging
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 
 # Ensure project root is in sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -96,6 +96,43 @@ def train_ner_trf(
     last_model_path = os.path.join(output_dir, "model-last")
 
     logger.info(f"Training completed. Best model checkpoint: {best_model_path}")
+    return {
+        "best_model_path": best_model_path,
+        "last_model_path": last_model_path,
+        "status": "SUCCESS",
+    }
+
+
+
+def train_ner_cnn(
+    config_path: str = "config_cnn_mini.cfg",
+    output_dir: str = "models/trstr_llm_cnn",
+    train_path: str = "data/training/train.spacy",
+    dev_path: str = "data/training/dev.spacy",
+    max_steps: int = 5000,
+    eval_frequency: int = 100,
+    patience: int = 800,
+    use_gpu: int = 0,
+) -> Dict[str, Any]:
+    """Trains a CPU-friendly CNN tok2vec NER pipeline (<30MB RAM footprint)."""
+    import gc
+    gc.collect()
+
+    os.makedirs(output_dir, exist_ok=True)
+    overrides = {
+        "paths.train": train_path,
+        "paths.dev": dev_path,
+        "training.max_steps": max_steps,
+        "training.eval_frequency": eval_frequency,
+        "training.patience": patience,
+    }
+
+    logger.info(f"Starting CNN tok2vec training for up to {max_steps} steps...")
+    spacy_train(config_path, output_dir, use_gpu=use_gpu, overrides=overrides)
+
+    best_model_path = os.path.join(output_dir, "model-best")
+    last_model_path = os.path.join(output_dir, "model-last")
+    logger.info(f"CNN training completed. Checkpoint: {best_model_path}")
     return {
         "best_model_path": best_model_path,
         "last_model_path": last_model_path,
