@@ -279,8 +279,9 @@ def train_cv_model(
     seed: int = 42,
     force_train: bool = False,
     models_dir: str = CV_MODELS_DIR,
+    trainer: str = "transformer",
 ) -> str:
-    """Trains a transformer model for a specific fold and condition with GPU memory safety."""
+    """Trains a model for a specific fold and condition with GPU memory safety."""
     output_dir = os.path.join(models_dir, f"{condition}_f{fold_idx}")
     best_model_path = os.path.join(output_dir, "model-best")
 
@@ -311,13 +312,30 @@ def train_cv_model(
         "training.max_steps": max_steps,
         "training.eval_frequency": eval_frequency,
         "training.patience": patience,
-        "training.optimizer.learn_rate.total_steps": max_steps,
-        "components.transformer.model.mixed_precision": True,
-        "components.transformer.max_batch_items": 2048,
     }
 
     logger.info(f"Training {condition.upper()} (Fold {fold_idx}) for up to {max_steps} steps...")
-    spacy_train(config_path, output_dir, use_gpu=0, overrides=overrides)
+    if trainer == "transformer":
+        overrides.update({
+            "training.optimizer.learn_rate.total_steps": max_steps,
+            "components.transformer.model.mixed_precision": True,
+            "components.transformer.max_batch_items": 2048,
+        })
+        spacy_train(config_path, output_dir, use_gpu=0, overrides=overrides)
+    elif trainer == "cnn":
+        from scripts.training import train_ner_cnn
+        train_ner_cnn(
+            config_path=config_path,
+            output_dir=output_dir,
+            train_path=train_path,
+            dev_path=dev_path,
+            max_steps=max_steps,
+            eval_frequency=eval_frequency,
+            patience=patience,
+            use_gpu=0,
+        )
+    else:
+        raise ValueError(f"Unsupported CV trainer: {trainer}")
     return best_model_path
 
 
@@ -435,6 +453,7 @@ def run_3way_cross_validation(
     results_dir: str = CV_RESULTS_DIR,
     summary_path: str = os.path.join(CV_DATA_DIR, "cv_3way_results.json"),
     eval_dir_name: str = "cv",
+    trainer: str = "transformer",
 ) -> Dict[str, Any]:
     """Executes 3-way K-Fold Cross-Validation: TRTR vs. TRSTR-Paraphrase vs. TRSTR-LLM."""
     if conditions is None:
@@ -484,6 +503,7 @@ def run_3way_cross_validation(
                     force_train=force_train,
                     config_path=config_path,
                     models_dir=models_dir,
+                    trainer=trainer,
                 )
 
                 cv_eval_dir = os.path.join("data/eval_results", eval_dir_name, cond)
@@ -579,18 +599,18 @@ def run_3way_cross_validation(
     return summary_report
 
 
-def run_mini_trstr_llm_cross_validation(
+def run_cnn_trstr_llm_cross_validation(
     data_path: str = "data/data.jsonl",
     terms_csv_path: str = "data/terms.csv",
     unseen_benchmark_path: str = "data/test/unseen_benchmark.jsonl",
     n_splits: int = 5,
     folds_to_run: Optional[List[int]] = None,
-    max_steps: int = 1500,
-    eval_frequency: int = 50,
-    patience: int = 250,
+    max_steps: int = 5000,
+    eval_frequency: int = 100,
+    patience: int = 800,
     force_train: bool = False,
 ) -> Dict[str, Any]:
-    """Runs isolated K-fold CV for TRSTR-LLM using the mini transformer config."""
+    """Runs isolated K-fold CV for TRSTR-LLM using the CNN tok2vec config."""
     return run_3way_cross_validation(
         data_path=data_path,
         terms_csv_path=terms_csv_path,
@@ -602,11 +622,12 @@ def run_mini_trstr_llm_cross_validation(
         eval_frequency=eval_frequency,
         patience=patience,
         force_train=force_train,
-        config_path="config_trf_mini.cfg",
-        models_dir="models/cv_trstr_llm_mini",
-        results_dir=os.path.join(CV_RESULTS_DIR, "trstr_llm_mini"),
-        summary_path=os.path.join(CV_DATA_DIR, "cv_trstr_llm_mini_results.json"),
-        eval_dir_name="cv_trstr_llm_mini",
+        config_path="config_cnn_mini.cfg",
+        models_dir="models/cv_trstr_llm_cnn",
+        results_dir=os.path.join(CV_RESULTS_DIR, "trstr_llm_cnn"),
+        summary_path=os.path.join(CV_DATA_DIR, "cv_trstr_llm_cnn_results.json"),
+        eval_dir_name="cv_trstr_llm_cnn",
+        trainer="cnn",
     )
 
 

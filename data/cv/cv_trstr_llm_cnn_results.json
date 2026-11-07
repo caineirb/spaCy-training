@@ -1,0 +1,195 @@
+{
+  "trstr_llm": {
+    "n_folds": 5,
+    "overall_f1": {
+      "mean": 63.5,
+      "std": 1.43
+    },
+    "overall_precision": {
+      "mean": 65.41,
+      "std": 2.51
+    },
+    "overall_recall": {
+      "mean": 61.86,
+      "std": 2.87
+    },
+    "it_term_f1": {
+      "mean": 63.37,
+      "std": 3.2
+    },
+    "clerical_term_f1": {
+      "mean": 63.62,
+      "std": 3.76
+    },
+    "unseen_trf_recall": {
+      "mean": 24.31,
+      "std": 4.9
+    },
+    "unseen_trf_f1": {
+      "mean": 30.18,
+      "std": 4.8
+    },
+    "runs": [
+      {
+        "overall": {
+          "precision": 68.66,
+          "recall": 62.8,
+          "f1": 65.6
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 67.23,
+            "recall": 68.97,
+            "f1": 68.09
+          },
+          "IT_TERM": {
+            "precision": 69.8,
+            "recall": 58.76,
+            "f1": 63.8
+          }
+        },
+        "counts": {
+          "tp": 184,
+          "fp": 84,
+          "fn": 109
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 18.46,
+          "transformer_f1": 24.49,
+          "hybrid_recall": 20.0,
+          "hybrid_f1": 22.41
+        },
+        "condition": "trstr_llm",
+        "fold": 0
+      },
+      {
+        "overall": {
+          "precision": 61.39,
+          "recall": 63.92,
+          "f1": 62.63
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 62.93,
+            "recall": 62.39,
+            "f1": 62.66
+          },
+          "IT_TERM": {
+            "precision": 60.43,
+            "recall": 64.94,
+            "f1": 62.6
+          }
+        },
+        "counts": {
+          "tp": 186,
+          "fp": 117,
+          "fn": 105
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 26.15,
+          "transformer_f1": 31.19,
+          "hybrid_recall": 27.69,
+          "hybrid_f1": 27.91
+        },
+        "condition": "trstr_llm",
+        "fold": 1
+      },
+      {
+        "overall": {
+          "precision": 67.05,
+          "recall": 58.72,
+          "f1": 62.61
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 63.74,
+            "recall": 59.18,
+            "f1": 61.38
+          },
+          "IT_TERM": {
+            "precision": 68.82,
+            "recall": 58.5,
+            "f1": 63.24
+          }
+        },
+        "counts": {
+          "tp": 175,
+          "fp": 86,
+          "fn": 123
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 18.46,
+          "transformer_f1": 25.0,
+          "hybrid_recall": 21.54,
+          "hybrid_f1": 23.93
+        },
+        "condition": "trstr_llm",
+        "fold": 2
+      },
+      {
+        "overall": {
+          "precision": 65.9,
+          "recall": 58.31,
+          "f1": 61.87
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 68.0,
+            "recall": 67.33,
+            "f1": 67.66
+          },
+          "IT_TERM": {
+            "precision": 64.6,
+            "recall": 53.61,
+            "f1": 58.59
+          }
+        },
+        "counts": {
+          "tp": 172,
+          "fp": 89,
+          "fn": 123
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 29.23,
+          "transformer_f1": 33.33,
+          "hybrid_recall": 29.23,
+          "hybrid_f1": 29.69
+        },
+        "condition": "trstr_llm",
+        "fold": 3
+      },
+      {
+        "overall": {
+          "precision": 64.03,
+          "recall": 65.54,
+          "f1": 64.77
+        },
+        "labels": {
+          "CLERICAL_TERM": {
+            "precision": 57.02,
+            "recall": 59.63,
+            "f1": 58.3
+          },
+          "IT_TERM": {
+            "precision": 68.25,
+            "recall": 68.98,
+            "f1": 68.62
+          }
+        },
+        "counts": {
+          "tp": 194,
+          "fp": 109,
+          "fn": 102
+        },
+        "unseen_benchmark": {
+          "transformer_recall": 29.23,
+          "transformer_f1": 36.89,
+          "hybrid_recall": 30.77,
+          "hybrid_f1": 32.52
+        },
+        "condition": "trstr_llm",
+        "fold": 4
+      }
+    ]
+  }
+}

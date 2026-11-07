@@ -57,7 +57,8 @@ spaCy-training/
 │   │   ├── cv_metadata_5fold.json     # Fold split metadata
 │   │   ├── results/                   # Per‑fold evaluation reports (JSON)
 │   │   ├── fold_0/ … fold_4/          # DocBin splits per fold
-│   │   └── cv_3way_results.json       # **Aggregated 3‑way CV results** (means ± std)
+│   │   ├── cv_3way_results.json       # **Aggregated 3‑way CV results** (means ± std)
+│   │   └── cv_trstr_llm_cnn_results.json # Tok2Vec CNN CV results
 │   ├── eval_results/                 # Evaluation outputs per condition
 │   │   ├── comparison/                # Test‑split & benchmark comparison reports
 │   │   │   ├── trtr/                  # TRTR condition reports
