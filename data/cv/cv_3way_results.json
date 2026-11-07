@@ -2,190 +2,190 @@
   "trtr": {
     "n_folds": 5,
     "overall_f1": {
-      "mean": 79.02,
-      "std": 5.36
+      "mean": 71.71,
+      "std": 2.8
     },
     "overall_precision": {
-      "mean": 76.82,
-      "std": 6.02
+      "mean": 69.17,
+      "std": 2.79
     },
     "overall_recall": {
-      "mean": 81.38,
-      "std": 4.64
+      "mean": 74.46,
+      "std": 3.14
     },
     "it_term_f1": {
-      "mean": 81.07,
-      "std": 5.91
+      "mean": 72.61,
+      "std": 3.78
     },
     "clerical_term_f1": {
-      "mean": 75.29,
-      "std": 5.1
+      "mean": 70.05,
+      "std": 2.39
     },
     "unseen_trf_recall": {
-      "mean": 85.23,
-      "std": 3.72
+      "mean": 79.08,
+      "std": 5.02
     },
     "unseen_trf_f1": {
-      "mean": 53.56,
-      "std": 2.71
+      "mean": 50.85,
+      "std": 2.31
     },
     "runs": [
       {
         "overall": {
-          "precision": 68.1,
-          "recall": 75.77,
-          "f1": 71.73
+          "precision": 73.29,
+          "recall": 76.79,
+          "f1": 75.0
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 66.92,
-            "recall": 76.72,
-            "f1": 71.49
+            "precision": 70.31,
+            "recall": 77.59,
+            "f1": 73.77
           },
           "IT_TERM": {
-            "precision": 68.91,
-            "recall": 75.14,
-            "f1": 71.89
+            "precision": 75.42,
+            "recall": 76.27,
+            "f1": 75.84
           }
         },
         "counts": {
-          "tp": 222,
-          "fp": 104,
-          "fn": 71
+          "tp": 225,
+          "fp": 82,
+          "fn": 68
         },
         "unseen_benchmark": {
-          "transformer_recall": 78.46,
-          "transformer_f1": 48.34,
-          "hybrid_recall": 78.46,
-          "hybrid_f1": 48.34
+          "transformer_recall": 73.85,
+          "transformer_f1": 48.98,
+          "hybrid_recall": 75.38,
+          "hybrid_f1": 49.75
         },
         "condition": "trtr",
         "fold": 0
       },
       {
         "overall": {
-          "precision": 74.51,
-          "recall": 78.35,
-          "f1": 76.38
+          "precision": 64.82,
+          "recall": 68.38,
+          "f1": 66.56
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 73.5,
-            "recall": 73.5,
-            "f1": 73.5
+            "precision": 66.94,
+            "recall": 69.23,
+            "f1": 68.07
           },
           "IT_TERM": {
-            "precision": 75.13,
-            "recall": 81.61,
-            "f1": 78.24
+            "precision": 63.44,
+            "recall": 67.82,
+            "f1": 65.56
           }
         },
         "counts": {
-          "tp": 228,
-          "fp": 78,
-          "fn": 63
+          "tp": 199,
+          "fp": 108,
+          "fn": 92
         },
         "unseen_benchmark": {
-          "transformer_recall": 87.69,
-          "transformer_f1": 53.77,
-          "hybrid_recall": 87.69,
-          "hybrid_f1": 53.77
+          "transformer_recall": 72.31,
+          "transformer_f1": 47.24,
+          "hybrid_recall": 73.85,
+          "hybrid_f1": 48.24
         },
         "condition": "trtr",
         "fold": 1
       },
       {
         "overall": {
-          "precision": 82.85,
-          "recall": 85.91,
-          "f1": 84.35
+          "precision": 70.4,
+          "recall": 75.84,
+          "f1": 73.02
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 76.0,
-            "recall": 77.55,
-            "f1": 76.77
+            "precision": 66.99,
+            "recall": 70.41,
+            "f1": 68.66
           },
           "IT_TERM": {
-            "precision": 86.12,
-            "recall": 90.0,
-            "f1": 88.02
+            "precision": 72.02,
+            "recall": 78.5,
+            "f1": 75.12
           }
         },
         "counts": {
-          "tp": 256,
-          "fp": 53,
-          "fn": 42
+          "tp": 226,
+          "fp": 95,
+          "fn": 72
         },
         "unseen_benchmark": {
-          "transformer_recall": 89.23,
-          "transformer_f1": 56.04,
-          "hybrid_recall": 89.23,
-          "hybrid_f1": 55.77
+          "transformer_recall": 83.08,
+          "transformer_f1": 52.68,
+          "hybrid_recall": 83.08,
+          "hybrid_f1": 52.68
         },
         "condition": "trtr",
         "fold": 2
       },
       {
         "overall": {
-          "precision": 84.36,
-          "recall": 87.8,
-          "f1": 86.05
+          "precision": 69.4,
+          "recall": 74.58,
+          "f1": 71.9
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 82.86,
-            "recall": 86.14,
-            "f1": 84.47
+            "precision": 68.14,
+            "recall": 76.24,
+            "f1": 71.96
           },
           "IT_TERM": {
-            "precision": 85.15,
-            "recall": 88.66,
-            "f1": 86.87
+            "precision": 70.1,
+            "recall": 73.71,
+            "f1": 71.86
           }
         },
         "counts": {
-          "tp": 259,
-          "fp": 48,
-          "fn": 36
+          "tp": 220,
+          "fp": 97,
+          "fn": 75
         },
         "unseen_benchmark": {
           "transformer_recall": 84.62,
-          "transformer_f1": 54.46,
+          "transformer_f1": 52.88,
           "hybrid_recall": 84.62,
-          "hybrid_f1": 54.19
+          "hybrid_f1": 52.88
         },
         "condition": "trtr",
         "fold": 3
       },
       {
         "overall": {
-          "precision": 74.29,
-          "recall": 79.05,
-          "f1": 76.6
+          "precision": 67.96,
+          "recall": 76.69,
+          "f1": 72.06
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 68.1,
-            "recall": 72.48,
-            "f1": 70.22
+            "precision": 62.31,
+            "recall": 74.31,
+            "f1": 67.78
           },
           "IT_TERM": {
-            "precision": 77.89,
-            "recall": 82.89,
-            "f1": 80.31
+            "precision": 71.57,
+            "recall": 78.07,
+            "f1": 74.68
           }
         },
         "counts": {
-          "tp": 234,
-          "fp": 81,
-          "fn": 62
+          "tp": 227,
+          "fp": 107,
+          "fn": 69
         },
         "unseen_benchmark": {
-          "transformer_recall": 86.15,
-          "transformer_f1": 55.17,
-          "hybrid_recall": 86.15,
-          "hybrid_f1": 54.9
+          "transformer_recall": 81.54,
+          "transformer_f1": 52.48,
+          "hybrid_recall": 81.54,
+          "hybrid_f1": 52.22
         },
         "condition": "trtr",
         "fold": 4
@@ -195,190 +195,190 @@
   "trstr_paraphrase": {
     "n_folds": 5,
     "overall_f1": {
-      "mean": 80.39,
-      "std": 4.17
+      "mean": 71.47,
+      "std": 0.92
     },
     "overall_precision": {
-      "mean": 78.53,
-      "std": 5.48
+      "mean": 69.19,
+      "std": 1.61
     },
     "overall_recall": {
-      "mean": 82.42,
-      "std": 2.78
+      "mean": 73.99,
+      "std": 2.1
     },
     "it_term_f1": {
-      "mean": 81.33,
-      "std": 4.97
+      "mean": 72.33,
+      "std": 1.45
     },
     "clerical_term_f1": {
-      "mean": 78.58,
-      "std": 3.23
+      "mean": 70.08,
+      "std": 2.0
     },
     "unseen_trf_recall": {
-      "mean": 72.62,
-      "std": 4.9
+      "mean": 77.23,
+      "std": 6.56
     },
     "unseen_trf_f1": {
-      "mean": 48.19,
-      "std": 2.4
+      "mean": 50.58,
+      "std": 2.11
     },
     "runs": [
       {
         "overall": {
-          "precision": 68.47,
-          "recall": 77.82,
-          "f1": 72.84
+          "precision": 70.38,
+          "recall": 75.43,
+          "f1": 72.82
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 68.66,
-            "recall": 79.31,
-            "f1": 73.6
+            "precision": 66.67,
+            "recall": 74.14,
+            "f1": 70.2
           },
           "IT_TERM": {
-            "precision": 68.34,
-            "recall": 76.84,
-            "f1": 72.34
+            "precision": 72.97,
+            "recall": 76.27,
+            "f1": 74.59
           }
         },
         "counts": {
-          "tp": 228,
-          "fp": 105,
-          "fn": 65
+          "tp": 221,
+          "fp": 93,
+          "fn": 72
         },
         "unseen_benchmark": {
-          "transformer_recall": 76.92,
-          "transformer_f1": 48.08,
-          "hybrid_recall": 76.92,
-          "hybrid_f1": 48.08
+          "transformer_recall": 72.31,
+          "transformer_f1": 49.74,
+          "hybrid_recall": 72.31,
+          "hybrid_f1": 49.47
         },
         "condition": "trstr_paraphrase",
         "fold": 0
       },
       {
         "overall": {
-          "precision": 79.29,
-          "recall": 84.19,
-          "f1": 81.67
+          "precision": 69.73,
+          "recall": 70.45,
+          "f1": 70.09
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 78.86,
-            "recall": 82.91,
-            "f1": 80.83
+            "precision": 68.33,
+            "recall": 70.09,
+            "f1": 69.2
           },
           "IT_TERM": {
-            "precision": 79.57,
-            "recall": 85.06,
-            "f1": 82.22
+            "precision": 70.69,
+            "recall": 70.69,
+            "f1": 70.69
           }
         },
         "counts": {
-          "tp": 245,
-          "fp": 64,
-          "fn": 46
+          "tp": 205,
+          "fp": 89,
+          "fn": 86
         },
         "unseen_benchmark": {
-          "transformer_recall": 78.46,
-          "transformer_f1": 52.04,
-          "hybrid_recall": 78.46,
-          "hybrid_f1": 51.78
+          "transformer_recall": 67.69,
+          "transformer_f1": 47.57,
+          "hybrid_recall": 67.69,
+          "hybrid_f1": 47.31
         },
         "condition": "trstr_paraphrase",
         "fold": 1
       },
       {
         "overall": {
-          "precision": 79.93,
-          "recall": 81.54,
-          "f1": 80.73
+          "precision": 70.06,
+          "recall": 73.83,
+          "f1": 71.9
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 77.66,
-            "recall": 74.49,
-            "f1": 76.04
+            "precision": 70.71,
+            "recall": 71.43,
+            "f1": 71.07
           },
           "IT_TERM": {
-            "precision": 80.95,
-            "recall": 85.0,
-            "f1": 82.93
+            "precision": 69.77,
+            "recall": 75.0,
+            "f1": 72.29
           }
         },
         "counts": {
-          "tp": 243,
-          "fp": 61,
-          "fn": 55
+          "tp": 220,
+          "fp": 94,
+          "fn": 78
         },
         "unseen_benchmark": {
-          "transformer_recall": 72.31,
-          "transformer_f1": 48.96,
-          "hybrid_recall": 72.31,
-          "hybrid_f1": 48.7
+          "transformer_recall": 78.46,
+          "transformer_f1": 49.76,
+          "hybrid_recall": 80.0,
+          "hybrid_f1": 50.49
         },
         "condition": "trstr_paraphrase",
         "fold": 2
       },
       {
         "overall": {
-          "precision": 85.23,
-          "recall": 86.1,
-          "f1": 85.67
+          "precision": 69.77,
+          "recall": 73.56,
+          "f1": 71.62
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 77.88,
-            "recall": 87.13,
-            "f1": 82.24
+            "precision": 70.0,
+            "recall": 76.24,
+            "f1": 72.99
           },
           "IT_TERM": {
-            "precision": 89.73,
-            "recall": 85.57,
-            "f1": 87.6
+            "precision": 69.65,
+            "recall": 72.16,
+            "f1": 70.89
           }
         },
         "counts": {
-          "tp": 254,
-          "fp": 44,
-          "fn": 41
+          "tp": 217,
+          "fp": 94,
+          "fn": 78
         },
         "unseen_benchmark": {
-          "transformer_recall": 70.77,
-          "transformer_f1": 47.18,
-          "hybrid_recall": 70.77,
-          "hybrid_f1": 46.94
+          "transformer_recall": 81.54,
+          "transformer_f1": 52.22,
+          "hybrid_recall": 81.54,
+          "hybrid_f1": 51.96
         },
         "condition": "trstr_paraphrase",
         "fold": 3
       },
       {
         "overall": {
-          "precision": 79.74,
-          "recall": 82.43,
-          "f1": 81.06
+          "precision": 65.99,
+          "recall": 76.69,
+          "f1": 70.94
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 78.76,
-            "recall": 81.65,
-            "f1": 80.18
+            "precision": 63.64,
+            "recall": 70.64,
+            "f1": 66.96
           },
           "IT_TERM": {
-            "precision": 80.31,
-            "recall": 82.89,
-            "f1": 81.58
+            "precision": 67.26,
+            "recall": 80.21,
+            "f1": 73.17
           }
         },
         "counts": {
-          "tp": 244,
-          "fp": 62,
-          "fn": 52
+          "tp": 227,
+          "fp": 117,
+          "fn": 69
         },
         "unseen_benchmark": {
-          "transformer_recall": 64.62,
-          "transformer_f1": 44.68,
-          "hybrid_recall": 64.62,
-          "hybrid_f1": 44.44
+          "transformer_recall": 86.15,
+          "transformer_f1": 53.59,
+          "hybrid_recall": 86.15,
+          "hybrid_f1": 53.33
         },
         "condition": "trstr_paraphrase",
         "fold": 4
@@ -388,190 +388,190 @@
   "trstr_llm": {
     "n_folds": 5,
     "overall_f1": {
-      "mean": 75.43,
-      "std": 2.11
+      "mean": 67.95,
+      "std": 1.41
     },
     "overall_precision": {
-      "mean": 74.75,
-      "std": 2.92
+      "mean": 66.05,
+      "std": 1.74
     },
     "overall_recall": {
-      "mean": 76.16,
-      "std": 1.55
+      "mean": 69.99,
+      "std": 1.74
     },
     "it_term_f1": {
-      "mean": 75.74,
-      "std": 2.15
+      "mean": 68.82,
+      "std": 1.61
     },
     "clerical_term_f1": {
-      "mean": 74.79,
-      "std": 3.06
+      "mean": 66.36,
+      "std": 1.53
     },
     "unseen_trf_recall": {
-      "mean": 89.54,
-      "std": 3.56
+      "mean": 92.0,
+      "std": 5.45
     },
     "unseen_trf_f1": {
-      "mean": 67.06,
-      "std": 4.85
+      "mean": 72.16,
+      "std": 4.13
     },
     "runs": [
       {
         "overall": {
-          "precision": 75.34,
-          "recall": 75.09,
-          "f1": 75.21
+          "precision": 68.46,
+          "recall": 69.62,
+          "f1": 69.04
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 75.0,
-            "recall": 80.17,
-            "f1": 77.5
+            "precision": 66.94,
+            "recall": 69.83,
+            "f1": 68.35
           },
           "IT_TERM": {
-            "precision": 75.6,
-            "recall": 71.75,
-            "f1": 73.62
+            "precision": 69.49,
+            "recall": 69.49,
+            "f1": 69.49
           }
         },
         "counts": {
-          "tp": 220,
-          "fp": 72,
-          "fn": 73
+          "tp": 204,
+          "fp": 94,
+          "fn": 89
         },
         "unseen_benchmark": {
-          "transformer_recall": 84.62,
-          "transformer_f1": 63.58,
-          "hybrid_recall": 84.62,
-          "hybrid_f1": 61.8
+          "transformer_recall": 83.08,
+          "transformer_f1": 66.67,
+          "hybrid_recall": 83.08,
+          "hybrid_f1": 63.91
         },
         "condition": "trstr_llm",
         "fold": 0
       },
       {
         "overall": {
-          "precision": 69.13,
-          "recall": 73.88,
-          "f1": 71.43
+          "precision": 66.56,
+          "recall": 68.38,
+          "f1": 67.46
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 66.67,
-            "recall": 71.79,
-            "f1": 69.14
+            "precision": 68.14,
+            "recall": 65.81,
+            "f1": 66.96
           },
           "IT_TERM": {
-            "precision": 70.81,
-            "recall": 75.29,
-            "f1": 72.98
+            "precision": 65.59,
+            "recall": 70.11,
+            "f1": 67.78
           }
         },
         "counts": {
-          "tp": 215,
-          "fp": 96,
-          "fn": 76
+          "tp": 199,
+          "fp": 100,
+          "fn": 92
         },
         "unseen_benchmark": {
-          "transformer_recall": 93.85,
-          "transformer_f1": 67.78,
-          "hybrid_recall": 93.85,
-          "hybrid_f1": 65.24
+          "transformer_recall": 90.77,
+          "transformer_f1": 79.19,
+          "hybrid_recall": 90.77,
+          "hybrid_f1": 73.29
         },
         "condition": "trstr_llm",
         "fold": 1
       },
       {
         "overall": {
-          "precision": 77.18,
-          "recall": 77.18,
-          "f1": 77.18
+          "precision": 63.47,
+          "recall": 68.79,
+          "f1": 66.02
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 73.74,
-            "recall": 74.49,
-            "f1": 74.11
+            "precision": 60.55,
+            "recall": 67.35,
+            "f1": 63.77
           },
           "IT_TERM": {
-            "precision": 78.89,
-            "recall": 78.5,
-            "f1": 78.7
+            "precision": 64.95,
+            "recall": 69.5,
+            "f1": 67.15
           }
         },
         "counts": {
-          "tp": 230,
-          "fp": 68,
-          "fn": 68
+          "tp": 205,
+          "fp": 118,
+          "fn": 93
         },
         "unseen_benchmark": {
-          "transformer_recall": 92.31,
-          "transformer_f1": 75.95,
-          "hybrid_recall": 92.31,
-          "hybrid_f1": 69.77
+          "transformer_recall": 90.77,
+          "transformer_f1": 69.82,
+          "hybrid_recall": 90.77,
+          "hybrid_f1": 67.43
         },
         "condition": "trstr_llm",
         "fold": 2
       },
       {
         "overall": {
-          "precision": 75.24,
-          "recall": 78.31,
-          "f1": 76.74
+          "precision": 64.78,
+          "recall": 69.83,
+          "f1": 67.21
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 70.94,
-            "recall": 82.18,
-            "f1": 76.15
+            "precision": 60.33,
+            "recall": 72.28,
+            "f1": 65.77
           },
           "IT_TERM": {
-            "precision": 77.89,
-            "recall": 76.29,
-            "f1": 77.08
+            "precision": 67.51,
+            "recall": 68.56,
+            "f1": 68.03
           }
         },
         "counts": {
-          "tp": 231,
-          "fp": 76,
-          "fn": 64
+          "tp": 206,
+          "fp": 112,
+          "fn": 89
         },
         "unseen_benchmark": {
-          "transformer_recall": 90.77,
-          "transformer_f1": 62.11,
-          "hybrid_recall": 90.77,
-          "hybrid_f1": 61.46
+          "transformer_recall": 96.92,
+          "transformer_f1": 72.41,
+          "hybrid_recall": 96.92,
+          "hybrid_f1": 71.19
         },
         "condition": "trstr_llm",
         "fold": 3
       },
       {
         "overall": {
-          "precision": 76.87,
-          "recall": 76.35,
-          "f1": 76.61
+          "precision": 66.98,
+          "recall": 73.31,
+          "f1": 70.0
         },
         "labels": {
           "CLERICAL_TERM": {
-            "precision": 77.06,
-            "recall": 77.06,
-            "f1": 77.06
+            "precision": 66.97,
+            "recall": 66.97,
+            "f1": 66.97
           },
           "IT_TERM": {
-            "precision": 76.76,
-            "recall": 75.94,
-            "f1": 76.34
+            "precision": 66.98,
+            "recall": 77.01,
+            "f1": 71.64
           }
         },
         "counts": {
-          "tp": 226,
-          "fp": 68,
-          "fn": 70
+          "tp": 217,
+          "fp": 107,
+          "fn": 79
         },
         "unseen_benchmark": {
-          "transformer_recall": 86.15,
-          "transformer_f1": 65.88,
-          "hybrid_recall": 86.15,
-          "hybrid_f1": 63.28
+          "transformer_recall": 98.46,
+          "transformer_f1": 72.73,
+          "hybrid_recall": 98.46,
+          "hybrid_f1": 71.11
         },
         "condition": "trstr_llm",
         "fold": 4

@@ -26,7 +26,7 @@ flowchart TB
     Layer1 ~~~ Layer2
   end
 
-  subgraph ConflictEngine["Conflict Resolution Engine"]
+  subgraph ConflictEngine["Conflict Resolution"]
     direction LR
     id1["Longest Span Wins"]
     id2["Dictionary Label Authority"]
@@ -128,7 +128,8 @@ spaCy-training/
 │   ├── deployment.md                  # Minimal production standalone deployment guide
 │   ├── hard_negative_mining.md        # Hard negative mining methodology & leakage isolation
 │   ├── synthetic_augmentation_methodology.md # Full 3-way evaluation methodology & ablation analysis
-│   └── paraphrase_augmentation_methodology.md # Documentation of T5 paraphrasing
+│   ├── paraphrase_augmentation_methodology.md # Documentation of T5 paraphrasing
+│   └── chapter4.md                    # Results & Discussion chapter (empirical findings, error analysis, language effects)
 |
 └── tools/
     ├── README.md                      # Guide to desktop GUI tools
@@ -188,6 +189,14 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 | Clerical‑Term F1 | 75.29 ± 5.10% | **78.58 ± 3.23%** | 74.79 ± 3.06% |
 | Unseen Benchmark Recall (Transformer) | 85.23 ± 3.72% | 72.62 ± 4.90% | **89.54 ± 3.56%** |
 | Unseen Benchmark F1 (Transformer) | 53.56 ± 2.71% | 48.19 ± 2.40% | **67.06 ± 4.85%** |
+
+### Chapter 4 Detailed Discussion
+
+The complete Chapter 4 discussion is now available in [`docs/chapter4.md`](docs/chapter4.md), which expands the empirical results with:
+
+- **Discussion**: Which category performed better (TRTR vs. TRSTR-Paraphrase vs. TRSTR-LLM) and under what conditions.
+- **Error analysis**: Types of errors observed, including missed entities, misclassified entities, and ambiguous terms.
+- **Language mixing effects**: How English, Filipino, or mixed-language expressions in the Weekly Activity Reports (WARs) affected the results.
 
 ### Key Findings & Thesis Insights
 

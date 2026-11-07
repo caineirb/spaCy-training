@@ -278,9 +278,10 @@ def train_cv_model(
     patience: int = 250,
     seed: int = 42,
     force_train: bool = False,
+    models_dir: str = CV_MODELS_DIR,
 ) -> str:
     """Trains a transformer model for a specific fold and condition with GPU memory safety."""
-    output_dir = os.path.join(CV_MODELS_DIR, f"{condition}_f{fold_idx}")
+    output_dir = os.path.join(models_dir, f"{condition}_f{fold_idx}")
     best_model_path = os.path.join(output_dir, "model-best")
 
     if not force_train and os.path.exists(os.path.join(best_model_path, "meta.json")):
@@ -429,12 +430,17 @@ def run_3way_cross_validation(
     eval_frequency: int = 50,
     patience: int = 250,
     force_train: bool = False,
+    config_path: str = "config_trf.cfg",
+    models_dir: str = CV_MODELS_DIR,
+    results_dir: str = CV_RESULTS_DIR,
+    summary_path: str = os.path.join(CV_DATA_DIR, "cv_3way_results.json"),
+    eval_dir_name: str = "cv",
 ) -> Dict[str, Any]:
     """Executes 3-way K-Fold Cross-Validation: TRTR vs. TRSTR-Paraphrase vs. TRSTR-LLM."""
     if conditions is None:
         conditions = ["trtr", "trstr_paraphrase", "trstr_llm"]
 
-    os.makedirs(CV_RESULTS_DIR, exist_ok=True)
+    os.makedirs(results_dir, exist_ok=True)
     metadata = prepare_3way_cv_folds(data_path=data_path, n_splits=n_splits)
 
     if folds_to_run is None:
@@ -457,7 +463,7 @@ def run_3way_cross_validation(
 
         for fold_idx in folds_to_run:
             fold_meta = metadata["folds"][fold_idx]
-            res_path = os.path.join(CV_RESULTS_DIR, f"{cond}_f{fold_idx}.json")
+            res_path = os.path.join(results_dir, f"{cond}_f{fold_idx}.json")
 
             if os.path.exists(res_path) and not force_train:
                 logger.info(f"Loaded cached run results from {res_path}")
@@ -476,9 +482,11 @@ def run_3way_cross_validation(
                     eval_frequency=eval_frequency,
                     patience=patience,
                     force_train=force_train,
+                    config_path=config_path,
+                    models_dir=models_dir,
                 )
 
-                cv_eval_dir = os.path.join("data/eval_results/cv", cond)
+                cv_eval_dir = os.path.join("data/eval_results", eval_dir_name, cond)
                 os.makedirs(cv_eval_dir, exist_ok=True)
                 overrides_path = os.path.join(cv_eval_dir, f"dictionary_overrides_f{fold_idx}.jsonl")
 
@@ -562,7 +570,6 @@ def run_3way_cross_validation(
         }
 
     # Save consolidated summary
-    summary_path = os.path.join(CV_DATA_DIR, "cv_3way_results.json")
     with open(summary_path, "w", encoding="utf-8") as f:
         json.dump(summary_report, f, indent=2)
     logger.info(f"Consolidated CV summary saved to: {summary_path}")
@@ -570,6 +577,37 @@ def run_3way_cross_validation(
     # Display comparison table
     print_cv_comparison_table(summary_report)
     return summary_report
+
+
+def run_mini_trstr_llm_cross_validation(
+    data_path: str = "data/data.jsonl",
+    terms_csv_path: str = "data/terms.csv",
+    unseen_benchmark_path: str = "data/test/unseen_benchmark.jsonl",
+    n_splits: int = 5,
+    folds_to_run: Optional[List[int]] = None,
+    max_steps: int = 1500,
+    eval_frequency: int = 50,
+    patience: int = 250,
+    force_train: bool = False,
+) -> Dict[str, Any]:
+    """Runs isolated K-fold CV for TRSTR-LLM using the mini transformer config."""
+    return run_3way_cross_validation(
+        data_path=data_path,
+        terms_csv_path=terms_csv_path,
+        unseen_benchmark_path=unseen_benchmark_path,
+        n_splits=n_splits,
+        conditions=["trstr_llm"],
+        folds_to_run=folds_to_run,
+        max_steps=max_steps,
+        eval_frequency=eval_frequency,
+        patience=patience,
+        force_train=force_train,
+        config_path="config_trf_mini.cfg",
+        models_dir="models/cv_trstr_llm_mini",
+        results_dir=os.path.join(CV_RESULTS_DIR, "trstr_llm_mini"),
+        summary_path=os.path.join(CV_DATA_DIR, "cv_trstr_llm_mini_results.json"),
+        eval_dir_name="cv_trstr_llm_mini",
+    )
 
 
 def print_cv_comparison_table(summary: Dict[str, Any]) -> None:
