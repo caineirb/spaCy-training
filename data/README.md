@@ -15,15 +15,20 @@ Across the complete authentic dataset ([`data.jsonl`](data.jsonl), **1,320** rec
 
 ### Partition Splits & DocBin Summary
 
-| Partition / Split          | File Path                                                               | Documents | Positive | Negative (Ratio) | Valid Entities |
-| :---                       | :---                                                                    |   :---:   |   :---:  |      :---:       |      :---:     |
-| **Authentic Full Corpus**  | [`data.jsonl`](data.jsonl)                                              | 1,320     | 868      | 452 (34.2%)      | 1,474          |
-| ├── **Real Train Split**   | [`training/train.spacy`](training/train.spacy)                           | 923       | 606      | 317 (34.3%)      | 1,032          |
-| ├── **Real Validation Split** | [`training/dev.spacy`](training/dev.spacy)                           | 198       | 128      | 70 (35.4%)       | 208            |
-| └── **Held‑Out Test Split**   | [`training/test.spacy`](training/test.spacy)                       | 199       | 134      | 65 (32.7%)       | 233            |
-| **TRSTR‑Paraphrase Pool**  | [`training/train_trstr_paraphrase.spacy`](training/train_trstr_paraphrase.spacy) | 1,488 | 855 | 633 (42.5%) | 1,416 |
-| **TRSTR‑LLM Pool**         | [`training/train_trstr_llm.spacy`](training/train_trstr_llm.spacy)       | 1,588     | 1,000    | 588 (37.0%)      | 1,587          |
-| **OOV Unseen Benchmark**   | [`test/unseen_benchmark.jsonl`](test/unseen_benchmark.jsonl)           | 85        | 85       | 0 (0.0%)         | 65 *gold*      |
+| Partition / Split          | File Path                                                               | Documents | Positive | Negative (Ratio) | Valid Entities | On-Disk Size |
+| :---                       | :---                                                                    |   :---:   |   :---:  |      :---:       |      :---:     | :---: |
+| **Authentic Full Corpus**  | [`data.jsonl`](data.jsonl)                                              | 1,320     | 868      | 452 (34.2%)      | 1,474          | **230.07 KiB** |
+| ├── **Real Train Split**   | [`training/train.spacy`](training/train.spacy)                           | 923       | 606      | 317 (34.3%)      | 1,032          | **138.82 KiB** |
+| ├── **Real Validation Split** | [`training/dev.spacy`](training/dev.spacy)                           | 198       | 128      | 70 (35.4%)       | 208            | **35.42 KiB** |
+| └── **Held‑Out Test Split**   | [`training/test.spacy`](training/test.spacy)                       | 199       | 134      | 65 (32.7%)       | 233            | **33.21 KiB** |
+| **TRSTR‑Paraphrase Pool**  | [`training/train_trstr_paraphrase.spacy`](training/train_trstr_paraphrase.spacy) | 1,488 | 855 | 633 (42.5%) | 1,416 | **216.83 KiB** |
+| **TRSTR‑LLM Pool**         | [`training/train_trstr_llm.spacy`](training/train_trstr_llm.spacy)       | 1,588     | 1,000    | 588 (37.0%)      | 1,587          | **221.75 KiB** |
+| **OOV Unseen Benchmark**   | [`test/unseen_benchmark.jsonl`](test/unseen_benchmark.jsonl)           | 85        | 85       | 0 (0.0%)         | 65 *gold*      | **12.90 KiB** |
+
+The authentic corpus occupies **230.07 KiB** as JSONL. Its three DocBin splits
+occupy **207.45 KiB** combined (138.82 KiB train, 35.42 KiB validation, and
+33.21 KiB test). The split document counts sum exactly to the full 1,320-record
+corpus.
 
 *For complete schema definitions, negative‑sample guidelines, and audit guarantees, see the top‑level [README.md](../README.md).*.
 
@@ -32,7 +37,7 @@ Across the complete authentic dataset ([`data.jsonl`](data.jsonl), **1,320** rec
 ```text
 spaCy-training/
 ├── data/
-│   ├── terms.csv                     # Seed dictionary (371 terms: 215 IT, 156 Clerical)
+│   ├── terms.csv                     # Seed dictionary (372 terms: 215 IT, 157 Clerical; 9.60 KiB)
 │   ├── data.jsonl                    # Real authentic OJT journal dataset (1,320 records)
 │   ├── synthetic_paraphrases.jsonl   # T5‑generated paraphrases (565 records)
 │   ├── synthetic_llm_generated.jsonl # Gemini‑generated synthetic records (571 records)

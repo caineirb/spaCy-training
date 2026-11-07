@@ -72,7 +72,7 @@ spaCy-training/
 │   └── README.md                      # API documentation, curl examples & PHP integration
 ├── data/
 │   ├── README.md                      # Comprehensive data guide, schemas, partitions & leakage audit
-│   ├── terms.csv                      # Seed dictionary (371 terms: 215 IT, 156 Clerical)
+│   ├── terms.csv                      # Seed dictionary (372 terms: 215 IT, 157 Clerical)
 │   ├── data.jsonl                     # Real authentic annotated OJT journal dataset (1,320 records)
 │   ├── synthetic_paraphrases.jsonl    # T5 seq2seq generated paraphrases (565 records)
 │   ├── synthetic_llm_generated.jsonl  # Gemini LLM-direct synthetic records (571 records)
@@ -92,7 +92,8 @@ spaCy-training/
 │   │   ├── cv_metadata_5fold.json     # 5-fold cross-validation partition splits and metadata
 │   │   ├── results/                   # Cross-validation evaluation reports per condition
 │   │   ├── fold_0/ ... fold_4/        # 5-fold cross-validation DocBins (val_real, train_trtr, etc.)
-│   │   └── cv_3way_results.json       # Previous 5-fold cross-validation results across all 3 conditions
+│   │   ├── cv_3way_results.json       # 5-fold cross-validation results across the three main conditions
+│   │   └── cv_trstr_llm_mini_results.json # 5-fold TRSTR-LLM Mini results
 │   ├── eval_results/                  # Evaluation outputs partitioned by evaluation type
 │   │   ├── comparison/                # Test split and benchmark comparison outputs
 │   │   │   ├── trtr/                  # TRTR test partition reports & unseen benchmark outputs
@@ -107,6 +108,7 @@ spaCy-training/
 │   ├── ner_trf_trtr/                  # TRTR baseline model checkpoints (model-best, model-last)
 │   ├── ner_trf_trstr_paraphrase/      # TRSTR-Paraphrase augmented model (model-best, model-last)
 │   ├── ner_trf_trstr_llm/             # TRSTR-LLM augmented model (model-best, model-last)
+│   ├── trstr_llm_mini/                # DistilRoBERTa TRSTR-LLM Mini model
 │   └── cv/                            # Cross-validation model checkpoints per fold (e.g., trtr_f0)
 ├── scripts/
 │   ├── README.md                      # Comprehensive guide to all 12 pipeline scripts
@@ -147,11 +149,12 @@ spaCy-training/
 
 ## 4. Empirical Evaluation Results
 
-To rigorously assess performance and generalization, three experimental conditions were evaluated under identical training hyperparameters (`max_steps=2500`, `eval_frequency=50`, `patience=400`, GPU device 0):
+To rigorously assess performance and generalization, the three main experimental conditions were evaluated under identical training hyperparameters (`max_steps=2500`, `eval_frequency=50`, `patience=400`, GPU device 0). The mini model was evaluated separately using the same training schedule.
 
 1. **TRTR (Train Real, Test Real)**: Baseline trained exclusively on **923** authentic journal entries.
 2. **TRSTR-Paraphrase**: Trained on **923** real records + **565** accepted T5 seq2seq paraphrases (**1,488** total).
 3. **TRSTR-LLM**: Trained on **923** real records + **571** Gemini LLM synthetic records + **94** clean mined hard negatives (**1,588** total).
+4. **TRSTR-LLM Mini**: A lightweight `distilroberta-base` model trained on the same **1,588-record** TRSTR-LLM pool.
 
 ### 4.1 Side-by-Side Test Partition Evaluation
 
@@ -159,22 +162,21 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 
 | Evaluation Metric | TRTR (Real Baseline) | TRSTR-Paraphrase (T5) | TRSTR-LLM (Gemini) | Delta (Para vs TRTR) | Delta (LLM vs TRTR) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Held-Out Test Overall F1** | **72.92%** | 67.95% | 71.24% | -4.97% | -1.68% |
-| Held-Out Test Overall Precision | 72.46% | 67.66% | **73.52%** | -4.80% | **+1.06%** |
-| Held-Out Test Overall Recall | **73.39%** | 68.24% | 69.10% | -5.15% | -4.29% |
-| ├── `IT_TERM` F1 | **74.01%** | 68.14% | 70.13% | -5.87% | -3.88% |
-| ├── `IT_TERM` Precision | 72.89% | 69.23% | **73.47%** | -3.66% | **+0.58%** |
-| ├── `IT_TERM` Recall | **75.16%** | 67.08% | 67.08% | -8.08% | -8.08% |
-| ├── `CLERICAL_TERM` F1 | 70.42% | 67.55% | **73.61%** | -2.87% | **+3.19%** |
-| ├── `CLERICAL_TERM` Precision | 71.43% | 64.56% | **73.61%** | -6.87% | **+2.18%** |
-| └── `CLERICAL_TERM` Recall | 69.44% | 70.83% | **73.61%** | +1.39% | **+4.17%** |
-| **Unseen Benchmark TRF Precision** | 38.17% | 34.56% | **64.89%** | -3.61% | **+26.72%** |
-| **Unseen Benchmark TRF Recall** | 76.92% | 72.31% | **93.85%** | -4.61% | **+16.93%** |
-| **Unseen Benchmark TRF F1** | 51.02% | 46.77% | **76.73%** | -4.25% | **+25.71%** |
-| **Unseen Benchmark Hybrid Precision** | 37.88% | 34.31% | **60.40%** | -3.57% | **+22.52%** |
-| **Unseen Benchmark Hybrid Recall** | 76.92% | 72.31% | **93.85%** | -4.61% | **+16.93%** |
-| **Unseen Benchmark Hybrid F1** | 50.76% | 46.53% | **73.49%** | -4.23% | **+22.73%** |
-| **Generalization Lift (vs Dict Recall 4.62%)** | +72.30% | +67.69% | **+89.23%** | -4.61% | **+16.93%** |
+| **Held-Out Test Overall F1** | **71.27%** | 66.22% | 64.85% | -5.05% | -6.42% |
+| Held-Out Test Overall Precision | 71.74% | 69.16% | 68.75% | -2.58% | -2.99% |
+| Held-Out Test Overall Recall | **70.82%** | 63.52% | 61.37% | -7.30% | -9.45% |
+| ├── `IT_TERM` F1 | **71.52%** | 66.03% | 64.65% | -5.49% | -6.87% |
+| ├── `IT_TERM` Precision | 72.90% | 67.53% | 70.59% | -5.37% | -2.31% |
+| ├── `IT_TERM` Recall | **70.19%** | 64.60% | 59.63% | -5.59% | -10.56% |
+| ├── `CLERICAL_TERM` F1 | **70.75%** | 66.67% | 65.28% | -4.08% | -5.47% |
+| ├── `CLERICAL_TERM` Precision | 69.33% | **73.33%** | 65.28% | +4.00% | -4.05% |
+| └── `CLERICAL_TERM` Recall | **72.22%** | 61.11% | 65.28% | -11.11% | -6.94% |
+| **Unseen Benchmark TRF Precision** | 35.92% | 32.50% | **61.54%** | -3.42% | **+25.62%** |
+| **Unseen Benchmark TRF Recall** | 78.46% | 60.00% | **86.15%** | -18.46% | **+7.69%** |
+| **Unseen Benchmark TRF F1** | 49.28% | 42.16% | **71.79%** | -7.12% | **+22.51%** |
+| **Unseen Benchmark Hybrid Precision** | 35.66% | 33.61% | **56.00%** | -2.05% | **+20.34%** |
+| **Unseen Benchmark Hybrid Recall** | 78.46% | 63.08% | **86.15%** | -15.38% | **+7.69%** |
+| **Unseen Benchmark Hybrid F1** | 49.04% | 43.85% | **67.88%** | -5.19% | **+18.84%** |
 
 ### 4.2 5-Fold Stratified Cross-Validation Summary
 
@@ -182,13 +184,40 @@ Evaluated against the identical authentic held-out test split (`data/training/te
 
 | Metric | TRTR (Real Baseline) | TRSTR‑Paraphrase | TRSTR‑LLM |
 | :--- | :---: | :---: | :---: |
-| **Overall F1** | 79.02 ± 5.36% | **80.39 ± 4.17%** | 75.43 ± 2.11% |
-| Overall Precision | 76.82 ± 6.02% | **78.53 ± 5.48%** | 74.75 ± 2.92% |
-| Overall Recall | 81.38 ± 4.64% | **82.42 ± 2.78%** | 76.16 ± 1.55% |
-| IT‑Term F1 | 81.07 ± 5.91% | **81.33 ± 4.97%** | 75.74 ± 2.15% |
-| Clerical‑Term F1 | 75.29 ± 5.10% | **78.58 ± 3.23%** | 74.79 ± 3.06% |
-| Unseen Benchmark Recall (Transformer) | 85.23 ± 3.72% | 72.62 ± 4.90% | **89.54 ± 3.56%** |
-| Unseen Benchmark F1 (Transformer) | 53.56 ± 2.71% | 48.19 ± 2.40% | **67.06 ± 4.85%** |
+| **Overall F1** | 71.71 ± 2.80% | 71.47 ± 0.92% | 67.95 ± 1.41% |
+| Overall Precision | 69.17 ± 2.79% | 69.19 ± 1.61% | 66.05 ± 1.74% |
+| Overall Recall | 74.46 ± 3.14% | 73.99 ± 2.10% | 69.99 ± 1.74% |
+| IT‑Term F1 | 72.61 ± 3.78% | 72.33 ± 1.45% | 68.82 ± 1.61% |
+| Clerical‑Term F1 | 70.05 ± 2.39% | 70.08 ± 2.00% | 66.36 ± 1.53% |
+| Unseen Benchmark Recall (Transformer) | 79.08 ± 5.02% | 77.23 ± 6.56% | **92.00 ± 5.45%** |
+| Unseen Benchmark F1 (Transformer) | 50.85 ± 2.31% | 50.58 ± 2.11% | **72.16 ± 4.13%** |
+
+### 4.3 TRSTR-LLM Mini (DistilRoBERTa)
+
+The mini variant keeps the TRSTR-LLM training data and hybrid extraction logic but replaces
+`roberta-base` with `distilroberta-base`. The executed notebook run produced:
+
+| Metric | TRSTR-LLM Mini |
+| :--- | :---: |
+| Backbone | `distilroberta-base` |
+| Model size on disk | **318.2 MB** |
+| Held-Out Test Overall F1 | **70.33%** |
+| Held-Out Test Overall Precision | 72.07% |
+| Held-Out Test Overall Recall | 68.67% |
+| `IT_TERM` F1 | 70.29% |
+| `CLERICAL_TERM` F1 | 70.42% |
+| Unseen Benchmark Transformer Precision | 60.87% |
+| Unseen Benchmark Transformer Recall | 86.15% |
+| Unseen Benchmark Transformer F1 | **71.34%** |
+| Unseen Benchmark Hybrid Precision | 56.00% |
+| Unseen Benchmark Hybrid Recall | 86.15% |
+| Unseen Benchmark Hybrid F1 | 67.88% |
+| Generalization Lift (vs Dict Recall 4.62%) | **+81.53%** |
+
+Its five-fold cross-validation summary is **66.77 ± 2.91% overall F1**,
+**63.70 ± 2.94% precision**, **70.18 ± 3.31% recall**, **67.64 ± 2.29% `IT_TERM` F1**,
+**65.20 ± 4.39% `CLERICAL_TERM` F1**, **89.85 ± 1.85% unseen transformer recall**,
+and **70.12 ± 2.68% unseen transformer F1**.
 
 ### Chapter 4 Detailed Discussion
 
@@ -200,12 +229,11 @@ The complete Chapter 4 discussion is now available in [`docs/chapter4.md`](docs/
 
 ### Key Findings & Thesis Insights
 
-1. **TRSTR-LLM Excels in Precision & Clerical Domain Mastery**: Direct LLM augmentation combined with mined hard negatives achieves the highest overall test precision (**73.52%**, **+1.06%** over TRTR baseline) and dominates across every `CLERICAL_TERM` metric: **73.61% F1** (**+3.19%** over TRTR), **73.61% Precision** (**+2.18%**), and **73.61% Recall** (**+4.17%**). The synthetic generation effectively populated technical-administrative contexts that are scarce in raw OJT entries.
-2. **Tremendous Out-of-Vocabulary (OOV) Generalization (+25.71% F1)**: On the canonical 65-term unseen benchmark (`data/test/unseen_benchmark.jsonl`), TRSTR-LLM successfully recognized **61 out of 65** completely unseen technical concepts. TRSTR-LLM drove Transformer Recall to **93.85%** (vs. 76.92% [50/65] for TRTR, **+16.93%** lift), Precision to **64.89%** (vs. 38.17% for TRTR, a massive **+26.72%** jump), and Transformer F1 to **76.73%** (vs. 51.02% for TRTR, an astounding **+25.71%** improvement). In hybrid resolution mode, TRSTR-LLM maintained **73.49% F1** (vs. 50.76% for TRTR, **+22.73%** lift), achieving an overall **+89.23% generalization lift** over the seed dictionary baseline.
-3. **TRTR Strong In-Domain Baseline Anchor**: The authentic real-data baseline (TRTR) performs strongly on in-domain distributions with **72.92% Held-Out Test F1**, **73.39% Recall**, and **74.01% `IT_TERM` F1** on familiar journal distributions, demonstrating the high baseline quality and label consistency of the curated authentic annotations.
-4. **Mined Negative Curation & Superior Confidence Discrimination**: Filtering 164 raw candidates down to 94 clean hard negatives (blocking 19 test and 15 dev leaks) effectively suppressed spurious over-prediction on conversational text, boosting unseen benchmark precision from 38.17% (TRTR) to **64.89%** (TRSTR-LLM). Furthermore, TRSTR-LLM exhibited strong confidence discrimination on unseen evaluations: correct entities averaged **0.9901** confidence while spurious predictions averaged **0.9153** (a **+0.0748** discrimination margin, compared to +0.0215 for TRTR and -0.0208 for TRSTR-Para).
-5. **TRSTR-Paraphrase Syntactic Augmentation**: T5 seq2seq paraphrasing enriched grammatical variety, yielding **70.83% Recall** on `CLERICAL_TERM` (+1.39% over TRTR 69.44%) and identifying 47/65 unseen terms (72.31% recall, +67.69% generalization lift). However, subtle semantic and stylistic shifts introduced by automated paraphrasing led to lower precision (67.66%) and an overall test F1 of **67.95%**.
-6. **Strict Evaluation Isolation Maintained**: All 7 checks of the automated leakage audit passed with zero leakage. Synthetic data remains strictly isolated to the training split. Evaluation partitions (`dev.spacy`, `test.spacy`, `unseen_benchmark.jsonl`) remain 100% authentic real data.
+1. **TRSTR-LLM Provides the Strongest OOV Recall in the Three-Way Run**: On the 65-entity unseen benchmark, TRSTR-LLM reached **86.15% transformer recall** and **71.79% transformer F1**, compared with TRTR's 78.46% recall and 49.28% F1. Its hybrid mode reached **67.88% F1**.
+2. **TRTR Remains the Best Held-Out Test Baseline**: The real-only baseline achieved **71.27% held-out F1**, **71.74% precision**, and **70.82% recall** in the current comparison report.
+3. **TRSTR-Paraphrase Has the Most Stable Cross-Validation**: It achieved **71.47 ± 0.92% overall F1** across five folds, while TRTR reached 71.71 ± 2.80% and TRSTR-LLM reached 67.95 ± 1.41%.
+4. **TRSTR-LLM Mini Preserves Most Full-Model Capability at Lower Size**: The `distilroberta-base` model achieved **70.33% held-out F1**, **71.34% unseen transformer F1**, and a **318.2 MB** checkpoint footprint.
+5. **Strict Evaluation Isolation Maintained**: All 7 checks of the automated leakage audit passed with zero leakage. Synthetic data remains strictly isolated to the training split. Evaluation partitions (`dev.spacy`, `test.spacy`, `unseen_benchmark.jsonl`) remain 100% authentic real data.
 
 ---
 
